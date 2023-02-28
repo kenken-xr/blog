@@ -6,7 +6,7 @@
   <link href="https://kenken-xr.github.io/blog/atom.xml" rel="self"/>
   
   <link href="https://kenken-xr.github.io/blog/"/>
-  <updated>2023-02-28T02:54:13.760Z</updated>
+  <updated>2023-02-28T11:55:53.689Z</updated>
   <id>https://kenken-xr.github.io/blog/</id>
   
   <author>
@@ -17,28 +17,25 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>基本的一些东西</title>
-    <link href="https://kenken-xr.github.io/blog/2023/02/28/%E5%9F%BA%E6%9C%AC%E7%9A%84%E4%B8%80%E4%BA%9B%E4%B8%9C%E8%A5%BF/"/>
-    <id>https://kenken-xr.github.io/blog/2023/02/28/%E5%9F%BA%E6%9C%AC%E7%9A%84%E4%B8%80%E4%BA%9B%E4%B8%9C%E8%A5%BF/</id>
-    <published>2023-02-28T02:51:47.000Z</published>
-    <updated>2023-02-28T02:54:13.760Z</updated>
+    <title>20230228</title>
+    <link href="https://kenken-xr.github.io/blog/2023/02/28/20230228/"/>
+    <id>https://kenken-xr.github.io/blog/2023/02/28/20230228/</id>
+    <published>2023-02-28T11:52:24.000Z</published>
+    <updated>2023-02-28T11:55:53.689Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Log运行日志"><a href="#Log运行日志" class="headerlink" title="Log运行日志"></a>Log运行日志</h1><p>Android 采用Log工具打印日志，它将各类日志划分为五个级:</p><ul><li><p>Log.eE表示错误信息，比如可能导致程序崩溃的异常。</p></li><li><p>Log.w:表示警告信息。</p></li><li><p>Log.i:表示一般消息。</p></li><li><p>Log.d:表示调试信息，可把程序运行时的变量值打印出来，方便跟踪调试。</p></li><li><p>Log.v:表示冗余信息。</p></li></ul><h1 id="工程目录结构"><a href="#工程目录结构" class="headerlink" title="工程目录结构"></a>工程目录结构</h1><h2 id="App工程目录结构"><a href="#App工程目录结构" class="headerlink" title="App工程目录结构"></a>App工程目录结构</h2><p>App工程分为两个层次，第一个层次是项目，另一个层次是模块。</p><p>模块依附于项目，每个项目至少有一个模块，也能拥有多个模块。<br>一般所言的“编译运行App”，指的是运行某个模块，而非运行某个项目，因为模块才对应实际的App。</p><p>App项目下面有两个分类: </p><ul><li>app（代表app模块)  下面有3个子目录</li><li>Gradle Scripts，主要是工程的编译配置文件</li></ul><p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/study/android%E5%BC%80%E5%8F%91/%E5%9F%BA%E6%9C%AC%E7%9A%84%E4%B8%80%E4%BA%9B%E4%B8%9C%E8%A5%BF/%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95"></p><ul><li><p>app（代表app模块）</p><ul><li><p>manifests子目录，下面只有一个XML文件，即AndroidManifest.xml，它是App的运行配置文件。</p></li><li><p>java子目录，下面有3个com.example.myapp包，其中第一个包存放当前模块的Java源代码，后<br>面两个包存放测试用的Java代码。</p></li><li><p>res子目录，存放当前模块的资源文件</p><ul><li>drawable目录存放图形描述文件与图片文件。</li><li>layout目录存放App页面的布局文件。</li><li>mipmap目录存放App的启动图标。</li><li>values目录存放一些常量定义文件，例如字符串常量strings.xml、像素常量dimens.xml、颜色常<br>量colors.xml、样式风格定义styles.xml等。  </li></ul></li><li><p>Gradle Scripts</p><ul><li>build.gradle，该文件分为项目级与模块级两种，用于描述App工程的编译规则。</li><li>proguard-rules.pro，该文件用于描述Java代码的混淆规则。</li><li>gradle.properties，该文件用于配置编译工程的命令行参数，一般无须改动。</li><li>settings.gradle，该文件配置了需要编译哪些模块。初始内容为include ‘:app’，表示只编译app模块。</li><li>local.properties，项目的本地配置文件，它在工程编译时自动生成，用于描述开发者电脑的环境配置，包括SDK的本地路径、NDK的本地路径等。</li></ul></li></ul></li></ul><h2 id="编译配置文件build-gradle"><a href="#编译配置文件build-gradle" class="headerlink" title="编译配置文件build.gradle"></a>编译配置文件build.gradle</h2><p>项目级别的build.gradle指定了当前项目的总体编译规则，打开该文件在buildscript下面找到repositories和dependencies两个节点，其中repositories节点用于设置Android Studio插件的网络仓库地址，而dependencies节点用于设置gradle插件的版本号。由于官方的谷歌仓库位于国外，下载速度相对较慢，因此可在repositories节点添加阿里云的仓库地址，方便国内开发者下载相关插件。</p><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">buildscript {</span><br><span class="line">  repositories {</span><br><span class="line">    <span class="comment">// 以下四行添加阿里云的仓库地址，方便国内开发者下载相关插件</span></span><br><span class="line">    maven { url <span class="string">'https://maven.aliyun.com/repository/jcenter'</span> }</span><br><span class="line">    maven { url <span class="string">'https://maven.aliyun.com/repository/google'</span>}</span><br><span class="line">    maven { url <span class="string">'https://maven.aliyun.com/repository/gradle-plugin'</span>}</span><br><span class="line">    maven { url <span class="string">'https://maven.aliyun.com/repository/public'</span>}</span><br><span class="line">    google()</span><br><span class="line">    jcenter()</span><br><span class="line">  } </span><br><span class="line">dependencies {</span><br><span class="line">    <span class="comment">// 配置gradle插件版本，下面的版本号就是Android Studio的版本号</span></span><br><span class="line">    classpath <span class="string">'com.android.tools.build:gradle:4.1.0'</span></span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p>模块级别的build.gradle对应于具体模块，每个模块都有自己的build.gradle，它指定了当前模块的详细编译规则。  </p><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">plugins {</span><br><span class="line">    id <span class="string">'com.android.application'</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">android {</span><br><span class="line">  <span class="comment">// 指定编译用的SDK版本号。比如30表示使用Android 11.0编译</span></span><br><span class="line">    compileSdk <span class="number">30</span>,</span><br><span class="line">  <span class="comment">// 指定编译工具的版本号。这里的头两位数字必须与compileSdkVersion保持一致，具体的版本号可在sdk安装目录的“sdk\build-tools”下找到</span></span><br><span class="line">buildToolsVersion <span class="string">"30.0.3,</span></span><br><span class="line"><span class="string">    defaultConfig {</span></span><br><span class="line"><span class="string">      // 指定该模块的应用编号，也就是App的包名</span></span><br><span class="line"><span class="string">        applicationId "</span>com.dongnaoedu.myapplication<span class="string">"</span></span><br><span class="line"><span class="string">        // 指定App适合运行的最小SDK版本号。比如19表示至少要在Android 4.4上运行</span></span><br><span class="line"><span class="string">        minSdkVersion 19</span></span><br><span class="line"><span class="string">        // 指定目标设备的SDK版本号。表示App最希望在哪个版本的Android上运行</span></span><br><span class="line"><span class="string">        targetSdkVersion 30</span></span><br><span class="line"><span class="string">        // 指定App的应用版本号</span></span><br><span class="line"><span class="string">        versionCode 1</span></span><br><span class="line"><span class="string">        // 指定App的应用版本名称</span></span><br><span class="line"><span class="string">        versionName "</span><span class="number">1.0</span><span class="string">"</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        testInstrumentationRunner "</span>androidx.test.runner.AndroidJUnitRunner<span class="string">"</span></span><br><span class="line"><span class="string">    }</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    buildTypes {</span></span><br><span class="line"><span class="string">        release {</span></span><br><span class="line"><span class="string">            minifyEnabled false</span></span><br><span class="line"><span class="string">            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'</span></span><br><span class="line"><span class="string">        }</span></span><br><span class="line"><span class="string">    }</span></span><br><span class="line"><span class="string">}</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// 指定App编译的依赖信息</span></span><br><span class="line"><span class="string">dependencies {</span></span><br><span class="line"><span class="string">    // 指定引用jar包的路径</span></span><br><span class="line"><span class="string">    implementation fileTree(dir: 'libs', include: ['*.jar'])</span></span><br><span class="line"><span class="string">    // 指定编译Android的高版本支持库。如AppCompatActivity必须指定编译appcompat库</span></span><br><span class="line"><span class="string">    //appcompat库各版本见https://mvnrepository.com/artifact/androidx.appcompat/appcompat</span></span><br><span class="line"><span class="string">    implementation 'androidx.appcompat:appcompat:1.2.0'</span></span><br><span class="line"><span class="string">    // 指定单元测试编译用的junit版本号</span></span><br><span class="line"><span class="string">    testImplementation 'junit:junit:4.13'</span></span><br><span class="line"><span class="string">    androidTestImplementation 'androidx.test.ext:junit:1.1.2'</span></span><br><span class="line"><span class="string">    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0</span></span><br><span class="line"><span class="string">}</span></span><br></pre></td></tr></tbody></table></figure><h2 id="运行配置文件AndroidManifest-xml"><a href="#运行配置文件AndroidManifest-xml" class="headerlink" title="运行配置文件AndroidManifest.xml"></a>运行配置文件AndroidManifest.xml</h2><p><code>AndroidManifest.xml</code>指定了App的运行配置信息，它是一个XML描述文件  </p><figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">manifest</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></span><br><span class="line"><span class="tag"><span class="attr">package</span>=<span class="string">"com.example.chapter02"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">application</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:allowBackup</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:icon</span>=<span class="string">"@mipmap/ic_launcher"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:label</span>=<span class="string">"@string/app_name"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:roundIcon</span>=<span class="string">"@mipmap/ic_launcher_round"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:supportsRtl</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:theme</span>=<span class="string">"@style/AppTheme"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">activity</span> <span class="attr">android:name</span>=<span class="string">".Main2Activity"</span>&gt;</span><span class="tag">&lt;/<span class="name">activity</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- activity节点指定了该App拥有的活动页面信息，其中拥有android.intent.action.MAIN的activity说明它是入口页面 --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">activity</span> <span class="attr">android:name</span>=<span class="string">".MainActivity"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">"android.intent.action.MAIN"</span> /&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">category</span> <span class="attr">android:name</span>=<span class="string">"android.intent.category.LAUNCHER"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">activity</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">application</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">manifest</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure><p><code>AndroidManifest.xml</code>的根节点为manifest，它的package属性指定了该App的包名。manifest下面有个application节点</p><ul><li><code>android:allowBackup</code>，是否允许应用备份。允许用户备份系统应用和第三方应用的apk安装包和应用数据，以便在刷机或者数据丢失后恢复应用，用户即可通过adb backup和adb restore来进行<br>对应用数据的备份和恢复。为true表示允许，为false则表示不允许。</li><li><code>android:icon</code>，指定App在手机屏幕上显示的图标。</li><li><code>android:label</code>，指定App在手机屏幕上显示的名称。</li><li><code>android:roundIcon</code>，指定App的圆角图标。</li><li><code>android:supportsRtl</code>，是否支持阿拉伯语／波斯语这种从右往左的文字排列顺序。为true表示支持，为false则表示不支持。</li><li><code>android:theme</code>，指定App的显示风格。  </li></ul><p>application下面还有个activity节点，它是活动页面的注册声明，只有在<code>AndroidManifest.xml</code>中正确配置了activity节点，才能在运行时访问对应的活动页面。初始配置的MainActivity正是App的默认主页，之所以说该页面是App主页，是因为它的activity节点内部还配置了以下的过滤信息  </p><figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">"android.intent.action.MAIN"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">category</span> <span class="attr">android:name</span>=<span class="string">"android.intent.category.LAUNCHER"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure><p>其中<code>action</code>节点设置的<code>android.intent.action.MAIN</code>表示该页面是App的入口页面，启动App时会最先打开该页面。</p><p>而<code>category</code>节点设置的<code>android.intent.category.LAUNCHER</code>决定了是否在手机屏幕上显示App图标，如果同时有两个activity节点内部都设置了android.intent.category.LAUNCHER，那么桌面就会显示两个App图标。  </p>]]></content>
+    <content type="html"><![CDATA[<h1 id="今天吃什么"><a href="#今天吃什么" class="headerlink" title="今天吃什么"></a>今天吃什么</h1><p>吃菜包子<br>不好吃</p><p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/20230228/%E6%97%A9%E9%A5%AD"></p><p>吃沙拉<br>这个好好吃</p><blockquote><p>染七沙拉.三文治.热轻食</p></blockquote><p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/20230228/%E4%B8%AD%E9%A5%AD"></p><p>吃黑椒牛排<br>好吃<br><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/20230228/%E6%99%9A%E9%A5%AD"></p>]]></content>
     
     
       
       
-    <summary type="html">&lt;h1 id=&quot;Log运行日志&quot;&gt;&lt;a href=&quot;#Log运行日志&quot; class=&quot;headerlink&quot; title=&quot;Log运行日志&quot;&gt;&lt;/a&gt;Log运行日志&lt;/h1&gt;&lt;p&gt;Android 采用Log工具打印日志，它将各类日志划分为五个级:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;</summary>
+    <summary type="html">&lt;h1 id=&quot;今天吃什么&quot;&gt;&lt;a href=&quot;#今天吃什么&quot; class=&quot;headerlink&quot; title=&quot;今天吃什么&quot;&gt;&lt;/a&gt;今天吃什么&lt;/h1&gt;&lt;p&gt;吃菜包子&lt;br&gt;不好吃&lt;/p&gt;
+&lt;p&gt;&lt;img lazyload=&quot;&quot; alt=&quot;image&quot; data-src=&quot;</summary>
       
     
     
     
-    <category term="有在认真上班" scheme="https://kenken-xr.github.io/blog/categories/%E6%9C%89%E5%9C%A8%E8%AE%A4%E7%9C%9F%E4%B8%8A%E7%8F%AD/"/>
+    <category term="今天在腾讯吃什么" scheme="https://kenken-xr.github.io/blog/categories/%E4%BB%8A%E5%A4%A9%E5%9C%A8%E8%85%BE%E8%AE%AF%E5%90%83%E4%BB%80%E4%B9%88/"/>
     
-    
-    <category term="Android" scheme="https://kenken-xr.github.io/blog/tags/Android/"/>
     
   </entry>
   
@@ -55,6 +52,32 @@
       
       
     <summary type="html">&lt;p&gt;&lt;img lazyload=&quot;&quot; alt=&quot;image&quot; data-src=&quot;https://raw.githubusercontent.com/kenken-xr/blog-images/images/study/android%E5%BC%80%E5%8F%91/Act</summary>
+      
+    
+    
+    
+    <category term="有在认真上班" scheme="https://kenken-xr.github.io/blog/categories/%E6%9C%89%E5%9C%A8%E8%AE%A4%E7%9C%9F%E4%B8%8A%E7%8F%AD/"/>
+    
+    
+    <category term="Android" scheme="https://kenken-xr.github.io/blog/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基本的一些东西</title>
+    <link href="https://kenken-xr.github.io/blog/2023/02/28/%E5%9F%BA%E6%9C%AC%E7%9A%84%E4%B8%80%E4%BA%9B%E4%B8%9C%E8%A5%BF/"/>
+    <id>https://kenken-xr.github.io/blog/2023/02/28/%E5%9F%BA%E6%9C%AC%E7%9A%84%E4%B8%80%E4%BA%9B%E4%B8%9C%E8%A5%BF/</id>
+    <published>2023-02-28T02:51:47.000Z</published>
+    <updated>2023-02-28T02:54:13.760Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Log运行日志"><a href="#Log运行日志" class="headerlink" title="Log运行日志"></a>Log运行日志</h1><p>Android 采用Log工具打印日志，它将各类日志划分为五个级:</p><ul><li><p>Log.eE表示错误信息，比如可能导致程序崩溃的异常。</p></li><li><p>Log.w:表示警告信息。</p></li><li><p>Log.i:表示一般消息。</p></li><li><p>Log.d:表示调试信息，可把程序运行时的变量值打印出来，方便跟踪调试。</p></li><li><p>Log.v:表示冗余信息。</p></li></ul><h1 id="工程目录结构"><a href="#工程目录结构" class="headerlink" title="工程目录结构"></a>工程目录结构</h1><h2 id="App工程目录结构"><a href="#App工程目录结构" class="headerlink" title="App工程目录结构"></a>App工程目录结构</h2><p>App工程分为两个层次，第一个层次是项目，另一个层次是模块。</p><p>模块依附于项目，每个项目至少有一个模块，也能拥有多个模块。<br>一般所言的“编译运行App”，指的是运行某个模块，而非运行某个项目，因为模块才对应实际的App。</p><p>App项目下面有两个分类: </p><ul><li>app（代表app模块)  下面有3个子目录</li><li>Gradle Scripts，主要是工程的编译配置文件</li></ul><p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/study/android%E5%BC%80%E5%8F%91/%E5%9F%BA%E6%9C%AC%E7%9A%84%E4%B8%80%E4%BA%9B%E4%B8%9C%E8%A5%BF/%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95"></p><ul><li><p>app（代表app模块）</p><ul><li><p>manifests子目录，下面只有一个XML文件，即AndroidManifest.xml，它是App的运行配置文件。</p></li><li><p>java子目录，下面有3个com.example.myapp包，其中第一个包存放当前模块的Java源代码，后<br>面两个包存放测试用的Java代码。</p></li><li><p>res子目录，存放当前模块的资源文件</p><ul><li>drawable目录存放图形描述文件与图片文件。</li><li>layout目录存放App页面的布局文件。</li><li>mipmap目录存放App的启动图标。</li><li>values目录存放一些常量定义文件，例如字符串常量strings.xml、像素常量dimens.xml、颜色常<br>量colors.xml、样式风格定义styles.xml等。  </li></ul></li><li><p>Gradle Scripts</p><ul><li>build.gradle，该文件分为项目级与模块级两种，用于描述App工程的编译规则。</li><li>proguard-rules.pro，该文件用于描述Java代码的混淆规则。</li><li>gradle.properties，该文件用于配置编译工程的命令行参数，一般无须改动。</li><li>settings.gradle，该文件配置了需要编译哪些模块。初始内容为include ‘:app’，表示只编译app模块。</li><li>local.properties，项目的本地配置文件，它在工程编译时自动生成，用于描述开发者电脑的环境配置，包括SDK的本地路径、NDK的本地路径等。</li></ul></li></ul></li></ul><h2 id="编译配置文件build-gradle"><a href="#编译配置文件build-gradle" class="headerlink" title="编译配置文件build.gradle"></a>编译配置文件build.gradle</h2><p>项目级别的build.gradle指定了当前项目的总体编译规则，打开该文件在buildscript下面找到repositories和dependencies两个节点，其中repositories节点用于设置Android Studio插件的网络仓库地址，而dependencies节点用于设置gradle插件的版本号。由于官方的谷歌仓库位于国外，下载速度相对较慢，因此可在repositories节点添加阿里云的仓库地址，方便国内开发者下载相关插件。</p><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">buildscript {</span><br><span class="line">  repositories {</span><br><span class="line">    <span class="comment">// 以下四行添加阿里云的仓库地址，方便国内开发者下载相关插件</span></span><br><span class="line">    maven { url <span class="string">'https://maven.aliyun.com/repository/jcenter'</span> }</span><br><span class="line">    maven { url <span class="string">'https://maven.aliyun.com/repository/google'</span>}</span><br><span class="line">    maven { url <span class="string">'https://maven.aliyun.com/repository/gradle-plugin'</span>}</span><br><span class="line">    maven { url <span class="string">'https://maven.aliyun.com/repository/public'</span>}</span><br><span class="line">    google()</span><br><span class="line">    jcenter()</span><br><span class="line">  } </span><br><span class="line">dependencies {</span><br><span class="line">    <span class="comment">// 配置gradle插件版本，下面的版本号就是Android Studio的版本号</span></span><br><span class="line">    classpath <span class="string">'com.android.tools.build:gradle:4.1.0'</span></span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p>模块级别的build.gradle对应于具体模块，每个模块都有自己的build.gradle，它指定了当前模块的详细编译规则。  </p><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">plugins {</span><br><span class="line">    id <span class="string">'com.android.application'</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">android {</span><br><span class="line">  <span class="comment">// 指定编译用的SDK版本号。比如30表示使用Android 11.0编译</span></span><br><span class="line">    compileSdk <span class="number">30</span>,</span><br><span class="line">  <span class="comment">// 指定编译工具的版本号。这里的头两位数字必须与compileSdkVersion保持一致，具体的版本号可在sdk安装目录的“sdk\build-tools”下找到</span></span><br><span class="line">buildToolsVersion <span class="string">"30.0.3,</span></span><br><span class="line"><span class="string">    defaultConfig {</span></span><br><span class="line"><span class="string">      // 指定该模块的应用编号，也就是App的包名</span></span><br><span class="line"><span class="string">        applicationId "</span>com.dongnaoedu.myapplication<span class="string">"</span></span><br><span class="line"><span class="string">        // 指定App适合运行的最小SDK版本号。比如19表示至少要在Android 4.4上运行</span></span><br><span class="line"><span class="string">        minSdkVersion 19</span></span><br><span class="line"><span class="string">        // 指定目标设备的SDK版本号。表示App最希望在哪个版本的Android上运行</span></span><br><span class="line"><span class="string">        targetSdkVersion 30</span></span><br><span class="line"><span class="string">        // 指定App的应用版本号</span></span><br><span class="line"><span class="string">        versionCode 1</span></span><br><span class="line"><span class="string">        // 指定App的应用版本名称</span></span><br><span class="line"><span class="string">        versionName "</span><span class="number">1.0</span><span class="string">"</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        testInstrumentationRunner "</span>androidx.test.runner.AndroidJUnitRunner<span class="string">"</span></span><br><span class="line"><span class="string">    }</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    buildTypes {</span></span><br><span class="line"><span class="string">        release {</span></span><br><span class="line"><span class="string">            minifyEnabled false</span></span><br><span class="line"><span class="string">            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'</span></span><br><span class="line"><span class="string">        }</span></span><br><span class="line"><span class="string">    }</span></span><br><span class="line"><span class="string">}</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// 指定App编译的依赖信息</span></span><br><span class="line"><span class="string">dependencies {</span></span><br><span class="line"><span class="string">    // 指定引用jar包的路径</span></span><br><span class="line"><span class="string">    implementation fileTree(dir: 'libs', include: ['*.jar'])</span></span><br><span class="line"><span class="string">    // 指定编译Android的高版本支持库。如AppCompatActivity必须指定编译appcompat库</span></span><br><span class="line"><span class="string">    //appcompat库各版本见https://mvnrepository.com/artifact/androidx.appcompat/appcompat</span></span><br><span class="line"><span class="string">    implementation 'androidx.appcompat:appcompat:1.2.0'</span></span><br><span class="line"><span class="string">    // 指定单元测试编译用的junit版本号</span></span><br><span class="line"><span class="string">    testImplementation 'junit:junit:4.13'</span></span><br><span class="line"><span class="string">    androidTestImplementation 'androidx.test.ext:junit:1.1.2'</span></span><br><span class="line"><span class="string">    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0</span></span><br><span class="line"><span class="string">}</span></span><br></pre></td></tr></tbody></table></figure><h2 id="运行配置文件AndroidManifest-xml"><a href="#运行配置文件AndroidManifest-xml" class="headerlink" title="运行配置文件AndroidManifest.xml"></a>运行配置文件AndroidManifest.xml</h2><p><code>AndroidManifest.xml</code>指定了App的运行配置信息，它是一个XML描述文件  </p><figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">manifest</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></span><br><span class="line"><span class="tag"><span class="attr">package</span>=<span class="string">"com.example.chapter02"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">application</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:allowBackup</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:icon</span>=<span class="string">"@mipmap/ic_launcher"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:label</span>=<span class="string">"@string/app_name"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:roundIcon</span>=<span class="string">"@mipmap/ic_launcher_round"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:supportsRtl</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:theme</span>=<span class="string">"@style/AppTheme"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">activity</span> <span class="attr">android:name</span>=<span class="string">".Main2Activity"</span>&gt;</span><span class="tag">&lt;/<span class="name">activity</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- activity节点指定了该App拥有的活动页面信息，其中拥有android.intent.action.MAIN的activity说明它是入口页面 --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">activity</span> <span class="attr">android:name</span>=<span class="string">".MainActivity"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">"android.intent.action.MAIN"</span> /&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">category</span> <span class="attr">android:name</span>=<span class="string">"android.intent.category.LAUNCHER"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">activity</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">application</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">manifest</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure><p><code>AndroidManifest.xml</code>的根节点为manifest，它的package属性指定了该App的包名。manifest下面有个application节点</p><ul><li><code>android:allowBackup</code>，是否允许应用备份。允许用户备份系统应用和第三方应用的apk安装包和应用数据，以便在刷机或者数据丢失后恢复应用，用户即可通过adb backup和adb restore来进行<br>对应用数据的备份和恢复。为true表示允许，为false则表示不允许。</li><li><code>android:icon</code>，指定App在手机屏幕上显示的图标。</li><li><code>android:label</code>，指定App在手机屏幕上显示的名称。</li><li><code>android:roundIcon</code>，指定App的圆角图标。</li><li><code>android:supportsRtl</code>，是否支持阿拉伯语／波斯语这种从右往左的文字排列顺序。为true表示支持，为false则表示不支持。</li><li><code>android:theme</code>，指定App的显示风格。  </li></ul><p>application下面还有个activity节点，它是活动页面的注册声明，只有在<code>AndroidManifest.xml</code>中正确配置了activity节点，才能在运行时访问对应的活动页面。初始配置的MainActivity正是App的默认主页，之所以说该页面是App主页，是因为它的activity节点内部还配置了以下的过滤信息  </p><figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">"android.intent.action.MAIN"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">category</span> <span class="attr">android:name</span>=<span class="string">"android.intent.category.LAUNCHER"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure><p>其中<code>action</code>节点设置的<code>android.intent.action.MAIN</code>表示该页面是App的入口页面，启动App时会最先打开该页面。</p><p>而<code>category</code>节点设置的<code>android.intent.category.LAUNCHER</code>决定了是否在手机屏幕上显示App图标，如果同时有两个activity节点内部都设置了android.intent.category.LAUNCHER，那么桌面就会显示两个App图标。  </p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Log运行日志&quot;&gt;&lt;a href=&quot;#Log运行日志&quot; class=&quot;headerlink&quot; title=&quot;Log运行日志&quot;&gt;&lt;/a&gt;Log运行日志&lt;/h1&gt;&lt;p&gt;Android 采用Log工具打印日志，它将各类日志划分为五个级:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;</summary>
       
     
     
@@ -91,6 +114,29 @@
   </entry>
   
   <entry>
+    <title>20230227</title>
+    <link href="https://kenken-xr.github.io/blog/2023/02/27/20230227/"/>
+    <id>https://kenken-xr.github.io/blog/2023/02/27/20230227/</id>
+    <published>2023-02-27T11:56:43.000Z</published>
+    <updated>2023-02-28T11:59:22.314Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="今天吃什么"><a href="#今天吃什么" class="headerlink" title="今天吃什么"></a>今天吃什么</h1><p>吃蒸饺</p><p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/20230227/%E6%97%A9%E9%A5%AD"></p><p>吃沙拉<br>一般般 </p><blockquote><p>超能鹿战队</p></blockquote><p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/20230227/%E4%B8%AD%E9%A5%AD"></p><p>吃肉夹馍</p><p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/20230227/%E6%99%9A%E9%A5%AD"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;今天吃什么&quot;&gt;&lt;a href=&quot;#今天吃什么&quot; class=&quot;headerlink&quot; title=&quot;今天吃什么&quot;&gt;&lt;/a&gt;今天吃什么&lt;/h1&gt;&lt;p&gt;吃蒸饺&lt;/p&gt;
+&lt;p&gt;&lt;img lazyload=&quot;&quot; alt=&quot;image&quot; data-src=&quot;https://</summary>
+      
+    
+    
+    
+    <category term="今天在腾讯吃什么" scheme="https://kenken-xr.github.io/blog/categories/%E4%BB%8A%E5%A4%A9%E5%9C%A8%E8%85%BE%E8%AE%AF%E5%90%83%E4%BB%80%E4%B9%88/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>直播界面适配平板大屏幕</title>
     <link href="https://kenken-xr.github.io/blog/2023/02/27/%E7%9B%B4%E6%92%AD%E7%95%8C%E9%9D%A2%E9%80%82%E9%85%8D%E5%B9%B3%E6%9D%BF%E5%A4%A7%E5%B1%8F%E5%B9%95/"/>
     <id>https://kenken-xr.github.io/blog/2023/02/27/%E7%9B%B4%E6%92%AD%E7%95%8C%E9%9D%A2%E9%80%82%E9%85%8D%E5%B9%B3%E6%9D%BF%E5%A4%A7%E5%B1%8F%E5%B9%95/</id>
@@ -111,6 +157,50 @@
     
     
     <category term="写了什么新功能" scheme="https://kenken-xr.github.io/blog/tags/%E5%86%99%E4%BA%86%E4%BB%80%E4%B9%88%E6%96%B0%E5%8A%9F%E8%83%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>20230224</title>
+    <link href="https://kenken-xr.github.io/blog/2023/02/24/20230224/"/>
+    <id>https://kenken-xr.github.io/blog/2023/02/24/20230224/</id>
+    <published>2023-02-24T12:05:12.000Z</published>
+    <updated>2023-02-28T12:12:08.711Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="今天吃什么"><a href="#今天吃什么" class="headerlink" title="今天吃什么"></a>今天吃什么</h1><p>吃豆沙饼<br><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/20230224/%E6%97%A9%E9%A5%AD"></p><p>吃小馄饨<br><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/20230224/%E4%B8%AD%E9%A5%AD"></p><p>吃麻辣香锅<br><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/20230224/%E4%B8%AD%E9%A5%AD"></p><p>早上遇到的麦当劳小车<br><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/20230224/%E9%BA%A6%E5%BD%93%E5%8A%B3%E5%B0%8F%E8%BD%A6"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;今天吃什么&quot;&gt;&lt;a href=&quot;#今天吃什么&quot; class=&quot;headerlink&quot; title=&quot;今天吃什么&quot;&gt;&lt;/a&gt;今天吃什么&lt;/h1&gt;&lt;p&gt;吃豆沙饼&lt;br&gt;&lt;img lazyload=&quot;&quot; alt=&quot;image&quot; data-src=&quot;https://raw</summary>
+      
+    
+    
+    
+    <category term="今天在腾讯吃什么" scheme="https://kenken-xr.github.io/blog/categories/%E4%BB%8A%E5%A4%A9%E5%9C%A8%E8%85%BE%E8%AE%AF%E5%90%83%E4%BB%80%E4%B9%88/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>20230222</title>
+    <link href="https://kenken-xr.github.io/blog/2023/02/22/20230222/"/>
+    <id>https://kenken-xr.github.io/blog/2023/02/22/20230222/</id>
+    <published>2023-02-22T12:13:00.000Z</published>
+    <updated>2023-02-28T13:02:29.684Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="今天吃什么"><a href="#今天吃什么" class="headerlink" title="今天吃什么"></a>今天吃什么</h1><p>吃南瓜饼<br><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/20230224/%E5%90%83%E5%8D%97%E7%93%9C%E9%A5%BC"></p><p>吃水煮肉片<br><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/20230222/%E4%B8%AD%E9%A5%AD"></p><p>晚上去吃了达美乐</p><p>照了很多照片</p><p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/20230222/1"></p><p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/20230222/2"></p><p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/20230222/3"></p><p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/20230222/4"></p><p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/20230222/5"></p><p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/20230222/6"></p><p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/20230222/7"></p><p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/20230222/8"></p><p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/20230222/9"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;今天吃什么&quot;&gt;&lt;a href=&quot;#今天吃什么&quot; class=&quot;headerlink&quot; title=&quot;今天吃什么&quot;&gt;&lt;/a&gt;今天吃什么&lt;/h1&gt;&lt;p&gt;吃南瓜饼&lt;br&gt;&lt;img lazyload=&quot;&quot; alt=&quot;image&quot; data-src=&quot;https://raw</summary>
+      
+    
+    
+    
+    <category term="今天在腾讯吃什么" scheme="https://kenken-xr.github.io/blog/categories/%E4%BB%8A%E5%A4%A9%E5%9C%A8%E8%85%BE%E8%AE%AF%E5%90%83%E4%BB%80%E4%B9%88/"/>
+    
     
   </entry>
   
@@ -396,73 +486,6 @@
     
     
     <category term="今天在腾讯吃什么" scheme="https://kenken-xr.github.io/blog/categories/%E4%BB%8A%E5%A4%A9%E5%9C%A8%E8%85%BE%E8%AE%AF%E5%90%83%E4%BB%80%E4%B9%88/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>20230208</title>
-    <link href="https://kenken-xr.github.io/blog/2023/02/08/20230208/"/>
-    <id>https://kenken-xr.github.io/blog/2023/02/08/20230208/</id>
-    <published>2023-02-08T11:26:25.000Z</published>
-    <updated>2023-02-17T13:29:56.249Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="今天吃什么"><a href="#今天吃什么" class="headerlink" title="今天吃什么"></a>今天吃什么</h1><p>吃水煎包<br><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/20230208/%E6%97%A9%E9%A5%AD.jpg"></p><p>吃水煮鱼<br><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/20230208/%E4%B8%AD%E9%A5%AD.jpg"></p><p>吃蒸菜<br><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/20230208/%E6%99%9A%E9%A5%AD.jpg"></p><p>看风景<br><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/20230208/%E6%88%91%E4%BB%8Etx%E7%9C%8B%E9%A3%8E%E6%99%AF.jpg"></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;今天吃什么&quot;&gt;&lt;a href=&quot;#今天吃什么&quot; class=&quot;headerlink&quot; title=&quot;今天吃什么&quot;&gt;&lt;/a&gt;今天吃什么&lt;/h1&gt;&lt;p&gt;吃水煎包&lt;br&gt;&lt;img lazyload=&quot;&quot; alt=&quot;image&quot; data-src=&quot;https://raw</summary>
-      
-    
-    
-    
-    <category term="今天在腾讯吃什么" scheme="https://kenken-xr.github.io/blog/categories/%E4%BB%8A%E5%A4%A9%E5%9C%A8%E8%85%BE%E8%AE%AF%E5%90%83%E4%BB%80%E4%B9%88/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>20230207</title>
-    <link href="https://kenken-xr.github.io/blog/2023/02/08/20230207/"/>
-    <id>https://kenken-xr.github.io/blog/2023/02/08/20230207/</id>
-    <published>2023-02-08T02:44:24.000Z</published>
-    <updated>2023-02-17T13:29:53.499Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="今天吃什么"><a href="#今天吃什么" class="headerlink" title="今天吃什么"></a>今天吃什么</h1><p>吃小炒</p><p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/%E6%99%9A%E4%B8%8A%E5%90%83%E4%BB%80%E4%B9%88.jpg"></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;今天吃什么&quot;&gt;&lt;a href=&quot;#今天吃什么&quot; class=&quot;headerlink&quot; title=&quot;今天吃什么&quot;&gt;&lt;/a&gt;今天吃什么&lt;/h1&gt;&lt;p&gt;吃小炒&lt;/p&gt;
-&lt;p&gt;&lt;img lazyload=&quot;&quot; alt=&quot;image&quot; data-src=&quot;https://</summary>
-      
-    
-    
-    
-    <category term="今天在腾讯吃什么" scheme="https://kenken-xr.github.io/blog/categories/%E4%BB%8A%E5%A4%A9%E5%9C%A8%E8%85%BE%E8%AE%AF%E5%90%83%E4%BB%80%E4%B9%88/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>愤怒的小鸟包</title>
-    <link href="https://kenken-xr.github.io/blog/2023/02/04/%E6%84%A4%E6%80%92%E7%9A%84%E5%B0%8F%E9%B8%9F%E5%8C%85/"/>
-    <id>https://kenken-xr.github.io/blog/2023/02/04/%E6%84%A4%E6%80%92%E7%9A%84%E5%B0%8F%E9%B8%9F%E5%8C%85/</id>
-    <published>2023-02-04T14:00:07.000Z</published>
-    <updated>2023-02-16T14:01:29.517Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="红红火火小鸟包"><a href="#红红火火小鸟包" class="headerlink" title="红红火火小鸟包"></a>红红火火小鸟包</h1><p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/20230204/%E5%B0%8F%E9%B8%9F%E5%8C%851.jpg"></p><p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/20230204/%E5%B0%8F%E9%B8%9F%E5%8C%852.jpg"></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;红红火火小鸟包&quot;&gt;&lt;a href=&quot;#红红火火小鸟包&quot; class=&quot;headerlink&quot; title=&quot;红红火火小鸟包&quot;&gt;&lt;/a&gt;红红火火小鸟包&lt;/h1&gt;&lt;p&gt;&lt;img lazyload=&quot;&quot; alt=&quot;image&quot; data-src=&quot;https://raw</summary>
-      
-    
-    
-    
-    <category term="每天都有小惊喜" scheme="https://kenken-xr.github.io/blog/categories/%E6%AF%8F%E5%A4%A9%E9%83%BD%E6%9C%89%E5%B0%8F%E6%83%8A%E5%96%9C/"/>
     
     
   </entry>
