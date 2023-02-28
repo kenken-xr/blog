@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="MoMo">
+    
+    <title>
+        
+            添加记住密码功能 |
+        
+        今天在干嘛
+    </title>
+    
+<link rel="stylesheet" href="/blog/css/style.css">
+
+    <link rel="shortcut icon" href="/blog/images/moon.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/font/css/regular.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/font/css/solid.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/font/css/brands.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"kenken-xr.github.io","root":"/blog/","language":"en","path":"search.json"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066cc","logo":"/images/moon.svg","favicon":"/images/moon.svg","avatar":"/images/avatar.svg","font_size":null,"font_family":null,"hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"header_transparent":true,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving.","font_color":null,"hitokoto":false},"scroll":{"progress_bar":true,"percent":true}},"local_search":{"enable":true,"preload":true},"code_copy":{},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"side_tools":{},"pjax":{"enable":true},"lazyload":{"enable":true},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":false,"auto":true,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":true,"wordcount":true,"min2read":false},"img_align":"left","copyright_info":false},"version":"3.6.0"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original article title","author":"Original article author","link":"Original article link"}
+  </script>
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/blog/atom.xml" title="MoMo" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/blog/images/moon.svg">
+                </a>
+            
+            <a class="logo-title" href="/">
+               今天在干嘛
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+
+            <div class="article-title">
+                <span class="title-hover-animation">添加记住密码功能</span>
+            </div>
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/blog/images/avatar.svg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">MoMo</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            
+<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        
+            <i class="fa-regular fa-calendar-plus"></i>&nbsp;
+        
+        <span class="pc">2023-02-15 16:06:31</span>
+        <span class="mobile">2023-02-15 16:06</span>
+    </span>
+    
+        <span class="article-update-date article-meta-item">
+        <i class="fas fa-file-pen"></i>&nbsp;
+        <span class="pc">2023-02-21 21:56:11</span>
+    </span>
+    
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/blog/categories/%E6%9C%89%E5%9C%A8%E8%AE%A4%E7%9C%9F%E4%B8%8A%E7%8F%AD/">有在认真上班</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/blog/tags/%E6%94%B9%E4%BA%86%E4%BB%80%E4%B9%88bug/">改了什么bug</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content keep-markdown-body">
+                
+
+                <h1 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h1><h2 id="编写界面交互代码"><a href="#编写界面交互代码" class="headerlink" title="编写界面交互代码"></a>编写界面交互代码</h2><p><code>res/layout/activity_login.xml</code></p>
+<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">CheckBox</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:id</span>=<span class="string">"@+id/remember_password"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:layout_marginHorizontal</span>=<span class="string">"24dp"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:layout_marginTop</span>=<span class="string">"8dp"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:textSize</span>=<span class="string">"12sp"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:minHeight</span>=<span class="string">"36dp"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:layout_gravity</span>=<span class="string">"right"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:text</span>=<span class="string">"@string/text_remember_me"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:onClick</span>=<span class="string">"@{viewModel::onClickRememberPassword}"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">app:layout_constraintRight_toRightOf</span>=<span class="string">"parent"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">app:layout_constraintStart_toStartOf</span>=<span class="string">"parent"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">app:layout_constraintTop_toBottomOf</span>=<span class="string">"@id/edit_password"</span>/&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/work/%E8%AE%B0%E4%BD%8F%E5%AF%86%E7%A0%81/%E8%AE%B0%E4%BD%8F%E5%AF%86%E7%A0%81.png"></p>
+<h2 id="记住密码框架封装"><a href="#记住密码框架封装" class="headerlink" title="记住密码框架封装"></a>记住密码框架封装</h2><p><code>com/danale/edge/coreimpl/usersdk/PvStoreImpl.kt</code></p>
+<figure class="highlight kotlin"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.danale.edge.coreimpl.usersdk</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.content.Context</span><br><span class="line"><span class="keyword">import</span> android.content.SharedPreferences</span><br><span class="line"><span class="keyword">import</span> androidx.security.crypto.EncryptedSharedPreferences</span><br><span class="line"><span class="keyword">import</span> androidx.security.crypto.MasterKey</span><br><span class="line"><span class="keyword">import</span> com.danale.edge.foundation.log.Logger</span><br><span class="line"><span class="keyword">import</span> com.danale.edge.usersdk.di.PvStoreRepository</span><br><span class="line"><span class="keyword">import</span> dagger.hilt.android.qualifiers.ApplicationContext</span><br><span class="line"><span class="keyword">import</span> javax.inject.Inject</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PvStoreImpl</span> <span class="meta">@Inject</span> <span class="keyword">constructor</span></span>(</span><br><span class="line">    <span class="meta">@ApplicationContext</span> <span class="keyword">private</span> <span class="keyword">val</span> context: Context</span><br><span class="line">) : PvStoreRepository {</span><br><span class="line"></span><br><span class="line">    <span class="keyword">companion</span> <span class="keyword">object</span> {</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">val</span> TAG = <span class="string">"PvStoreImpl"</span></span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">val</span> SP_NAME = <span class="string">"com.danale.edge.coreimpl.usersdk.PvStoreImpl"</span></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 使用EncryptedSharedPreferences通过 Security 库以更安全的方式修改用户的一组共享偏好设置</span></span><br><span class="line">    <span class="keyword">private</span> <span class="function"><span class="keyword">fun</span> <span class="title">getEncryptedSp</span><span class="params">()</span></span>: SharedPreferences {</span><br><span class="line">        <span class="keyword">val</span> mainKey = MasterKey.Builder(context)</span><br><span class="line">            .setKeyScheme(MasterKey.KeyScheme.AES256_GCM)</span><br><span class="line">            .build()</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> EncryptedSharedPreferences.create(</span><br><span class="line">            context,</span><br><span class="line">            SP_NAME,</span><br><span class="line">            mainKey,</span><br><span class="line">            EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,</span><br><span class="line">            EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM</span><br><span class="line">        )</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Synchronized</span></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">store</span><span class="params">(key: <span class="type">String</span>, value: <span class="type">String</span>)</span></span> {</span><br><span class="line">        with(getEncryptedSp().edit()) {</span><br><span class="line">            putString(key, value)</span><br><span class="line">            apply()</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Synchronized</span></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">read</span><span class="params">(key: <span class="type">String</span>)</span></span>: String? {</span><br><span class="line">        <span class="keyword">return</span> getEncryptedSp().getString(key, <span class="literal">null</span>)</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="添加点击checkbox时的绑定函数"><a href="#添加点击checkbox时的绑定函数" class="headerlink" title="添加点击checkbox时的绑定函数"></a>添加点击checkbox时的绑定函数</h2><p>获取checkbox的选中状态</p>
+<p><code>com/danale/edge/ui/account/LoginViewModel.kt</code></p>
+<figure class="highlight kotlin"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">var</span> acceptRememberMeState: <span class="built_in">Boolean</span> = <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@Suppress(<span class="meta-string">"UNUSED_PARAMETER"</span>)</span></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">onClickRememberPassword</span><span class="params">(view: <span class="type">View</span>)</span></span> {</span><br><span class="line">        (view <span class="keyword">as</span>? CheckBox)?.let {</span><br><span class="line">            acceptRememberMeState = it.isChecked</span><br><span class="line">        }</span><br><span class="line">    }</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="在登录函数中添加逻辑"><a href="#在登录函数中添加逻辑" class="headerlink" title="在登录函数中添加逻辑"></a>在登录函数中添加逻辑</h2><p>如果checkbox被选中，就将用户名和密码存起来；否则置空</p>
+<p><code>com/danale/edge/ui/account/LoginViewModel.kt</code></p>
+<figure class="highlight kotlin"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 初始化用户名和密码</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">var</span> userName: String? = pvStoreImpl.read(<span class="string">"userName"</span>)</span><br><span class="line"> <span class="keyword">private</span> <span class="keyword">var</span> password: String? = pvStoreImpl.read(<span class="string">"password"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">performLogin</span><span class="params">(licenseState: <span class="type">Boolean</span> = acceptLicenseState)</span></span> {</span><br><span class="line">  <span class="comment">//  验证是否同意隐私条款</span></span><br><span class="line">  	 <span class="comment">// ...</span></span><br><span class="line">  </span><br><span class="line">  viewModelScope.launch {</span><br><span class="line">    <span class="comment">// 验证用户名和密码的正确性</span></span><br><span class="line">      <span class="keyword">val</span> success = withContext(Dispatchers.IO) {</span><br><span class="line">          <span class="keyword">try</span> { } <span class="keyword">catch</span> (ex: Exception) { }</span><br><span class="line">      }</span><br><span class="line"> </span><br><span class="line">  <span class="comment">// 验证成功  </span></span><br><span class="line">  <span class="keyword">if</span> (success) {</span><br><span class="line">     <span class="comment">// 如果checkbox被选中则记住密码</span></span><br><span class="line">      <span class="keyword">if</span>(acceptRememberMeState){</span><br><span class="line">        pvStoreImpl.store(<span class="string">"userName"</span>, userName!!)</span><br><span class="line">        pvStoreImpl.store(<span class="string">"password"</span>, password!!)</span><br><span class="line">      }<span class="keyword">else</span>{</span><br><span class="line">        <span class="comment">//  否则置空</span></span><br><span class="line">        pvStoreImpl.store(<span class="string">"userName"</span>, <span class="string">""</span>)</span><br><span class="line">        pvStoreImpl.store(<span class="string">"password"</span>, <span class="string">""</span>)</span><br><span class="line">      }</span><br><span class="line">    <span class="comment">// 页面跳转</span></span><br><span class="line">    navigationRequiredEvent.postValue( )</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">//  用户名改变时监听状态</span></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">afterUsernameChanged</span><span class="params">(editable: <span class="type">Editable</span>)</span></span> {</span><br><span class="line">    userName = editable.toString()</span><br><span class="line">    updateButtonEnable()</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line"><span class="comment">//  密码改变时监听状态</span></span><br><span class="line">  <span class="function"><span class="keyword">fun</span> <span class="title">afterPasswordChanged</span><span class="params">(editable: <span class="type">Editable</span>)</span></span> {</span><br><span class="line">    password = editable.toString()</span><br><span class="line">    updateButtonEnable()</span><br><span class="line">  }</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="在初始化时显示存储的用户信息"><a href="#在初始化时显示存储的用户信息" class="headerlink" title="在初始化时显示存储的用户信息"></a>在初始化时显示存储的用户信息</h2><p><code>com/danale/edge/ui/account/LoginActivity.kt</code></p>
+<figure class="highlight kotlin"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(pvStoreImpl.read(<span class="string">"userName"</span>) != <span class="string">""</span> &amp;&amp; pvStoreImpl.read(<span class="string">"password"</span>) != <span class="string">""</span>){</span><br><span class="line">      dataBinding.editUserName.setText(pvStoreImpl.read(<span class="string">"userName"</span>))</span><br><span class="line">      dataBinding.editPassword.setText(pvStoreImpl.read(<span class="string">"password"</span>))</span><br><span class="line">      dataBinding.rememberPassword.isChecked = <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">      viewModel.updateButtonEnable()</span><br><span class="line">  }</span><br></pre></td></tr></tbody></table></figure>
+
+<p>如果pvStoreImpl中有用户信息，将用户名和密码显示在editText内，同时设置checkbox的选中状态为<code>true</code></p>
+<p><code>updateButtonEnable</code>用来更新登录按钮的状态，如果存在用户名和密码有为空的情况，则设置登录按钮不可点击状态</p>
+<figure class="highlight kotlin"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">updateButtonEnable</span><span class="params">()</span></span> {</span><br><span class="line">    <span class="keyword">val</span> isEmail = observableIsEmailUserName.<span class="keyword">get</span>()</span><br><span class="line">    buttonEnable.<span class="keyword">set</span>(!TextUtils.isEmpty(userName) &amp;&amp; !TextUtils.isEmpty(password) &amp;&amp; !isEmail)</span><br><span class="line">  }</span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h1><p><video src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/work/%E8%AE%B0%E4%BD%8F%E5%AF%86%E7%A0%81/%E8%AE%B0%E4%BD%8F%E5%AF%86%E7%A0%81.mp4"></video></p>
+<h1 id="用到的库"><a href="#用到的库" class="headerlink" title="用到的库"></a>用到的库</h1><h2 id="Security-库"><a href="#Security-库" class="headerlink" title="Security 库"></a>Security 库</h2><p><a class="link" target="_blank" rel="noopener" href="https://developer.android.google.cn/jetpack/androidx/releases/security?hl=zh-cn#version_110_2">Security 库版本 1.1.0<i class="fas fa-external-link-alt"></i></a></p>
+<p>API 参考文档，可以安全地管理密钥并对文件和 sharedpreferences 进行加密<br><a class="link" target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/androidx/security/crypto/package-summary?hl=zh-cn">androidx.security.crypto<i class="fas fa-external-link-alt"></i></a></p>
+<p>Security 库使用一个由两部分组成的密钥管理系统：</p>
+<ul>
+<li><p>包含一个或多个密钥的<strong>密钥集</strong>，用于对文件或共享偏好设置数据进行加密。密钥集本身存储在 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/content/SharedPreferences?hl=zh-cn"><code>SharedPreferences</code></a> 中。</p>
+</li>
+<li><p>用于加密所有密钥集的<strong>主 (<code>master</code>) 密钥</strong>。此密钥使用 <a class="link" target="_blank" rel="noopener" href="https://developer.android.google.cn/training/articles/keystore?hl=zh-cn">Android 密钥库系统<i class="fas fa-external-link-alt"></i></a>进行存储。</p>
+</li>
+<li><p>库中包含的类</p>
+<p>Security 库包含以下类，旨在提供更安全的静态数据机制：</p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/androidx/security/crypto/EncryptedFile?hl=zh-cn"><code>EncryptedFile</code></a></p>
+<p>提供 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/java/io/FileInputStream?hl=zh-cn"><code>FileInputStream</code></a> 和 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/java/io/FileOutputStream?hl=zh-cn"><code>FileOutputStream</code></a> 的自定义实现，为您的应用赋予更安全的流式读写操作。为了提供安全的文件流读写操作，Security 库使用了流式 AEAD（带关联数据的认证加密）基元。如需详细了解该基元，请参阅 GitHub 上的 <a class="link" target="_blank" rel="noopener" href="https://github.com/google/tink/blob/e92349191557c62a640a873f9126b0de292aa0c2/docs/PRIMITIVES.md#streaming-authenticated-encryption-with-associated-data">Tink 库文档<i class="fas fa-external-link-alt"></i></a>。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/androidx/security/crypto/EncryptedSharedPreferences?hl=zh-cn"><code>EncryptedSharedPreferences</code></a></p>
+<p>封装 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/android/content/SharedPreferences?hl=zh-cn"><code>SharedPreferences</code></a> 类，并使用双重方案方法自动加密密钥和值：</p>
+<p>​    <strong>密钥</strong>使用确定性加密算法进行加密，这样便可以加密并正确查找密钥。</p>
+<p>​    <strong>值</strong>使用 <a class="link" target="_blank" rel="noopener" href="https://tools.ietf.org/html/rfc5116#section-5.2">AES-256 GCM<i class="fas fa-external-link-alt"></i></a> 加密，并且具有不确定性。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="读取文件"><a href="#读取文件" class="headerlink" title="读取文件"></a>读取文件</h3><p>使用 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/androidx/security/crypto/EncryptedFile?hl=zh-cn"><code>EncryptedFile</code></a> 通过 Security 库以更安全的方式读取文件内容：</p>
+<figure class="highlight kotlin"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> mainKey = MasterKey.Builder(applicationContext)</span><br><span class="line">        .setKeyScheme(MasterKey.KeyScheme.AES256_GCM)</span><br><span class="line">        .build()</span><br><span class="line"></span><br><span class="line"><span class="keyword">val</span> fileToRead = <span class="string">"my_sensitive_data.txt"</span></span><br><span class="line"><span class="keyword">val</span> encryptedFile = EncryptedFile.Builder(applicationContext,</span><br><span class="line">        File(DIRECTORY, fileToRead),</span><br><span class="line">        mainKey,</span><br><span class="line">        EncryptedFile.FileEncryptionScheme.AES256_GCM_HKDF_4KB</span><br><span class="line">).build()</span><br><span class="line"></span><br><span class="line"><span class="keyword">val</span> inputStream = encryptedFile.openFileInput()</span><br><span class="line"><span class="keyword">val</span> byteArrayOutputStream = ByteArrayOutputStream()</span><br><span class="line"><span class="keyword">var</span> nextByte: <span class="built_in">Int</span> = inputStream.read()</span><br><span class="line"><span class="keyword">while</span> (nextByte != -<span class="number">1</span>) {</span><br><span class="line">    byteArrayOutputStream.write(nextByte)</span><br><span class="line">    nextByte = inputStream.read()</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">val</span> plaintext: ByteArray = byteArrayOutputStream.toByteArray()</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="写入文件"><a href="#写入文件" class="headerlink" title="写入文件"></a>写入文件</h3><p>使用 <a target="_blank" rel="noopener" href="https://developer.android.google.cn/reference/androidx/security/crypto/EncryptedFile?hl=zh-cn"><code>EncryptedFile</code></a> 通过 Security 库以更安全的方式写入文件内容：</p>
+<figure class="highlight kotlin"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> mainKey = MasterKey.Builder(applicationContext)</span><br><span class="line">        .setKeyScheme(MasterKey.KeyScheme.AES256_GCM)</span><br><span class="line">        .build()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用此名称创建文件，或替换具有相同名称的现有文件。 请注意，文件名不能包含路径分隔符。</span></span><br><span class="line"><span class="keyword">val</span> fileToWrite = File(DIRECTORY, <span class="string">"my_sensitive_data.txt"</span>)</span><br><span class="line"><span class="keyword">val</span> encryptedFile = EncryptedFile.Builder(applicationContext,</span><br><span class="line">        fileToWrite,</span><br><span class="line">        mainKey,</span><br><span class="line">        EncryptedFile.FileEncryptionScheme.AES256_GCM_HKDF_4KB</span><br><span class="line">).build()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用 openFileOutput 之前文件不能存在</span></span><br><span class="line"><span class="keyword">if</span> (fileToWrite.exists()) {</span><br><span class="line">    fileToWrite.delete()</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">val</span> fileContent = <span class="string">"MY SUPER-SECRET INFORMATION"</span>.toByteArray(StandardCharsets.UTF_8))</span><br><span class="line">encryptedFile.openFileOutput().apply {</span><br><span class="line">    write(fileContent)</span><br><span class="line">    flush()</span><br><span class="line">    close()</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="修改共享偏好设置"><a href="#修改共享偏好设置" class="headerlink" title="修改共享偏好设置"></a>修改共享偏好设置</h3><p>使用 <code>EncryptedSharedPreferences</code> 通过 Security 库以更安全的方式修改用户的一组共享偏好设置：</p>
+<figure class="highlight kotlin"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> context = applicationContext</span><br><span class="line"><span class="keyword">val</span> mainKey = MasterKey.Builder(applicationContext)</span><br><span class="line">        .setKeyScheme(MasterKey.KeyScheme.AES256_GCM)</span><br><span class="line">        .build()</span><br><span class="line"></span><br><span class="line"><span class="keyword">val</span> sharedPreferences = EncryptedSharedPreferences.create(</span><br><span class="line">    applicationContext,</span><br><span class="line">    FILE_NAME,</span><br><span class="line">    mainKey,</span><br><span class="line">    EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,</span><br><span class="line">    EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">with (sharedPreferences.edit()) {</span><br><span class="line">    <span class="comment">//  修改共享偏好设置</span></span><br><span class="line">    apply()</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h2 id="MasterKey-Builder"><a href="#MasterKey-Builder" class="headerlink" title="MasterKey.Builder"></a>MasterKey.Builder</h2><p>用于生成 <code>MasterKey</code></p>
+<h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h3><table>
+<thead>
+<tr>
+<th align="left">Public constructors</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>Builder(context: Context)</code></td>
+<td>使用默认别名 <code>MasterKeyDEFAULT_MASTER_KEY_ALIAS</code>创建一个构建器</td>
+</tr>
+<tr>
+<td align="left"><code>Builder(context: Context, keyAlias: String)</code></td>
+<td>为 <code>.MasterKey</code> 创建构建器</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">Public functions</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>MasterKey</code></td>
+<td><code>build()</code></td>
+</tr>
+<tr>
+<td align="left"><code>MasterKey.Builder</code></td>
+<td><code>@RequiresApi(value = Build.VERSION_CODES.M)setKeyGenParameterSpec(keyGenParameterSpec: KeyGenParameterSpec)</code><br>设置自定义用作主密钥的基础<code>KeyGenParameterSpec</code></td>
+</tr>
+<tr>
+<td align="left"><code>MasterKey.Builder</code></td>
+<td><code>setKeyScheme(keyScheme: MasterKey.KeyScheme)</code><br>设置用于主密钥的<code>KeyScheme</code></td>
+</tr>
+<tr>
+<td align="left"><code>MasterKey.Builder</code></td>
+<td><code>setRequestStrongBoxBacked(requestStrongBoxBacked: Boolean)</code><br>设置是否请求此密钥是强框支持的</td>
+</tr>
+<tr>
+<td align="left"><code>MasterKey.Builder</code></td>
+<td><code>setUserAuthenticationRequired(  authenticationRequired: Boolean,  userAuthenticationValidityDurationSeconds: @IntRange(from = 1) Int)</code><br>设置构建的主密钥在解锁之前应要求用户进行身份验证，可能使用 androidx.biometric 库，并且密钥应在提供的持续时间内保持解锁状态.<code>setKeyScheme</code></td>
+</tr>
+<tr>
+<td align="left"><code>MasterKey.Builder</code></td>
+<td><code>setUserAuthenticationRequired(authenticationRequired: Boolean)</code><br>设置构建的主密钥在解锁之前应要求用户进行身份验证，可能使用 androidx.biometric library.<code>setKeyScheme</code></td>
+</tr>
+</tbody></table>
+<h3 id="Public-constructors"><a href="#Public-constructors" class="headerlink" title="Public constructors"></a>Public constructors</h3><h4 id="Builder"><a href="#Builder" class="headerlink" title="Builder"></a>Builder</h4><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Builder(context: Context)</span><br></pre></td></tr></tbody></table></figure>
+
+<p>使用默认别名 <code>.MasterKeyDEFAULT_MASTER_KEY_ALIAS</code> 创建一个构建器     </p>
+<table>
+<thead>
+<tr>
+<th align="left">Parameters</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>context: Context</code></td>
+<td>与此主密钥一起使用的上下文</td>
+</tr>
+</tbody></table>
+<h4 id="Builder-1"><a href="#Builder-1" class="headerlink" title="Builder"></a>Builder</h4><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Builder(context: Context, keyAlias: String)</span><br></pre></td></tr></tbody></table></figure>
+
+<p>为 <code>.MasterKey</code> 创建构建器</p>
+<table>
+<thead>
+<tr>
+<th align="left">Parameters</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>context: Context</code></td>
+<td>与此主密钥一起使用的上下文</td>
+</tr>
+</tbody></table>
+<h3 id="Public-functions"><a href="#Public-functions" class="headerlink" title="Public functions"></a>Public functions</h3><h4 id="build"><a href="#build" class="headerlink" title="build"></a>build</h4><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fun build(): MasterKey</span><br></pre></td></tr></tbody></table></figure>
+
+<p>从<code>builder.MasterKey</code>构建</p>
+<table>
+<thead>
+<tr>
+<th align="left">Returns</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>MasterKey</code></td>
+<td>主key</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">Throws</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>java.security.GeneralSecurityException: java.security.GeneralSecurityException</code></td>
+<td></td>
+</tr>
+<tr>
+<td align="left"><code>java.io.IOException: java.io.IOException</code></td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="setKeyGenParameterSpec"><a href="#setKeyGenParameterSpec" class="headerlink" title="setKeyGenParameterSpec"></a>setKeyGenParameterSpec</h4><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@RequiresApi(value = Build.VERSION_CODES.M)</span><br><span class="line">fun setKeyGenParameterSpec(keyGenParameterSpec: KeyGenParameterSpec): MasterKey.Builder</span><br></pre></td></tr></tbody></table></figure>
+
+<p>设置自定义用作主密钥的基础。注意：应使用此方法或设置用于构建主密钥的参数。在另一个函数之后调用任一函数将抛出 <code>.KeyGenParameterSpecsetKeySchemeIllegalArgumentException</code></p>
+<table>
+<thead>
+<tr>
+<th align="left">Parameters</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>keyGenParameterSpec: KeyGenParameterSpec</code></td>
+<td>要使用的关键规范。</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">Returns</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>MasterKey.Builder</code></td>
+<td>构建器</td>
+</tr>
+</tbody></table>
+<h4 id="setKeyScheme"><a href="#setKeyScheme" class="headerlink" title="setKeyScheme"></a>setKeyScheme</h4><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fun setKeyScheme(keyScheme: MasterKey.KeyScheme): MasterKey.Builder</span><br></pre></td></tr></tbody></table></figure>
+
+<p>设置要用于主密钥的 a。这使用与提供的关联的默认值。注意：应使用此方法或设置用于构建主密钥的参数。在另一个函数之后调用任一函数将抛出<code>KeyScheme``KeyGenParameterSpec``KeyScheme``setKeyGenParameterSpec``IllegalArgumentException</code></p>
+<table>
+<thead>
+<tr>
+<th align="left">Parameters</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>keyScheme: MasterKey.KeyScheme</code></td>
+<td>The KeyScheme to use.</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">Returns</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>MasterKey.Builder</code></td>
+<td>This builder.</td>
+</tr>
+</tbody></table>
+<h4 id="setRequestStrongBoxBacked"><a href="#setRequestStrongBoxBacked" class="headerlink" title="setRequestStrongBoxBacked"></a>setRequestStrongBoxBacked</h4><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fun setRequestStrongBoxBacked(requestStrongBoxBacked: Boolean): MasterKey.Builder</span><br></pre></td></tr></tbody></table></figure>
+
+<p>设置是否请求此密钥是强框支持的。此设置仅适用于以上版本，且仅适用于支持 Strongbox.P 的设备</p>
+<table>
+<thead>
+<tr>
+<th align="left">Parameters</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>requestStrongBoxBacked: Boolean</code></td>
+<td>Whether to request to use strongbox</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">Returns</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>MasterKey.Builder</code></td>
+<td>This builder.</td>
+</tr>
+</tbody></table>
+<h4 id="setUserAuthenticationRequired"><a href="#setUserAuthenticationRequired" class="headerlink" title="setUserAuthenticationRequired"></a>setUserAuthenticationRequired</h4><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fun setUserAuthenticationRequired(</span><br><span class="line">    authenticationRequired: Boolean,</span><br><span class="line">    userAuthenticationValidityDurationSeconds: @IntRange(from = 1) Int</span><br><span class="line">): MasterKey.Builder</span><br></pre></td></tr></tbody></table></figure>
+
+<p>与 一起使用时，设置构建的主密钥在解锁之前应要求用户进行身份验证，可能使用 androidx.biometric 库，并且密钥应在提供的持续时间内保持解锁状态<code>setKeyScheme</code></p>
+<table>
+<thead>
+<tr>
+<th align="left">Parameters</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>authenticationRequired: Boolean</code></td>
+<td>Whether user authentication should be required to use the key.</td>
+</tr>
+<tr>
+<td align="left"><code>userAuthenticationValidityDurationSeconds: @IntRange(from = 1) Int</code></td>
+<td>Duration in seconds that the key should remain unlocked following user authentication.</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">Returns</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>MasterKey.Builder</code></td>
+<td>This builder.</td>
+</tr>
+</tbody></table>
+<h4 id="setUserAuthenticationRequired-1"><a href="#setUserAuthenticationRequired-1" class="headerlink" title="setUserAuthenticationRequired"></a>setUserAuthenticationRequired</h4><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fun setUserAuthenticationRequired(authenticationRequired: Boolean): MasterKey.Builder</span><br></pre></td></tr></tbody></table></figure>
+
+<p>与 一起使用时，设置构建的主密钥在解锁之前应要求用户进行身份验证，可能使用 androidx.biometric 库。该方法设置key的有效期为.<code>setKeyScheme</code> <code>getDefaultAuthenticationValidityDurationSeconds</code></p>
+<table>
+<thead>
+<tr>
+<th align="left">Parameters</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>authenticationRequired: Boolean</code></td>
+<td>是否需要用户身份验证才能使用密钥</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">Returns</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>MasterKey.Builder</code></td>
+<td>构造器</td>
+</tr>
+</tbody></table>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="指纹登录"><a href="#指纹登录" class="headerlink" title="指纹登录"></a>指纹登录</h2><p><a class="link" target="_blank" rel="noopener" href="https://github.com/android/security-samples/tree/master/BiometricLoginKotlin">安全样本/生物识别登录科特林在大师 ·安卓/安全示例 (github.com)<i class="fas fa-external-link-alt"></i></a></p>
+
+            </div>
+
+            
+
+            
+                <ul class="post-tags-box">
+                    
+                        <li class="tag-item">
+                            <a href="/blog/tags/%E6%94%B9%E4%BA%86%E4%BB%80%E4%B9%88bug/">#改了什么bug</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            
+
+            
+                <div class="article-nav">
+                    
+                        <div class="article-prev">
+                            <a class="prev"
+                               rel="prev"
+                               href="/blog/2023/02/15/20230215/"
+                            >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                <span class="post-nav-title-item">20230215</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                            </a>
+                        </div>
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                               rel="next"
+                               href="/blog/2023/02/14/%E6%83%85%E4%BA%BA%E8%8A%82%E6%80%8E%E4%B9%88%E8%BF%87/"
+                            >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">情人节怎么过</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                                <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C"><span class="nav-number">1.</span> <span class="nav-text">操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E5%86%99%E7%95%8C%E9%9D%A2%E4%BA%A4%E4%BA%92%E4%BB%A3%E7%A0%81"><span class="nav-number">1.1.</span> <span class="nav-text">编写界面交互代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%B0%E4%BD%8F%E5%AF%86%E7%A0%81%E6%A1%86%E6%9E%B6%E5%B0%81%E8%A3%85"><span class="nav-number">1.2.</span> <span class="nav-text">记住密码框架封装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E7%82%B9%E5%87%BBcheckbox%E6%97%B6%E7%9A%84%E7%BB%91%E5%AE%9A%E5%87%BD%E6%95%B0"><span class="nav-number">1.3.</span> <span class="nav-text">添加点击checkbox时的绑定函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E7%99%BB%E5%BD%95%E5%87%BD%E6%95%B0%E4%B8%AD%E6%B7%BB%E5%8A%A0%E9%80%BB%E8%BE%91"><span class="nav-number">1.4.</span> <span class="nav-text">在登录函数中添加逻辑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E5%88%9D%E5%A7%8B%E5%8C%96%E6%97%B6%E6%98%BE%E7%A4%BA%E5%AD%98%E5%82%A8%E7%9A%84%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF"><span class="nav-number">1.5.</span> <span class="nav-text">在初始化时显示存储的用户信息</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%93%E6%9E%9C"><span class="nav-number">2.</span> <span class="nav-text">结果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%A8%E5%88%B0%E7%9A%84%E5%BA%93"><span class="nav-number">3.</span> <span class="nav-text">用到的库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Security-%E5%BA%93"><span class="nav-number">3.1.</span> <span class="nav-text">Security 库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6"><span class="nav-number">3.1.1.</span> <span class="nav-text">读取文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6"><span class="nav-number">3.1.2.</span> <span class="nav-text">写入文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E5%85%B1%E4%BA%AB%E5%81%8F%E5%A5%BD%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.1.3.</span> <span class="nav-text">修改共享偏好设置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MasterKey-Builder"><span class="nav-number">3.2.</span> <span class="nav-text">MasterKey.Builder</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Summary"><span class="nav-number">3.2.1.</span> <span class="nav-text">Summary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Public-constructors"><span class="nav-number">3.2.2.</span> <span class="nav-text">Public constructors</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Builder"><span class="nav-number">3.2.2.1.</span> <span class="nav-text">Builder</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Builder-1"><span class="nav-number">3.2.2.2.</span> <span class="nav-text">Builder</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Public-functions"><span class="nav-number">3.2.3.</span> <span class="nav-text">Public functions</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#build"><span class="nav-number">3.2.3.1.</span> <span class="nav-text">build</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#setKeyGenParameterSpec"><span class="nav-number">3.2.3.2.</span> <span class="nav-text">setKeyGenParameterSpec</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#setKeyScheme"><span class="nav-number">3.2.3.3.</span> <span class="nav-text">setKeyScheme</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#setRequestStrongBoxBacked"><span class="nav-number">3.2.3.4.</span> <span class="nav-text">setRequestStrongBoxBacked</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#setUserAuthenticationRequired"><span class="nav-number">3.2.3.5.</span> <span class="nav-text">setUserAuthenticationRequired</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#setUserAuthenticationRequired-1"><span class="nav-number">3.2.3.6.</span> <span class="nav-text">setUserAuthenticationRequired</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-number">4.</span> <span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E7%BA%B9%E7%99%BB%E5%BD%95"><span class="nav-number">4.1.</span> <span class="nav-text">指纹登录</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            
+<footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+                <span>2023</span> -
+            
+            2023
+            
+                &nbsp;<i class="fas fa-heart icon-animate"></i>
+                &nbsp;<a href="/">MoMo</a>
+            
+        </div>
+        
+            <script async data-pjax
+                    src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                
+                
+                    Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.6.0</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/dark-light-toggle.js"></script>
+
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/code-block.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/lazyload.js"></script>
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/post-helper.js"></script>
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/libs/anime.min.js"></script>
+        
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/toc.js"></script>
+        
+    
+</div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>

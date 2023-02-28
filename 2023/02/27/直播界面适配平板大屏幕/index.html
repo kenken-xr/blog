@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="MoMo">
+    
+    <title>
+        
+            直播界面适配平板大屏幕 |
+        
+        今天在干嘛
+    </title>
+    
+<link rel="stylesheet" href="/blog/css/style.css">
+
+    <link rel="shortcut icon" href="/blog/images/moon.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/font/css/regular.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/font/css/solid.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/font/css/brands.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"kenken-xr.github.io","root":"/blog/","language":"en","path":"search.json"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066cc","logo":"/images/moon.svg","favicon":"/images/moon.svg","avatar":"/images/avatar.svg","font_size":null,"font_family":null,"hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"header_transparent":true,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving.","font_color":null,"hitokoto":false},"scroll":{"progress_bar":true,"percent":true}},"local_search":{"enable":true,"preload":true},"code_copy":{},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"side_tools":{},"pjax":{"enable":true},"lazyload":{"enable":true},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":false,"auto":true,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":true,"wordcount":true,"min2read":false},"img_align":"left","copyright_info":false},"version":"3.6.0"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original article title","author":"Original article author","link":"Original article link"}
+  </script>
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/blog/atom.xml" title="MoMo" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/blog/images/moon.svg">
+                </a>
+            
+            <a class="logo-title" href="/">
+               今天在干嘛
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+
+            <div class="article-title">
+                <span class="title-hover-animation">直播界面适配平板大屏幕</span>
+            </div>
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/blog/images/avatar.svg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">MoMo</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            
+<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        
+            <i class="fa-regular fa-calendar-plus"></i>&nbsp;
+        
+        <span class="pc">2023-02-27 10:20:47</span>
+        <span class="mobile">2023-02-27 10:20</span>
+    </span>
+    
+        <span class="article-update-date article-meta-item">
+        <i class="fas fa-file-pen"></i>&nbsp;
+        <span class="pc">2023-02-28 10:59:33</span>
+    </span>
+    
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/blog/categories/%E6%9C%89%E5%9C%A8%E8%AE%A4%E7%9C%9F%E4%B8%8A%E7%8F%AD/">有在认真上班</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/blog/tags/%E5%86%99%E4%BA%86%E4%BB%80%E4%B9%88%E6%96%B0%E5%8A%9F%E8%83%BD/">写了什么新功能</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content keep-markdown-body">
+                
+
+                <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><p>直播界面适配平板大屏幕（车机屏幕）</p>
+<h2 id="时间"><a href="#时间" class="headerlink" title="时间"></a>时间</h2><p>预计 2/15～2/17 + 2/20</p>
+<h2 id="内容拆分"><a href="#内容拆分" class="headerlink" title="内容拆分"></a>内容拆分</h2><ol>
+<li>检查登录页是否有显示异常（布局重叠）</li>
+<li>新增页面<ol>
+<li>设备列表Activity（仅横屏，复用设备卡片网格布局，点击进入直播查看Activity）</li>
+<li> 直播查看Activity（仅横屏，只保留看直播视频功能）</li>
+</ol>
+</li>
+<li> 临时修改跳转：启动APP直接进入新增的设备列表页</li>
+<li>功能对接<ol>
+<li>参考现有的直播页，利用已有的代码实现</li>
+<li> 列表页点击卡片跳转设备直播页</li>
+<li>进入直播页面就加载直播视频</li>
+<li>加载失败的时候展示重试按钮（状态）</li>
+<li>对接现有的播放器手势操作：滑动到边缘控制云台</li>
+</ol>
+</li>
+</ol>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><p>强制Activity横屏或竖屏：<a class="link" target="_blank" rel="noopener" href="https://blog.csdn.net/Smile_Qian/article/details/99187728">https://blog.csdn.net/Smile_Qian/article/details/99187728<i class="fas fa-external-link-alt"></i></a></p>
+<ol>
+<li><code>requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_USER_PORTRAIT</code></li>
+</ol>
+</li>
+<li><p>卡片网格布局：<a class="link" target="_blank" rel="noopener" href="https://www.cnblogs.com/guanxinjing/p/13037271.html">https://www.cnblogs.com/guanxinjing/p/13037271.html<i class="fas fa-external-link-alt"></i></a></p>
+</li>
+<li><p>界面跳转封装：com.danale.edge.base.BaseNavigation</p>
+</li>
+<li><p>当前摄像头直播界面：com.danale.edge.ui.devicecontrol.ipc.IPCLiveFragment</p>
+</li>
+<li><p>视频渲染View手势处理封装类：com.danale.edge.ui.common.view.ScaleTextureView</p>
+</li>
+<li><p>设置点击图标拉起的启动Activity：</p>
+<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">"android.intent.action.MAIN"</span> /&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">category</span> <span class="attr">android:name</span>=<span class="string">"android.intent.category.LAUNCHER"</span> /&gt;</span></span><br></pre></td></tr></tbody></table></figure></li>
+</ol>
+<h2 id="测试账号"><a href="#测试账号" class="headerlink" title="测试账号"></a>测试账号</h2><p>15105982803</p>
+<p>App_2021</p>
+<h1 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h1><p>大概的逻辑</p>
+<ul>
+<li><p>主页面</p>
+<ul>
+<li><p><code>LandScapeListActivity</code>作为主页面，在里面放置<code>activity_land_scape_list</code>设备列表</p>
+</li>
+<li><p><code>activity_land_scape_list</code>中绑定对应的<code>LandScapeListViewModel</code></p>
+</li>
+<li><p><code>LandScapeListViewModel</code>中设置onclick函数，通过路由跳转到直播页面</p>
+</li>
+</ul>
+</li>
+<li><p>直播页</p>
+<ul>
+<li><code>LandScapeIPCActivity</code>作为直播的主页面，内部放置<code>DeviceListToIPCFragment</code>容器</li>
+</ul>
+</li>
+</ul>
+<h2 id="主页"><a href="#主页" class="headerlink" title="主页"></a>主页</h2><p>由于主页是通过Fragment切换动态创建的，所以首先创建一个新的Fragment放置设备列表</p>
+<h3 id="LandScapeListActivity-kt"><a href="#LandScapeListActivity-kt" class="headerlink" title="LandScapeListActivity.kt"></a>LandScapeListActivity.kt</h3><p>创建主页的activity，绑定对应的xml布局文件</p>
+<p><code>ui/devicelist/landscape/LandScapeListActivity.kt</code></p>
+<figure class="highlight kotlin"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.danale.edge.ui.devicelist.landscape</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.os.Bundle</span><br><span class="line"><span class="keyword">import</span> com.danale.edge.R</span><br><span class="line"><span class="keyword">import</span> com.danale.edge.base.BaseActivity</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LandScapeListActivity</span> : <span class="type">BaseActivity</span></span>() {</span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onCreate</span><span class="params">(savedInstanceState: <span class="type">Bundle</span>?)</span></span> {</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState)</span><br><span class="line">        setContentView(R.layout.activity_land_scape_list)  <span class="comment">// 布局文件</span></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="activity-land-scape-list-xml"><a href="#activity-land-scape-list-xml" class="headerlink" title="activity_land_scape_list.xml"></a>activity_land_scape_list.xml</h3><p>activity布局文件，内部套一个Fragment</p>
+<p><code>layout/activity_land_scape_list.xml</code></p>
+<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">layout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:tools</span>=<span class="string">"http://schemas.android.com/tools"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">tools:context</span>=<span class="string">".ui.VideoFlowActivity"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">androidx.constraintlayout.widget.ConstraintLayout</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:keepScreenOn</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:orientation</span>=<span class="string">"vertical"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:background</span>=<span class="string">"@color/black"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">androidx.fragment.app.FragmentContainerView</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:id</span>=<span class="string">"@+id/fragment_container"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:name</span>=<span class="string">"com.danale.edge.ui.devicelist.landscape.LandScapeListFragment"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">tools:layout</span>=<span class="string">"@layout/fragment_land_scape_list"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">androidx.constraintlayout.widget.ConstraintLayout</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">layout</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="fragment-land-scape-list-xml"><a href="#fragment-land-scape-list-xml" class="headerlink" title="fragment_land_scape_list.xml"></a>fragment_land_scape_list.xml</h3><p>创建主页的Fragment组件，通过variable实现数据绑定</p>
+<p>通过RecyclerView实现网格布局</p>
+<p><code>layout/fragment_land_scape_list.xml</code></p>
+<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">layout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:app</span>=<span class="string">"http://schemas.android.com/apk/res-auto"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:tools</span>=<span class="string">"http://schemas.android.com/tools"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">data</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">variable</span></span></span><br><span class="line"><span class="tag">            <span class="attr">name</span>=<span class="string">"viewModel"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">type</span>=<span class="string">"com.danale.edge.ui.devicelist.landscape.LandScapeListViewModel"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">data</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">androidx.constraintlayout.widget.ConstraintLayout</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:background</span>=<span class="string">"@color/app_std_background_gray"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">com.danale.edge.ui.common.view.TopSafeAreaGuideLine</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:id</span>=<span class="string">"@+id/safe_area_top_guide"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:orientation</span>=<span class="string">"horizontal"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">app:layout_constraintGuide_begin</span>=<span class="string">"24dp"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">tools:ignore</span>=<span class="string">"MissingConstraints"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">include</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:id</span>=<span class="string">"@+id/component_title_bar"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">layout</span>=<span class="string">"@layout/component_title_bar"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">app:layout_constraintTop_toBottomOf</span>=<span class="string">"@id/safe_area_top_guide"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">androidx.recyclerview.widget.RecyclerView</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:id</span>=<span class="string">"@+id/recycler_view"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">app:layout_constraintTop_toBottomOf</span>=<span class="string">"@id/component_title_bar"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">androidx.constraintlayout.widget.ConstraintLayout</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">layout</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="LandScapeListFragment-kt"><a href="#LandScapeListFragment-kt" class="headerlink" title="LandScapeListFragment.kt"></a>LandScapeListFragment.kt</h3><p>实现Fragment的布局和绑定，添加binding和ViewModel，在<code>GridLayoutManager(requireContext(), 4)</code>处设置布局样式</p>
+<p><code>com/danale/edge/ui/devicelist/landscape/LandScapeListFragment.kt</code></p>
+<figure class="highlight kotlin"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.danale.edge.ui.devicelist.landscape</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.os.Bundle</span><br><span class="line"><span class="keyword">import</span> android.view.LayoutInflater</span><br><span class="line"><span class="keyword">import</span> android.view.View</span><br><span class="line"><span class="keyword">import</span> android.view.ViewGroup</span><br><span class="line"><span class="keyword">import</span> androidx.databinding.DataBindingUtil</span><br><span class="line"><span class="keyword">import</span> androidx.lifecycle.ViewModelProvider</span><br><span class="line"><span class="keyword">import</span> androidx.lifecycle.<span class="keyword">get</span></span><br><span class="line"><span class="keyword">import</span> androidx.recyclerview.widget.GridLayoutManager</span><br><span class="line"><span class="keyword">import</span> com.danale.edge.R</span><br><span class="line"><span class="keyword">import</span> com.danale.edge.base.BaseFragment</span><br><span class="line"><span class="keyword">import</span> com.danale.edge.databinding.FragmentLandScapeListBinding</span><br><span class="line"><span class="keyword">import</span> com.danale.edge.usersdk.type.DeviceInfo</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LandScapeListFragment</span> : <span class="type">BaseFragment</span></span>() {</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">lateinit</span> <span class="keyword">var</span> binding: FragmentLandScapeListBinding</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">lateinit</span> <span class="keyword">var</span> viewModel: LandScapeListViewModel</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onCreateView</span><span class="params">(</span></span></span><br><span class="line"><span class="params"><span class="function">        inflater: <span class="type">LayoutInflater</span>,</span></span></span><br><span class="line"><span class="params"><span class="function">        container: <span class="type">ViewGroup</span>?,</span></span></span><br><span class="line"><span class="params"><span class="function">        savedInstanceState: <span class="type">Bundle</span>?</span></span></span><br><span class="line"><span class="params"><span class="function">    )</span></span>: View {</span><br><span class="line"></span><br><span class="line">        logger.i(TAG, <span class="string">"onCreateView"</span>)</span><br><span class="line"></span><br><span class="line">        binding =</span><br><span class="line">            DataBindingUtil.inflate(inflater, R.layout.fragment_land_scape_list, container, <span class="literal">false</span>)  <span class="comment">// 绑定数据</span></span><br><span class="line">        binding.lifecycleOwner = viewLifecycleOwner  <span class="comment">// 生命周期</span></span><br><span class="line"></span><br><span class="line">        viewModel = ViewModelProvider(requireActivity()).<span class="keyword">get</span>()  <span class="comment">// 绑定ViewModel</span></span><br><span class="line">        observeNavigation(viewModel)  <span class="comment">// 处理BaseViewModel的导航请求</span></span><br><span class="line"></span><br><span class="line">        binding.recyclerView.apply {</span><br><span class="line">            adapter = viewModel.adapterForClassCode(DeviceInfo.DEVICE_TYPE_IPC)</span><br><span class="line">            <span class="comment">// 一行四列</span></span><br><span class="line">            layoutManager = GridLayoutManager(requireContext(), <span class="number">4</span>)</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> binding.root</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onResume</span><span class="params">()</span></span> {</span><br><span class="line">        <span class="keyword">super</span>.onResume()</span><br><span class="line">        setStatusBarDarkText(<span class="literal">true</span>)  <span class="comment">// 切换状态栏文本颜色,true为深色</span></span><br><span class="line">        viewModel.loadDeviceList()  <span class="comment">// 加载设备列表</span></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="LandScapeListViewModel-kt"><a href="#LandScapeListViewModel-kt" class="headerlink" title="LandScapeListViewModel.kt"></a>LandScapeListViewModel.kt</h3><p>ViewModel文件，用来实现内部逻辑</p>
+<p><code>com/danale/edge/ui/devicelist/landscape/LandScapeListViewModel.kt</code></p>
+<figure class="highlight kotlin"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.danale.edge.ui.devicelist.landscape</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.app.Application</span><br><span class="line"><span class="keyword">import</span> android.content.Intent</span><br><span class="line"><span class="keyword">import</span> com.danale.edge.base.BaseNavigation</span><br><span class="line"><span class="keyword">import</span> com.danale.edge.ui.devicelist.ListDeviceViewModel</span><br><span class="line"><span class="keyword">import</span> com.danale.edge.ui.devicelist.card.CardAdapter</span><br><span class="line"><span class="keyword">import</span> com.danale.edge.usersdk.type.DeviceInfo</span><br><span class="line"><span class="keyword">import</span> dagger.hilt.android.lifecycle.HiltViewModel</span><br><span class="line"><span class="keyword">import</span> javax.inject.Inject</span><br><span class="line"></span><br><span class="line"><span class="meta">@HiltViewModel</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LandScapeListViewModel</span> <span class="meta">@Inject</span> <span class="keyword">constructor</span></span>(application: Application) :</span><br><span class="line">    ListDeviceViewModel(application), CardAdapter.Delegate {</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     *跳转直播</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">navigateDevicePage</span><span class="params">(item: <span class="type">DeviceInfo</span>)</span></span> {</span><br><span class="line">        <span class="keyword">val</span> type = item.getDeviceType()</span><br><span class="line">        <span class="keyword">if</span> (type != DeviceInfo.DEVICE_TYPE_IPC) <span class="keyword">return</span>  <span class="comment">// 判断设备类型</span></span><br><span class="line"></span><br><span class="line">        item.getDeviceInfoDid()?.let { did -&gt;</span><br><span class="line">            <span class="keyword">val</span> intent = Intent().apply {</span><br><span class="line">                putExtra(BaseNavigation.Constants.EXTRA_PLATFORM_DEVICE_ID_32, did)</span><br><span class="line">                putExtra(</span><br><span class="line">                    BaseNavigation.Constants.EXTRA_PLATFORM_DEVICE_LIKE_NAME,</span><br><span class="line">                    item.getDeviceInfoLikeName()</span><br><span class="line">                )</span><br><span class="line">            }</span><br><span class="line">            navigationRequiredEvent.postValue(</span><br><span class="line">                BaseNavigation(</span><br><span class="line">                    BaseNavigation.Route.CONTROL_LAND_SCAPE_IPC,  <span class="comment">// 进入直播页</span></span><br><span class="line">                    intent</span><br><span class="line">                )</span><br><span class="line">            )</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="直播页"><a href="#直播页" class="headerlink" title="直播页"></a>直播页</h2><h3 id="LandScapeIPCActivity-kt"><a href="#LandScapeIPCActivity-kt" class="headerlink" title="LandScapeIPCActivity.kt"></a>LandScapeIPCActivity.kt</h3><p>创建一个直播页的activity</p>
+<p><code>com/danale/edge/ui/devicecontrol/landscape/LandScapeIPCActivity.kt</code></p>
+<figure class="highlight kotlin"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.danale.edge.ui.devicecontrol.landscape</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.os.Bundle</span><br><span class="line"><span class="keyword">import</span> androidx.activity.viewModels</span><br><span class="line"><span class="keyword">import</span> com.danale.edge.R</span><br><span class="line"><span class="keyword">import</span> com.danale.edge.base.BaseActivity</span><br><span class="line"><span class="keyword">import</span> com.danale.edge.base.BaseNavigation</span><br><span class="line"><span class="keyword">import</span> com.danale.edge.foundation.privacy.Fuzzy</span><br><span class="line"><span class="keyword">import</span> com.danale.edge.ui.devicecontrol.common.DeviceLiveViewModel</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * IPC入口Activity到直播页</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LandScapeIPCActivity</span> : <span class="type">BaseActivity</span></span>() {</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">val</span> liveVm: DeviceLiveViewModel <span class="keyword">by</span> viewModels()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onCreate</span><span class="params">(savedInstanceState: <span class="type">Bundle</span>?)</span></span> {</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState)</span><br><span class="line">        setContentView(R.layout.activity_land_scape_ipc)  <span class="comment">// 布局文件</span></span><br><span class="line"></span><br><span class="line">        intent?.let { intent -&gt;</span><br><span class="line">            intent.getStringExtra(BaseNavigation.Constants.EXTRA_PLATFORM_DEVICE_ID_32)</span><br><span class="line">                ?.let { did -&gt;</span><br><span class="line">                    logger.d(TAG, <span class="string">"onCreate, did=<span class="subst">${Fuzzy.interval(did)}</span>"</span>)</span><br><span class="line">                    liveVm.deviceId32 = did</span><br><span class="line">                }</span><br><span class="line">            intent.getStringExtra(BaseNavigation.Constants.EXTRA_PLATFORM_DEVICE_LIKE_NAME)</span><br><span class="line">                ?.let { name -&gt;</span><br><span class="line">                    logger.d(TAG, <span class="string">"onCreate, name=<span class="subst">${Fuzzy.interval(name)}</span>"</span>)</span><br><span class="line">                    liveVm.observableDeviceName.<span class="keyword">set</span>(name)</span><br><span class="line">                }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="activity-land-scape-ipc-xml"><a href="#activity-land-scape-ipc-xml" class="headerlink" title="activity_land_scape_ipc.xml"></a>activity_land_scape_ipc.xml</h3><p><code>layout/activity_land_scape_ipc.xml</code></p>
+<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">androidx.constraintlayout.widget.ConstraintLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:tools</span>=<span class="string">"http://schemas.android.com/tools"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">tools:context</span>=<span class="string">".ui.devicecontrol.landscape.LandScapeIPCActivity"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">androidx.fragment.app.FragmentContainerView</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/fragment_container_ipc"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:name</span>=<span class="string">"com.danale.edge.ui.devicecontrol.landscape.LandScapeIPCLiveFragment"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">tools:layout</span>=<span class="string">"@layout/fragment_land_scape_ipc_live"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">androidx.constraintlayout.widget.ConstraintLayout</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="fragment-land-scape-ipc-live-xml"><a href="#fragment-land-scape-ipc-live-xml" class="headerlink" title="fragment_land_scape_ipc_live.xml"></a>fragment_land_scape_ipc_live.xml</h3><p><code>layout/fragment_land_scape_ipc_live.xmll</code></p>
+<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">layout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:app</span>=<span class="string">"http://schemas.android.com/apk/res-auto"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:tools</span>=<span class="string">"http://schemas.android.com/tools"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">data</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">variable</span></span></span><br><span class="line"><span class="tag">            <span class="attr">name</span>=<span class="string">"viewModel"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">type</span>=<span class="string">"com.danale.edge.ui.devicecontrol.common.DeviceLiveViewModel"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">import</span> <span class="attr">type</span>=<span class="string">"android.view.View"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">data</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">androidx.constraintlayout.widget.ConstraintLayout</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:background</span>=<span class="string">"@color/black"</span>&gt;</span></span><br><span class="line">				</span><br><span class="line">      <span class="comment">&lt;!--顶部安全距离--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">com.danale.edge.ui.common.view.TopSafeAreaGuideLine</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:id</span>=<span class="string">"@+id/safe_area_top_guide"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:orientation</span>=<span class="string">"horizontal"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">app:layout_constraintGuide_begin</span>=<span class="string">"24dp"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">tools:ignore</span>=<span class="string">"MissingConstraints"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">com.danale.edge.ui.common.view.ScaleTextureView</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:id</span>=<span class="string">"@+id/texture_view"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">androidx.appcompat.widget.LinearLayoutCompat</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:gravity</span>=<span class="string">"start"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:orientation</span>=<span class="string">"horizontal"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:paddingHorizontal</span>=<span class="string">"12dp"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:paddingVertical</span>=<span class="string">"4dp"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:visibility</span>=<span class="string">"visible"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">app:layout_constraintTop_toBottomOf</span>=<span class="string">"@id/safe_area_top_guide"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">          <span class="comment">&lt;!--返回按钮--&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">androidx.appcompat.widget.AppCompatImageView</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:id</span>=<span class="string">"@+id/iv_back_icon"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:layout_width</span>=<span class="string">"48dp"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:layout_height</span>=<span class="string">"48dp"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:layout_marginHorizontal</span>=<span class="string">"3dp"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:layout_marginVertical</span>=<span class="string">"15dp"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">android:padding</span>=<span class="string">"6dp"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">app:srcCompat</span>=<span class="string">"@mipmap/ic_back_white"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;/<span class="name">androidx.appcompat.widget.LinearLayoutCompat</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      <span class="comment">&lt;!--重新加载组件--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">com.github.ybq.android.spinkit.SpinKitView</span></span></span><br><span class="line"><span class="tag">            <span class="attr">style</span>=<span class="string">"@style/SpinKitView.ThreeBounce"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:visibility</span>=<span class="string">"@{viewModel.observableVideoState.showLoadingUi ? View.VISIBLE : View.GONE}"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">app:SpinKit_Color</span>=<span class="string">"@color/white"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">app:layout_constraintBottom_toBottomOf</span>=<span class="string">"@id/texture_view"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">app:layout_constraintEnd_toEndOf</span>=<span class="string">"@id/texture_view"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">app:layout_constraintStart_toStartOf</span>=<span class="string">"@id/texture_view"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">app:layout_constraintTop_toTopOf</span>=<span class="string">"@id/texture_view"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">androidx.appcompat.widget.AppCompatTextView</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:background</span>=<span class="string">"@drawable/bg_round_color"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:backgroundTint</span>=<span class="string">"@color/app_std_white_20"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:gravity</span>=<span class="string">"center"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:onClick</span>=<span class="string">"@{viewModel::onClickLoadLiveVideo}"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:paddingHorizontal</span>=<span class="string">"24dp"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:paddingVertical</span>=<span class="string">"8dp"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:text</span>=<span class="string">"@string/text_retry_loading"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:textColor</span>=<span class="string">"@color/white"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:visibility</span>=<span class="string">"@{viewModel.observableVideoState.showErrorUi ? View.VISIBLE : View.GONE}"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">app:layout_constraintBottom_toBottomOf</span>=<span class="string">"@id/texture_view"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">app:layout_constraintEnd_toEndOf</span>=<span class="string">"@id/texture_view"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">app:layout_constraintStart_toStartOf</span>=<span class="string">"@id/texture_view"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">app:layout_constraintTop_toTopOf</span>=<span class="string">"@id/texture_view"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">androidx.constraintlayout.widget.ConstraintLayout</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">layout</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/work/%E8%BD%A6%E6%9C%BA%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D/%E7%9B%B4%E6%92%AD%E9%A1%B5xml.png"></p>
+<h3 id="LandScapeIPCLiveFragment-kt"><a href="#LandScapeIPCLiveFragment-kt" class="headerlink" title="LandScapeIPCLiveFragment.kt"></a>LandScapeIPCLiveFragment.kt</h3><p><code>com/danale/edge/ui/devicecontrol/landscape/LandScapeIPCLiveFragment.kt</code></p>
+<figure class="highlight kotlin"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.danale.edge.ui.devicecontrol.landscape</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> android.content.res.Configuration</span><br><span class="line"><span class="keyword">import</span> android.graphics.SurfaceTexture</span><br><span class="line"><span class="keyword">import</span> android.os.Bundle</span><br><span class="line"><span class="keyword">import</span> android.view.*</span><br><span class="line"><span class="keyword">import</span> androidx.activity.result.ActivityResultLauncher</span><br><span class="line"><span class="keyword">import</span> androidx.activity.result.contract.ActivityResultContracts</span><br><span class="line"><span class="keyword">import</span> androidx.databinding.DataBindingUtil</span><br><span class="line"><span class="keyword">import</span> androidx.lifecycle.ViewModelProvider</span><br><span class="line"><span class="keyword">import</span> androidx.lifecycle.<span class="keyword">get</span></span><br><span class="line"><span class="keyword">import</span> com.danale.edge.R</span><br><span class="line"><span class="keyword">import</span> com.danale.edge.base.BaseFragment</span><br><span class="line"><span class="keyword">import</span> com.danale.edge.databinding.FragmentLandScapeIpcLiveBinding</span><br><span class="line"><span class="keyword">import</span> com.danale.edge.foundation.media.PcmTrack</span><br><span class="line"><span class="keyword">import</span> com.danale.edge.ui.common.view.ScaleTextureView</span><br><span class="line"><span class="keyword">import</span> com.danale.edge.ui.devicecontrol.common.DeviceLiveViewModel</span><br><span class="line"><span class="keyword">import</span> com.danale.edge.usersdk.usecase.UserSdkUseCase</span><br><span class="line"><span class="keyword">import</span> javax.inject.Inject</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 直播页具体内容</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LandScapeIPCLiveFragment</span> : <span class="type">BaseFragment</span></span>(), TextureView.SurfaceTextureListener {</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">lateinit</span> <span class="keyword">var</span> binding: FragmentLandScapeIpcLiveBinding</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">lateinit</span> <span class="keyword">var</span> viewModel: DeviceLiveViewModel</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">lateinit</span> <span class="keyword">var</span> requestPermissionLauncher: ActivityResultLauncher&lt;String&gt;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">var</span> surfaceCallback: ((Surface) -&gt; <span class="built_in">Unit</span>)? = <span class="literal">null</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">var</span> surface: Surface? = <span class="literal">null</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Inject</span></span><br><span class="line">    <span class="keyword">lateinit</span> <span class="keyword">var</span> sdk: UserSdkUseCase</span><br><span class="line"></span><br><span class="line">    <span class="keyword">lateinit</span> <span class="keyword">var</span> deviceId32: String</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onCreateView</span><span class="params">(</span></span></span><br><span class="line"><span class="params"><span class="function">        inflater: <span class="type">LayoutInflater</span>,</span></span></span><br><span class="line"><span class="params"><span class="function">        container: <span class="type">ViewGroup</span>?,</span></span></span><br><span class="line"><span class="params"><span class="function">        savedInstanceState: <span class="type">Bundle</span>?</span></span></span><br><span class="line"><span class="params"><span class="function">    )</span></span>: View {</span><br><span class="line">        binding =</span><br><span class="line">            DataBindingUtil.inflate(</span><br><span class="line">                inflater,</span><br><span class="line">                R.layout.fragment_land_scape_ipc_live,</span><br><span class="line">                container,</span><br><span class="line">                <span class="literal">false</span></span><br><span class="line">            )  <span class="comment">// 数据绑定</span></span><br><span class="line">        binding.lifecycleOwner = viewLifecycleOwner  <span class="comment">// 生命周期</span></span><br><span class="line"></span><br><span class="line">        viewModel = ViewModelProvider(requireActivity()).<span class="keyword">get</span>()  <span class="comment">// ViewModel（使用原有的</span></span><br><span class="line">        binding.viewModel = <span class="keyword">this</span>.viewModel</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        deviceId32 = viewModel.deviceId32.toString()  <span class="comment">// 获取设备id</span></span><br><span class="line"></span><br><span class="line">      <span class="comment">// 云台控制</span></span><br><span class="line">        binding.textureView.surfaceTextureListener = <span class="keyword">this</span></span><br><span class="line">        binding.textureView.setCanTouch(<span class="literal">true</span>)</span><br><span class="line">        binding.textureView.setScaleTextureOnTouchLimitListener(<span class="keyword">object</span> :</span><br><span class="line">            ScaleTextureView.ScaleTextureOnTouchLimitListener {</span><br><span class="line">            <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onLeftLimit</span><span class="params">()</span></span> {</span><br><span class="line">                logger.d(TAG, <span class="string">"video gesture, left limit"</span>)</span><br><span class="line">                viewModel.setPtzNeedStop(<span class="literal">false</span>)</span><br><span class="line">                viewModel.sendRequest(DeviceLiveViewModel.IPCDirection.LEFT)</span><br><span class="line">            }</span><br><span class="line"></span><br><span class="line">            <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onRightLimit</span><span class="params">()</span></span> {</span><br><span class="line">                logger.d(TAG, <span class="string">"video gesture, right limit"</span>)</span><br><span class="line">                viewModel.setPtzNeedStop(<span class="literal">false</span>)</span><br><span class="line">                viewModel.sendRequest(DeviceLiveViewModel.IPCDirection.RIGHT)</span><br><span class="line">            }</span><br><span class="line"></span><br><span class="line">            <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onTopLimit</span><span class="params">()</span></span> {</span><br><span class="line">                logger.d(TAG, <span class="string">"video gesture, top limit"</span>)</span><br><span class="line">                viewModel.setPtzNeedStop(<span class="literal">false</span>)</span><br><span class="line">                viewModel.sendRequest(DeviceLiveViewModel.IPCDirection.TOP)</span><br><span class="line">            }</span><br><span class="line"></span><br><span class="line">            <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onBottomLimit</span><span class="params">()</span></span> {</span><br><span class="line">                logger.d(TAG, <span class="string">"video gesture, bottom limit"</span>)</span><br><span class="line">                viewModel.setPtzNeedStop(<span class="literal">false</span>)</span><br><span class="line">                viewModel.sendRequest(DeviceLiveViewModel.IPCDirection.BOTTOM)</span><br><span class="line">            }</span><br><span class="line"></span><br><span class="line">            <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onFinish</span><span class="params">()</span></span> {</span><br><span class="line">                logger.d(TAG, <span class="string">"video gesture, finish"</span>)</span><br><span class="line">                viewModel.setPtzNeedStop(<span class="literal">true</span>)</span><br><span class="line">                viewModel.sendRequest(DeviceLiveViewModel.IPCDirection.STOP)</span><br><span class="line">            }</span><br><span class="line"></span><br><span class="line">            <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onScale</span><span class="params">(scale: <span class="type">Float</span>)</span></span> {</span><br><span class="line">                logger.d(TAG, <span class="string">"video gesture, scale <span class="variable">$scale</span>"</span>)</span><br><span class="line">            }</span><br><span class="line"></span><br><span class="line">            <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onOnlyClick</span><span class="params">()</span></span> {</span><br><span class="line">                logger.d(TAG, <span class="string">"video gesture, click"</span>)</span><br><span class="line">                viewModel.toggleOverlayVisible()</span><br><span class="line">            }</span><br><span class="line"></span><br><span class="line">        })</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 返回按钮</span></span><br><span class="line">        binding.ivBackIcon.setOnClickListener {</span><br><span class="line">            onBackPressed()</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        requestPermissionLauncher =</span><br><span class="line">            registerForActivityResult(ActivityResultContracts.RequestPermission()) {</span><br><span class="line">                logger.d(TAG, <span class="string">"mic permission result, it=<span class="variable">$it</span>"</span>)</span><br><span class="line">            }</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> binding.root</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onResume</span><span class="params">()</span></span> {</span><br><span class="line">        <span class="keyword">super</span>.onResume()</span><br><span class="line">        PcmTrack.startAudioTrackSync()</span><br><span class="line">        ensureSurface {</span><br><span class="line">            viewModel.startLive(it)</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onPause</span><span class="params">()</span></span> {</span><br><span class="line">        <span class="keyword">super</span>.onPause()</span><br><span class="line">        PcmTrack.releaseAudioTrackSync()</span><br><span class="line">        viewModel.releaseDeviceAndPlayer()</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="function"><span class="keyword">fun</span> <span class="title">ensureSurface</span><span class="params">(callback: (<span class="type">Surface</span>) -&gt; <span class="type">Unit</span>)</span></span> {</span><br><span class="line">        <span class="keyword">val</span> s = surface</span><br><span class="line">        <span class="keyword">if</span> (s != <span class="literal">null</span>) {</span><br><span class="line">            callback(s)</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        } <span class="keyword">else</span> {</span><br><span class="line">            surfaceCallback = callback</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onSurfaceTextureAvailable</span><span class="params">(surface: <span class="type">SurfaceTexture</span>, width: <span class="type">Int</span>, height: <span class="type">Int</span>)</span></span> {</span><br><span class="line">        logger.i(TAG, <span class="string">"onSurfaceTextureAvailable"</span>)</span><br><span class="line">        <span class="keyword">val</span> s = Surface(surface)</span><br><span class="line">        <span class="keyword">this</span>.surface = s</span><br><span class="line">        surfaceCallback?.let {</span><br><span class="line">            it(s)</span><br><span class="line">        }</span><br><span class="line">        surfaceCallback = <span class="literal">null</span></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onSurfaceTextureSizeChanged</span><span class="params">(surface: <span class="type">SurfaceTexture</span>, width: <span class="type">Int</span>, height: <span class="type">Int</span>)</span></span> {</span><br><span class="line">        logger.i(TAG, <span class="string">"onSurfaceTextureSizeChanged"</span>)</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onSurfaceTextureDestroyed</span><span class="params">(surface: <span class="type">SurfaceTexture</span>)</span></span>: <span class="built_in">Boolean</span> {</span><br><span class="line">        logger.i(TAG, <span class="string">"onSurfaceTextureDestroyed"</span>)</span><br><span class="line">        <span class="keyword">this</span>.surface = <span class="literal">null</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onSurfaceTextureUpdated</span><span class="params">(surface: <span class="type">SurfaceTexture</span>)</span></span> {}</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onConfigurationChanged</span><span class="params">(newConfig: <span class="type">Configuration</span>)</span></span> {</span><br><span class="line">        <span class="keyword">super</span>.onConfigurationChanged(newConfig)</span><br><span class="line">        viewModel.setOrientation(newConfig.orientation)</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="云台控制"><a href="#云台控制" class="headerlink" title="云台控制"></a>云台控制</h3><figure class="highlight kotlin"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">sendRequest</span><span class="params">(direction: <span class="type">IPCDirection</span>)</span></span> {</span><br><span class="line">        <span class="keyword">val</span> did = deviceId32 ?: <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">val</span> thing = deviceThingInfo ?: <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">        viewModelScope.launch {</span><br><span class="line">            <span class="keyword">val</span> stop = DpCommand(<span class="string">"direction"</span>, <span class="string">"8"</span>, <span class="string">"1"</span>)</span><br><span class="line">            <span class="keyword">val</span> flipState = performOnIOWithDefault(DpFlipState.NORMAL) {</span><br><span class="line">                sdk.getDeviceFlipStatusWithCache(thing).await()</span><br><span class="line">            }</span><br><span class="line"></span><br><span class="line">          <span class="comment">// 判断旋转的方向</span></span><br><span class="line">          <span class="comment">// DpFlipState.UP_SIDE_DOWN是设备倒置的时候，需要调转方向</span></span><br><span class="line">            <span class="keyword">val</span> request = <span class="keyword">when</span> (direction) {</span><br><span class="line">                IPCDirection.LEFT -&gt; <span class="keyword">if</span> (flipState == DpFlipState.UP_SIDE_DOWN) {</span><br><span class="line">                    DpCommand(<span class="string">"direction"</span>, <span class="string">"8"</span>, <span class="string">"5"</span>)</span><br><span class="line">                } <span class="keyword">else</span> {</span><br><span class="line">                    DpCommand(<span class="string">"direction"</span>, <span class="string">"8"</span>, <span class="string">"4"</span>)</span><br><span class="line">                }</span><br><span class="line">                IPCDirection.RIGHT -&gt; <span class="keyword">if</span> (flipState == DpFlipState.UP_SIDE_DOWN) {</span><br><span class="line">                    DpCommand(<span class="string">"direction"</span>, <span class="string">"8"</span>, <span class="string">"4"</span>)</span><br><span class="line">                } <span class="keyword">else</span> {</span><br><span class="line">                    DpCommand(<span class="string">"direction"</span>, <span class="string">"8"</span>, <span class="string">"5"</span>)</span><br><span class="line">                }</span><br><span class="line">                IPCDirection.TOP -&gt; <span class="keyword">if</span> (flipState == DpFlipState.UP_SIDE_DOWN) {</span><br><span class="line">                    DpCommand(<span class="string">"direction"</span>, <span class="string">"8"</span>, <span class="string">"3"</span>)</span><br><span class="line">                } <span class="keyword">else</span> {</span><br><span class="line">                    DpCommand(<span class="string">"direction"</span>, <span class="string">"8"</span>, <span class="string">"2"</span>)</span><br><span class="line">                }</span><br><span class="line">                IPCDirection.BOTTOM -&gt; <span class="keyword">if</span> (flipState == DpFlipState.UP_SIDE_DOWN) {</span><br><span class="line">                    DpCommand(<span class="string">"direction"</span>, <span class="string">"8"</span>, <span class="string">"2"</span>)</span><br><span class="line">                } <span class="keyword">else</span> {</span><br><span class="line">                    DpCommand(<span class="string">"direction"</span>, <span class="string">"8"</span>, <span class="string">"3"</span>)</span><br><span class="line">                }</span><br><span class="line">                <span class="keyword">else</span> -&gt; stop</span><br><span class="line">            }</span><br><span class="line">            withContext(Dispatchers.IO) {</span><br><span class="line">                <span class="keyword">try</span> {</span><br><span class="line">                    sdk.commandDeviceDp(did, DpCode.PTZ_CONTROL, listOf(request)).await()</span><br><span class="line">                    <span class="keyword">if</span> (ptzNeedStop.<span class="keyword">get</span>()) {</span><br><span class="line">                        <span class="comment">// 结果返回的时候操作已经停止了，为了避免设备一直转下去，在这种情况下发一个停止信令</span></span><br><span class="line">                        logger.w(TAG, <span class="string">"ptz, control, need stop"</span>)</span><br><span class="line">                        sdk.commandDeviceDp(did, DpCode.PTZ_CONTROL, listOf(stop)).await()</span><br><span class="line">                    }</span><br><span class="line">                } <span class="keyword">catch</span> (e: Exception) {</span><br><span class="line">                    logger.e(TAG, <span class="string">"ptz, control, error"</span>, e)</span><br><span class="line">                    <span class="keyword">try</span> {</span><br><span class="line">                        sdk.commandDeviceDp(did, DpCode.PTZ_CONTROL, listOf(stop)).await()</span><br><span class="line">                    } <span class="keyword">catch</span> (_: Exception) {</span><br><span class="line">                    }</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 在设备开始转的时候传入false，停止的时候传入true</span></span><br><span class="line"><span class="comment">// 由于控制设备的方式是异步的，为了避免异步的顺序问题可能导致在停止后会收到旋转的消息，设备会一直转下去</span></span><br><span class="line"><span class="comment">// 通过设定一个flag，在true的时候发送停止指令</span></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">setPtzNeedStop</span><span class="params">(flag: <span class="type">Boolean</span>)</span></span>{</span><br><span class="line">    ptzNeedStop.<span class="keyword">set</span>(flag)</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="强制横屏"><a href="#强制横屏" class="headerlink" title="强制横屏"></a>强制横屏</h2><p><code>Androidmanifest.xml</code>中添加activity并设置intent-filter</p>
+<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">activity</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:name</span>=<span class="string">"com.danale.edge.ui.devicelist.landscape.LandScapeListActivity"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:exported</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:screenOrientation</span>=<span class="string">"landscape"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:configChanges</span>=<span class="string">"orientation|keyboardHidden"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">     <span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">"android.intent.action.MAIN"</span> /&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">category</span> <span class="attr">android:name</span>=<span class="string">"android.intent.category.LAUNCHER"</span> /&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">activity</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+
+            </div>
+
+            
+
+            
+                <ul class="post-tags-box">
+                    
+                        <li class="tag-item">
+                            <a href="/blog/tags/%E5%86%99%E4%BA%86%E4%BB%80%E4%B9%88%E6%96%B0%E5%8A%9F%E8%83%BD/">#写了什么新功能</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            
+
+            
+                <div class="article-nav">
+                    
+                        <div class="article-prev">
+                            <a class="prev"
+                               rel="prev"
+                               href="/blog/2023/02/28/%E7%AE%80%E5%8D%95%E6%8E%A7%E4%BB%B6/"
+                            >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                <span class="post-nav-title-item">简单控件</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                            </a>
+                        </div>
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                               rel="next"
+                               href="/blog/2023/02/20/20230220/"
+                            >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">20230220</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                                <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AE%B9"><span class="nav-number">1.1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%B6%E9%97%B4"><span class="nav-number">1.2.</span> <span class="nav-text">时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AE%B9%E6%8B%86%E5%88%86"><span class="nav-number">1.3.</span> <span class="nav-text">内容拆分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">1.4.</span> <span class="nav-text">参考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E8%B4%A6%E5%8F%B7"><span class="nav-number">1.5.</span> <span class="nav-text">测试账号</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%87%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E9%A1%B5"><span class="nav-number">2.1.</span> <span class="nav-text">主页</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LandScapeListActivity-kt"><span class="nav-number">2.1.1.</span> <span class="nav-text">LandScapeListActivity.kt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#activity-land-scape-list-xml"><span class="nav-number">2.1.2.</span> <span class="nav-text">activity_land_scape_list.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fragment-land-scape-list-xml"><span class="nav-number">2.1.3.</span> <span class="nav-text">fragment_land_scape_list.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LandScapeListFragment-kt"><span class="nav-number">2.1.4.</span> <span class="nav-text">LandScapeListFragment.kt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LandScapeListViewModel-kt"><span class="nav-number">2.1.5.</span> <span class="nav-text">LandScapeListViewModel.kt</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B4%E6%92%AD%E9%A1%B5"><span class="nav-number">2.2.</span> <span class="nav-text">直播页</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LandScapeIPCActivity-kt"><span class="nav-number">2.2.1.</span> <span class="nav-text">LandScapeIPCActivity.kt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#activity-land-scape-ipc-xml"><span class="nav-number">2.2.2.</span> <span class="nav-text">activity_land_scape_ipc.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fragment-land-scape-ipc-live-xml"><span class="nav-number">2.2.3.</span> <span class="nav-text">fragment_land_scape_ipc_live.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LandScapeIPCLiveFragment-kt"><span class="nav-number">2.2.4.</span> <span class="nav-text">LandScapeIPCLiveFragment.kt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%91%E5%8F%B0%E6%8E%A7%E5%88%B6"><span class="nav-number">2.2.5.</span> <span class="nav-text">云台控制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%BA%E5%88%B6%E6%A8%AA%E5%B1%8F"><span class="nav-number">2.3.</span> <span class="nav-text">强制横屏</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            
+<footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+                <span>2023</span> -
+            
+            2023
+            
+                &nbsp;<i class="fas fa-heart icon-animate"></i>
+                &nbsp;<a href="/">MoMo</a>
+            
+        </div>
+        
+            <script async data-pjax
+                    src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                
+                
+                    Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.6.0</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/dark-light-toggle.js"></script>
+
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/code-block.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/lazyload.js"></script>
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/post-helper.js"></script>
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/libs/anime.min.js"></script>
+        
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/toc.js"></script>
+        
+    
+</div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>

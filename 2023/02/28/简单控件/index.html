@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="MoMo">
+    
+    <title>
+        
+            简单控件 |
+        
+        今天在干嘛
+    </title>
+    
+<link rel="stylesheet" href="/blog/css/style.css">
+
+    <link rel="shortcut icon" href="/blog/images/moon.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/font/css/regular.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/font/css/solid.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/font/css/brands.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"kenken-xr.github.io","root":"/blog/","language":"en","path":"search.json"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066cc","logo":"/images/moon.svg","favicon":"/images/moon.svg","avatar":"/images/avatar.svg","font_size":null,"font_family":null,"hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"header_transparent":true,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving.","font_color":null,"hitokoto":false},"scroll":{"progress_bar":true,"percent":true}},"local_search":{"enable":true,"preload":true},"code_copy":{},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"side_tools":{},"pjax":{"enable":true},"lazyload":{"enable":true},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":false,"auto":true,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":true,"wordcount":true,"min2read":false},"img_align":"left","copyright_info":false},"version":"3.6.0"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original article title","author":"Original article author","link":"Original article link"}
+  </script>
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/blog/atom.xml" title="MoMo" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/blog/images/moon.svg">
+                </a>
+            
+            <a class="logo-title" href="/">
+               今天在干嘛
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+
+            <div class="article-title">
+                <span class="title-hover-animation">简单控件</span>
+            </div>
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/blog/images/avatar.svg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">MoMo</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            
+<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        
+            <i class="fa-regular fa-calendar-plus"></i>&nbsp;
+        
+        <span class="pc">2023-02-28 10:51:47</span>
+        <span class="mobile">2023-02-28 10:51</span>
+    </span>
+    
+        <span class="article-update-date article-meta-item">
+        <i class="fas fa-file-pen"></i>&nbsp;
+        <span class="pc">2023-02-28 11:03:19</span>
+    </span>
+    
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/blog/categories/%E6%9C%89%E5%9C%A8%E8%AE%A4%E7%9C%9F%E4%B8%8A%E7%8F%AD/">有在认真上班</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/blog/tags/Android/">Android</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content keep-markdown-body">
+                
+
+                <p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/study/android%E5%BC%80%E5%8F%91/%E7%AE%80%E5%8D%95%E6%8E%A7%E4%BB%B6/%E7%AE%80%E5%8D%95%E6%8E%A7%E4%BB%B6.png"></p>
+<h1 id="文本显示"><a href="#文本显示" class="headerlink" title="文本显示"></a>文本显示</h1><h2 id="设置文本内容"><a href="#设置文本内容" class="headerlink" title="设置文本内容"></a>设置文本内容</h2><ul>
+<li><p>在 XML 文件中通过属性 android:text 设置文本，在XML文件中引用（@string/xxx）</p>
+<ul>
+<li>```xml<br><textview android:id="@+id/tv_hello" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="你好，世界"><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 在 Java 代码中调用文本视图对象的 setText 方法设置文本</span><br><span class="line">  引用字符串资源，在Java代码中引用（R.string.xxx）</span><br><span class="line"></span><br><span class="line">  - ```java</span><br><span class="line">    // 获取名为tv_hello的文本视图</span><br><span class="line">    TextView tv_hello = findViewById(R.id.tv_hello);</span><br><span class="line">    tv_hello.setText("你好，世界"); // 设置tv_hello的文字内容</span><br></pre></td></tr></tbody></table></figure></textview></li>
+</ul>
+</li>
+</ul>
+<h2 id="设置文本的大小"><a href="#设置文本的大小" class="headerlink" title="设置文本的大小"></a>设置文本的大小</h2><p>TextView允许设置文本内容，也允许设置文本大小，在Java代码中调用setTextSize方法，即可指定文本大小 </p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 从布局文件中获取名叫tv_sp的文本视图</span></span><br><span class="line">TextView tv_sp = findViewById(R.id.tv_sp);</span><br><span class="line">tv_sp.setTextSize(<span class="number">30</span>); <span class="comment">// 设置tv_sp的文本大小</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>XML文件要求在字号数字后面写明单位类型，常见的字号单位主要有px、dp、sp 3种，分别介绍如下。</p>
+<h3 id="px"><a href="#px" class="headerlink" title="px"></a>px</h3><p>px是手机屏幕的最小显示单位，它与设备的显示屏有关。一般来说，同样尺寸的屏幕（比如6英寸手机），如果看起来越清晰，则表示像素密度越高，以px计量的分辨率也越大。</p>
+<h3 id="dp"><a href="#dp" class="headerlink" title="dp"></a>dp</h3><p>dp有时也写作dip，指的是与设备无关的显示单位，它只与屏幕的尺寸有关。一般来说，同样尺寸的屏幕以dp计量的分辨率是相同的，比如同样是6英寸手机，无论它由哪个厂家生产，其分辨率换算成dp单位都是一个大小。</p>
+<h3 id="sp（推荐）"><a href="#sp（推荐）" class="headerlink" title="sp（推荐）"></a>sp（推荐）</h3><p>sp的原理跟dp差不多，但它专门用来设置字体大小。手机在系统设置里可以调整字体的大小（小、标准、大、超大）。设置普通字体时，同数值dp和sp的文字看起来一样大；如果设置为大字体，用dp设置的文字没有变化，用sp设置的文字就变大了。</p>
+<p>字体大小采用不同单位的话，显示的文字大小各不相同。例如，30px、30dp、30sp这3个字号，在不同手机上的显示大小有所差异。有的手机像素密度较低，一个dp相当于两个px，此时30px等同于15dp；<br>有的手机像素密度较高，一个dp相当于3个px，此时30px等同于10dp。假设某个App的内部文本使用字号30px，则该App安装到前一部手机的字体大小为15dp，安装到后一部手机的字体大小为10dp，显然后一部手机显示的文本会更小。  </p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>px（Pixel像 素）</td>
+<td>也称为图像元素，是作为图像构成的基本单元，单个像素的大小并不固定，跟随 屏幕大小和像素数量的关系变化，一个像素点为1px。</td>
+</tr>
+<tr>
+<td>Resolution （分辨率）</td>
+<td>是指屏幕的垂直和水平方向的像素数量，如果分辨率是 1920*1080 ，那就是垂 直方向有 1920 个像素，水平方向有 1080 个像素。</td>
+</tr>
+<tr>
+<td>Dpi（像素密 度）</td>
+<td>是指屏幕上每英寸（1英寸 = 2.54 厘米）距离中有多少个像素点。</td>
+</tr>
+<tr>
+<td>Density（密 度）</td>
+<td>是指屏幕上每平方英寸（2.54 ^ 2 平方厘米）中含有的像素点数量。</td>
+</tr>
+<tr>
+<td>Dip / dp (设 备独立像素)</td>
+<td>也可以叫做dp，长度单位，同一个单位在不同的设备上有不同的显示效果，具体 效果根据设备的密度有关，详细的公式请看下面 。</td>
+</tr>
+</tbody></table>
+<h2 id="设置文本的颜色"><a href="#设置文本的颜色" class="headerlink" title="设置文本的颜色"></a>设置文本的颜色</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 从布局文件中获取名为tv_code_system的文本视图</span></span><br><span class="line">TextView tv_code_system = findViewById(R.id.tv_code_system);</span><br><span class="line"><span class="comment">// 将tv_code_system的文字颜色设置系统自带的绿色</span></span><br><span class="line">tv_code_system.setTextColor(Color.GREEN);</span><br></pre></td></tr></tbody></table></figure>
+
+<p>注意属性android:background和setBackgroundResource方法，它俩用来设置控件的背景，不单单是背景颜色，还包括背景图片。</p>
+<h1 id="视图基础"><a href="#视图基础" class="headerlink" title="视图基础"></a>视图基础</h1><h2 id="设置视图的宽高"><a href="#设置视图的宽高" class="headerlink" title="设置视图的宽高"></a>设置视图的宽高</h2><p>手机屏幕是块长方形区域，较短的那条边叫作宽，较长的那条边叫作高。App控件通常也是长方形状，控件宽度通过属性android:layout_width表达，控件高度通过属性android:layout_height表达，宽高的取值主要有下列3种：</p>
+<ul>
+<li><code>match_parent</code>：表示与上级视图保持一致。上级视图的尺寸有多大，当前视图的尺寸就有多大。</li>
+<li><code>wrap_content</code>：表示与内容自适应。对于文本视图来说，内部文字需要多大的显示空间，当前视图就要占据多大的尺寸。但最宽不能超过上级视图的宽度，一旦超过就要换行；最高不能超过上级视图<br>的高度，一旦超过就会隐藏。</li>
+<li>以<code>dp</code>为单位的具体尺寸，比如300dp，表示宽度或者高度就是这么大。  </li>
+</ul>
+<h2 id="设置视图的间距"><a href="#设置视图的间距" class="headerlink" title="设置视图的间距"></a>设置视图的间距</h2><p>每个TextView标签都携带新的属性<code>android:layout_marginTop="5dp"</code>，该属性的作用是让当前视图与上方间隔一段距离。同理，<br><code>android:layout_marginLeft</code>让当前视图与左边间隔一段距离，<code>android:layout_marginRight</code>让当前视图与右边间隔一段距离，<code>android:layout_marginBottom</code>让当前视图与下方间隔一段距离。如果上下左右都间隔同样的距离，还能使用<code>android:layout_margin</code>一次性设置四周的间距。</p>
+<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span><span class="comment">&lt;!-- 最外层的布局背景为蓝色 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">LinearLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">"300dp"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:background</span>=<span class="string">"#00AAFF"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:orientation</span>=<span class="string">"vertical"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 中间层的布局背景为黄色 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">LinearLayout</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_margin</span>=<span class="string">"20dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:background</span>=<span class="string">"#FFFF99"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:padding</span>=<span class="string">"60dp"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- 最内层的视图背景为红色 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">View</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:background</span>=<span class="string">"#FF0000"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/study/android%E5%BC%80%E5%8F%91/%E7%AE%80%E5%8D%95%E6%8E%A7%E4%BB%B6/%E8%A7%86%E5%9B%BE%E9%97%B4%E8%B7%9D.png">
+
+<h2 id="设置视图的对齐方式"><a href="#设置视图的对齐方式" class="headerlink" title="设置视图的对齐方式"></a>设置视图的对齐方式</h2><p>在XML文件中通过属性<code>android:layout_gravity</code>可以指定当前视图的对齐方向，当属性值为top时表示视图朝上对齐，为bottom时表示视图朝下对齐，为left时表示视图靠左对齐，为right时表示视图靠右对齐。如果希望视图既朝上又靠左，则用竖线连接top与left，此时属性标记为<br><code>android:layout_gravity="top|left"</code>；如果希望视图既朝下又靠右，则用竖线连接bottom与right，此时属性标记为<code>android:layout_gravity="bottom|right"</code>。</p>
+<p>注意<code>layout_gravity</code>规定的对齐方式，指的是当前视图往上级视图的哪个方向对齐，并非当前视图的内部对齐。若想设置内部视图的对齐方向，则需由当前视图的<code>android:gravity</code>指定，该属性一样拥有top、bottom、left、right 4种取值及其组合。</p>
+<p><code>gravity</code>与<code>layout_gravity</code>的不同之处在于：layout_gravity设定了当前视图相对于上级视图的对齐方式，而gravity设定了下级视图相对于当前视图的对齐方式；前者决定了当前视图的位置，而后者决定了下级视图的位置。</p>
+<h1 id="常用布局"><a href="#常用布局" class="headerlink" title="常用布局"></a>常用布局</h1><h2 id="线性布局LinearLayout"><a href="#线性布局LinearLayout" class="headerlink" title="线性布局LinearLayout"></a>线性布局LinearLayout</h2><p>线性布局像是用一根线把它的内部视图串起来，故而内部视图之间的排列顺序是固定的，要么从左到右排列，要么从上到下排列。</p>
+<p>在XML文件中，LinearLayout通过属性<code>android:orientation</code>区分两种方向，其中从左到右排列叫作水平方向，属性值为horizontal；从上到下排列叫作垂直方向，属性值为vertical。</p>
+<p>如果LinearLayout标签不指定具体方向，则系统默认该布局为水平方向排列，也就是默认<code>android:orientation="horizontal"  </code></p>
+<p>除了方向之外，线性布局还有一个权重概念，所谓权重，指的是线性布局的下级视图各自拥有多大比例的宽高，在XML文件中通过属性<code>android:layout_weight</code>来表达。  </p>
+<p>一旦设置了<code>layout_weight</code>属性值，便要求<code>layout_width</code>填0dp或者<code>layout_height</code>填0dp。如果<code>layout_width</code>填0dp，则<code>layout_weigh</code>t表示水平方向的权重，下级视图会从左往右分割线性布局；如果<code>layout_height</code>填0dp，则<code>layout_weight</code>表示垂直方向的权重，下级视图会从上往下分割线性布局。  </p>
+<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">LinearLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:orientation</span>=<span class="string">"vertical"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">LinearLayout</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:orientation</span>=<span class="string">"horizontal"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"0dp"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_weight</span>=<span class="string">"1"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:text</span>=<span class="string">"横排第一个"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:textSize</span>=<span class="string">"17sp"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:textColor</span>=<span class="string">"#000000"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"0dp"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_weight</span>=<span class="string">"1"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:text</span>=<span class="string">"横排第二个"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:textSize</span>=<span class="string">"17sp"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:textColor</span>=<span class="string">"#000000"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">LinearLayout</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:orientation</span>=<span class="string">"vertical"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"0dp"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_weight</span>=<span class="string">"1"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:text</span>=<span class="string">"竖排第一个"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:textSize</span>=<span class="string">"17sp"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:textColor</span>=<span class="string">"#000000"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"0dp"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:layout_weight</span>=<span class="string">"1"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:text</span>=<span class="string">"竖排第二个"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:textSize</span>=<span class="string">"17sp"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">android:textColor</span>=<span class="string">"#000000"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/study/android%E5%BC%80%E5%8F%91/%E7%AE%80%E5%8D%95%E6%8E%A7%E4%BB%B6/%E7%BA%BF%E6%80%A7%E5%B8%83%E5%B1%80%E6%9D%83%E9%87%8D.png">
+
+
+
+<h2 id="相对布局RelativeLayout"><a href="#相对布局RelativeLayout" class="headerlink" title="相对布局RelativeLayout"></a>相对布局RelativeLayout</h2><p>线性布局的下级视图是顺序排列着的，另一种相对布局的下级视图位置则由其他视图决定。相对布局名为RelativeLayout，因为下级视图的位置是相对位置，所以得有具体的参照物才能确定最终位置。</p>
+<p>如果不设定下级视图的参照物，那么下级视图默认显示在RelativeLayout内部的左上角。用于确定下级视图位置的参照物分两种，一种是与该视图自身平级的视图；另一种是该视图的上级视图。</p>
+<ol>
+<li>属性值为true或者false<ol>
+<li>android：layout_centerHrizontal 水平居中</li>
+<li>android：layout_centerVertical 垂直居中</li>
+<li>android：layout_centerInparent 相对于父控件完全居中</li>
+<li>android：layout_alignParentBottom 贴紧父控件的下边缘</li>
+<li>android：layout_alignParentLeft 贴紧父控件的左边缘</li>
+<li>android：layout_alignParentRight 贴紧父控件的右边缘</li>
+<li>android：layout_alignParentTop 贴紧父控件的上边缘</li>
+<li>android：layout_alignWithParentIfMissing 如果对应的兄弟控件找不到的话，就以父控件作为参照物</li>
+</ol>
+</li>
+<li>属性值必须为id的引用名“@id/id-name”<ol>
+<li>android：layout_below 在某控件下方</li>
+<li>android：layout_above 在某控件上方</li>
+<li>android：layout_toLeftOf 在某控件的左边</li>
+<li>android：layout_toRightOf 在某控件的右边</li>
+<li>android：layout_alignTop 本控件的上边缘和某控件的上边缘对齐</li>
+<li>android：layout_alignLeft 本控件的左边缘和某控件的左边缘对齐</li>
+<li>android：layout_alignBottom 本控件的下边缘和某控件的下控件对齐</li>
+<li>android：layout_alignRight 本控件的右边缘和某控件的有边缘对齐</li>
+</ol>
+</li>
+<li>属性值为具体的像素值，如30dip，40px<ol>
+<li>android：layout_marginBottom 离某控件底边缘的距离</li>
+<li>android：layout_marginLeft 离某控件左边缘的距离</li>
+<li>android：layout_marginRight 离某控件右边缘的距离</li>
+<li>android：layout_marginTop 离某控件上边缘的距离</li>
+</ol>
+</li>
+</ol>
+<h2 id="网格布局GridLayout"><a href="#网格布局GridLayout" class="headerlink" title="网格布局GridLayout"></a>网格布局GridLayout</h2><p>网格布局默认从左往右、从上到下排列，它先从第一行从左往右放置下级视图，塞满之后另起一行放置其余的下级视图，如此循环往复直至所有下级视图都放置完毕。</p>
+<p>为了判断能够容纳几行几列，网格布局新增了<code>android:columnCount</code>与<code>android:rowCount</code>两个属性，其中<code>columnCount</code>指定了网格的列数，即每行能放多少个视图；<code>rowCount</code>指定了网格的行数，即每列能放多少个视图。  </p>
+<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">GridLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:columnCount</span>=<span class="string">"2"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:rowCount</span>=<span class="string">"2"</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--两行两列--&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"0dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"60dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_columnWeight</span>=<span class="string">"1"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:background</span>=<span class="string">"#ffcccc"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:gravity</span>=<span class="string">"center"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:text</span>=<span class="string">"浅红色"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:textColor</span>=<span class="string">"#000000"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:textSize</span>=<span class="string">"17sp"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"0dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"60dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_columnWeight</span>=<span class="string">"1"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:background</span>=<span class="string">"#ffaa00"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:gravity</span>=<span class="string">"center"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:text</span>=<span class="string">"橙色"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:textColor</span>=<span class="string">"#000000"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:textSize</span>=<span class="string">"17sp"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"0dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"60dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_columnWeight</span>=<span class="string">"1"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:background</span>=<span class="string">"#00ff00"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:gravity</span>=<span class="string">"center"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:text</span>=<span class="string">"绿色"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:textColor</span>=<span class="string">"#000000"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:textSize</span>=<span class="string">"17sp"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"0dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"60dp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_columnWeight</span>=<span class="string">"1"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:background</span>=<span class="string">"#660066"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:gravity</span>=<span class="string">"center"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:text</span>=<span class="string">"深紫色"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:textColor</span>=<span class="string">"#000000"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:textSize</span>=<span class="string">"17sp"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">GridLayout</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h2 id="滚动视图ScrollView"><a href="#滚动视图ScrollView" class="headerlink" title="滚动视图ScrollView"></a>滚动视图ScrollView</h2><p>与线性布局类似，滚动视图也分为垂直方向和水平方向两类，其中垂直滚动视图名为<code>ScrollView</code>，水平滚动视图名为<code>HorizontalScrollView</code>。这两个滚动视图的使用并不复杂，主要注意以下3点：</p>
+<ol>
+<li>垂直方向滚动时，<code>layout_width</code>属性值设置为<code>match_parent</code>，<code>layout_height</code>属性值设置为<code>wrap_content</code>。</li>
+<li>水平方向滚动时，<code>layout_width</code>属性值设置为<code>wrap_content</code>，<code>layout_height</code>属性值设置为<code>match_parent</code>。</li>
+<li>滚动视图节点下面必须且只能挂着一个子布局节点，否则会在运行时报错<code>Caused by： java.lang.IllegalStateException：ScrollView can host only one direct child</code>。  </li>
+</ol>
+<p>有时<code>ScrollView</code>的实际内容不够，又想让它充满屏幕，再增加一行<code>android:fillViewport</code>（该属性为true表示允许填满视图窗口 </p>
+ <figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">android:layout_height="match_parent"</span><br><span class="line">android:fillViewport="true"</span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="按钮"><a href="#按钮" class="headerlink" title="按钮"></a>按钮</h1><p>Button继承于TextView，因此它们拥有的属性都是共通的。</p>
+<h2 id="textAllCaps"><a href="#textAllCaps" class="headerlink" title="textAllCaps"></a>textAllCaps</h2><p>对于TextView来说，text属性设置了什么文本，文本视图就显示什么文本。但对于Button来说，不管text属性设置的是大写字母还是小写字母，按钮控件都默认转成大写字母显示。比如在XML文件中加入下面的Button标签  </p>
+<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Button</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:text</span>=<span class="string">"Hello World"</span>/&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>编译运行后的App界面，按钮上显示全大写的“HELLO WORLD”，而非原来大小写混合的“Hello<br>World”。显然这个效果不符合预期，为此需要给Button标签补充textAllCaps属性，该属性默认为true表示全部转为大写，如果设置为false则表示不转为大写。 </p>
+<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Button</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:text</span>=<span class="string">"Hello World"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:textAllCaps</span>=<span class="string">"false"</span>/&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h2 id="点击事件"><a href="#点击事件" class="headerlink" title="点击事件"></a>点击事件</h2><p>除此之外，Button最重要的是点击事件。</p>
+<ul>
+<li><p>点击监听器：通过<code>setOnClickListener</code>方法设置。按钮被按住少于500毫秒时，会触发点击事件。</p>
+<ul>
+<li>```java<br>// 从布局文件中获取名为btn_click_single的按钮控件<br>Button btn_click_single = findViewById(R.id.btn_click_single);<br>// 给btn_click_single设置点击监听器，一旦用户点击按钮，就触发监听器的onClick方法<br>btn_click_single.setOnClickListener(new MyOnClickListener());// 定义一个点击监听器，它实现了接口View.OnClickListener<br>class MyOnClickListener implements View.OnClickListener {<br>  @Override<br>  public void onClick(View v) { // 点击事件的处理方法<pre><code>String desc = String.format("%s 点击了按钮：%s", ((Button) v).getText());
+tv_result.setText(desc); // 设置文本视图的文本内容
+</code></pre>
+  }<br>}<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 长按监听器：通过`setOnLongClickListener`方法设置。按钮被按住超过500毫秒时，会触发长按事件。</span><br><span class="line"></span><br><span class="line">  - ```java</span><br><span class="line">    // 从布局文件中获取名为btn_click_public的按钮控件</span><br><span class="line">    Button btn_longclick_public = findViewById(R.id.btn_longclick_public);</span><br><span class="line">    // 设置长按监听器，一旦用户长按按钮，就触发监听器的onLongClick方法</span><br><span class="line">    btn_longclick_public.setOnLongClickListener(this);</span><br><span class="line">    </span><br><span class="line">    @Override</span><br><span class="line">    public boolean onLongClick(View v) { // 长按事件的处理方法</span><br><span class="line">      if (v.getId() == R.id.btn_longclick_public) { // 来自于按钮</span><br><span class="line">        btn_longclick_public</span><br><span class="line">        String desc = String.format("%s 长按了按钮：%s", ((Button)v).getText());</span><br><span class="line">        tv_result.setText(desc); // 设置文本视图的文本内容</span><br><span class="line">      } </span><br><span class="line">      return true;</span><br><span class="line">    }</span><br></pre></td></tr></tbody></table></figure></li>
+</ul>
+</li>
+</ul>
+<p>点击监听器和长按监听器不局限于按钮控件，其实它们都来源于视图基类View，凡是从View派生而来的各类控件，均可注册点击监听器和长按监听器。譬如文本视图TextView，其对象也能调用setOnClickListener方法与setOnLongClickListener方法，此时TextView控件就会响应点击动作和长按动作。</p>
+<p>因为按钮存在按下和松开两种背景，便于提示用户该控件允许点击，但文本视图默认没有按压背景，不方便判断是否被点击，所以一般不会让文本视图处理点击事件和长按事件。  </p>
+<h2 id="禁用与恢复按钮"><a href="#禁用与恢复按钮" class="headerlink" title="禁用与恢复按钮"></a>禁用与恢复按钮</h2><ul>
+<li>不可用按钮：按钮不允许点击，即使点击也没反应，同时按钮文字为灰色。</li>
+<li>可用按钮：按钮允许点击，点击按钮会触发点击事件，同时按钮文字为正常的黑色。  </li>
+</ul>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">btn_test.setEnabled(<span class="keyword">true</span>); <span class="comment">// 启用当前控件</span></span><br><span class="line">btn_test.setEnabled(<span class="keyword">false</span>); <span class="comment">// 禁用当前控件</span></span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h1 id="图像显示"><a href="#图像显示" class="headerlink" title="图像显示"></a>图像显示</h1><p>图片一般放在res/drawable目录下，设置图像显示一般有两种方法：</p>
+<ol>
+<li>在XML文件中，通过属性android:src设置图片资源，属性值格式形如 @drawable/不含扩展名的图片名称。</li>
+<li>在Java代码中，调用setImageResource方法设置图片资源，方法参数格式形如 R.drawable.不含扩展名的图片名称。<br>（1）图像的缩放问题：<br>ImageView本身默认图片居中显示，若要改变图片的显示方式，可通过scaleType属性设定，该属性的取值说明如下：</li>
+</ol>
+<h2 id="图像视图ImageView"><a href="#图像视图ImageView" class="headerlink" title="图像视图ImageView"></a>图像视图ImageView</h2><p>由于图像通常保存为单独的图片文件，因此需要先把图片放到res/drawable目录，然后再去引用该图片的资源名称。XML文件通过属性android:src设置图片资源，属性值格式形如“@drawable/不含扩展名的图片名称”。  </p>
+<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ImageView</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:id</span>=<span class="string">"@+id/iv_scale"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:layout_height</span>=<span class="string">"220dp"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:src</span>=<span class="string">"@drawable/apple"</span> /&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>ImageView本身默认图片居中显示，不管图片有多大抑或有多小，图像视图都会自动缩放图片，使之刚好够着ImageView的边界，并且缩放后的图片保持原始的宽高比例，看起来图片很完美地占据视图中央。这种缩放类型在XML文件中通过属性<code>android:scaleType</code>定义，即使图像视图未明确指定该属性，系统也会默认其值为fitCenter，表示让图像缩放后居中显示。  </p>
+<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ImageView</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:id</span>=<span class="string">"@+id/iv_scale"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:layout_height</span>=<span class="string">"220dp"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:src</span>=<span class="string">"@drawable/apple"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">android:scaleType</span>=<span class="string">"fitCenter"</span>/&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>在Java代码中可调用<code>setScaleType</code>方法设置图像视图的缩放类型，其中<code>fitCenter</code>对应的类型为<code>ScaleType.FIT_CENTER</code></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 将缩放类型设置为“保持宽高比例，缩放图片使其位于视图中间”</span></span><br><span class="line">iv_scale.setScaleType(ImageView.ScaleType.FIT_CENTER);</span><br></pre></td></tr></tbody></table></figure>
+
+<p>可选值如下：</p>
+<ul>
+<li><code>fitXY</code>:对图像的横向与纵向进行独立缩放,使得该图片完全适应ImageView,但是图片的横纵比可能会发生改变</li>
+<li><code>fitStart</code>:保持纵横比缩放图片,知道较长的边与Image的边长相等,缩放完成后将图片放在ImageView的左上角</li>
+<li><code>fitCenter</code>:同上,缩放后放于中间;</li>
+<li><code>fitEnd</code>:同上,缩放后放于右下角;</li>
+<li><code>center</code>:保持原图的大小，显示在ImageView的中心。当原图的size大于ImageView的size，超过部分裁剪处理。</li>
+<li><code>centerCrop</code>:保持横纵比缩放图片,知道完全覆盖ImageView,可能会出现图片的显示不完全</li>
+<li><code>centerInside</code>:保持横纵比缩放图片,直到ImageView能够完全地显示图片</li>
+<li><code>matrix</code>:默认值，不改变原图的大小，从ImageView的左上角开始绘制原图，原图超过ImageView的部分作裁剪处理</li>
+</ul>
+<h2 id="图像按钮ImageButton："><a href="#图像按钮ImageButton：" class="headerlink" title="图像按钮ImageButton："></a>图像按钮ImageButton：</h2><p>ImageButton是显示图片的图像按钮，但它继承自ImageView，而非继承Button。</p>
+<p>ImageButton和Button之间的区别有：</p>
+<ul>
+<li>Button既可显示文本也可显示图片，ImageButton只能显示图片不能显示文本。</li>
+<li>ImageButton上的图像可按比例缩放，而Button通过背景设置的图像会拉伸变形。</li>
+<li>Button只能靠背景显示一张图片，而ImageButton可分别在前景和背景显示图片，从而实现两张图片叠加的效果。</li>
+</ul>
+<h2 id="同时展示文本与图像"><a href="#同时展示文本与图像" class="headerlink" title="同时展示文本与图像"></a>同时展示文本与图像</h2><p>Button标签通过属性android:drawableTop设置了文字上边的图标，若想变更图标所处的位置，<br>只要把drawableTop换成对应方向的属性即可</p>
+<ul>
+<li><code>drawableTop</code>：指定文字上方的图片。</li>
+<li><code>drawableBottom</code>：指定文字下方的图片。</li>
+<li><code>drawableLeft</code>：指定文字左边的图片。</li>
+<li><code>drawableRight</code>：指定文字右边的图片。</li>
+<li><code>drawablePadding</code>：指定图片与文字的间距。 </li>
+</ul>
+<img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/study/android%E5%BC%80%E5%8F%91/%E7%AE%80%E5%8D%95%E6%8E%A7%E4%BB%B6/%E5%9B%BE%E6%A0%87%E6%96%87%E5%AD%97.png"> 
+            </div>
+
+            
+
+            
+                <ul class="post-tags-box">
+                    
+                        <li class="tag-item">
+                            <a href="/blog/tags/Android/">#Android</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            
+
+            
+                <div class="article-nav">
+                    
+                        <div class="article-prev">
+                            <a class="prev"
+                               rel="prev"
+                               href="/blog/2023/02/28/%E5%9F%BA%E6%9C%AC%E7%9A%84%E4%B8%80%E4%BA%9B%E4%B8%9C%E8%A5%BF/"
+                            >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                <span class="post-nav-title-item">基本的一些东西</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                            </a>
+                        </div>
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                               rel="next"
+                               href="/blog/2023/02/27/%E7%9B%B4%E6%92%AD%E7%95%8C%E9%9D%A2%E9%80%82%E9%85%8D%E5%B9%B3%E6%9D%BF%E5%A4%A7%E5%B1%8F%E5%B9%95/"
+                            >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">直播界面适配平板大屏幕</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                                <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E6%9C%AC%E6%98%BE%E7%A4%BA"><span class="nav-number">1.</span> <span class="nav-text">文本显示</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E6%96%87%E6%9C%AC%E5%86%85%E5%AE%B9"><span class="nav-number">1.1.</span> <span class="nav-text">设置文本内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E6%96%87%E6%9C%AC%E7%9A%84%E5%A4%A7%E5%B0%8F"><span class="nav-number">1.2.</span> <span class="nav-text">设置文本的大小</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#px"><span class="nav-number">1.2.1.</span> <span class="nav-text">px</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dp"><span class="nav-number">1.2.2.</span> <span class="nav-text">dp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sp%EF%BC%88%E6%8E%A8%E8%8D%90%EF%BC%89"><span class="nav-number">1.2.3.</span> <span class="nav-text">sp（推荐）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E6%96%87%E6%9C%AC%E7%9A%84%E9%A2%9C%E8%89%B2"><span class="nav-number">1.3.</span> <span class="nav-text">设置文本的颜色</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%86%E5%9B%BE%E5%9F%BA%E7%A1%80"><span class="nav-number">2.</span> <span class="nav-text">视图基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E8%A7%86%E5%9B%BE%E7%9A%84%E5%AE%BD%E9%AB%98"><span class="nav-number">2.1.</span> <span class="nav-text">设置视图的宽高</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E8%A7%86%E5%9B%BE%E7%9A%84%E9%97%B4%E8%B7%9D"><span class="nav-number">2.2.</span> <span class="nav-text">设置视图的间距</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E8%A7%86%E5%9B%BE%E7%9A%84%E5%AF%B9%E9%BD%90%E6%96%B9%E5%BC%8F"><span class="nav-number">2.3.</span> <span class="nav-text">设置视图的对齐方式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%B8%83%E5%B1%80"><span class="nav-number">3.</span> <span class="nav-text">常用布局</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E5%B8%83%E5%B1%80LinearLayout"><span class="nav-number">3.1.</span> <span class="nav-text">线性布局LinearLayout</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E5%AF%B9%E5%B8%83%E5%B1%80RelativeLayout"><span class="nav-number">3.2.</span> <span class="nav-text">相对布局RelativeLayout</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E6%A0%BC%E5%B8%83%E5%B1%80GridLayout"><span class="nav-number">3.3.</span> <span class="nav-text">网格布局GridLayout</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BB%9A%E5%8A%A8%E8%A7%86%E5%9B%BEScrollView"><span class="nav-number">3.4.</span> <span class="nav-text">滚动视图ScrollView</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8C%89%E9%92%AE"><span class="nav-number">4.</span> <span class="nav-text">按钮</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#textAllCaps"><span class="nav-number">4.1.</span> <span class="nav-text">textAllCaps</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%82%B9%E5%87%BB%E4%BA%8B%E4%BB%B6"><span class="nav-number">4.2.</span> <span class="nav-text">点击事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A6%81%E7%94%A8%E4%B8%8E%E6%81%A2%E5%A4%8D%E6%8C%89%E9%92%AE"><span class="nav-number">4.3.</span> <span class="nav-text">禁用与恢复按钮</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E6%98%BE%E7%A4%BA"><span class="nav-number">5.</span> <span class="nav-text">图像显示</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E8%A7%86%E5%9B%BEImageView"><span class="nav-number">5.1.</span> <span class="nav-text">图像视图ImageView</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E6%8C%89%E9%92%AEImageButton%EF%BC%9A"><span class="nav-number">5.2.</span> <span class="nav-text">图像按钮ImageButton：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8C%E6%97%B6%E5%B1%95%E7%A4%BA%E6%96%87%E6%9C%AC%E4%B8%8E%E5%9B%BE%E5%83%8F"><span class="nav-number">5.3.</span> <span class="nav-text">同时展示文本与图像</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            
+<footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+                <span>2023</span> -
+            
+            2023
+            
+                &nbsp;<i class="fas fa-heart icon-animate"></i>
+                &nbsp;<a href="/">MoMo</a>
+            
+        </div>
+        
+            <script async data-pjax
+                    src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                
+                
+                    Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.6.0</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/dark-light-toggle.js"></script>
+
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/code-block.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/lazyload.js"></script>
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/post-helper.js"></script>
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/libs/anime.min.js"></script>
+        
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/toc.js"></script>
+        
+    
+</div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
