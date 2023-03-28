@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="MoMo">
+    
+    <title>
+        
+            视频导入和导出 |
+        
+        今天在干嘛
+    </title>
+    
+<link rel="stylesheet" href="/blog/css/style.css">
+
+    <link rel="shortcut icon" href="/blog/images/moon.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/font/css/regular.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/font/css/solid.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/font/css/brands.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"kenken-xr.github.io","root":"/blog/","language":"en","path":"search.json"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066cc","logo":"/images/moon.svg","favicon":"/images/moon.svg","avatar":"/images/avatar.svg","font_size":null,"font_family":null,"hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"header_transparent":true,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving.","font_color":null,"hitokoto":false},"scroll":{"progress_bar":true,"percent":true}},"local_search":{"enable":true,"preload":true},"code_copy":{},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"side_tools":{},"pjax":{"enable":true},"lazyload":{"enable":true},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":false,"auto":true,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":true,"wordcount":true,"min2read":false},"img_align":"left","copyright_info":false},"version":"3.6.0"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original article title","author":"Original article author","link":"Original article link"}
+  </script>
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/blog/atom.xml" title="MoMo" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/blog/images/moon.svg">
+                </a>
+            
+            <a class="logo-title" href="/">
+               今天在干嘛
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+
+            <div class="article-title">
+                <span class="title-hover-animation">视频导入和导出</span>
+            </div>
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/blog/images/avatar.svg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">MoMo</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            
+<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        
+            <i class="fa-regular fa-calendar-plus"></i>&nbsp;
+        
+        <span class="pc">2023-03-24 10:58:47</span>
+        <span class="mobile">2023-03-24 10:58</span>
+    </span>
+    
+        <span class="article-update-date article-meta-item">
+        <i class="fas fa-file-pen"></i>&nbsp;
+        <span class="pc">2023-03-28 09:56:11</span>
+    </span>
+    
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/blog/categories/%E6%9C%89%E5%9C%A8%E8%AE%A4%E7%9C%9F%E4%B8%8A%E7%8F%AD/">有在认真上班</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/blog/tags/%E5%86%99%E4%BA%86%E4%BB%80%E4%B9%88%E6%96%B0%E5%8A%9F%E8%83%BD/">写了什么新功能</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content keep-markdown-body">
+                
+
+                <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><p>由于在视频的算法计算和同步时是一次性计算完成，导致回顾时不能重新定位到需求位置(有人经过、有声音)，需要将视频可以导出，同时可以导入到把视频重新放到pipeline中可复现</p>
+<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><ol>
+<li>导出文件 <ol>
+<li>有一个用户操作的入口 [分享菜单]  </li>
+<li>导出后是一个mp4完整文件/ 原始数据格式(0000001是一帧的开头，根据标识保存数据)</li>
+</ol>
+</li>
+<li>读取文件读成pipeline的输入</li>
+<li>文件转换成一帧</li>
+</ol>
+<h1 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h1><h3 id="pipelineFactory"><a href="#pipelineFactory" class="headerlink" title="pipelineFactory"></a><code>pipelineFactory</code></h3><figure class="highlight kotlin"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">object</span> DemoPipelineFactory {</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">createVideoPipeline</span><span class="params">(</span></span></span><br><span class="line"><span class="params"><span class="function">        sink: <span class="type">EventSink</span>,</span></span></span><br><span class="line"><span class="params"><span class="function">        ai: <span class="type">IntelligenceRepository</span>,</span></span></span><br><span class="line"><span class="params"><span class="function">        logger: <span class="type">Logger</span></span></span></span><br><span class="line"><span class="params"><span class="function">    )</span></span>: LabelPipeline&lt;Bitmap&gt; {</span><br><span class="line">        <span class="keyword">val</span> facePipelineBuilder = LabelPipeline.Builder&lt;List&lt;MarkedFace&gt;&gt;(logger)</span><br><span class="line">        <span class="keyword">val</span> facePipeline = facePipelineBuilder</span><br><span class="line">            .sinkTo(sink)</span><br><span class="line">            .addOp(HMSFaceVerifier(ai, logger))</span><br><span class="line">            .build()</span><br><span class="line">        <span class="keyword">val</span> facePipeSplitter = SplitExtractor(facePipeline, GoogleMLKitFaceDetector(logger))</span><br><span class="line"></span><br><span class="line">        <span class="keyword">val</span> videoPipeBuilder = LabelPipeline.Builder&lt;Bitmap&gt;(logger)</span><br><span class="line">        <span class="keyword">return</span> videoPipeBuilder</span><br><span class="line">            .sinkTo(sink)</span><br><span class="line">            .addOp(facePipeSplitter)</span><br><span class="line">						<span class="comment">// .addOp(HMSSceneDetector()) // TODO 接入新的标签回调</span></span><br><span class="line">            .addOp(TFLiteObjectDetector(ModelName.SSD_MOBILE_NET_V1, ai, logger))</span><br><span class="line">            .build()</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">createAudioPcmPipeline</span><span class="params">(</span></span></span><br><span class="line"><span class="params"><span class="function">        eventSink: <span class="type">EventSink</span>,</span></span></span><br><span class="line"><span class="params"><span class="function">        intelligenceRepository: <span class="type">IntelligenceRepository</span>,</span></span></span><br><span class="line"><span class="params"><span class="function">        logger: <span class="type">Logger</span></span></span></span><br><span class="line"><span class="params"><span class="function">    )</span></span>: LabelPipeline&lt;ShortArray&gt; {</span><br><span class="line">        <span class="keyword">val</span> audioPipeBuilder = LabelPipeline.Builder&lt;ShortArray&gt;(logger)</span><br><span class="line">        <span class="keyword">return</span> audioPipeBuilder</span><br><span class="line">            .sinkTo(eventSink)</span><br><span class="line">            .addOp(YAMNetAudioClassifier(intelligenceRepository, logger))</span><br><span class="line">            .build()</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h3 id="LabelPipeLine"><a href="#LabelPipeLine" class="headerlink" title="LabelPipeLine"></a><code>LabelPipeLine</code></h3><p><code>com/danale/edge/intelligence/pipe/LabelPipeline.kt</code></p>
+<figure class="highlight kotlin"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">open</span> <span class="class"><span class="keyword">class</span> <span class="title">LabelPipeline</span>&lt;<span class="type">T : Any</span>&gt;</span>(</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">val</span> extractors: List&lt;LabelExtractor&lt;T&gt;&gt;,</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">val</span> logger: Logger,</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">val</span> providedSink: EventSink?</span><br><span class="line">) : Closeable {</span><br><span class="line"></span><br><span class="line">    <span class="keyword">companion</span> <span class="keyword">object</span> {</span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">val</span> TAG = <span class="string">"LabelPipeline"</span></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">init</span> {</span><br><span class="line">        extractors.forEach {</span><br><span class="line">            <span class="keyword">if</span> (providedSink != <span class="literal">null</span>) {</span><br><span class="line">                logger.i(TAG, <span class="string">"init, sink <span class="subst">${it.hashCode()}</span> to <span class="subst">${providedSink.hashCode()}</span>"</span>)</span><br><span class="line">                it.bindEventSink(providedSink)</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">process</span><span class="params">(item: <span class="type">T</span>, metaData: <span class="type">LabeledObject</span>.<span class="type">MetaData</span>)</span></span>: Single&lt;LabeledObject&lt;T&gt;&gt; {</span><br><span class="line">        <span class="keyword">var</span> single = Single.just(LabeledObject(ConcurrentHashMap(), item, metaData = metaData))</span><br><span class="line">        <span class="keyword">for</span> (op <span class="keyword">in</span> extractors) {</span><br><span class="line">            single = single.flatMap { op.extractLabel(it).toSingleDefault(it) }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> single</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Builder</span>&lt;<span class="type">T : Any</span>&gt;</span>(<span class="keyword">val</span> logger: Logger) {</span><br><span class="line"></span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">val</span> list = LinkedList&lt;LabelExtractor&lt;T&gt;&gt;()</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">var</span> sink: EventSink? = <span class="literal">null</span></span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">fun</span> <span class="title">sinkTo</span><span class="params">(sink: <span class="type">EventSink</span>)</span></span>: Builder&lt;T&gt; {</span><br><span class="line">            <span class="keyword">this</span>.sink = sink</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span></span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">fun</span> <span class="title">addOp</span><span class="params">(extractor: <span class="type">LabelExtractor</span>&lt;<span class="type">T</span>&gt;)</span></span>: Builder&lt;T&gt; {</span><br><span class="line">            list.addLast(extractor)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span></span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">fun</span> <span class="title">build</span><span class="params">()</span></span>: LabelPipeline&lt;T&gt; {</span><br><span class="line">            <span class="keyword">return</span> LabelPipeline(list, logger, sink)</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">close</span><span class="params">()</span></span> {</span><br><span class="line">        <span class="keyword">for</span> (op <span class="keyword">in</span> extractors) {</span><br><span class="line">            op.flushSession(providedSink)</span><br><span class="line">            op.close()</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<figure class="highlight kotlin"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">LabelExtractor</span>&lt;<span class="type">T : Any</span>&gt; : <span class="type">Closeable</span>, <span class="type">EventSource {</span></span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Extractor执行计算</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">extractLabel</span><span class="params">(item: <span class="type">LabeledObject</span>&lt;<span class="type">T</span>&gt;)</span></span>: Completable</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 告知计算已结束，Extractor应将尚未上报的事件进行上报</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">flushSession</span><span class="params">(sink: <span class="type">EventSink</span>?)</span></span> {}</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">labelKey</span><span class="params">(sourceType: <span class="type">String</span>, category: <span class="type">String</span>, vendor: <span class="type">String</span>, vendorKey: <span class="type">String</span>)</span></span>: String {</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"<span class="variable">$sourceType</span>:<span class="variable">$category</span>:<span class="variable">$vendor</span>:<span class="variable">$vendorKey</span>"</span></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h2 id="视频导出"><a href="#视频导出" class="headerlink" title="视频导出"></a>视频导出</h2><p>通过ByteBuffer导出成MP4格式视频</p>
+<p><code>com/danale/edge/ui/flow/VideoFlowViewModel.kt</code></p>
+<figure class="highlight kotlin"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">attachPlayer</span><span class="params">(</span></span></span><br><span class="line"><span class="params"><span class="function">        surface: <span class="type">Surface</span>,</span></span></span><br><span class="line"><span class="params"><span class="function">        clipDri: <span class="type">String</span>,</span></span></span><br><span class="line"><span class="params"><span class="function">        clipDataSource: <span class="type">ByteBufferVideoSource</span>? = <span class="literal">null</span>,</span></span></span><br><span class="line"><span class="params"><span class="function">        positionResponder: <span class="type">ClipPositionResponder</span>? = <span class="literal">null</span></span></span></span><br><span class="line"><span class="params"><span class="function">    )</span></span> {</span><br><span class="line">        logger.d(</span><br><span class="line">            TAG,</span><br><span class="line">            <span class="string">"attachPlayer, clipDri=<span class="subst">${Fuzzy.interval(clipDri)}</span>, data=<span class="subst">${clipDataSource?.hashCode()}</span>"</span></span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">        positionResponder?.let {</span><br><span class="line">            <span class="comment">// 弱引用保存播放进度的响应体</span></span><br><span class="line">            weakPositionResponder = WeakReference(it)</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        loadPlayerExecutor.submit {</span><br><span class="line">            detachPlayerSync()</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (player == <span class="literal">null</span>) {</span><br><span class="line">                logger.i(TAG, <span class="string">"attachPlayer, instantiate"</span>)</span><br><span class="line">                player = IjkPlayerProvider.provideIjkPlayerDefaultConfig()</span><br><span class="line">            }</span><br><span class="line">            player?.apply {</span><br><span class="line">                <span class="keyword">try</span> {</span><br><span class="line">                    setSurface(surface)</span><br><span class="line">                    setOnPreparedListener {</span><br><span class="line">                      <span class="comment">// 开始播放视频</span></span><br><span class="line">                    }</span><br><span class="line">                    setOnErrorListener { mediaPlayer, errArg1, errArg2 -&gt;</span><br><span class="line">                        <span class="comment">// 错误被处理</span></span><br><span class="line">                    }</span><br><span class="line">                    setOnCompletionListener {</span><br><span class="line">                        <span class="comment">// 视频播放完毕</span></span><br><span class="line">                    }</span><br><span class="line">                } <span class="keyword">catch</span> (e: Exception) {</span><br><span class="line">                    logger.e(TAG, <span class="string">"attachPlayer, null mp"</span>, e)</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (clipDataSource != <span class="literal">null</span>) {</span><br><span class="line">                logger.i(TAG, <span class="string">"attachPlayer, use exist data"</span>)</span><br><span class="line">                <span class="keyword">try</span> {</span><br><span class="line">                    <span class="comment">// 播放已有视频</span></span><br><span class="line">                } <span class="keyword">catch</span> (e: Exception) {}</span><br><span class="line">            } <span class="keyword">else</span> {</span><br><span class="line">                logger.i(TAG, <span class="string">"attachPlayer, load clip <span class="subst">${Fuzzy.interval(clipDri)}</span>"</span>)</span><br><span class="line">                <span class="keyword">val</span> latch = CountDownLatch(<span class="number">1</span>)</span><br><span class="line">                dataSubscription = sdk.getBlobWithDri(clipDri)</span><br><span class="line">                    .subscribeOn(Schedulers.io())</span><br><span class="line">                    .subscribeBy(</span><br><span class="line">                        onSuccess = {</span><br><span class="line">                            logger.i(TAG, <span class="string">"attachPlayer, blob ok"</span>)</span><br><span class="line">                            <span class="keyword">try</span> {</span><br><span class="line">                                <span class="keyword">val</span> <span class="keyword">data</span> = ByteBufferVideoSource()</span><br><span class="line">                                <span class="keyword">data</span>.load(it)</span><br><span class="line">                                preparePlayer(<span class="keyword">data</span>)</span><br><span class="line"></span><br><span class="line">                                <span class="comment">/***保存bytebuffer****/</span></span><br><span class="line">                               saveBytebuffer(it, clipDri.split(<span class="string">"clip_"</span>)[<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">                            } <span class="keyword">catch</span> (e: Exception) {}</span><br><span class="line">                            latch.countDown()</span><br><span class="line">                        },</span><br><span class="line">                        onError = {}</span><br><span class="line">                    )</span><br><span class="line">                latch.await()</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">    }</span><br></pre></td></tr></tbody></table></figure>
+
+<p>其中<code>data.load(it)</code>是获取视频来源，<code>it</code>是ByteBuffer格式，通过保<code>it</code>为MP4格式可以实现视频的导出，不同的视频通过<code>clipDri</code>加以区分</p>
+<figure class="highlight kotlin"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取存储路径</span></span><br><span class="line"><span class="keyword">private</span> <span class="function"><span class="keyword">fun</span> <span class="title">getPath</span><span class="params">()</span></span>: String {</span><br><span class="line">    <span class="keyword">val</span> result = (Environment.getExternalStorageDirectory().toString()</span><br><span class="line">            + File.separator + Environment.DIRECTORY_DCIM</span><br><span class="line">            + File.separator + <span class="string">"Camera"</span> + File.separator)</span><br><span class="line">    <span class="keyword">val</span> file = File(result)</span><br><span class="line">    <span class="keyword">if</span> (!file.exists()) {</span><br><span class="line">        file.mkdir()</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> result + File.separator</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">// 保存ByteBuffer</span></span><br><span class="line"><span class="keyword">private</span> <span class="function"><span class="keyword">fun</span> <span class="title">saveBytebuffer</span><span class="params">(byteBuffer: <span class="type">ByteBuffer</span>, fileName: <span class="type">String</span>)</span></span>{</span><br><span class="line">    logger.d(TAG, <span class="string">"attachPlayer, save bytebuffer"</span>)</span><br><span class="line">    <span class="keyword">val</span> file = File(getPath()+ fileName + <span class="string">".mp4"</span>)</span><br><span class="line">    logger.d(TAG, <span class="string">"attachPlayer, file=<span class="variable">$file</span>"</span>)</span><br><span class="line">    <span class="keyword">if</span>(!file.exists()){</span><br><span class="line">        file.createNewFile();</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">val</span> os: OutputStream = FileOutputStream(file,<span class="literal">true</span>)</span><br><span class="line">    os.write(byteBuffer.array())</span><br><span class="line">    os.flush()</span><br><span class="line">    os.close()</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><code>clipDri</code>是String格式，但直接将其存为文件名会有非法字符，<code>[D*]dri:data_worm:kv:blob:grid/827f8b9cfbb780df63f56fe6e7bef03c:clip_f00b3dd5c79411edaa64d54fbc172c8c</code></p>
+<p>通过截取拿到<code>clip_</code>后的部分组成文件名</p>
+<h2 id="视频导入"><a href="#视频导入" class="headerlink" title="视频导入"></a>视频导入</h2><h3 id="图片导入"><a href="#图片导入" class="headerlink" title="图片导入"></a>图片导入</h3><p>通过<code>ffmpeg</code>将mp4视频文件分割成jpg图片文件</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i  test.mp4 -r 10 -f image2 %05d.jpg</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li>-i : 指定输入文件</li>
+<li>-r : 帧数 10</li>
+<li>-f : 指定格式化的格式为image2</li>
+<li>image2后面跟着的是文件名</li>
+<li>%5d：以为5位数按正序编号</li>
+</ul>
+<p>将图片放入到app的文件夹中，由于手机的安全性，放入其他文件夹会读不到文件<code>/sdcard/Android/data/com.alcidae.edgeapp/files</code></p>
+<p>通过<code>context.getExternalFilesDir(null)</code>获取到文件夹路径，存入每个图片的名称</p>
+<figure class="highlight kotlin"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="function"><span class="keyword">fun</span> <span class="title">getPics</span><span class="params">()</span></span>: MutableList&lt;String&gt; {</span><br><span class="line">    logger.d(TAG, <span class="string">"start getPics, <span class="subst">${context.getExternalFilesDir(null)}</span>"</span>)</span><br><span class="line">    <span class="keyword">val</span> fileNames: MutableList&lt;String&gt; = mutableListOf()</span><br><span class="line">    <span class="keyword">val</span> fileTree = File(<span class="string">"<span class="subst">${context.getExternalFilesDir(null)}</span>/test"</span>).walk()</span><br><span class="line">    fileTree.maxDepth(<span class="number">1</span>) <span class="comment">//需遍历的目录层次为1，即无须检查子目录</span></span><br><span class="line">        .filter {</span><br><span class="line">            it.isFile</span><br><span class="line">        } <span class="comment">//只挑选文件，不处理文件夹</span></span><br><span class="line">        .filter {</span><br><span class="line">            it.extension <span class="keyword">in</span> listOf(<span class="string">"jpg"</span>)</span><br><span class="line">        }<span class="comment">//选择扩展名为jpg的文件</span></span><br><span class="line">        .forEach {</span><br><span class="line">            fileNames.add(it.absolutePath)</span><br><span class="line">        }<span class="comment">//循环 处理符合条件的文件</span></span><br><span class="line">    <span class="keyword">return</span> fileNames</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>通过循环读取图片，并将图片转成bitmap输入到pipeline</p>
+<figure class="highlight kotlin"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SuppressLint(<span class="meta-string">"CheckResult"</span>)</span></span><br><span class="line"><span class="keyword">private</span> <span class="function"><span class="keyword">fun</span> <span class="title">pipelineFromPic</span><span class="params">(files: <span class="type">MutableList</span>&lt;<span class="type">String</span>&gt;)</span></span> {</span><br><span class="line">    <span class="keyword">for</span> (i <span class="keyword">in</span>  <span class="number">0</span> until files.size){</span><br><span class="line">        <span class="keyword">val</span> file = File(files[i])</span><br><span class="line"></span><br><span class="line">        <span class="comment">//readBytes读取字节数组形式的文件内容</span></span><br><span class="line">        <span class="keyword">val</span> bytes = file.readBytes()</span><br><span class="line">        <span class="comment">//decodeByteArray从字节数组解析图片</span></span><br><span class="line">        <span class="keyword">val</span> currBitmap = BitmapFactory.decodeByteArray(bytes, <span class="number">0</span>, bytes.size)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">val</span> metaData =</span><br><span class="line">            LabeledObject.MetaData(dataTimestamp = i.toLong())  <span class="comment">// 新建data 承载源数据</span></span><br><span class="line">        videoPipeline.process(currBitmap, metaData)</span><br><span class="line">            <span class="comment">// 扁平化</span></span><br><span class="line">            .flatMap {</span><br><span class="line">                <span class="keyword">val</span> elapsedNano = it.getElapsedMillis()</span><br><span class="line">                logger.d(TAG, <span class="string">"for, inferenceTime = <span class="variable">$elapsedNano</span>"</span>)</span><br><span class="line">                it.obj.recycle()  <span class="comment">// 释放与此位图关联的本机对象，并清除对像素数据的引用</span></span><br><span class="line">                <span class="keyword">return</span><span class="symbol">@flatMap</span> Single.just(it)  <span class="comment">// 转换为发出该对象的Single</span></span><br><span class="line">            }</span><br><span class="line">            .subscribeBy(</span><br><span class="line">                onSuccess = {</span><br><span class="line">                    logger.d(TAG, <span class="string">"for, onSuccess, i=<span class="variable">$i</span>, labeledObject = <span class="variable">$it</span>"</span>)</span><br><span class="line">                },</span><br><span class="line">                onError = {</span><br><span class="line">                    logger.d(TAG, <span class="string">"for, onError, i=<span class="variable">$i</span>, throwable = <span class="variable">$it</span>"</span>)</span><br><span class="line">                    close()</span><br><span class="line">                },</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    videoPipeline.close()</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight kotlin"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> files = getPics()</span><br><span class="line"></span><br><span class="line">pipelineFromPic(files)</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h3 id="音频导入"><a href="#音频导入" class="headerlink" title="音频导入"></a>音频导入</h3><p>通过ffmpeg工具将mp4文件转成pcm文件</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i test.mp4 test.mp3</span><br><span class="line">ffmpeg -i test.mp3 -ar 48000 -ac 2 -f s16le test.pcm</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight kotlin"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SuppressLint(<span class="meta-string">"CheckResult"</span>)</span></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">videoPipeline</span><span class="params">()</span></span> {</span><br><span class="line">    <span class="keyword">val</span> file = File(<span class="string">"<span class="subst">${context.getExternalFilesDir(null)}</span>/test/test.pcm"</span>)</span><br><span class="line">    <span class="keyword">val</span> bytes = file.readBytes()</span><br><span class="line">    <span class="keyword">val</span> metaData = LabeledObject.MetaData(dataTimestamp = <span class="number">1.</span>toLong())</span><br><span class="line"></span><br><span class="line">    logger.d(TAG, <span class="string">"bytes.size= <span class="subst">${bytes.size}</span>"</span>)</span><br><span class="line">    <span class="keyword">val</span> step = <span class="number">640</span>  <span class="comment">// 每次读取的大小</span></span><br><span class="line">    <span class="keyword">val</span> num = floor((bytes.size / step).toDouble())  <span class="comment">// 循环次数</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">0</span> until num.toInt()) {</span><br><span class="line">        <span class="keyword">val</span> byte = bytes.slice(i..i + step)  <span class="comment">// 截取pcm</span></span><br><span class="line">        <span class="keyword">val</span> shorts = ShortArray(byte.size / <span class="number">2</span>) {</span><br><span class="line">            (byte[it * <span class="number">2</span>].toUByte().toInt() + (byte[(it * <span class="number">2</span>) + <span class="number">1</span>].toInt() shl <span class="number">8</span>)).toShort()</span><br><span class="line">        }  <span class="comment">// 转换成shortArray</span></span><br><span class="line"></span><br><span class="line">        Maybe.fromSingle(audioPipeline.process(shorts, metaData)</span><br><span class="line">            .flatMap {</span><br><span class="line">                <span class="keyword">val</span> elapsedNano = it.getElapsedMillis()</span><br><span class="line">                logger.d(TAG, <span class="string">"audioPipe, inferenceTime = <span class="variable">$elapsedNano</span>"</span>)</span><br><span class="line">                <span class="keyword">return</span><span class="symbol">@flatMap</span> Single.just(it)</span><br><span class="line">            }).subscribeBy(</span><br><span class="line">            onSuccess = {</span><br><span class="line">                logger.d(TAG, <span class="string">"for, onSuccess, labeledObject = <span class="variable">$it</span>"</span>)</span><br><span class="line">            },</span><br><span class="line">            onError = {</span><br><span class="line">                logger.d(TAG, <span class="string">"for, onError, throwable = <span class="variable">$it</span>"</span>)</span><br><span class="line">                close()</span><br><span class="line">            },</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line">    audioPipeline.close()</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+
+            </div>
+
+            
+
+            
+                <ul class="post-tags-box">
+                    
+                        <li class="tag-item">
+                            <a href="/blog/tags/%E5%86%99%E4%BA%86%E4%BB%80%E4%B9%88%E6%96%B0%E5%8A%9F%E8%83%BD/">#写了什么新功能</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            
+
+            
+                <div class="article-nav">
+                    
+                        <div class="article-prev">
+                            <a class="prev"
+                               rel="prev"
+                               href="/blog/2023/03/28/%E6%98%9F%E6%A0%87%E7%94%A8%E6%88%B7/"
+                            >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                <span class="post-nav-title-item">星标用户</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                            </a>
+                        </div>
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                               rel="next"
+                               href="/blog/2023/03/15/%E8%AE%BE%E7%BD%AE%E9%A1%B5%E9%9D%A2/"
+                            >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">设置页面</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                                <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AE%B9"><span class="nav-number">1.1.</span> <span class="nav-text">内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9C%80%E6%B1%82"><span class="nav-number">1.2.</span> <span class="nav-text">需求</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%87%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pipelineFactory"><span class="nav-number">2.0.1.</span> <span class="nav-text">pipelineFactory</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LabelPipeLine"><span class="nav-number">2.0.2.</span> <span class="nav-text">LabelPipeLine</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%86%E9%A2%91%E5%AF%BC%E5%87%BA"><span class="nav-number">2.1.</span> <span class="nav-text">视频导出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%86%E9%A2%91%E5%AF%BC%E5%85%A5"><span class="nav-number">2.2.</span> <span class="nav-text">视频导入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E7%89%87%E5%AF%BC%E5%85%A5"><span class="nav-number">2.2.1.</span> <span class="nav-text">图片导入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9F%B3%E9%A2%91%E5%AF%BC%E5%85%A5"><span class="nav-number">2.2.2.</span> <span class="nav-text">音频导入</span></a></li></ol></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            
+<footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+                <span>2023</span> -
+            
+            2023
+            
+                &nbsp;<i class="fas fa-heart icon-animate"></i>
+                &nbsp;<a href="/">MoMo</a>
+            
+        </div>
+        
+            <script async data-pjax
+                    src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                
+                
+                    Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.6.0</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/dark-light-toggle.js"></script>
+
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/code-block.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/lazyload.js"></script>
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/post-helper.js"></script>
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/libs/anime.min.js"></script>
+        
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/toc.js"></script>
+        
+    
+</div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.0/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
