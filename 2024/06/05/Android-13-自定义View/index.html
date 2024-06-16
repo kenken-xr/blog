@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="MoMo">
+    
+    <title>
+        
+            自定义View |
+        
+        今天在干嘛
+    </title>
+    
+<link rel="stylesheet" href="/blog/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/blog/images/logoMoon.svg">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/regular.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/brands.min.css">
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"kenken-xr.github.io","root":"/blog/","language":"en","path":"search.json"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#f8a5c2","title":"今天在干嘛","author":"MoMo","avatar":"/images/avatar.jpg","logo":"/images/logoMoon.svg","favicon":"/images/logoMoon.svg"},"menu":{"home":"/","archives":"/archives","tags":"/tags","categories":"/categories","github":"https://github.com/kenken-xr"},"first_screen":{"enable":true,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":true,"links":{"github":"https://github.com/kenken-xr","weixin":"img | /images/wx.png","qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":true,"percent":true,"hide_header":false},"home":{"announcement":null,"category":true,"tag":true,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":true,"reward":{"enable":false,"img_link":null,"text":null},"img_align":"center"},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true,"layout":"left"},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"local_search":{"enable":true,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.36"},"waline":{"server_url":null,"reaction":false,"version":"3.2.1"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":true},"cdn":{"enable":true,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":2023,"word_count":true,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"/blog","source_data":{},"version":"4.1.3"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original post title","author":"Original post author","link":"Original post link"}
+  </script>
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/blog/atom.xml" title="MoMo" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left border-box">
+            
+                <a class="logo-image border-box" href="/blog/">
+                    <img src="/blog/images/logoMoon.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/blog/">
+               今天在干嘛
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/"
+                            >
+                                
+                                HOME
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/archives"
+                            >
+                                
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/tags"
+                            >
+                                
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/categories"
+                            >
+                                
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               target="_blank" rel="noopener" href="https://github.com/kenken-xr"
+                            >
+                                
+                                GITHUB
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/"
+                    >HOME</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/archives"
+                    >ARCHIVES</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/tags"
+                    >TAGS</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/categories"
+                    >CATEGORIES</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       target="_blank" rel="noopener" href="https://github.com/kenken-xr"
+                    >GITHUB</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        自定义View
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/blog/images/avatar.jpg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">MoMo</span>
+                                
+                                    <span class="author-badge">Lv5</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2024-06-05 17:24:23</span>
+            </span>
+
+            <span class="meta-info-item post-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="datetime" data-updated="Thu Jun 13 2024 22:04:12 GMT+0800">2024-06-13 22:04:12</span>
+            </span>
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/blog/categories/%E6%9C%89%E5%9C%A8%E8%AE%A4%E7%9C%9F%E4%B8%8A%E7%8F%AD/">有在认真上班</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/blog/tags/Android/">Android</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+            <span class="meta-info-item post-pv">
+                <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    <ol>
+<li>自定义View的流程 ⭐⭐⭐⭐⭐</li>
+<li>自定义View需要重写哪些函数？说说你在自定义View时常常重写的一些方法？ ⭐⭐⭐⭐</li>
+<li>自定义View的种类有哪些?给我说说你之前项目中的案例。⭐⭐⭐⭐</li>
+<li>说说自定义View中如何自定义属性？⭐⭐⭐</li>
+<li>自定义View如何处理padding？⭐⭐</li>
+<li>自定义View效率高于xml布局文件吗？⭐⭐</li>
+<li>自定义View什么时候需要处理wrap_content属性？怎么处理？⭐</li>
+</ol>
+<h1 id="什么是自定义View"><a href="#什么是自定义View" class="headerlink" title="什么是自定义View"></a>什么是自定义View</h1><p>View的绘制有测量 -〉布局 -〉绘制，这三大步骤</p>
+<h2 id="自定义View和自定义ViewGroup"><a href="#自定义View和自定义ViewGroup" class="headerlink" title="自定义View和自定义ViewGroup"></a>自定义View和自定义ViewGroup</h2><ul>
+<li>自定义View：如果官方提供现成的View控件无法达到符合自己预期的View的样式，那就需要自己来实现，一般需要重写onDraw()方法来设置绘制的样式，这就是自定义View；</li>
+<li>自定义ViewGroup：如果希望将一个或多个现有的View按照特定的布局方式，组装形成一个新的组件，这就是自定义ViewGroup。</li>
+</ul>
+<h2 id="自定义View基础知识"><a href="#自定义View基础知识" class="headerlink" title="自定义View基础知识"></a>自定义View基础知识</h2><h3 id="坐标系"><a href="#坐标系" class="headerlink" title="坐标系"></a>坐标系</h3><p>在安卓系统中，屏幕左上角为原点，往右边是X轴正向，往下边是Y轴正向。常见API函数如下：</p>
+<ul>
+<li>子View到父View的距离</li>
+</ul>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">getHeight()	<span class="comment">//获取View自身高度</span></span><br><span class="line">getWidth()	<span class="comment">//获取View自身宽度</span></span><br><span class="line">getTop()	<span class="comment">//获取子 View 左上角到父 View 顶部的距离</span></span><br><span class="line">getLeft()	<span class="comment">//获取子 View 左上角到父 View 左边的距离</span></span><br><span class="line">getBottom()     <span class="comment">//获取子 View 右下角到父 View 顶部的距离</span></span><br><span class="line">getRight()	<span class="comment">//获取子 View 右上角到父 View 左边的距离</span></span><br><span class="line">    </span><br><span class="line">getBottom() - getTop() = 子View 的高</span><br><span class="line">getRight() - getLeft() = 子View 的宽</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li>触摸点到所在View或者屏幕坐标系</li>
+</ul>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">event.getX()	<span class="comment">//触摸点相对于其所在 View 坐标系的坐标</span></span><br><span class="line">event.getY()</span><br><span class="line">    </span><br><span class="line">event.getRawX()	<span class="comment">//触摸点相对于屏幕坐标系的坐标</span></span><br><span class="line">event.getRawY()	    </span><br></pre></td></tr></tbody></table></figure>
+
+<p>详细可参考下图(抄录于参考文档1)，其中绿色方块为子View，子View里面的蓝色小圆圈代表触摸点，子View外边依次是父View和屏幕坐标。</p>
+<p><img lazyload="" alt="image" data-src="https://uploadfiles.nowcoder.com/images/20231120/545613072_1700451541148/D2B5CA33BD970F64A6301FA75AE2EB22"></p>
+<h3 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h3><p>Android系统支持的颜色模式有以下三种：</p>
+<table>
+<thead>
+<tr>
+<th>颜色模式</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ARGB8888</td>
+<td>四通道高精度（32位）</td>
+</tr>
+<tr>
+<td>ARGB4444</td>
+<td>四通道低精度（16位）</td>
+</tr>
+<tr>
+<td>RGB565</td>
+<td>屏幕默认模式（16位）</td>
+</tr>
+</tbody></table>
+<p>其中A代表透明度，RGB分别代表红绿蓝三种原色，后面的数值代表该模式用多少位二进制数来表示，比如：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#<span class="number">0xF00</span>	<span class="comment">//低精度 - 不带透明通道红色</span></span><br><span class="line">#<span class="number">0xAF00</span>	<span class="comment">//低精度 - 带透明通道红色</span></span><br><span class="line">#<span class="number">0xFF0000</span>		<span class="comment">//高精度 - 不带透明通道红色</span></span><br><span class="line">#<span class="number">0xAAFF0000</span>	<span class="comment">//高精度 - 带透明通道红色	</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="触摸事件"><a href="#触摸事件" class="headerlink" title="触摸事件"></a>触摸事件</h3><p>既然是View，那就离不开触摸事件，常见的触摸事件如下：</p>
+<table>
+<thead>
+<tr>
+<th>事件</th>
+<th>简介</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ACTION_DOWN</td>
+<td>手指初次接触屏幕时触发</td>
+</tr>
+<tr>
+<td>ACTION_MOVE</td>
+<td>手指在屏幕上滑动时触发，会多次触发</td>
+</tr>
+<tr>
+<td>ACTION_UP</td>
+<td>手指离开屏幕时触发</td>
+</tr>
+<tr>
+<td>ACTION_CANCEL</td>
+<td>事件被上层拦截时触发</td>
+</tr>
+</tbody></table>
+<h3 id="margin和padding"><a href="#margin和padding" class="headerlink" title="margin和padding"></a>margin和padding</h3><p>在开发中，经常可以看到这两个，在此再次介绍下：</p>
+<ul>
+<li>margin：子控件与父控件的距离，也就是“外边距”；</li>
+<li>padding：控件里内容和控件的边界之间的距离，也就是“内边距”。在使用系统自带的控件时，只要在xml布局文件设置好padding即刻生效，但在自定义View则不会生效，需要手动在onDraw()方法里处理。</li>
+</ul>
+<h2 id="自定义View效率高于xml布局文件吗？"><a href="#自定义View效率高于xml布局文件吗？" class="headerlink" title="自定义View效率高于xml布局文件吗？"></a>自定义View效率高于xml布局文件吗？</h2><p>自定义View效率高于xml定义，原因如下：</p>
+<ol>
+<li>自定义View少了解析xml;</li>
+<li>自定义View 减少了ViewGroup与View之间的测量,包括父量子,子量自身,子在父中位置摆放,当子view变化时,父的某些属性都会跟着变化。</li>
+</ol>
+<h1 id="自定义View的流程"><a href="#自定义View的流程" class="headerlink" title="自定义View的流程"></a>自定义View的流程</h1><p>自定义View有一个通用的流程：</p>
+<p><img lazyload="" alt="image" data-src="https://uploadfiles.nowcoder.com/images/20231120/545613072_1700451550800/D2B5CA33BD970F64A6301FA75AE2EB22"></p>
+<h2 id="onMeasure"><a href="#onMeasure" class="headerlink" title="onMeasure()"></a>onMeasure()</h2><p>在Measure阶段，需根据需要重写onMeasure()方法，即使在xml布局文件里面设置了View的宽高。因为一个子View的宽高不止受自身参数决定，还需要受到父控件的影响。</p>
+<h2 id="onLayout"><a href="#onLayout" class="headerlink" title="onLayout()"></a>onLayout()</h2><p>确定布局可以用onLayout()方法，在自定义View中，一般不需要重写该方法。但在自定义ViewGroup中可能需要重写，一般做法是循环取出子View，并计算每个子View位置等坐标值，然后使用child.layout()方法设置子View的位置，如下所示：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">       <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onLayout</span><span class="params">(<span class="type">boolean</span> changed, <span class="type">int</span> l, <span class="type">int</span> t, <span class="type">int</span> r, <span class="type">int</span> b)</span> {</span><br><span class="line">        <span class="type">int</span> <span class="variable">childCount</span> <span class="operator">=</span> getChildCount();</span><br><span class="line">        <span class="type">int</span> <span class="variable">left</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        View child;</span><br><span class="line">        <span class="comment">//循环遍历各个子View</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; childCount; i++) {</span><br><span class="line">            child = getChildAt(i);</span><br><span class="line">            <span class="keyword">if</span> (child.getVisibility() != View.GONE) {</span><br><span class="line">                <span class="type">int</span> <span class="variable">width</span> <span class="operator">=</span> child.getMeasuredWidth();</span><br><span class="line">                childWidth = width; </span><br><span class="line">                <span class="comment">//设置子View位置</span></span><br><span class="line">                child.layout(left, <span class="number">0</span>, left + width, child.getMeasuredHeight());</span><br><span class="line">                left += width;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="onDraw"><a href="#onDraw" class="headerlink" title="onDraw()"></a>onDraw()</h2><h3 id="Canvas（画布）"><a href="#Canvas（画布）" class="headerlink" title="Canvas（画布）"></a>Canvas（画布）</h3><p>这是实际绘制的部分，使用Canvas（画布）进行绘制常见的Canvas API函数如下：</p>
+<p>操作类型 相关 API 备注</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>绘制颜色</td>
+<td>drawColor、drawRGB、drawARGB</td>
+<td>使用单一颜色填充整个画布</td>
+</tr>
+<tr>
+<td>绘制基本图形</td>
+<td>drawPoint、drawPoints、drawLine、drawLines、drawRect、drawRoundRect、drawOval、drawCircle、drawArc</td>
+<td>绘制点、线、矩形、圆角矩形、椭圆、圆、圆弧</td>
+</tr>
+<tr>
+<td>绘制图片</td>
+<td>drawBitmap、drawPicture</td>
+<td>绘制位图和图片</td>
+</tr>
+<tr>
+<td>绘制路径</td>
+<td>drawPath</td>
+<td>绘制路径，绘制贝塞尔曲线</td>
+</tr>
+<tr>
+<td>画布裁剪</td>
+<td>clipPath、clipRect</td>
+<td>设置画布的显示区域</td>
+</tr>
+<tr>
+<td>画布变换</td>
+<td>translate、scale、rotate、skew</td>
+<td>位移、缩放、旋转、错切</td>
+</tr>
+</tbody></table>
+<h3 id="Paint（画笔）"><a href="#Paint（画笔）" class="headerlink" title="Paint（画笔）"></a>Paint（画笔）</h3><p>Paint（画笔）在自定义View的实现也是非常常见的，所以需要了解常见的API函数，详情可见：<a class="link" target="_blank" rel="noopener" href="https://www.apiref.com/android-zh/android/graphics/Paint.html">Android开发手册-Paint<i class="fas fa-external-link-alt"></i></a></p>
+<p>以下是Paint常用API函数:<a class="link" target="_blank" rel="noopener" href="https://blog.csdn.net/shell812/article/details/49781397?ref=myread">Android Paint API总结和使用方法<i class="fas fa-external-link-alt"></i></a>：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">reset</span><span class="params">()</span>;</span><br><span class="line"><span class="keyword">void</span> <span class="title function_">set</span><span class="params">(Paint src)</span>;</span><br><span class="line"><span class="keyword">void</span> <span class="title function_">setCompatibilityScaling</span><span class="params">( <span class="type">float</span> factor)</span>;</span><br><span class="line"><span class="keyword">void</span> <span class="title function_">setBidiFlags</span><span class="params">( <span class="type">int</span> flags)</span>;</span><br><span class="line"><span class="keyword">void</span> <span class="title function_">setFlags</span><span class="params">( <span class="type">int</span> flags)</span>;</span><br><span class="line"><span class="keyword">void</span> <span class="title function_">setHinting</span><span class="params">( <span class="type">int</span> mode)</span>;</span><br><span class="line"><span class="comment">//是否抗锯齿</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">setAntiAlias</span><span class="params">( <span class="type">boolean</span> aa)</span>;</span><br><span class="line"><span class="comment">//设定是否使用图像抖动处理，会使绘制出来的图片颜色更加平滑和饱满，图像更加清晰  </span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">setDither</span><span class="params">( <span class="type">boolean</span> dither)</span>;</span><br><span class="line"><span class="comment">//设置线性文本</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">setLinearText</span><span class="params">( <span class="type">boolean</span> linearText)</span>;</span><br><span class="line"><span class="comment">//设置该项为true，将有助于文本在LCD屏幕上的显示效果  </span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">setSubpixelText</span><span class="params">( <span class="type">boolean</span> subpixelText)</span>;</span><br><span class="line"><span class="comment">//设置下划线</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">setUnderlineText</span><span class="params">( <span class="type">boolean</span> underlineText)</span>;</span><br><span class="line"><span class="comment">//设置带有删除线的效果 </span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">setStrikeThruText</span><span class="params">( <span class="type">boolean</span> strikeThruText)</span>;</span><br><span class="line"><span class="comment">//设置伪粗体文本，设置在小字体上效果会非常差  </span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">setFakeBoldText</span><span class="params">( <span class="type">boolean</span> fakeBoldText)</span>;</span><br><span class="line"><span class="comment">//如果该项设置为true，则图像在动画进行中会滤掉对Bitmap图像的优化操作</span></span><br><span class="line"><span class="comment">//加快显示速度，本设置项依赖于dither和xfermode的设置  </span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">setFilterBitmap</span><span class="params">( <span class="type">boolean</span> filter)</span>;</span><br><span class="line"><span class="comment">//设置画笔风格，空心或者实心 FILL，FILL_OR_STROKE，或STROKE</span></span><br><span class="line"><span class="comment">//Paint.Style.STROKE 表示当前只绘制图形的轮廓，而Paint.Style.FILL表示填充图形。  </span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">setStyle</span><span class="params">(Style style)</span>;</span><br><span class="line">  <span class="comment">//设置颜色值</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">setColor</span><span class="params">( <span class="type">int</span> color)</span>;</span><br><span class="line"><span class="comment">//设置透明图0~255，要在setColor后面设置才生效</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">setAlpha</span><span class="params">( <span class="type">int</span> a)</span>;   </span><br><span class="line"><span class="comment">//设置RGB及透明度</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">setARGB</span><span class="params">( <span class="type">int</span> a,  <span class="type">int</span> r,  <span class="type">int</span> g,  <span class="type">int</span> b)</span>;  </span><br><span class="line"><span class="comment">//当画笔样式为STROKE或FILL_OR_STROKE时，设置笔刷的粗细度  </span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">setStrokeWidth</span><span class="params">( <span class="type">float</span> width)</span>;</span><br><span class="line"><span class="keyword">void</span> <span class="title function_">setStrokeMiter</span><span class="params">( <span class="type">float</span> miter)</span>;</span><br><span class="line"><span class="comment">//当画笔样式为STROKE或FILL_OR_STROKE时，设置笔刷末端的图形样式</span></span><br><span class="line"><span class="comment">//如圆形样式Cap.ROUND,或方形样式Cap.SQUARE  </span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">setStrokeCap</span><span class="params">(Cap cap)</span>;</span><br><span class="line"><span class="comment">//设置绘制时各图形的结合方式，如平滑效果等  </span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">setStrokeJoin</span><span class="params">(Join join)</span>;</span><br><span class="line"><span class="comment">//设置图像效果，使用Shader可以绘制出各种渐变效果  </span></span><br><span class="line">Shader <span class="title function_">setShader</span><span class="params">(Shader shader)</span>;</span><br><span class="line"><span class="comment">//设置颜色过滤器，可以在绘制颜色时实现不用颜色的变换效果 </span></span><br><span class="line">ColorFilter <span class="title function_">setColorFilter</span><span class="params">(ColorFilter filter)</span>;</span><br><span class="line"><span class="comment">//设置图形重叠时的处理方式，如合并，取交集或并集，经常用来制作橡皮的擦除效果 </span></span><br><span class="line">Xfermode <span class="title function_">setXfermode</span><span class="params">(Xfermode xfermode)</span>;</span><br><span class="line"><span class="comment">//设置绘制路径的效果，如点画线等 </span></span><br><span class="line">PathEffect <span class="title function_">setPathEffect</span><span class="params">(PathEffect effect)</span>;</span><br><span class="line"><span class="comment">//设置MaskFilter，可以用不同的MaskFilter实现滤镜的效果，如滤化，立体等  </span></span><br><span class="line">MaskFilter <span class="title function_">setMaskFilter</span><span class="params">(MaskFilter maskfilter)</span>;</span><br><span class="line"><span class="comment">//设置Typeface对象，即字体风格，包括粗体，斜体以及衬线体，非衬线体等  </span></span><br><span class="line">Typeface <span class="title function_">setTypeface</span><span class="params">(Typeface typeface)</span>;</span><br><span class="line"><span class="comment">//设置光栅化</span></span><br><span class="line">Rasterizer <span class="title function_">setRasterizer</span><span class="params">(Rasterizer rasterizer)</span>;</span><br><span class="line"><span class="comment">//在图形下面设置阴影层，产生阴影效果，radius为阴影的角度，dx和dy为阴影在x轴和y轴上的距离，color为阴影的颜色</span></span><br><span class="line"><span class="comment">//注意：在Android4.0以上默认开启硬件加速，有些图形的阴影无法显示。关闭View的硬件加速 view.setLayerType(View.LAYER_TYPE_SOFTWARE, null);</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">setShadowLayer</span><span class="params">( <span class="type">float</span> radius,  <span class="type">float</span> dx,  <span class="type">float</span> dy,  <span class="type">int</span> color)</span>;</span><br><span class="line"><span class="comment">//设置文本对齐</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">setTextAlign</span><span class="params">(Align align)</span>;</span><br><span class="line"><span class="comment">//设置字体大小</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">setTextSize</span><span class="params">( <span class="type">float</span> textSize)</span>;</span><br><span class="line"><span class="comment">//设置文本缩放倍数，1.0f为原始</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">setTextScaleX</span><span class="params">( <span class="type">float</span> scaleX)</span>;</span><br><span class="line"><span class="comment">//设置斜体文字，skewX为倾斜弧度  </span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">setTextSkewX</span><span class="params">( <span class="type">float</span> skewX)</span>;</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Path（路径）"><a href="#Path（路径）" class="headerlink" title="Path（路径）"></a>Path（路径）</h3><p>Path类封装了由直线段，二次曲线和三次曲线组成的复合（多轮廓）几何路径。 它可以用canvas.drawPath（path，paint）绘制，可以是填充或描边（基于绘制的样式），也可以用于剪裁或在路径上绘制文本。 详情见：<a class="link" target="_blank" rel="noopener" href="https://www.apiref.com/android-zh/android/graphics/Path.html">Android开发手册-Path<i class="fas fa-external-link-alt"></i></a></p>
+<h1 id="常见的自定义View类型"><a href="#常见的自定义View类型" class="headerlink" title="常见的自定义View类型"></a>常见的自定义View类型</h1><p>如1.1小节说的，自定义View主要可以分为自定义View和自定义ViewGroup两种，常见的自定义View分为以下4种类型：</p>
+<ul>
+<li>继承系统提供的现有控件的自定义View；</li>
+<li>继承View类的自定义View；</li>
+<li>将多个单一的View合成复杂的自定义组合View；</li>
+<li>继承ViewGroup类的自定义View（引导）；</li>
+</ul>
+<p>接下来根据每种类型依次介绍。</p>
+<h1 id="继承系统提供的现有控件的自定义View"><a href="#继承系统提供的现有控件的自定义View" class="headerlink" title="继承系统提供的现有控件的自定义View"></a>继承系统提供的现有控件的自定义View</h1><p>继承系统控件，一般是为了在系统控件上增加新的特性，可以在onDraw()方法里进行处理即可。系统控件TextView可以正常设置背景颜色和文本内容，但如果需要增加背景线条等特殊操作，正常的TextView的API函数是无法做到的。这时候就可以通过自定义View来实现了：</p>
+<p><img lazyload="" alt="image" data-src="https://uploadfiles.nowcoder.com/images/20231120/545613072_1700451566993/D2B5CA33BD970F64A6301FA75AE2EB22"></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyTextView</span> <span class="keyword">extends</span> <span class="title class_">TextView</span> { <span class="comment">//继承TextView</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">Paint</span> <span class="variable">mPaint</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Paint</span>(Paint.DITHER_FLAG); <span class="comment">//绘制时启用抗锯齿功能的绘制标志</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">MyTextView</span><span class="params">(Context context)</span> {</span><br><span class="line">        <span class="built_in">super</span>(context);</span><br><span class="line">        initDraw();</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">MyTextView</span><span class="params">(Context context, AttributeSet attrs)</span> {</span><br><span class="line">        <span class="built_in">super</span>(context, attrs);</span><br><span class="line">        initDraw();</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">MyTextView</span><span class="params">(Context context, AttributeSet attrs, <span class="type">int</span> defStyleAttr)</span> {</span><br><span class="line">        <span class="built_in">super</span>(context, attrs, defStyleAttr);</span><br><span class="line">        initDraw();</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">initDraw</span><span class="params">()</span> {</span><br><span class="line">        mPaint.setColor(Color.BLUE); <span class="comment">//设置画笔颜色</span></span><br><span class="line">        mPaint.setStrokeWidth((<span class="type">float</span>) <span class="number">1.5</span>); <span class="comment">//设置画笔宽度，也就是字体的宽度</span></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onDraw</span><span class="params">(Canvas canvas)</span> {</span><br><span class="line">        <span class="built_in">super</span>.onDraw(canvas);</span><br><span class="line">        <span class="type">int</span> <span class="variable">width</span> <span class="operator">=</span> getWidth();</span><br><span class="line">        <span class="type">int</span> <span class="variable">height</span> <span class="operator">=</span> getHeight();</span><br><span class="line">        canvas.drawLine(<span class="number">0</span>, <span class="number">0</span>, width, height, mPaint); <span class="comment">//绘制线条</span></span><br><span class="line">        canvas.drawLine(<span class="number">0</span>, height, width, <span class="number">0</span>, mPaint); <span class="comment">//绘制线条</span></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>通过以上的代码，就自定义了一个继承TextView的自定义View，这时候只要在xml文件里直接引用该控件即可：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;com.example.android.MyTextView </span><br><span class="line">    android:id=<span class="string">"@+id/iv_text"</span></span><br><span class="line">    android:layout_width=<span class="string">"250dp"</span></span><br><span class="line">    android:layout_height=<span class="string">"150dp"</span></span><br><span class="line">    android:textSize=<span class="string">"15sp"</span></span><br><span class="line">    android:background=<span class="string">"@android:color/blue"</span></span><br><span class="line">    android:layout_centerHorizontal=<span class="string">"true"</span></span><br><span class="line">    android:text=<span class="string">"自定义TextView"</span></span><br><span class="line">    /&gt;</span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="继承View类的自定义View"><a href="#继承View类的自定义View" class="headerlink" title="继承View类的自定义View"></a>继承View类的自定义View</h1><h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>上面继承系统控件相对简单，如果是继承View类的自定义View，就不仅要重写onDraw()方法，还要考虑以下几点：</p>
+<ul>
+<li>padding属性处理；</li>
+<li>wrap_content属性处理；</li>
+<li>提供自定义属性，方便自定义View的属性配置；</li>
+<li>如果涉及触摸操作，还需要重写onTouchEvent()方法来处理触摸事件；</li>
+</ul>
+<p>既然是继承View类来创造一个新的View控件，我们画一个贝塞尔曲线，就是仿手机边缘滑动时的曲线图：</p>
+<p><img lazyload="" alt="image" data-src="https://uploadfiles.nowcoder.com/images/20231120/545613072_1700451579691/D2B5CA33BD970F64A6301FA75AE2EB22"></p>
+<p>直接上代码（为方便展示，以下是最终版本的代码）：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">BezierView</span> <span class="keyword">extends</span> <span class="title class_">View</span> {</span><br><span class="line">    <span class="keyword">private</span> Path bezierPath; <span class="comment">//贝塞尔曲线路径</span></span><br><span class="line">    <span class="keyword">private</span> Paint paint; <span class="comment">//画笔</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> mColor=Color.BLACK;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">BezierView</span><span class="params">(Context context)</span> {</span><br><span class="line">        <span class="built_in">super</span>(context);</span><br><span class="line">        initDraw();</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">BezierView</span><span class="params">(Context context, AttributeSet attrs)</span> {</span><br><span class="line">        <span class="built_in">super</span>(context, attrs);</span><br><span class="line">        TypedArray mTypedArray=context.obtainStyledAttributes(attrs,R.styleable.BezierView);</span><br><span class="line">        <span class="comment">//提取BezierView属性集合的bezier_color属性，如果没设置默认值为Color.BLACK</span></span><br><span class="line">        mColor=mTypedArray.getColor(R.styleable.bezier_color,Color.BLACK);</span><br><span class="line">        <span class="comment">//获取资源后要及时回收</span></span><br><span class="line">        mTypedArray.recycle();</span><br><span class="line">        initDraw();</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">BezierView</span><span class="params">(Context context, AttributeSet attrs, <span class="type">int</span> defStyleAttr)</span> {</span><br><span class="line">        <span class="built_in">super</span>(context, attrs, defStyleAttr);</span><br><span class="line">        initDraw();</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 初始化路径和画笔</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">initDraw</span><span class="params">()</span> {</span><br><span class="line">        bezierPath = <span class="keyword">new</span> <span class="title class_">Path</span>();</span><br><span class="line">        paint = <span class="keyword">new</span> <span class="title class_">Paint</span>();</span><br><span class="line">        paint.setAntiAlias(<span class="literal">true</span>);</span><br><span class="line">        paint.setStyle(Paint.Style.FILL);</span><br><span class="line">        paint.setColor(Color.RED);</span><br><span class="line">        paint.setStrokeWidth((<span class="type">float</span>) <span class="number">1.5</span>);</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">     <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onMeasure</span><span class="params">(<span class="type">int</span> widthMeasureSpec, <span class="type">int</span> heightMeasureSpec)</span> { <span class="comment">//1</span></span><br><span class="line">        <span class="built_in">super</span>.onMeasure(widthMeasureSpec, heightMeasureSpec);</span><br><span class="line">        <span class="type">int</span> <span class="variable">defaultValue</span> <span class="operator">=</span> <span class="number">700</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">widthSpecMode</span> <span class="operator">=</span> MeasureSpec.getMode(widthMeasureSpec);</span><br><span class="line">        <span class="type">int</span> <span class="variable">heightSpecMode</span> <span class="operator">=</span> MeasureSpec.getMode(heightMeasureSpec);</span><br><span class="line">        <span class="type">int</span> widthSpecSize=MeasureSpec.getSize(widthMeasureSpec);</span><br><span class="line">        <span class="type">int</span> heightSpecSize=MeasureSpec.getSize(heightMeasureSpec);</span><br><span class="line">       </span><br><span class="line">       <span class="comment">//AT_MOST对应的是wrap_content的宽高</span></span><br><span class="line">       <span class="keyword">if</span>(widthSpecMode==MeasureSpec.AT_MOST&amp;&amp;heightSpecMode==MeasureSpec.AT_MOST){</span><br><span class="line">            setMeasuredDimension(defaultValue,defaultValue);</span><br><span class="line">        }<span class="keyword">else</span> <span class="keyword">if</span>(widthSpecMode==MeasureSpec.AT_MOST){</span><br><span class="line">            setMeasuredDimension(defaultValue,heightSpecSize);</span><br><span class="line">        }<span class="keyword">else</span> <span class="keyword">if</span>(heightSpecMode==MeasureSpec.AT_MOST){</span><br><span class="line">            setMeasuredDimension(widthSpecSize,defaultValue);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onDraw</span><span class="params">(Canvas canvas)</span> {</span><br><span class="line">        <span class="built_in">super</span>.onDraw(canvas);</span><br><span class="line">        <span class="comment">// 半弧的宽度是可以根据手指位置而变化的，这里简化写死为200</span></span><br><span class="line">        <span class="type">float</span> <span class="variable">currentWidth</span> <span class="operator">=</span> <span class="number">200</span>;</span><br><span class="line">        <span class="type">float</span> <span class="variable">height</span> <span class="operator">=</span> getHeight();</span><br><span class="line">        <span class="type">int</span> <span class="variable">maxWidth</span> <span class="operator">=</span> getWidth();</span><br><span class="line">        <span class="type">float</span> <span class="variable">centerY</span> <span class="operator">=</span> height / <span class="number">2</span>;</span><br><span class="line">        <span class="type">float</span> <span class="variable">progress</span> <span class="operator">=</span> currentWidth / maxWidth;</span><br><span class="line">        <span class="keyword">if</span> (progress == <span class="number">0</span>) {</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="comment">//开始画半弧图形</span></span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        ps: 形状如下，小点为起始点和结束点，星号为控制点</span></span><br><span class="line"><span class="comment">        ·</span></span><br><span class="line"><span class="comment">        |</span></span><br><span class="line"><span class="comment">        *</span></span><br><span class="line"><span class="comment">             *</span></span><br><span class="line"><span class="comment">             |</span></span><br><span class="line"><span class="comment">             ·</span></span><br><span class="line"><span class="comment">             |</span></span><br><span class="line"><span class="comment">             *</span></span><br><span class="line"><span class="comment">        *</span></span><br><span class="line"><span class="comment">        |</span></span><br><span class="line"><span class="comment">        ·</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="comment">//设置画笔颜色，现在设置为黑色</span></span><br><span class="line">        paint.setColor(mColor);</span><br><span class="line">        <span class="comment">//半弧颜色的深度是可以根据手指位置而变化的，这里简化写死</span></span><br><span class="line">        paint.setAlpha((<span class="type">int</span>) (<span class="number">500</span> * progress));</span><br><span class="line"></span><br><span class="line">        <span class="type">float</span> <span class="variable">bezierWidth</span> <span class="operator">=</span> currentWidth / <span class="number">2</span>;</span><br><span class="line">        <span class="type">float</span> <span class="variable">coordinateX</span> <span class="operator">=</span> <span class="number">0</span>;  <span class="comment">//2</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//正式绘制贝塞尔曲线，使用cubicTo()方法</span></span><br><span class="line">        bezierPath.reset();</span><br><span class="line">        bezierPath.moveTo(coordinateX, <span class="number">0</span>);</span><br><span class="line">        bezierPath.cubicTo(coordinateX, height / <span class="number">4f</span>, bezierWidth, height * <span class="number">3f</span> / <span class="number">8</span>, bezierWidth, centerY);</span><br><span class="line">        bezierPath.cubicTo(bezierWidth, height * <span class="number">5f</span> / <span class="number">8</span>, coordinateX, height * <span class="number">3f</span> / <span class="number">4</span>, coordinateX, height);</span><br><span class="line">        canvas.drawPath(bezierPath, paint);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>上述代码都做了详细的注释，先是初始化画笔，接着在onDraw()方法按照我们自己的思路，绘制贝塞尔曲线，接着只要在xml布局文件引用该自定义View即可（这几行代码下文多次讲到，记得回来这里看）：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;com.example.android.BezierView </span><br><span class="line">    xmlns:app=<span class="string">"http://schemas.android.com/apk/res-auto"</span></span><br><span class="line">    android:id=<span class="string">"@+id/rv_bezier"</span></span><br><span class="line">    android:layout_width=<span class="string">"match_parent"</span>  &lt;!-- <span class="number">3</span> --&gt;</span><br><span class="line">    android:layout_height=<span class="string">"200dp"</span></span><br><span class="line">    android:layout_below=<span class="string">"@id/iv_text"</span></span><br><span class="line">    android:layout_centerHorizontal=<span class="string">"true"</span></span><br><span class="line">    android:layout_marginTop=<span class="string">"50dp"</span></span><br><span class="line">    android:padding=<span class="string">"10dp"</span>    &lt;!-- <span class="number">4</span> --&gt;</span><br><span class="line">    app:bezier_color=<span class="string">"@android:color/black"</span> /&gt;  &lt;!-- <span class="number">5</span> --&gt;</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="处理padding"><a href="#处理padding" class="headerlink" title="处理padding"></a>处理padding</h2><p>上面<code>[注释4]</code>指定的padding（内边距），会发现无论修改到任何数值，绘制出来的View都不受影响，这是因为我们需要在onDraw()方法里做特殊处理才能显示出效果。至于系统控件设置padding数值可以生效，正是系统帮我们处理好了。</p>
+<p>因此，在BezierView的onDraw()中的<code>[注释2]</code>需要做如下修改：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//原来的代码：</span></span><br><span class="line"><span class="type">float</span> <span class="variable">coordinateX</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"> </span><br><span class="line"><span class="comment">//修改为：</span></span><br><span class="line"><span class="type">int</span> <span class="variable">paddingLeft</span> <span class="operator">=</span> getPaddingLeft();</span><br><span class="line"><span class="type">float</span> <span class="variable">coordinateX</span> <span class="operator">=</span> paddingLeft;</span><br></pre></td></tr></tbody></table></figure>
+
+<p>其中coordinateX是贝塞尔曲线横坐标的开始点，我们需要手动获取xml布局文件设置的偏差值，手动的修改coordinateX，如此就可以使padding值生效。效果图如下，可以发现图像确实往中间偏移了一些：</p>
+<p><img lazyload="" alt="image" data-src="https://uploadfiles.nowcoder.com/images/20231120/545613072_1700451592836/D2B5CA33BD970F64A6301FA75AE2EB22"></p>
+<h2 id="wrap-content属性处理"><a href="#wrap-content属性处理" class="headerlink" title="wrap_content属性处理"></a>wrap_content属性处理</h2><p>在xml布局文件修改android:layout_width属性为match_parent或者wrap_content，最终发现效果都是一样的。导致这个原因，在参考文档3的2.3小节有介绍，我们需要在onMeasure()方法里给wrap_content属性设置默认宽高值，代码已经在上面BezierView类写清楚了，即<code>[注释1]</code>。接着，看看android:layout_width属性设置为match_parent或者wrap_content的区别（为了更直观看出差别，直接给BezierView整个控件设置了背景颜色）：</p>
+<ul>
+<li>android:layout_width=match_parent或者android:layout_width=wrap_content但没有重写onMeasure()</li>
+</ul>
+<p><img lazyload="" alt="image" data-src="https://uploadfiles.nowcoder.com/images/20231120/545613072_1700451610210/D2B5CA33BD970F64A6301FA75AE2EB22"></p>
+<ul>
+<li>android:layout_width=wrap_content并且重写onMeasure()</li>
+</ul>
+<p><img lazyload="" alt="image" data-src="https://uploadfiles.nowcoder.com/images/20231120/545613072_1700451616873/D2B5CA33BD970F64A6301FA75AE2EB22"></p>
+<h2 id="添加自定义属性"><a href="#添加自定义属性" class="headerlink" title="添加自定义属性"></a>添加自定义属性</h2><p>我们看5.1小节最后的代码，以<code>android:</code>开头的都是系统自带的属性，而<code>[注释5]</code>：app:bezier_color，是自定义的属性。只要在values目录下创建attrs.xml文件：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"utf-8"</span>?&gt;</span><br><span class="line">&lt;resources&gt;</span><br><span class="line">    &lt;declare-styleable name=<span class="string">"BezierView"</span>&gt;</span><br><span class="line">        &lt;attr name=<span class="string">"bezier_color"</span> format=<span class="string">"color"</span> /&gt;</span><br><span class="line">    &lt;/declare-styleable&gt;</span><br><span class="line">&lt;/resources&gt;</span><br></pre></td></tr></tbody></table></figure>
+
+<p>在这个文件我们设置了一个名为BezierView的自定义属性组合，里面可以有多个属性，目前只需要一个颜色格式的属性：bezier_color。可以根据需要添加多个属性。创建好后，我们看看如何使用，有两个地方需要修改：</p>
+<ul>
+<li>Step1：xml布局文件修改</li>
+</ul>
+<p>自定义属性需要添加：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xmlns:app=<span class="string">"http://schemas.android.com/apk/res-auto"</span> &lt;!-- <span class="number">6</span> --&gt;</span><br><span class="line">app:bezier_color=<span class="string">"@android:color/black"</span> /&gt;   &lt;!-- <span class="number">7</span> --&gt;</span><br></pre></td></tr></tbody></table></figure>
+
+<p>使用自定义属性，都要添加<code>[注释6]</code>。其中<code>app</code>是自定义的名字，可以改为其他的。最后在<code>[注释7]</code>配置为黑色。</p>
+<ul>
+<li>Step2：代码修改 在上面BezierView的代码里有如下构造函数：</li>
+</ul>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="title function_">BezierView</span><span class="params">(Context context, AttributeSet attrs)</span> {</span><br><span class="line">        <span class="built_in">super</span>(context, attrs);</span><br><span class="line">        <span class="comment">//获取自定义属性组合</span></span><br><span class="line">        TypedArray mTypedArray=context.obtainStyledAttributes(attrs,R.styleable.BezierView);</span><br><span class="line">        <span class="comment">//提取BezierView属性集合的bezier_color属性，如果没设置默认值为Color.BLACK</span></span><br><span class="line">        mColor=mTypedArray.getColor(R.styleable.bezier_color,Color.BLACK);</span><br><span class="line">        <span class="comment">//获取资源后要及时回收</span></span><br><span class="line">        mTypedArray.recycle();</span><br><span class="line">        initDraw();</span><br><span class="line">    }</span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="将多个单一的View合成复杂的自定义组合View"><a href="#将多个单一的View合成复杂的自定义组合View" class="headerlink" title="将多个单一的View合成复杂的自定义组合View"></a>将多个单一的View合成复杂的自定义组合View</h1><p>Android系统自带的AlertDialog比较丑，因此想要自定义一个MyDialogView，如下图：</p>
+<p><img lazyload="" alt="image" data-src="https://uploadfiles.nowcoder.com/images/20231120/545613072_1700451626100/D2B5CA33BD970F64A6301FA75AE2EB22"></p>
+<p>可以简单的看出，这个自定义组合View包含至少2个TextView、2个Button、1个ImageView。还是先上最终完整代码，再进行解析：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyDialogView</span> <span class="keyword">extends</span> <span class="title class_">Dialog</span> {</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">MyDialogView</span><span class="params">(Context context)</span> {</span><br><span class="line">        <span class="built_in">super</span>(context);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">MyDialogView</span><span class="params">(Context context, <span class="type">int</span> theme)</span> {</span><br><span class="line">        <span class="built_in">super</span>(context, theme);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">px2dip</span><span class="params">(Context context, <span class="type">float</span> pxValue)</span> {</span><br><span class="line">        <span class="type">float</span> <span class="variable">scale</span> <span class="operator">=</span> context.getResources().getDisplayMetrics().density;</span><br><span class="line">        <span class="keyword">return</span> (<span class="type">int</span>) (pxValue / scale + <span class="number">0.5f</span>);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onStart</span><span class="params">()</span> {</span><br><span class="line">        <span class="built_in">super</span>.onStart();</span><br><span class="line">        <span class="comment">//8:设置窗口背景为透明</span></span><br><span class="line">        getWindow().setBackgroundDrawable(<span class="keyword">new</span> <span class="title class_">ColorDrawable</span>(Color.TRANSPARENT));</span><br><span class="line">        getWindow().setLayout(px2dip(getContext(), <span class="number">2010</span>), LinearLayout.LayoutParams.WRAP_CONTENT);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">Builder</span> {</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">final</span> Context context;</span><br><span class="line">        <span class="keyword">private</span> String title;</span><br><span class="line">        <span class="keyword">private</span> String message;</span><br><span class="line">        <span class="keyword">private</span> String positiveButtonText;</span><br><span class="line">        <span class="keyword">private</span> String negativeButtonText;</span><br><span class="line">        <span class="keyword">private</span> DialogInterface.OnClickListener positiveButtonClickListener;</span><br><span class="line">        <span class="keyword">private</span> DialogInterface.OnClickListener negativeButtonClickListener;</span><br><span class="line">        <span class="keyword">private</span> Drawable mIcon;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> <span class="title function_">Builder</span><span class="params">(Context context)</span> {</span><br><span class="line">            <span class="built_in">this</span>.context = context;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="comment">//设置图标</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setIcon</span><span class="params">(Drawable icon)</span> {</span><br><span class="line">            mIcon = icon;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="comment">//设置消息内容</span></span><br><span class="line">        <span class="keyword">public</span> Builder <span class="title function_">setMessage</span><span class="params">(String message)</span> {</span><br><span class="line">            <span class="built_in">this</span>.message = message;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">this</span>;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="comment">//设置消息内容</span></span><br><span class="line">        <span class="keyword">public</span> Builder <span class="title function_">setMessage</span><span class="params">(<span class="type">int</span> message)</span> {</span><br><span class="line">            <span class="built_in">this</span>.message = (String) context.getText(message);</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">this</span>;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="comment">//设置标题内容</span></span><br><span class="line">        <span class="keyword">public</span> Builder <span class="title function_">setTitle</span><span class="params">(<span class="type">int</span> title)</span> {</span><br><span class="line">            <span class="built_in">this</span>.title = (String) context.getText(title);</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">this</span>;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="comment">//设置标题内容</span></span><br><span class="line">        <span class="keyword">public</span> Builder <span class="title function_">setTitle</span><span class="params">(String title)</span> {</span><br><span class="line">            <span class="built_in">this</span>.title = title;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">this</span>;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="comment">//设置确认按钮回调</span></span><br><span class="line">        <span class="keyword">public</span> Builder <span class="title function_">setPositiveButton</span><span class="params">(<span class="type">int</span> positiveButtonText,</span></span><br><span class="line"><span class="params">                                         DialogInterface.OnClickListener listener)</span> {</span><br><span class="line">            <span class="built_in">this</span>.positiveButtonText = (String) context</span><br><span class="line">                    .getText(positiveButtonText);</span><br><span class="line">            <span class="built_in">this</span>.positiveButtonClickListener = listener;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">this</span>;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="comment">//设置确认按钮回调</span></span><br><span class="line">        <span class="keyword">public</span> Builder <span class="title function_">setPositiveButton</span><span class="params">(String positiveButtonText,</span></span><br><span class="line"><span class="params">                                         DialogInterface.OnClickListener listener)</span> {</span><br><span class="line">            <span class="built_in">this</span>.positiveButtonText = positiveButtonText;</span><br><span class="line">            <span class="built_in">this</span>.positiveButtonClickListener = listener;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">this</span>;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="comment">//设置取消按钮回调</span></span><br><span class="line">        <span class="keyword">public</span> Builder <span class="title function_">setNegativeButton</span><span class="params">(<span class="type">int</span> negativeButtonText,</span></span><br><span class="line"><span class="params">                                         DialogInterface.OnClickListener listener)</span> {</span><br><span class="line">            <span class="built_in">this</span>.negativeButtonText = (String) context</span><br><span class="line">                    .getText(negativeButtonText);</span><br><span class="line">            <span class="built_in">this</span>.negativeButtonClickListener = listener;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">this</span>;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="comment">//设置取消按钮回调</span></span><br><span class="line">        <span class="keyword">public</span> Builder <span class="title function_">setNegativeButton</span><span class="params">(String negativeButtonText,</span></span><br><span class="line"><span class="params">                                         DialogInterface.OnClickListener listener)</span> {</span><br><span class="line">            <span class="built_in">this</span>.negativeButtonText = negativeButtonText;</span><br><span class="line">            <span class="built_in">this</span>.negativeButtonClickListener = listener;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">this</span>;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> MyDialogView <span class="title function_">create</span><span class="params">()</span> {</span><br><span class="line">            <span class="type">LayoutInflater</span> <span class="variable">inflater</span> <span class="operator">=</span> (LayoutInflater) context</span><br><span class="line">                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);</span><br><span class="line">            <span class="comment">// 9:Step 1: 初始化</span></span><br><span class="line">            <span class="keyword">final</span> <span class="type">MyDialogView</span> <span class="variable">dialog</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MyDialogView</span>(context);</span><br><span class="line">            <span class="type">View</span> <span class="variable">layout</span> <span class="operator">=</span> inflater.inflate(R.layout.my_alert_dialog, <span class="literal">null</span>);</span><br><span class="line">            dialog.addContentView(layout, <span class="keyword">new</span> <span class="title class_">LinearLayout</span>.LayoutParams(</span><br><span class="line">                    LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));</span><br><span class="line"></span><br><span class="line">            <span class="comment">// Step 2：设置图标，如果不设置则隐藏图标ImageView控件</span></span><br><span class="line">            <span class="keyword">if</span> (mIcon != <span class="literal">null</span>) {</span><br><span class="line">                layout.findViewById(R.id.my_alert_dialog_icon).setVisibility(View.VISIBLE);</span><br><span class="line">                ((ImageView) layout.findViewById(R.id.my_alert_dialog_icon)).setImageDrawable(mIcon);</span><br><span class="line">            } <span class="keyword">else</span> {</span><br><span class="line">                layout.findViewById(R.id.my_alert_dialog_icon).setVisibility(View.GONE);</span><br><span class="line">            }</span><br><span class="line"></span><br><span class="line">            <span class="comment">// Step 3：设置标题，如果不设置则隐藏标题TextView控件</span></span><br><span class="line">            <span class="keyword">if</span> (title != <span class="literal">null</span>) {</span><br><span class="line">                ((TextView) layout.findViewById(R.id.my_alert_dialog_title)).setText(title);</span><br><span class="line">                ((TextView) layout.findViewById(R.id.my_alert_dialog_title)).setVisibility(View.VISIBLE);</span><br><span class="line">            } <span class="keyword">else</span> {</span><br><span class="line">                layout.findViewById(R.id.my_alert_dialog_title).setVisibility(View.GONE);</span><br><span class="line">            }</span><br><span class="line"></span><br><span class="line">            <span class="comment">// Step 4：设置确认按钮，如果不设置则隐藏确认控件</span></span><br><span class="line">            <span class="keyword">if</span> (positiveButtonText != <span class="literal">null</span>) {</span><br><span class="line">                ((TextView) layout.findViewById(R.id.my_alert_dialog_button_positive))</span><br><span class="line">                        .setVisibility(View.VISIBLE);</span><br><span class="line">                ((TextView) layout.findViewById(R.id.my_alert_dialog_button_positive))</span><br><span class="line">                        .setText(positiveButtonText);</span><br><span class="line">                <span class="keyword">if</span> (positiveButtonClickListener != <span class="literal">null</span>) {</span><br><span class="line">                    layout.findViewById(R.id.my_alert_dialog_button_positive)</span><br><span class="line">                            .setOnClickListener(<span class="keyword">new</span> <span class="title class_">View</span>.OnClickListener() {</span><br><span class="line">                                <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onClick</span><span class="params">(View v)</span> {</span><br><span class="line">                                    positiveButtonClickListener.onClick(dialog,</span><br><span class="line">                                            DialogInterface.BUTTON_POSITIVE);</span><br><span class="line">                                }</span><br><span class="line">                            });</span><br><span class="line">                }</span><br><span class="line">            } <span class="keyword">else</span> {</span><br><span class="line">                layout.findViewById(R.id.my_alert_dialog_button_negative).setVisibility(</span><br><span class="line">                        View.GONE);</span><br><span class="line">            }</span><br><span class="line"></span><br><span class="line">            <span class="comment">// Step 5：设置取消按钮，如果不设置则隐藏取消控件</span></span><br><span class="line">            <span class="keyword">if</span> (negativeButtonText != <span class="literal">null</span>) {</span><br><span class="line">                ((TextView) layout.findViewById(R.id.my_alert_dialog_button_negative))</span><br><span class="line">                        .setVisibility(View.VISIBLE);</span><br><span class="line">                ((TextView) layout.findViewById(R.id.my_alert_dialog_button_negative))</span><br><span class="line">                        .setText(negativeButtonText);</span><br><span class="line">                <span class="keyword">if</span> (negativeButtonClickListener != <span class="literal">null</span>) {</span><br><span class="line">                    layout.findViewById(R.id.my_alert_dialog_button_negative)</span><br><span class="line">                            .setOnClickListener(<span class="keyword">new</span> <span class="title class_">View</span>.OnClickListener() {</span><br><span class="line">                                <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onClick</span><span class="params">(View v)</span> {</span><br><span class="line">                                    negativeButtonClickListener.onClick(dialog,</span><br><span class="line">                                            DialogInterface.BUTTON_NEGATIVE);</span><br><span class="line">                                }</span><br><span class="line">                            });</span><br><span class="line">                }</span><br><span class="line">            } <span class="keyword">else</span> {</span><br><span class="line">                layout.findViewById(R.id.my_alert_dialog_button_negative).setVisibility(</span><br><span class="line">                        View.GONE);</span><br><span class="line">            }</span><br><span class="line"></span><br><span class="line">            <span class="comment">// Step 6：设置消息内容，如果不设置则隐藏消息TextView控件</span></span><br><span class="line">            <span class="keyword">if</span> (message != <span class="literal">null</span>) {</span><br><span class="line">                ((TextView) layout.findViewById(R.id.my_alert_dialog_message)).setVisibility(View.VISIBLE);</span><br><span class="line">                ((TextView) layout.findViewById(R.id.my_alert_dialog_message)).setText(message);</span><br><span class="line">            } <span class="keyword">else</span> {</span><br><span class="line">                ((TextView) layout.findViewById(R.id.my_alert_dialog_message)).setVisibility(View.GONE);</span><br><span class="line">            }</span><br><span class="line"></span><br><span class="line">            dialog.setContentView(layout);</span><br><span class="line">            <span class="keyword">return</span> dialog;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>在MainActivity里面可以这么使用：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onCreate</span><span class="params">(Bundle savedInstanceState)</span> {</span><br><span class="line">        <span class="built_in">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        <span class="comment">//使用建造者设计模式进行建造</span></span><br><span class="line">        MyDialogView.<span class="type">Builder</span> <span class="variable">builder</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MyDialogView</span>.Builder(MainActivity.<span class="built_in">this</span>);</span><br><span class="line">        builder.setIcon(getDrawable(R.drawable.mydialog));</span><br><span class="line">        builder.setMessage(<span class="string">"这是消息内容"</span>);</span><br><span class="line">        builder.setTitle(<span class="string">"这是一个标题"</span>);</span><br><span class="line">        builder.setPositiveButton(<span class="string">"确定"</span>, <span class="keyword">new</span> <span class="title class_">DialogInterface</span>.OnClickListener() {</span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onClick</span><span class="params">(DialogInterface dialog, <span class="type">int</span> which)</span> {</span><br><span class="line">                dialog.dismiss();</span><br><span class="line">            }</span><br><span class="line">        });</span><br><span class="line">        builder.setNegativeButton(<span class="string">"取消"</span>,</span><br><span class="line">                <span class="keyword">new</span> <span class="title class_">android</span>.content.DialogInterface.OnClickListener() {</span><br><span class="line">                    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onClick</span><span class="params">(DialogInterface dialog, <span class="type">int</span> which)</span> {</span><br><span class="line">                        dialog.dismiss();</span><br><span class="line">                    }</span><br><span class="line">                });</span><br><span class="line">        builder.create().show();</span><br><span class="line">    }</span><br></pre></td></tr></tbody></table></figure>
+
+<p>上面的代码基本每个函数都做了注释。自定义组合View的关键是先写好xml布局文件，然后在代码里去<code>动态</code>的操作xml布局文件里的各种控件。先附上xml布局文件</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"utf-8"</span>?&gt;</span><br><span class="line"></span><br><span class="line">&lt;RelativeLayout xmlns:android=<span class="string">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    android:id=<span class="string">"@+id/install_RelativeLayout"</span></span><br><span class="line">    android:layout_width=<span class="string">"760dp"</span></span><br><span class="line">    android:layout_height=<span class="string">"wrap_content"</span></span><br><span class="line">    android:background=<span class="string">"@drawable/my_alertdialog_blackground"</span>&gt;</span><br><span class="line"></span><br><span class="line">    &lt;ImageView</span><br><span class="line">        android:id=<span class="string">"@+id/my_alert_dialog_icon"</span></span><br><span class="line">        android:layout_width=<span class="string">"64dp"</span></span><br><span class="line">        android:layout_height=<span class="string">"64dp"</span></span><br><span class="line">        android:layout_centerHorizontal=<span class="string">"true"</span></span><br><span class="line">        android:layout_marginTop=<span class="string">"32dp"</span></span><br><span class="line">        android:scaleType=<span class="string">"fitCenter"</span> /&gt;</span><br><span class="line"></span><br><span class="line">    &lt;TextView</span><br><span class="line">        android:id=<span class="string">"@+id/my_alert_dialog_title"</span></span><br><span class="line">        android:layout_width=<span class="string">"match_parent"</span></span><br><span class="line">        android:layout_height=<span class="string">"wrap_content"</span></span><br><span class="line">        android:layout_below=<span class="string">"@id/my_alert_dialog_icon"</span></span><br><span class="line">        android:layout_gravity=<span class="string">"center"</span></span><br><span class="line">        android:lineSpacingMultiplier=<span class="string">"1.2"</span></span><br><span class="line">        android:layout_marginTop=<span class="string">"8dp"</span></span><br><span class="line">        android:gravity=<span class="string">"center"</span></span><br><span class="line">        android:layout_marginStart=<span class="string">"32dp"</span></span><br><span class="line">        android:layout_marginEnd=<span class="string">"32dp"</span></span><br><span class="line">        android:textColor=<span class="string">"#CC000000"</span></span><br><span class="line">        android:textSize=<span class="string">"20sp"</span> /&gt;</span><br><span class="line"></span><br><span class="line">    &lt;TextView</span><br><span class="line">        android:id=<span class="string">"@+id/my_alert_dialog_message"</span></span><br><span class="line">        android:layout_width=<span class="string">"match_parent"</span></span><br><span class="line">        android:layout_height=<span class="string">"wrap_content"</span></span><br><span class="line">        android:layout_below=<span class="string">"@id/my_alert_dialog_title"</span></span><br><span class="line">        android:lineSpacingMultiplier=<span class="string">"1.2"</span></span><br><span class="line">        android:layout_gravity=<span class="string">"center"</span></span><br><span class="line">        android:layout_marginStart=<span class="string">"32dp"</span></span><br><span class="line">        android:layout_marginTop=<span class="string">"8dp"</span></span><br><span class="line">        android:gravity=<span class="string">"center"</span></span><br><span class="line">        android:layout_marginEnd=<span class="string">"32dp"</span></span><br><span class="line">        android:textColor=<span class="string">"#60000000"</span></span><br><span class="line">        android:textSize=<span class="string">"16sp"</span> /&gt;</span><br><span class="line"></span><br><span class="line">    &lt;View</span><br><span class="line">        android:id=<span class="string">"@+id/divider1"</span></span><br><span class="line">        android:layout_marginTop=<span class="string">"32dp"</span></span><br><span class="line">        android:layout_width=<span class="string">"match_parent"</span></span><br><span class="line">        android:layout_height=<span class="string">"1dp"</span></span><br><span class="line">        android:layout_below=<span class="string">"@id/my_alert_dialog_message"</span></span><br><span class="line">        android:background=<span class="string">"#20000000"</span> /&gt;</span><br><span class="line"></span><br><span class="line">    &lt;LinearLayout</span><br><span class="line">        android:id=<span class="string">"@+id/test_info_bottom_button"</span></span><br><span class="line">        android:layout_width=<span class="string">"match_parent"</span></span><br><span class="line">        android:layout_height=<span class="string">"48dp"</span></span><br><span class="line">        android:layout_below=<span class="string">"@id/divider1"</span></span><br><span class="line"></span><br><span class="line">        android:orientation=<span class="string">"horizontal"</span>&gt;</span><br><span class="line"></span><br><span class="line">        &lt;Button</span><br><span class="line">            android:id=<span class="string">"@+id/my_alert_dialog_button_negative"</span></span><br><span class="line">            android:layout_width=<span class="string">"0dp"</span></span><br><span class="line">            android:layout_height=<span class="string">"48dp"</span></span><br><span class="line">            android:layout_weight=<span class="string">"1"</span></span><br><span class="line">            android:textColor=<span class="string">"#FF000000"</span></span><br><span class="line">            android:textSize=<span class="string">"16sp"</span></span><br><span class="line">            android:paddingLeft=<span class="string">"8dp"</span></span><br><span class="line">            android:paddingRight=<span class="string">"8dp"</span></span><br><span class="line">            android:background=<span class="string">"?android:attr/selectableItemBackground"</span>/&gt;</span><br><span class="line"></span><br><span class="line">        &lt;View</span><br><span class="line">            android:id=<span class="string">"@+id/divider2"</span></span><br><span class="line">            android:layout_width=<span class="string">"1dp"</span></span><br><span class="line">            android:layout_height=<span class="string">"match_parent"</span></span><br><span class="line">            android:background=<span class="string">"#20000000"</span> /&gt;</span><br><span class="line"></span><br><span class="line">        &lt;Button</span><br><span class="line">            android:id=<span class="string">"@+id/my_alert_dialog_button_positive"</span></span><br><span class="line">            android:layout_width=<span class="string">"0dp"</span></span><br><span class="line">            android:layout_height=<span class="string">"48dp"</span></span><br><span class="line">            android:layout_weight=<span class="string">"1"</span></span><br><span class="line">            android:background=<span class="string">"?android:attr/selectableItemBackground"</span></span><br><span class="line">            android:paddingLeft=<span class="string">"8dp"</span></span><br><span class="line">            android:paddingRight=<span class="string">"8dp"</span></span><br><span class="line">            android:textColor=<span class="string">"#FF000000"</span></span><br><span class="line">            android:textSize=<span class="string">"16sp"</span> /&gt;</span><br><span class="line">    &lt;/LinearLayout&gt;</span><br><span class="line">&lt;/RelativeLayout&gt;</span><br></pre></td></tr></tbody></table></figure>
+
+<p>上面的xml布局文件就确定了自定义组合View的样式和里面包含什么View控件，接着在MyDialogView类里的create()方法的Step 1，即<code>[注释9]</code>，通过<code> View layout = inflater.inflate(R.layout.my_alert_dialog, null);</code>动态的加载布局文件，并在代码里逐一的操作各个控件，对应代码里Step2-Step6。</p>
+<p>代码虽然比较长，但是逻辑都很简单，花几分钟相信大家就可以看懂，不过其中<code>[注释8]</code>：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">   <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onStart</span><span class="params">()</span> {</span><br><span class="line">       <span class="built_in">super</span>.onStart();</span><br><span class="line">       <span class="comment">//8:设置窗口背景为透明</span></span><br><span class="line">       getWindow().setBackgroundDrawable(<span class="keyword">new</span> <span class="title class_">ColorDrawable</span>(Color.TRANSPARENT));</span><br><span class="line">       getWindow().setLayout(px2dip(getContext(), <span class="number">2010</span>), LinearLayout.LayoutParams.WRAP_CONTENT);</span><br><span class="line">   }</span><br></pre></td></tr></tbody></table></figure>
+
+<p>这个MyDialogView继承了Dialog类，而Dialog类有自己的 Window，我们自定义的MyDialogView的四个角是圆形角，因此需要把Window设置为透明背景，否则会变成下图这样：</p>
+<p><img lazyload="" alt="image" data-src="https://uploadfiles.nowcoder.com/images/20231120/545613072_1700451660655/D2B5CA33BD970F64A6301FA75AE2EB22"></p>
+<h1 id="继承ViewGroup类的自定义View"><a href="#继承ViewGroup类的自定义View" class="headerlink" title="继承ViewGroup类的自定义View"></a>继承ViewGroup类的自定义View</h1><p><a class="link" target="_blank" rel="noopener" href="http://liuwangshu.cn/application/view/11-custom-viewgroup.html">自定义ViewGroup<i class="fas fa-external-link-alt"></i></a></p>
+<h1 id="自定义View优化"><a href="#自定义View优化" class="headerlink" title="自定义View优化"></a>自定义View优化</h1><p>为了使自定义View运行更加流畅，有以下几点需要注意：</p>
+<ul>
+<li>onDraw()尽量不分配内存：onDraw()被调用频率很高，如果在此进行内存分配可能会导致GC，从而导致卡顿；</li>
+<li>使用含有参数的invalidate()：不带参数的invalidate()会强制重绘整个View，所以如果可能的话，尽量调用含有4个参数的invalidate()方法；</li>
+<li>减少requestLayout()调用：requestLayout()会使系统遍历整个View树来计算每个View的大小，是费时操作；</li>
+</ul>
+<h1 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h1><ol>
+<li><a class="link" target="_blank" rel="noopener" href="http://liuwangshu.cn/application/view/1-coordinate-system.html">Android View体系（一）视图坐标系<i class="fas fa-external-link-alt"></i></a></li>
+<li>[自定义 View](<a class="link" target="_blank" rel="noopener" href="https://github.com/Omooo/Android-Notes/blob/master/blogs/Android/%E8%87%AA%E5%AE%9A%E4%B9%89">https://github.com/Omooo/Android-Notes/blob/master/blogs/Android/自定义<i class="fas fa-external-link-alt"></i></a> View.md)</li>
+<li><a class="link" target="_blank" rel="noopener" href="https://www.nowcoder.com/discuss/443536796199260160">View绘制流程全解析<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link" target="_blank" rel="noopener" href="https://blog.csdn.net/shell812/article/details/49781397?ref=myread">Android Paint API总结和使用方法<i class="fas fa-external-link-alt"></i></a></li>
+</ol>
+
+                </div>
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/blog/tags/Android/">Android</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                            <div class="post-share-container border-box">
+    <ul class="share-list-wrap border-box">
+        <li class="qq share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to QQ"
+        >
+            <i class="fa-brands fa-qq"></i>
+        </li>
+        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
+            data-tooltip-content="Share to WeChat"
+            data-tooltip-img-tip="Scan by WeChat"
+            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
+        >
+            <i class="fa-brands fa-weixin"></i>
+        </li>
+        <li class="weibo share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to WeiBo"
+        >
+            <i class="fa-brands fa-weibo"></i>
+        </li>
+    </ul>
+</div>
+
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/blog/2024/06/05/Android-14-AsyncTask/"
+                                   title="AsyncTask"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">AsyncTask</span>
+                                        <span class="post-nav-item">Prev posts</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/blog/2024/06/05/Android-12-%E5%BA%8F%E5%88%97%E5%8C%96/"
+                                   title="序列化"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">序列化</span>
+                                        <span class="post-nav-item">Next posts</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc left-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <!-- use hexo-blog-encrypt -->
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E8%87%AA%E5%AE%9A%E4%B9%89View"><span class="nav-number">1.</span> <span class="nav-text">什么是自定义View</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89View%E5%92%8C%E8%87%AA%E5%AE%9A%E4%B9%89ViewGroup"><span class="nav-number">1.1.</span> <span class="nav-text">自定义View和自定义ViewGroup</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89View%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="nav-number">1.2.</span> <span class="nav-text">自定义View基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="nav-number">1.2.1.</span> <span class="nav-text">坐标系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%9C%E8%89%B2"><span class="nav-number">1.2.2.</span> <span class="nav-text">颜色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A6%E6%91%B8%E4%BA%8B%E4%BB%B6"><span class="nav-number">1.2.3.</span> <span class="nav-text">触摸事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#margin%E5%92%8Cpadding"><span class="nav-number">1.2.4.</span> <span class="nav-text">margin和padding</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89View%E6%95%88%E7%8E%87%E9%AB%98%E4%BA%8Exml%E5%B8%83%E5%B1%80%E6%96%87%E4%BB%B6%E5%90%97%EF%BC%9F"><span class="nav-number">1.3.</span> <span class="nav-text">自定义View效率高于xml布局文件吗？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89View%E7%9A%84%E6%B5%81%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">自定义View的流程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#onMeasure"><span class="nav-number">2.1.</span> <span class="nav-text">onMeasure()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#onLayout"><span class="nav-number">2.2.</span> <span class="nav-text">onLayout()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#onDraw"><span class="nav-number">2.3.</span> <span class="nav-text">onDraw()</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Canvas%EF%BC%88%E7%94%BB%E5%B8%83%EF%BC%89"><span class="nav-number">2.3.1.</span> <span class="nav-text">Canvas（画布）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Paint%EF%BC%88%E7%94%BB%E7%AC%94%EF%BC%89"><span class="nav-number">2.3.2.</span> <span class="nav-text">Paint（画笔）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Path%EF%BC%88%E8%B7%AF%E5%BE%84%EF%BC%89"><span class="nav-number">2.3.3.</span> <span class="nav-text">Path（路径）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89View%E7%B1%BB%E5%9E%8B"><span class="nav-number">3.</span> <span class="nav-text">常见的自定义View类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%A7%E6%89%BF%E7%B3%BB%E7%BB%9F%E6%8F%90%E4%BE%9B%E7%9A%84%E7%8E%B0%E6%9C%89%E6%8E%A7%E4%BB%B6%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89View"><span class="nav-number">4.</span> <span class="nav-text">继承系统提供的现有控件的自定义View</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%A7%E6%89%BFView%E7%B1%BB%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89View"><span class="nav-number">5.</span> <span class="nav-text">继承View类的自定义View</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">5.1.</span> <span class="nav-text">注意事项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%84%E7%90%86padding"><span class="nav-number">5.2.</span> <span class="nav-text">处理padding</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#wrap-content%E5%B1%9E%E6%80%A7%E5%A4%84%E7%90%86"><span class="nav-number">5.3.</span> <span class="nav-text">wrap_content属性处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7"><span class="nav-number">5.4.</span> <span class="nav-text">添加自定义属性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B0%86%E5%A4%9A%E4%B8%AA%E5%8D%95%E4%B8%80%E7%9A%84View%E5%90%88%E6%88%90%E5%A4%8D%E6%9D%82%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E5%90%88View"><span class="nav-number">6.</span> <span class="nav-text">将多个单一的View合成复杂的自定义组合View</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%A7%E6%89%BFViewGroup%E7%B1%BB%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89View"><span class="nav-number">7.</span> <span class="nav-text">继承ViewGroup类的自定义View</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89View%E4%BC%98%E5%8C%96"><span class="nav-number">8.</span> <span class="nav-text">自定义View优化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3"><span class="nav-number">9.</span> <span class="nav-text">参考文档</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+        &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2024
+        
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/blog/">MoMo</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+        <div class="count-info info-item">
+            
+
+            
+                <span class="count-item border-box uv">
+                    <span class="item-type border-box">Unique Visitor</span>
+                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
+                </span>
+            
+
+            
+                <span class="count-item border-box pv">
+                    <span class="item-type border-box">Page View</span>
+                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
+                </span>
+            
+        </div>
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools left-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-toggle-theme-mode flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <!-- use hexo-blog-encrypt -->
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E8%87%AA%E5%AE%9A%E4%B9%89View"><span class="nav-number">1.</span> <span class="nav-text">什么是自定义View</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89View%E5%92%8C%E8%87%AA%E5%AE%9A%E4%B9%89ViewGroup"><span class="nav-number">1.1.</span> <span class="nav-text">自定义View和自定义ViewGroup</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89View%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="nav-number">1.2.</span> <span class="nav-text">自定义View基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="nav-number">1.2.1.</span> <span class="nav-text">坐标系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%9C%E8%89%B2"><span class="nav-number">1.2.2.</span> <span class="nav-text">颜色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A6%E6%91%B8%E4%BA%8B%E4%BB%B6"><span class="nav-number">1.2.3.</span> <span class="nav-text">触摸事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#margin%E5%92%8Cpadding"><span class="nav-number">1.2.4.</span> <span class="nav-text">margin和padding</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89View%E6%95%88%E7%8E%87%E9%AB%98%E4%BA%8Exml%E5%B8%83%E5%B1%80%E6%96%87%E4%BB%B6%E5%90%97%EF%BC%9F"><span class="nav-number">1.3.</span> <span class="nav-text">自定义View效率高于xml布局文件吗？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89View%E7%9A%84%E6%B5%81%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">自定义View的流程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#onMeasure"><span class="nav-number">2.1.</span> <span class="nav-text">onMeasure()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#onLayout"><span class="nav-number">2.2.</span> <span class="nav-text">onLayout()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#onDraw"><span class="nav-number">2.3.</span> <span class="nav-text">onDraw()</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Canvas%EF%BC%88%E7%94%BB%E5%B8%83%EF%BC%89"><span class="nav-number">2.3.1.</span> <span class="nav-text">Canvas（画布）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Paint%EF%BC%88%E7%94%BB%E7%AC%94%EF%BC%89"><span class="nav-number">2.3.2.</span> <span class="nav-text">Paint（画笔）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Path%EF%BC%88%E8%B7%AF%E5%BE%84%EF%BC%89"><span class="nav-number">2.3.3.</span> <span class="nav-text">Path（路径）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89View%E7%B1%BB%E5%9E%8B"><span class="nav-number">3.</span> <span class="nav-text">常见的自定义View类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%A7%E6%89%BF%E7%B3%BB%E7%BB%9F%E6%8F%90%E4%BE%9B%E7%9A%84%E7%8E%B0%E6%9C%89%E6%8E%A7%E4%BB%B6%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89View"><span class="nav-number">4.</span> <span class="nav-text">继承系统提供的现有控件的自定义View</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%A7%E6%89%BFView%E7%B1%BB%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89View"><span class="nav-number">5.</span> <span class="nav-text">继承View类的自定义View</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">5.1.</span> <span class="nav-text">注意事项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%84%E7%90%86padding"><span class="nav-number">5.2.</span> <span class="nav-text">处理padding</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#wrap-content%E5%B1%9E%E6%80%A7%E5%A4%84%E7%90%86"><span class="nav-number">5.3.</span> <span class="nav-text">wrap_content属性处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7"><span class="nav-number">5.4.</span> <span class="nav-text">添加自定义属性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B0%86%E5%A4%9A%E4%B8%AA%E5%8D%95%E4%B8%80%E7%9A%84View%E5%90%88%E6%88%90%E5%A4%8D%E6%9D%82%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E5%90%88View"><span class="nav-number">6.</span> <span class="nav-text">将多个单一的View合成复杂的自定义组合View</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%A7%E6%89%BFViewGroup%E7%B1%BB%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89View"><span class="nav-number">7.</span> <span class="nav-text">继承ViewGroup类的自定义View</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89View%E4%BC%98%E5%8C%96"><span class="nav-number">8.</span> <span class="nav-text">自定义View优化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3"><span class="nav-number">9.</span> <span class="nav-text">参考文档</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+<!-- common -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/utils.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/header-shrink.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/back2top.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/toggle-theme.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/code-block.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/main.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/libs/anime.min.js"></script>
+
+<!-- local-search -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/local-search.min.js"></script>
+
+
+<!-- lazyload -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/lazyload.min.js"></script>
+
+
+<div class="pjax">
+    
+        <!-- post-helper -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/post/post-helper.min.js"></script>
+
+        <!-- toc -->
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/post/toc.min.js"></script>
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/post/share.min.js"></script>
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="MoMo">
+    
+    <title>
+        
+            I帧验证 |
+        
+        今天在干嘛
+    </title>
+    
+<link rel="stylesheet" href="/blog/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/blog/images/logoMoon.svg">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/regular.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/brands.min.css">
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"kenken-xr.github.io","root":"/blog/","language":"en","path":"search.json"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#f8a5c2","title":"今天在干嘛","author":"MoMo","avatar":"/images/avatar.jpg","logo":"/images/logoMoon.svg","favicon":"/images/logoMoon.svg"},"menu":{"home":"/","archives":"/archives","tags":"/tags","categories":"/categories","github":"https://github.com/kenken-xr"},"first_screen":{"enable":true,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":true,"links":{"github":"https://github.com/kenken-xr","weixin":"img | /images/wx.png","qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":true,"percent":true,"hide_header":false},"home":{"announcement":null,"category":true,"tag":true,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":true,"reward":{"enable":false,"img_link":null,"text":null},"img_align":"center"},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true,"layout":"left"},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"local_search":{"enable":true,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.36"},"waline":{"server_url":null,"reaction":false,"version":"3.2.1"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":true},"cdn":{"enable":true,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":2023,"word_count":true,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"/blog","source_data":{},"version":"4.1.3"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original post title","author":"Original post author","link":"Original post link"}
+  </script>
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/blog/atom.xml" title="MoMo" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left border-box">
+            
+                <a class="logo-image border-box" href="/blog/">
+                    <img src="/blog/images/logoMoon.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/blog/">
+               今天在干嘛
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/"
+                            >
+                                
+                                HOME
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/archives"
+                            >
+                                
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/tags"
+                            >
+                                
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/categories"
+                            >
+                                
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               target="_blank" rel="noopener" href="https://github.com/kenken-xr"
+                            >
+                                
+                                GITHUB
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/"
+                    >HOME</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/archives"
+                    >ARCHIVES</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/tags"
+                    >TAGS</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/categories"
+                    >CATEGORIES</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       target="_blank" rel="noopener" href="https://github.com/kenken-xr"
+                    >GITHUB</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        I帧验证
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/blog/images/avatar.jpg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">MoMo</span>
+                                
+                                    <span class="author-badge">Lv5</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2024-06-14 09:25:25</span>
+            </span>
+
+            <span class="meta-info-item post-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="datetime" data-updated="Sun Jun 16 2024 11:58:13 GMT+0800">2024-06-16 11:58:13</span>
+            </span>
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/blog/categories/%E6%9C%89%E5%9C%A8%E8%AE%A4%E7%9C%9F%E4%B8%8A%E7%8F%AD/">有在认真上班</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/blog/tags/Android/">Android</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/blog/tags/Danale-%E7%AE%A1%E7%BA%BF/">Danale-管线</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+            <span class="meta-info-item post-pv">
+                <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    <h1 id="I帧验证"><a href="#I帧验证" class="headerlink" title="I帧验证"></a>I帧验证</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>设备中装有的模型为避免占用太多内存导致性能比较一般，有较多告警被误识别，而APP内部部署的模型精度较高，所以设计了当设备产生告警时把告警发送到手机端进行I帧验证来增加告警的准确性。<br>由sdk循环调用得到设备端的的数据，如果有人物移动等视频端将当前帧的时间戳、byteArray和设备ID传给APP端，APP端收到回调启动I帧验证，目的是更准确的告警实际事件</p>
+<p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/work/2023-12/I%E5%B8%A7%E9%AA%8C%E8%AF%81.png"></p>
+<p>整体流程图如上。</p>
+<p>这个模块涉及的技术栈：RxJava、JNI</p>
+<p>这个模块嵌入在IPC模块中，在IPC页面中，会触发该设备的I帧验证，同时经过验证的结果也会经过流式返回并动态添加到告警列表中。</p>
+<p><strong>准确性：</strong> 由于APP内部会集成部署一些模型，该模型经过调参之后的结果比较准确，所以能够很好的保证设备告警的准确性。</p>
+<p><strong>实时性：</strong> 整个流程从从设备侧拉取I帧开始，在设备端解码再将图片传入模型进行计算，至最终得到结果并将结果标签返回至SDK中记录结束。APP内部的计算时间为平均500-700ms左右，整个流程平均为1000ms左右，达到产生告警即计算，算完之后则展示的效果，能够达到实时性的要求。</p>
+<h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><ul>
+<li>首先进入IPC（设备详情页）后，会通过触发<code>triggerComputeForDevice(deviceID:String)</code>这个方法，并在SDK层传入RxJava对象作为一个上下文context,同时传入编写好的JNI回调方法接收告警流式返回的结果。</li>
+<li>当设备告警产生时，SDK从设备侧拉取I帧数据，通过JNI调用业务回调方法并传入数据（dataArray,oriLabels）</li>
+<li>I帧验证方法：首先将传入的I帧数据解码成yuvImage再转成bitmap，然后创建I帧验证管线，传入bitmap进行处理并得到结果标签</li>
+<li>对标签结果进行转化并返回</li>
+<li>对bitmap进行压缩，通过<code>DiskLruCache</code>缓存，用于告警展示时的封面</li>
+</ul>
+<p>I帧验证管线：通过TFLite加载模型，加载完成后接收特定格式的数据（需要对bitmap进行转化）进行计算推理，对得到的结果读取转换，最终得到结果中是否有我们想要的标签（如人脸、人形、宠物等）</p>
+<p>SDK中创建方法</p>
+<h2 id="问题难点"><a href="#问题难点" class="headerlink" title="问题难点"></a>问题难点</h2><ul>
+<li>JNI代码的编写需要学习了解 -&gt; 仿照其他JNI方法进行编写，同时了解相关知识</li>
+<li>I帧验证的管线的生命周期（因为涉及算法模型，彼时占用内存较大，所以就需要确定什么时候释放） -&gt; 采用工厂模式+计时来确定管线对象的生存周期（<strong>通过锁实现管线对象的正常持续存在，防止定时任务中另一线程的操作导致管线对象获取后释放）</strong>，每次方法调用时都从Object类中获取，<ul>
+<li>首先加锁，如果管线对象存在则取消计时器，直接返回对象；</li>
+<li>如果管线对象已经释放，则解锁，重新创建管线对象并返回。同时重置计时器。</li>
+<li>当一段时间（设置为15s）没有获取管线对象时，则执行定时任务，释放管线对象，释放内存资源。计时器采用的是Timer()+TimeTask()，<strong>先加锁，再释放管线对象，再解锁</strong></li>
+</ul>
+</li>
+<li>方法调用的同步即I帧验证管线添加锁 -&gt; 预防SDK异步多次调用同一个方法导致计算的结果混乱</li>
+</ul>
+<h2 id="内存优化问题"><a href="#内存优化问题" class="headerlink" title="内存优化问题"></a>内存优化问题</h2><ul>
+<li>存在过内存泄漏 原因是因为利用FFMPEG解码时，工具类对象重复创建没有释放导致</li>
+<li>性能分析 添加log计算每一个步骤可能需要的时间，如FFmpeg解码时间，yuv转bitmap时间，管线推理时间等，</li>
+</ul>
+<h2 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h2><ol>
+<li><p>ByteArray转为YuvImage  <code>yuv=FFDecoder().use { it.decodePacket(data.clone()) }</code></p>
+</li>
+<li><p>YuvImage转bitmap </p>
+<figure class="highlight kotlin"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> bitmap: Bitmap</span><br><span class="line">ByteArrayOutputStream().let {</span><br><span class="line">  yuv.compressToJpeg(Rect(<span class="number">0</span>, <span class="number">0</span>, yuv.width, yuv.height), <span class="number">100</span>, it)</span><br><span class="line">  <span class="keyword">val</span> jpegData = it.toByteArray()</span><br><span class="line">  bitmap = BitmapFactory.decodeByteArray(jpegData, <span class="number">0</span>, jpegData.size)</span><br><span class="line">  it.close()</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>创建管线</p>
+<ul>
+<li><p>如果对象已经创建好，则直接返回使用，如果没有该对象，则创建后返回；同时添加倒计时，一段时间不使用则释放对象</p>
+<figure class="highlight kotlin"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">getAlarmPipeline</span><span class="params">(ai: <span class="type">IntelligenceRepository</span>, logger: <span class="type">Logger</span>)</span></span>: LabelPipeline&lt;Bitmap&gt;? {</span><br><span class="line">  alarmPipeLineLock.lock()  <span class="comment">// 通过锁实现管线对象的正常持续存在，防止定时任务中另一线程的操作导致管线对象获取后释放</span></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">if</span> (deviceAlarmPipeLine != <span class="literal">null</span>) {</span><br><span class="line">    cancelTimer()</span><br><span class="line">    deviceAlarmPipeLine</span><br><span class="line">  } <span class="keyword">else</span> {</span><br><span class="line">    alarmPipeLineLock.unlock()</span><br><span class="line">    <span class="keyword">init</span>(ai, logger)</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></li>
+</ul>
+</li>
+<li><p>I帧验证缩放压缩缓存</p>
+<figure class="highlight kotlin"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> matrix = Matrix()</span><br><span class="line"><span class="keyword">val</span> scale = FRAME_MIN_WIDTH / bitmap.width</span><br><span class="line">matrix.setScale(scale, scale)</span><br><span class="line"><span class="keyword">val</span> scaled = Bitmap.createBitmap(</span><br><span class="line">    bitmap, <span class="number">0</span>, <span class="number">0</span>, bitmap.width, bitmap.height, matrix, <span class="literal">true</span></span><br><span class="line">)</span><br><span class="line"><span class="keyword">val</span> scaledByteArray = ByteArrayOutputStream().use {</span><br><span class="line">    scaled.compress(Bitmap.CompressFormat.JPEG, <span class="number">40</span>, it)</span><br><span class="line">    it.flush()</span><br><span class="line">    <span class="keyword">return</span><span class="symbol">@use</span> it.toByteArray()</span><br><span class="line">}</span><br><span class="line">runBlocking {</span><br><span class="line">    diskLruCacheOfFrameOfAlarm.put(</span><br><span class="line">        deviceId, timestamp, ByteArrayInputStream(scaledByteArray), logger</span><br><span class="line">    )</span><br><span class="line">    <span class="keyword">val</span> uri = diskLruCacheOfFrameOfAlarm.<span class="keyword">get</span>(deviceId, timestamp)?.also {</span><br><span class="line">        sdk.currentComputedThumbSubject().onNext(it)  <span class="comment">// 用于获取全局单例的已经被计算了的最新的图像</span></span><br><span class="line">        sdk.reportKeyframeComputed()  <span class="comment">// 上报已计算关键帧+温度检测控制</span></span><br><span class="line">    }</span><br><span class="line">    logger.i(TAG, <span class="string">"computeOriAlarmKeyFrame, cache uri=<span class="variable">$uri</span>"</span>)</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>启动yolov8和centerFace进行计算</p>
+<figure class="highlight kotlin"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> result = deviceAlarmPipeLine.process(bitmap, metaData = LabeledObject.MetaData()).flatMap { Single.just(it.labels) }.blockingGet()</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>返回结果</p>
+<figure class="highlight kotlin"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 人脸结果</span></span><br><span class="line"><span class="keyword">val</span> alarmKeyFrameFaceDetectionResult = result[ALARM_KEY_FRAME_FACE_COMPUTE_RESULT] <span class="keyword">as</span>? <span class="built_in">Boolean</span></span><br><span class="line"><span class="comment">// 人物宠物计算结果</span></span><br><span class="line"><span class="keyword">val</span> alarmKeyFrameDetectionResult = result[ALARM_KEY_FRAME_YOLO_COMPUTE_RESULT] <span class="keyword">as</span>? List&lt;Yolo8DetectorOnlyKeyFrame.Detection&gt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">val</span> resultList =</span><br><span class="line">  <span class="keyword">if</span> (alarmKeyFrameFaceDetectionResult == <span class="literal">null</span> || !alarmKeyFrameFaceDetectionResult) {</span><br><span class="line">    <span class="keyword">if</span> (alarmKeyFrameDetectionResult.isNullOrEmpty()) {</span><br><span class="line">      <span class="comment">// 没有检测到任何标签，置为画面变化 detect_move fixme：这里只是不确定，如果是确定的空告警，应该删除</span></span><br><span class="line">      listOf(Label.DETECT_MOVE.key)</span><br><span class="line">    } <span class="keyword">else</span> {</span><br><span class="line">      <span class="keyword">val</span> detection = alarmKeyFrameDetectionResult.firstOrNull()</span><br><span class="line">      <span class="keyword">when</span> (detection?.topClassIdx) {</span><br><span class="line">        <span class="number">5</span>, <span class="number">6</span> -&gt; {</span><br><span class="line">          <span class="comment">// 宠物 detect_pet</span></span><br><span class="line">          listOf(Label.DETECT_ANIMAL.key)</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="number">0</span> -&gt; {</span><br><span class="line">          <span class="comment">// 人物 detect_person</span></span><br><span class="line">          listOf(Label.DETECT_PERSON.key)</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="keyword">else</span> -&gt; {</span><br><span class="line">          <span class="comment">// 检测为空，置为画面变化</span></span><br><span class="line">          listOf(Label.DETECT_MOVE.key)</span><br><span class="line">        }</span><br><span class="line">      }</span><br><span class="line">    }</span><br><span class="line">  } <span class="keyword">else</span> {</span><br><span class="line">    <span class="comment">// 检测到人脸 detect_face</span></span><br><span class="line">    listOf(Label.DETECT_PERSON_FACE.key)</span><br><span class="line">  }</span><br></pre></td></tr></tbody></table></figure></li>
+</ol>
+<h3 id="ReentrantLock"><a href="#ReentrantLock" class="headerlink" title="ReentrantLock"></a>ReentrantLock</h3><ul>
+<li><p><code>ReentrantLock</code> 是 一个锁（Lock）实现类，用于多线程编程中控制对共享资源的访问。可以实现对共享资源的独占访问，避免多个线程同时修改共享数据导致的竞态条件和数据不一致问题，用于实现线程之间的同步，确保在同一时刻只有一个线程能够访问共享资源，其他线程需要等待锁释放后才能访问。</p>
+<ul>
+<li><strong>可重入性</strong>：<code>ReentrantLock</code> 具有可重入性，同一个线程可以多次获取同一把锁，避免死锁情况。</li>
+<li><strong>公平性</strong>：<code>ReentrantLock</code> 可以设置为公平锁，按照线程请求的顺序获取锁，减少线程饥饿情况。</li>
+<li><strong>灵活性</strong>：<code>ReentrantLock</code> 提供了丰富的方法，如尝试获取锁、设置超时等待、条件变量等，更灵活地控制线程的等待和唤醒。</li>
+</ul>
+<p>在 <code>try</code> 块中获取锁，在 <code>finally</code> 块中释放锁，确保即使发生异常也能正确释放锁，避免资源泄漏。</p>
+<p>提供了一种更灵活、可控的锁机制，适用于复杂的多线程同步场景。但需要注意的是，在使用过程中要确保正确地获取和释放锁，以避免死锁和性能问题。</p>
+</li>
+</ul>
+<h3 id="DiskLruCacheOfFrameOfAlarm"><a href="#DiskLruCacheOfFrameOfAlarm" class="headerlink" title="DiskLruCacheOfFrameOfAlarm"></a>DiskLruCacheOfFrameOfAlarm</h3><p>其中<code>diskLruCacheOfFrameOfAlarm</code>是用于缓存报警帧图像的类 <code>DiskLruCacheOfFrameOfAlarm</code>，通过 <code>DiskLruCache</code> 实现对报警帧图像的缓存操作</p>
+<figure class="highlight kotlin"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">open</span> <span class="keyword">class</span> <span class="title class_">DiskLruCacheOfFrameOfAlarm</span> <span class="meta">@Inject</span> <span class="keyword">constructor</span>(<span class="meta">@ApplicationContext</span> <span class="keyword">private</span> <span class="keyword">val</span> context: Context) {</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">val</span> diskLruCache: DiskLruCache = DiskLruCache.<span class="keyword">open</span>(</span><br><span class="line">    File(context.cacheDir, <span class="string">"alarm_frame"</span>),</span><br><span class="line">    <span class="number">0</span>, <span class="comment">// 固定版本号为0，保证APP升级时旧的缓存不被清理</span></span><br><span class="line">    <span class="number">1</span>, <span class="comment">// 一个Key仅对应1个文件</span></span><br><span class="line">    <span class="number">1024L</span> * <span class="number">1024</span> * <span class="number">100</span></span><br><span class="line">  )</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 从缓存中获取指定设备ID和时间戳对应的报警帧图像的Uri</span></span><br><span class="line">  <span class="meta">@Throws(IOException::class)</span></span><br><span class="line">  <span class="keyword">suspend</span> <span class="function"><span class="keyword">fun</span> <span class="title">get</span><span class="params">(deviceId: <span class="type">String</span>, timestamp: <span class="type">Long</span>)</span></span>: Uri? {</span><br><span class="line">    <span class="keyword">return</span> withContext(Dispatchers.IO) {</span><br><span class="line">      <span class="keyword">val</span> key = String.format(<span class="string">"%s_%s"</span>, deviceId, timestamp)</span><br><span class="line">      diskLruCache.<span class="keyword">get</span>(key)?.getFile(<span class="number">0</span>)?.toUri()</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 将报警帧图像缓存到磁盘中</span></span><br><span class="line">  <span class="meta">@Throws(IOException::class)</span></span><br><span class="line">  <span class="keyword">suspend</span> <span class="function"><span class="keyword">fun</span> <span class="title">put</span><span class="params">(deviceId: <span class="type">String</span>, timestamp: <span class="type">Long</span>, frame: <span class="type">InputStream</span>, logger: <span class="type">Logger</span>)</span></span> {</span><br><span class="line">    withContext(Dispatchers.IO) {</span><br><span class="line">      <span class="keyword">val</span> key = String.format(<span class="string">"%s_%s"</span>, deviceId, timestamp)</span><br><span class="line">      <span class="keyword">try</span> {</span><br><span class="line">          <span class="keyword">val</span> editor = diskLruCache.edit(key)?: <span class="keyword">throw</span> IOException(<span class="string">"Editor of file create fail!"</span>)</span><br><span class="line">          editor.newOutputStream(<span class="number">0</span>)?.use { fileOutputStream -&gt; frame.use { frame.copyTo(fileOutputStream) }} </span><br><span class="line">        														?: <span class="keyword">throw</span> IOException(<span class="string">"OutputStream of file create fail!"</span>)</span><br><span class="line">          editor.commit()</span><br><span class="line">      } <span class="keyword">catch</span> (e: Exception) {</span><br><span class="line">        logger.e(<span class="string">"DiskLruCacheOfFrameOfAlarm"</span>, <span class="string">"DiskLruCacheOfFrameOfAlarm put error "</span>, e)</span><br><span class="line">      }</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<ol>
+<li><ul>
+<li><code>get(deviceId: String, timestamp: Long): Uri?</code> 方法用于从缓存中获取指定设备ID和时间戳对应的报警帧图像的 <code>Uri</code>。<ul>
+<li>通过 <code>withContext(Dispatchers.IO)</code> 在 IO 线程中执行操作，避免阻塞主线程。</li>
+<li>根据设备ID和时间戳生成唯一的 key，通过该 key 从 <code>DiskLruCache</code> 中获取对应的缓存文件，并将其转换为 <code>Uri</code> 返回。</li>
+</ul>
+</li>
+<li><code>put(deviceId: String, timestamp: Long, frame: InputStream, logger: Logger)</code> 方法用于将报警帧图像缓存到磁盘中。<ul>
+<li>通过 <code>withContext(Dispatchers.IO)</code> 在 IO 线程中执行操作。</li>
+<li>根据设备ID和时间戳生成唯一的 key，通过该 key 获取 <code>DiskLruCache</code> 的编辑器（editor），将报警帧图像写入缓存文件中。</li>
+<li>最后提交编辑器以完成缓存操作，如果出现异常则记录日志。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>目的和优势</strong>：<ul>
+<li><strong>目的</strong>：该类的主要目的是实现对报警帧图像的缓存，以提高图像访问速度和节省网络带宽。</li>
+<li>优势<ul>
+<li><strong>快速访问</strong>：通过将报警帧图像缓存到磁盘上，可以减少重复下载和处理，提高访问速度。</li>
+<li><strong>节省资源</strong>：缓存可以减少对网络和服务器资源的依赖，节省带宽和服务器负载。</li>
+<li><strong>数据一致性</strong>：通过缓存可以保持数据的一致性，避免多次下载相同的数据。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="currentComputeStateSubject"><a href="#currentComputeStateSubject" class="headerlink" title="currentComputeStateSubject"></a>currentComputeStateSubject</h3><p>用户记录当前设备状态</p>
+<figure class="highlight kotlin"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">data</span> <span class="keyword">class</span> <span class="title class_">ComputeState</span>(</span><br><span class="line">    <span class="keyword">val</span> networkSyncable: <span class="built_in">Boolean</span> = <span class="literal">false</span>,</span><br><span class="line">    <span class="keyword">val</span> batteryComputable: <span class="built_in">Boolean</span> = <span class="literal">false</span>,</span><br><span class="line">    <span class="keyword">val</span> thermalHigh: <span class="built_in">Boolean</span> = <span class="literal">false</span>,</span><br><span class="line">    <span class="keyword">val</span> readyToTriggerCompute: <span class="built_in">Boolean</span> = <span class="literal">false</span>,</span><br><span class="line">    <span class="keyword">val</span> waitComputePeriods: <span class="built_in">Int</span> = <span class="number">0</span>,</span><br><span class="line">    <span class="keyword">val</span> generatedClips: <span class="built_in">Long</span> = <span class="number">0</span>,</span><br><span class="line">    <span class="keyword">val</span> computedKeyFrames: <span class="built_in">Long</span> = <span class="number">0</span>,</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">val</span> currentComputeStateSubject = BehaviorSubject.create&lt;ComputeState&gt;()</span><br></pre></td></tr></tbody></table></figure>
+
+<p>在<code>reportKeyframeComputed</code>中会将当前要上报的帧数+1，并且调用下面这个方法</p>
+<figure class="highlight kotlin"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="function"><span class="keyword">fun</span> <span class="title">reduceCurrentComputeState</span><span class="params">()</span></span> {</span><br><span class="line">  <span class="keyword">val</span> syncable = (isWiFi || syncWithCellular)</span><br><span class="line">  <span class="keyword">val</span> computable = (batteryLevel &gt; minBatteryLevel)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// TODO CPU温度低版本Android系统拿不到，后续再看下怎么弄</span></span><br><span class="line">  <span class="keyword">val</span> thermalState = <span class="number">0</span></span><br><span class="line">  <span class="keyword">val</span> thermalHigh = <span class="literal">false</span></span><br><span class="line">  <span class="comment">// TODO 温控策略，待进一步修改</span></span><br><span class="line">  <span class="keyword">val</span> thermalReady = generatedClipsCount &lt; <span class="number">20</span> || !thermalHigh</span><br><span class="line"></span><br><span class="line">  <span class="keyword">val</span> readyToTrigger = syncable &amp;&amp; computable &amp;&amp; thermalReady</span><br><span class="line"></span><br><span class="line">  <span class="keyword">val</span> newState = ComputeState(</span><br><span class="line">    syncable, computable, thermalHigh, readyToTrigger,</span><br><span class="line">    waitComputePeriodsSum, generatedClipsCount, computedKeyFrameCount</span><br><span class="line">  )</span><br><span class="line">  logger.i(TAG, <span class="string">"reduceCurrentComputeState, <span class="variable">$newState</span>"</span>)</span><br><span class="line">  currentComputeStateSubject.onNext(newState)</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>在这里面</p>
+<figure class="highlight kotlin"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">isWiFi = env.netType == NET_TYPE_WIFI   <span class="comment">//网络类型，1:WiFi 2:移动网络(手机设备获取)</span></span><br><span class="line">syncWithCellular = env.allowSyncOnMobileData == ALLOW_SYNC_ON_MOBILE_DATA_YES  <span class="comment">// 允许在移动网络下进行数据同步，1:是 2:否(用户选择)</span></span><br><span class="line">batteryLevel = env.soc / <span class="number">100f</span>  <span class="comment">// 当前剩余电量百分比</span></span><br><span class="line">minBatteryLevel = env.allowComputeMinSoc / <span class="number">100f</span>  <span class="comment">// 允许进行计算的最低电量百分比</span></span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight kotlin"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 当前网络是否不按量计费，可以传输大量数据</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">isUsingNotMeteredNetwork</span><span class="params">(context: <span class="type">Context</span>)</span></span>: <span class="built_in">Boolean</span> {</span><br><span class="line">  <span class="keyword">val</span> manager = context.getSystemService(Context.CONNECTIVITY_SERVICE) <span class="keyword">as</span> ConnectivityManager</span><br><span class="line">  <span class="keyword">if</span> (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.M) {</span><br><span class="line">    manager.activeNetwork?.let { network -&gt;</span><br><span class="line">                                manager.getNetworkCapabilities(network)?.let {</span><br><span class="line">                                  <span class="comment">// 高于 Android M，判断用户是否设置当前网络为不限流量</span></span><br><span class="line">                                  <span class="keyword">return</span> it.hasCapability(NetworkCapabilities.NET_CAPABILITY_NOT_METERED)</span><br><span class="line">                                }</span><br><span class="line">                               }</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">  } <span class="keyword">else</span> {</span><br><span class="line">    <span class="meta">@Suppress(<span class="string">"DEPRECATION"</span>)</span> <span class="comment">// 低于 Android M 的兼容逻辑，认为WiFi和有线网络是不计费网络</span></span><br><span class="line">    manager.activeNetworkInfo?.let { networkInfo -&gt;</span><br><span class="line">                                    <span class="keyword">return</span> networkInfo.type == ConnectivityManager.TYPE_WIFI || networkInfo.type == ConnectivityManager.TYPE_ETHERNET</span><br><span class="line">                                   }</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h1 id="子码流"><a href="#子码流" class="headerlink" title="子码流"></a>子码流</h1><p>这个主要是用于首页产生的视频</p>
+<p>i帧验证和子码流，用于管线加速，小码流拉视频变快， 可以用于实时性的识别场景，是离线场景，例如上一秒在家门口有危险手机打开之后拉取小码流数据可以几乎实时获取到，手机马上有提醒。原始的4k图片很大，虽然更清晰但速度很慢，可能需要十几分钟才可以计算完成，不够高效，而子码流因为码率很低所以不会卡，这个方法可以满足实时性，任何一台手机打开，基本不消耗流量，就可以得到一个实时的安防设备，并且用的是用户的手机流量和性能，基本不占用公司的服务器</p>
+<p>主要目的：加速管线，实时性</p>
+<p>同时测试了yolov8在不同码流下的检测速度，并结合手机性能和内存区分可以跑什么模型</p>
+<figure class="highlight kotlin"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> totalMemorySize =</span><br><span class="line">    extraParams?.getLong(KEY_TOTAL_MEMORY_SIZE, -<span class="number">1</span>)?.let { <span class="keyword">if</span> (it &lt;= <span class="number">0</span>) <span class="literal">null</span> <span class="keyword">else</span> it }</span><br><span class="line"></span><br><span class="line">interpreter = <span class="keyword">if</span> (totalMemorySize != <span class="literal">null</span> &amp;&amp; totalMemorySize &lt; MEMORY_SIZE_6GB) {</span><br><span class="line">    <span class="comment">// 实际内存小于6G的设备，使用CPU运算，大于等于6G的设备，使用GPU运算</span></span><br><span class="line">    baseInterpreter(model)</span><br><span class="line">} <span class="keyword">else</span> {</span><br><span class="line">    <span class="comment">// 依次尝试GPU/NNAPI/CPU</span></span><br><span class="line">    gpuDelegateInterpreterOrNull(model)</span><br><span class="line">    <span class="comment">// 目前使用的是浮点的模型，如果有些设备支持了NPU并且自动使用了NPU会导致精度下降，因此先注释掉该配置</span></span><br><span class="line">    <span class="comment">// ?: nnApiDelegateInterpreterOrNull(model)</span></span><br><span class="line">        ?: baseInterpreter(model)</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">baseInterpreter</span><span class="params">(model: <span class="type">MappedByteBuffer</span>)</span></span>: Interpreter {</span><br><span class="line">    <span class="keyword">val</span> cpuOpt = Interpreter.Options()</span><br><span class="line">    cpuOpt.numThreads = <span class="number">2</span>  <span class="comment">// 尝试并行地使用多个线程，在多核CPU设备上运行时可以显著提高推理速度</span></span><br><span class="line">    logger.i(<span class="string">"baseInterpreter t=<span class="subst">${cpuOpt.numThreads}</span>"</span>)</span><br><span class="line">    <span class="keyword">return</span> Interpreter(model, cpuOpt)</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">gpuDelegateInterpreterOrNull</span><span class="params">(model: <span class="type">MappedByteBuffer</span>)</span></span>: Interpreter? {</span><br><span class="line">    <span class="keyword">val</span> gpuOpt = Interpreter.Options()</span><br><span class="line">    gpuOpt.numThreads = <span class="number">1</span>  <span class="comment">// 在单线程模式下运行</span></span><br><span class="line">    gpuOpt.addDelegate(GpuDelegate())</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">try</span> {</span><br><span class="line">        <span class="keyword">val</span> it = Interpreter(model, gpuOpt)</span><br><span class="line">        logger.i(<span class="string">"gpuDelegateInterpreterOrNull success"</span>)</span><br><span class="line">        it</span><br><span class="line">    } <span class="keyword">catch</span> (e: Exception) {</span><br><span class="line">        logger.e(<span class="string">"gpuDelegateInterpreterOrNull error"</span>, e)</span><br><span class="line">        <span class="literal">null</span></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>该项目的应用中首先从sdk获取到需要计算的一大段视频起止时间，是小码流数据，之后通过pretask得到这一段视频的分数，如果有分数证明这一段是有价值的视频(检测到人、宠物、人脸等)，根据原始视频的长度截取一段最终在首页显示的视频长度，通过滑动窗口的方法得到分数最大的一段视频返给sdk，触发正式管线的计算</p>
+<p>I帧和pre都是子码流</p>
+
+                </div>
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/blog/tags/Android/">Android</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/blog/tags/Danale-%E7%AE%A1%E7%BA%BF/">Danale-管线</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                            <div class="post-share-container border-box">
+    <ul class="share-list-wrap border-box">
+        <li class="qq share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to QQ"
+        >
+            <i class="fa-brands fa-qq"></i>
+        </li>
+        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
+            data-tooltip-content="Share to WeChat"
+            data-tooltip-img-tip="Scan by WeChat"
+            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
+        >
+            <i class="fa-brands fa-weixin"></i>
+        </li>
+        <li class="weibo share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to WeiBo"
+        >
+            <i class="fa-brands fa-weibo"></i>
+        </li>
+    </ul>
+</div>
+
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/blog/2024/06/14/Danale-3-%E7%AE%A1%E7%BA%BF/"
+                                   title="管线"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">管线</span>
+                                        <span class="post-nav-item">Prev posts</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/blog/2024/06/13/%E7%BD%91%E7%BB%9C-3-TCP%20&%20UDP/"
+                                   title="TCP &amp; UDP"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">TCP &amp; UDP</span>
+                                        <span class="post-nav-item">Next posts</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc left-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <!-- use hexo-blog-encrypt -->
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#I%E5%B8%A7%E9%AA%8C%E8%AF%81"><span class="nav-number">1.</span> <span class="nav-text">I帧验证</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-number">1.1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%81%E7%A8%8B"><span class="nav-number">1.2.</span> <span class="nav-text">流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E9%9A%BE%E7%82%B9"><span class="nav-number">1.3.</span> <span class="nav-text">问题难点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98"><span class="nav-number">1.4.</span> <span class="nav-text">内存优化问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E6%AD%A5%E9%AA%A4"><span class="nav-number">1.5.</span> <span class="nav-text">具体步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ReentrantLock"><span class="nav-number">1.5.1.</span> <span class="nav-text">ReentrantLock</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DiskLruCacheOfFrameOfAlarm"><span class="nav-number">1.5.2.</span> <span class="nav-text">DiskLruCacheOfFrameOfAlarm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#currentComputeStateSubject"><span class="nav-number">1.5.3.</span> <span class="nav-text">currentComputeStateSubject</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%90%E7%A0%81%E6%B5%81"><span class="nav-number">2.</span> <span class="nav-text">子码流</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+        &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2024
+        
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/blog/">MoMo</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+        <div class="count-info info-item">
+            
+
+            
+                <span class="count-item border-box uv">
+                    <span class="item-type border-box">Unique Visitor</span>
+                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
+                </span>
+            
+
+            
+                <span class="count-item border-box pv">
+                    <span class="item-type border-box">Page View</span>
+                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
+                </span>
+            
+        </div>
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools left-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-toggle-theme-mode flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <!-- use hexo-blog-encrypt -->
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#I%E5%B8%A7%E9%AA%8C%E8%AF%81"><span class="nav-number">1.</span> <span class="nav-text">I帧验证</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-number">1.1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%81%E7%A8%8B"><span class="nav-number">1.2.</span> <span class="nav-text">流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E9%9A%BE%E7%82%B9"><span class="nav-number">1.3.</span> <span class="nav-text">问题难点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98"><span class="nav-number">1.4.</span> <span class="nav-text">内存优化问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E6%AD%A5%E9%AA%A4"><span class="nav-number">1.5.</span> <span class="nav-text">具体步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ReentrantLock"><span class="nav-number">1.5.1.</span> <span class="nav-text">ReentrantLock</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DiskLruCacheOfFrameOfAlarm"><span class="nav-number">1.5.2.</span> <span class="nav-text">DiskLruCacheOfFrameOfAlarm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#currentComputeStateSubject"><span class="nav-number">1.5.3.</span> <span class="nav-text">currentComputeStateSubject</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%90%E7%A0%81%E6%B5%81"><span class="nav-number">2.</span> <span class="nav-text">子码流</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+<!-- common -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/utils.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/header-shrink.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/back2top.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/toggle-theme.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/code-block.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/main.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/libs/anime.min.js"></script>
+
+<!-- local-search -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/local-search.min.js"></script>
+
+
+<!-- lazyload -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/lazyload.min.js"></script>
+
+
+<div class="pjax">
+    
+        <!-- post-helper -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/post/post-helper.min.js"></script>
+
+        <!-- toc -->
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/post/toc.min.js"></script>
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/post/share.min.js"></script>
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+</body>
+</html>

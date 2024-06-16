@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="MoMo">
+    
+    <title>
+        
+            JNI |
+        
+        今天在干嘛
+    </title>
+    
+<link rel="stylesheet" href="/blog/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/blog/images/logoMoon.svg">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/regular.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/brands.min.css">
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"kenken-xr.github.io","root":"/blog/","language":"en","path":"search.json"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#f8a5c2","title":"今天在干嘛","author":"MoMo","avatar":"/images/avatar.jpg","logo":"/images/logoMoon.svg","favicon":"/images/logoMoon.svg"},"menu":{"home":"/","archives":"/archives","tags":"/tags","categories":"/categories","github":"https://github.com/kenken-xr"},"first_screen":{"enable":true,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":true,"links":{"github":"https://github.com/kenken-xr","weixin":"img | /images/wx.png","qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":true,"percent":true,"hide_header":false},"home":{"announcement":null,"category":true,"tag":true,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":true,"reward":{"enable":false,"img_link":null,"text":null},"img_align":"center"},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true,"layout":"left"},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"local_search":{"enable":true,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.36"},"waline":{"server_url":null,"reaction":false,"version":"3.2.1"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":true},"cdn":{"enable":true,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":2023,"word_count":true,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"/blog","source_data":{},"version":"4.1.3"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original post title","author":"Original post author","link":"Original post link"}
+  </script>
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/blog/atom.xml" title="MoMo" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left border-box">
+            
+                <a class="logo-image border-box" href="/blog/">
+                    <img src="/blog/images/logoMoon.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/blog/">
+               今天在干嘛
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/"
+                            >
+                                
+                                HOME
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/archives"
+                            >
+                                
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/tags"
+                            >
+                                
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/categories"
+                            >
+                                
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               target="_blank" rel="noopener" href="https://github.com/kenken-xr"
+                            >
+                                
+                                GITHUB
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/"
+                    >HOME</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/archives"
+                    >ARCHIVES</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/tags"
+                    >TAGS</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/categories"
+                    >CATEGORIES</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       target="_blank" rel="noopener" href="https://github.com/kenken-xr"
+                    >GITHUB</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        JNI
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/blog/images/avatar.jpg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">MoMo</span>
+                                
+                                    <span class="author-badge">Lv5</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2024-06-05 17:26:02</span>
+            </span>
+
+            <span class="meta-info-item post-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="datetime" data-updated="Thu Jun 13 2024 22:04:12 GMT+0800">2024-06-13 22:04:12</span>
+            </span>
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/blog/categories/%E6%9C%89%E5%9C%A8%E8%AE%A4%E7%9C%9F%E4%B8%8A%E7%8F%AD/">有在认真上班</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/blog/tags/Android/">Android</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+            <span class="meta-info-item post-pv">
+                <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    <ol>
+<li>什么是JNI?它主要用来干什么。 ⭐⭐⭐⭐⭐</li>
+<li>Java 声明的Native方法如何和Native层的Native函数进行绑定的？⭐⭐⭐⭐⭐</li>
+<li>JNI如何实现数据传递？⭐⭐⭐⭐</li>
+<li>如何全局捕获Native发生的异常？⭐⭐⭐</li>
+<li>JNIEnv与JavaVM的关系⭐⭐⭐⭐</li>
+<li>C和C++的JNIEnv的区别 ⭐⭐⭐</li>
+<li>JNI项目配置和数据映射 ⭐⭐</li>
+</ol>
+<h1 id="什么是JNI、NDK"><a href="#什么是JNI、NDK" class="headerlink" title="什么是JNI、NDK"></a>什么是JNI、NDK</h1><h2 id="JNI"><a href="#JNI" class="headerlink" title="JNI"></a>JNI</h2><p>JNI（Java Native Interface）就是Java本地化接口。在Windows，Linux，MacOS等操作系统的底层驱动都是使用C/C++开发的，因此这些系统提供的API函数都是C/C++编写的。而在安卓开发中，我们使用java编程写的代码都是在Java虚拟机中，编译成虚拟机可以运行的Java字节码.class文件，再通过JIT技术即时编译成本地机器码，所以效率是比不上C/C++的。因此，很容易联想到，我们希望能有这么一个中间件，支持我们在Java代码中与本地系统的C/C++代码做个交互，这个中间件就是JNI。</p>
+<p>Java一次编译到处执行: JVM在不同的操作系统都有实现，Java可以一次编译到处运行，字节码文件一旦编译好了，可以放在任何平台的虚拟机上运行；</p>
+<p><strong>Java语言执行流程</strong>：</p>
+<ul>
+<li>编译字节码：Java编译器编译 .java源文件，获得.class 字节码文件；</li>
+<li>装载类库：使用类装载器装载平台上的Java类库，并进行字节码验证；</li>
+<li>Java虚拟机：将字节码加入到JVM中，Java解释器和即时编译器同时处理字节码文件，将处理后的结果放入运行时系统；</li>
+<li>调用JVM所在平台类库：JVM处理字节码后，转换成相应平台的操作，调用本平台底层类库进行相关处理；</li>
+</ul>
+<p><img lazyload="" alt="image" data-src="https://uploadfiles.nowcoder.com/images/20231120/545613072_1700451754172/D2B5CA33BD970F64A6301FA75AE2EB22"></p>
+<h2 id="1-2-JNI-与-NDK-的联系和区别"><a href="#1-2-JNI-与-NDK-的联系和区别" class="headerlink" title="1.2 JNI 与 NDK 的联系和区别"></a>1.2 JNI 与 NDK 的联系和区别</h2><p>NDK（Native Development Kit），翻译过来是“本地开发工具”，是Google开发的一套开发和编译工具集，可快速生成C、C++的动态库，并自动把so和应用打包成apk，主要用于Android的JNI开发；</p>
+<p>因此，JNI是一套编程接口，可以实现Java代码和本地C/C++代码进行交互。而NDK可以理解为Android实现JNI的一种工具，通过该工具打包C/C++动态库并自动打包进APK/AAR中。</p>
+<h1 id="JNI的两种注册方式"><a href="#JNI的两种注册方式" class="headerlink" title="JNI的两种注册方式"></a>JNI的两种注册方式</h1><p>JNI有静态注册和动态注册两种方式，多用动态注册。</p>
+<h2 id="静态注册"><a href="#静态注册" class="headerlink" title="静态注册"></a>静态注册</h2><p>静态注册的原理是：根据函数名建立Java方法和JNI函数的一一对应关系。步骤如下：</p>
+<ol>
+<li>先声明 Java 的 native 方法；</li>
+<li>使用 javah 工具生成对应的头文件，在Terminal控制台执行以下任一命令生成由包名加类名命名的 jni 层头文件：</li>
+</ol>
+<ul>
+<li><code>javah packagename.classname</code>；</li>
+<li><code>javah -o my_jni.h packagename.classname</code>，其中 my_jni.h 为自定义的文件名；</li>
+</ul>
+<ol>
+<li>实现对应的native方法，并在Java中通过System.loadLibrary()方法加载 so 库即可；</li>
+</ol>
+<p>因为有Android Studio这个强大的工具，我们可以很轻松建立一个JNI项目工程。</p>
+<p><img lazyload="" alt="image" data-src="https://uploadfiles.nowcoder.com/images/20231120/545613072_1700451763434/D2B5CA33BD970F64A6301FA75AE2EB22"></p>
+<p>新创建的项目就有了默认的JNI函数了，下面做简单介绍：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MainActivity</span> <span class="keyword">extends</span> <span class="title class_">AppCompatActivity</span> {</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Used to load the 'myapplication' library on application startup.</span></span><br><span class="line">    <span class="keyword">static</span> {</span><br><span class="line">        System.loadLibrary(<span class="string">"myapplication"</span>); <span class="comment">//1</span></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> ActivityMainBinding binding;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onCreate</span><span class="params">(Bundle savedInstanceState)</span> {</span><br><span class="line">        <span class="built_in">super</span>.onCreate(savedInstanceState);</span><br><span class="line"></span><br><span class="line">        binding = ActivityMainBinding.inflate(getLayoutInflater());</span><br><span class="line">        setContentView(binding.getRoot());</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Example of a call to a native method</span></span><br><span class="line">        <span class="type">TextView</span> <span class="variable">tv</span> <span class="operator">=</span> binding.sampleText;</span><br><span class="line">        tv.setText(stringFromJNI()); <span class="comment">//2 </span></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * A native method that is implemented by the 'myapplication' native library,</span></span><br><span class="line"><span class="comment">     * which is packaged with this application.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">native</span> String <span class="title function_">stringFromJNI</span><span class="params">()</span>; <span class="comment">//3</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>在[注释3]先声明 native 方法，并在[注释1]加载so库，最后在[注释2]调用native函数stringFromJNI()，其对应的实现在：native-lib.cpp文件里：</p>
+<figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;jni.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">extern</span> <span class="string">"C"</span> JNIEXPORT jstring JNICALL <span class="comment">//4</span></span><br><span class="line"><span class="built_in">Java_com_example_myapplication_MainActivity_stringFromJNI</span>( <span class="comment">//5</span></span><br><span class="line">        JNIEnv* env,</span><br><span class="line">        jobject <span class="comment">/* this */</span>) {</span><br><span class="line">    std::string hello = <span class="string">"Hello World"</span>;</span><br><span class="line">    <span class="keyword">return</span> env-&gt;<span class="built_in">NewStringUTF</span>(hello.<span class="built_in">c_str</span>()); <span class="comment">//6</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>[注释4]是两个关键词：<code>JNIEXPORT 和 JNICALL</code>，这两个都是宏定义，在jni.h文件中定义：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#define JNIIMPORT</span><br><span class="line">#define JNIEXPORT  __attribute__ ((visibility ("default")))</span><br><span class="line">#define JNICALL</span><br></pre></td></tr></tbody></table></figure>
+
+<p>主要作用是注明该函数Java_com_example_myapplication_MainActivity_stringFromJNI()是JNI函数，那么当虚拟机加载so库时，就会将该函数链接到对应的Java层native方法，World”的字符串。</p>
+<h2 id="native层函数命名规则"><a href="#native层函数命名规则" class="headerlink" title="native层函数命名规则"></a>native层函数命名规则</h2><p>上一小节的[注释3]stringFromJNI()和[注释5]Java_com_example_myapplication_MainActivity_stringFromJNI(JNIEnv* env,jobject)有匹配关系，其Natvie层函数命名遵循以下规则：</p>
+<p><code>JNIEXPORT 返回值 JNICALL Java_全路径类名_方法名_参数签名(JNIEnv* , jclass, 其它参数);</code> 同时还有以下几个需要注意的小点：</p>
+<ul>
+<li>如果是c++文件，如上述例子Natvie方法放在native-lib.cpp文件里，此时需要在Native函数前面加上 <strong>extern “C”</strong>；</li>
+<li>如果该函数是重载的方法，则需要加上“参数签名”，参数签名见3.3.1小节，上述例子非重载方法，因此命名上不需要加“参数签名”；</li>
+<li>包名或类名或方法名中含下划线 _ 要用 _1 连接；</li>
+<li>重载的Native方法命名中的“方法名”后面要用双下划线 __ 连接；</li>
+<li>参数签名的斜杠 “/” 改为下划线 “_” 连接，分号 “;” 改为 “_2” 连接，左方括号 ‘[‘改为 ‘_3’ 连接 ；</li>
+<li>如果Java层方法是static方法，则Native层方法的第二个形参是jclass，否则是jobject，如上述例子，Java层为非static方法，所以Native层方法的第二个参数是jobject。</li>
+</ul>
+<h2 id="静态注册的优缺点"><a href="#静态注册的优缺点" class="headerlink" title="静态注册的优缺点"></a>静态注册的优缺点</h2><p>静态注册优点就是<strong>实现简单</strong>，编写好Java方法后用javah工具就可以将Java代码中声明的native方法转换为native层的代码函数，并直接实现native层代码逻辑就行。然而缺点也比较明显：</p>
+<ul>
+<li>每次增加新的函数或者修改函数名等，都需要手动在运行javah命令，比较麻烦。同时，生成的Native层函数名字太长了，可读性不高；</li>
+<li>首次调用Native函数时，需要根据函数名在Java层和Native层直接建立函数链接，比较耗时；</li>
+</ul>
+<p>因此，无论是实用性还是效率，都推荐使用动态注册。</p>
+<h2 id="动态注册"><a href="#动态注册" class="headerlink" title="动态注册"></a>动态注册</h2><p>动态注册的原理是通过使用 JNINativeMethod 结构来保存Java层声明的native方法和Native层函数的关联关系，直接告Java层声明的native方法其在Native层中对应函数的指针。该结构体的定义和动态注册需要用到的关键函数也在jni.h文件中定义：</p>
+<figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//JNINativeMethod结构体</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> {</span><br><span class="line">    <span class="type">const</span> <span class="type">char</span>* name;       <span class="comment">//Java层声明的中的native方法的名字</span></span><br><span class="line">    <span class="type">const</span> <span class="type">char</span>* signature;  <span class="comment">//Java中native方法的函数签名</span></span><br><span class="line">    <span class="type">void</span>*       fnPtr;      <span class="comment">//对应Native层函数的指针</span></span><br><span class="line">} JNINativeMethod;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param clazz java类名，通过 FindClass 获取</span></span><br><span class="line"><span class="comment"> * @param methods JNINativeMethod 结构体指针</span></span><br><span class="line"><span class="comment"> * @param nMethods 方法个数</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function">jint <span class="title">RegisterNatives</span><span class="params">(jclass clazz, <span class="type">const</span> JNINativeMethod* methods, jint nMethods)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="comment">//JNI_OnLoad </span></span></span><br><span class="line"><span class="function">JNIEXPORT jint JNICALL <span class="title">JNI_OnLoad</span><span class="params">(JavaVM* vm, <span class="type">void</span>* reserved)</span></span>;</span><br></pre></td></tr></tbody></table></figure>
+
+<p>动态注册的步骤：</p>
+<ol>
+<li>先声明 Java层 的 native 方法；</li>
+<li>同步实现Native层函数的实现，函数名可以任意取！</li>
+<li>利用结构体 JNINativeMethod 保存Java层native方法和 Native层的JNI函数的对应关系；</li>
+<li>利用registerNatives(JNIEnv* env)注册类的所有本地方法；</li>
+<li>在 JNI_OnLoad() 方法中调用步骤4的注册方法；</li>
+<li>在Java中通过System.loadLibrary加载完JNI动态库之后，会调用JNI_OnLoad()方法，完成动态注册；</li>
+</ol>
+<p>代码实例如下：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Java层的MainActivity.java文件：</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MainActivity</span> <span class="keyword">extends</span> <span class="title class_">AppCompatActivity</span> {</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Used to load the 'myapplication' library on application startup.</span></span><br><span class="line">    <span class="keyword">static</span> {</span><br><span class="line">        System.loadLibrary(<span class="string">"myapplication"</span>); <span class="comment">//7</span></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> ActivityMainBinding binding;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onCreate</span><span class="params">(Bundle savedInstanceState)</span> {</span><br><span class="line">        <span class="built_in">super</span>.onCreate(savedInstanceState);</span><br><span class="line"></span><br><span class="line">        binding = ActivityMainBinding.inflate(getLayoutInflater());</span><br><span class="line">        setContentView(binding.getRoot());</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Example of a call to a native method</span></span><br><span class="line">        <span class="type">TextView</span> <span class="variable">tv</span> <span class="operator">=</span> binding.sampleText;</span><br><span class="line">        tv.setText(stringFromJNI());  <span class="comment">// 8</span></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * A native method that is implemented by the 'myapplication' native library,</span></span><br><span class="line"><span class="comment">     * which is packaged with this application.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">native</span> String <span class="title function_">stringFromJNI</span><span class="params">()</span>; <span class="comment">//9</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">// 自定义的interface.cpp文件：</span></span><br><span class="line"></span><br><span class="line">jint <span class="title function_">JNI_OnLoad</span><span class="params">(JavaVM* vm, <span class="keyword">void</span>* reserved)</span> <span class="comment">//10</span></span><br><span class="line">{</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">if</span> (JNI_FALSE == registerMethods(m_pEnv, CLASSNAME, gMethods, NELEM(gMethods))) <span class="comment">// 11</span></span><br><span class="line">    {</span><br><span class="line">        LOGE(LOG_TAG, <span class="string">"load method fail"</span>);</span><br><span class="line">        <span class="keyword">return</span> JNI_ERR;</span><br><span class="line">    }</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> JNI_VERSION_1_6;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">//JNINativeMethod结构体定义</span></span><br><span class="line"><span class="keyword">static</span> JNINativeMethod gMethods[] = { <span class="comment">//12</span></span><br><span class="line">        {<span class="string">"stringFromJNI"</span>, <span class="string">"()Ljava/lang/String"</span>, (<span class="keyword">void</span>*)stringFromJNI},</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>在[注释7]加载好库后，会自动调用[注释10]JNI_OnLoad()方法并最终执行[注释11]registerMethods()方法，对[注释12]定义的结构体进行注册。这样Java声明的native函数就可以使用啦。</p>
+<h1 id="JNI语法"><a href="#JNI语法" class="headerlink" title="JNI语法"></a>JNI语法</h1><h2 id="JNI项目配置"><a href="#JNI项目配置" class="headerlink" title="JNI项目配置"></a>JNI项目配置</h2><p>使用Android Studio新创建的JNI工程可以快速的实现Java层和Native层函数的交互，这是因为Android Studio已经自动的帮我们完成了项目配置，主要有以下几点：</p>
+<h3 id="build-gradle"><a href="#build-gradle" class="headerlink" title="build.gradle"></a>build.gradle</h3><p>build.gradle 文件配置：注意两个externalNativeBuild {}的配置</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">android {</span><br><span class="line">    compileSdkVersion 30</span><br><span class="line">    buildToolsVersion "30.0.1"</span><br><span class="line"></span><br><span class="line">    defaultConfig {</span><br><span class="line">        minSdkVersion 21</span><br><span class="line">        targetSdkVersion 30</span><br><span class="line">        ..</span><br><span class="line">        </span><br><span class="line">        externalNativeBuild {</span><br><span class="line">            cmake {</span><br><span class="line">                cppFlags "-std=c++11" //使用 C++11 标准    </span><br><span class="line">                abiFilters "armeabi-v7a", "arm64-v8a"  // 生成.so库的目标平台</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    externalNativeBuild {</span><br><span class="line">    cmake {</span><br><span class="line">            path file('src/main/cpp/CMakeLists.txt') //13：配置 CMake 文件的路径</span><br><span class="line">            version '3.18.1'</span><br><span class="line">        }</span><br><span class="line">    }</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="3-1-2-CMakeLists-txt文件"><a href="#3-1-2-CMakeLists-txt文件" class="headerlink" title="3.1.2 CMakeLists.txt文件"></a>3.1.2 CMakeLists.txt文件</h3><p>CMakeLists.txt文件 ：上面[注释13]配置的CMake文件CMakeLists.txt是Android Studio自动生成的CMake脚本配置文件，以下是Android Studio首次自动生成还未进行自定义修改的CMakeLists.txt文件：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"># For more information about using CMake with Android Studio, read the</span><br><span class="line"># documentation: https://d.android.com/studio/projects/add-native-code.html</span><br><span class="line"></span><br><span class="line"># Sets the minimum version of CMake required to build the native library.</span><br><span class="line"></span><br><span class="line">cmake_minimum_required(VERSION 3.18.1)  # 1.指定cmake版本</span><br><span class="line"></span><br><span class="line"># Declares and names the project.</span><br><span class="line"></span><br><span class="line">project("myapplication")</span><br><span class="line"></span><br><span class="line"># Creates and names a library, sets it as either STATIC</span><br><span class="line"># or SHARED, and provides the relative paths to its source code.</span><br><span class="line"># You can define multiple libraries, and CMake builds them for you.</span><br><span class="line"># Gradle automatically packages shared libraries with your APK.</span><br><span class="line"></span><br><span class="line">add_library( # Sets the name of the library.</span><br><span class="line">        myapplication # 2.生成函数库的名字，System.loadLibrary()方法加载的动态库的名字</span><br><span class="line"></span><br><span class="line">        # Sets the library as a shared library.</span><br><span class="line">        SHARED # 3.  生成动态函数</span><br><span class="line"></span><br><span class="line">        # Provides a relative path to your source file(s).</span><br><span class="line">        native-lib.cpp) # 4. 依赖的cpp文件，每添加一个 C/C++文件都要添加到这里，不然不会被编译</span><br><span class="line"></span><br><span class="line"># Searches for a specified prebuilt library and stores the path as a</span><br><span class="line"># variable. Because CMake includes system libraries in the search path by</span><br><span class="line"># default, you only need to specify the name of the public NDK library</span><br><span class="line"># you want to add. CMake verifies that the library exists before</span><br><span class="line"># completing its build.</span><br><span class="line"></span><br><span class="line">find_library( # Sets the name of the path variable.</span><br><span class="line">        log-lib  # 5. 设置path变量的名称</span><br><span class="line"></span><br><span class="line">        # Specifies the name of the NDK library that</span><br><span class="line">        # you want CMake to locate.</span><br><span class="line">        log) # 6.指定要查询库的名字</span><br><span class="line"></span><br><span class="line"># Specifies libraries CMake should link to your target library. You</span><br><span class="line"># can link multiple libraries, such as libraries you define in this</span><br><span class="line"># build script, prebuilt third-party libraries, or system libraries.</span><br><span class="line"></span><br><span class="line">target_link_libraries( # Specifies the target library.</span><br><span class="line">        myapplication # 7. 目标库, 和上面注释 '#2' 生成的函数库名字一致</span><br><span class="line"></span><br><span class="line">        # Links the target library to the log library</span><br><span class="line">        # included in the NDK.</span><br><span class="line">        ${log-lib}) # 8.  连接的库，根据log-lib变量对应liblog.so函数库</span><br></pre></td></tr></tbody></table></figure>
+
+<p>那如果需要加上自定义的修改，如添加新的c/c++文件，添加新的动态库，或者修改动态库的默认名字，需要如何修改呢？</p>
+<ul>
+<li>在add_library()这个方法里可以在[注释#2]修改动态库名字，在[注释#4]继续添加新的c/c++文件；</li>
+<li>当然也可以另写一个add_library()方法添加新的动态库，然后记得在[注释#7]下面也加上新的动态库的名字；</li>
+<li>添加文件夹：上面native-lib.cpp文件路径是src/main/cpp/native-lib.cpp，假如我们需要添加一个src/main/cpp/include文件夹来包含项目需求用到的其他.h头文件，则需要加上：<code>include_directories(${CMAKE_SOURCE_DIR}/include)</code>将指定目录添加到编译器的头文件搜索路径之下。</li>
+</ul>
+<p>至于其他的语法请自行百度“Cmake命令“。</p>
+<h2 id="数据映射"><a href="#数据映射" class="headerlink" title="数据映射"></a>数据映射</h2><h3 id="基本数据类型映射"><a href="#基本数据类型映射" class="headerlink" title="基本数据类型映射"></a>基本数据类型映射</h3><p>Java层基本数据类型和Native层数据类型会有如下映射关系，这些都是在jni.h里面有定义的：</p>
+<p>Java类型 本地类型 描述</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>boolean</td>
+<td>jboolean</td>
+<td>C/C++无符号8位整型(unsigned char)</td>
+</tr>
+<tr>
+<td>byte</td>
+<td>jbyte</td>
+<td>C/C++带符号8位整型(char)</td>
+</tr>
+<tr>
+<td>char</td>
+<td>jchar</td>
+<td>C/C++无符号16位整型(unsigned short)</td>
+</tr>
+<tr>
+<td>short</td>
+<td>jshort</td>
+<td>C/C++带符号16位整型(short)</td>
+</tr>
+<tr>
+<td>int</td>
+<td>jint</td>
+<td>C/C++带符号32位整型(int)</td>
+</tr>
+<tr>
+<td>long</td>
+<td>jlong</td>
+<td>C/C++带符号64位整型(long)</td>
+</tr>
+<tr>
+<td>float</td>
+<td>jfloat</td>
+<td>C/C++32位浮点型(float)</td>
+</tr>
+<tr>
+<td>double</td>
+<td>jdouble</td>
+<td>C/C++64位浮点型(double)</td>
+</tr>
+</tbody></table>
+<h3 id="引用数据类型映射"><a href="#引用数据类型映射" class="headerlink" title="引用数据类型映射"></a>引用数据类型映射</h3><p>Java引用数据类型和Native层的映射如下：</p>
+<p>Java类型 本地类型 描述</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Object</td>
+<td>jobject</td>
+<td>任何Java对象</td>
+</tr>
+<tr>
+<td>Class</td>
+<td>jclass</td>
+<td>Java中的类对象</td>
+</tr>
+<tr>
+<td>String</td>
+<td>jstring</td>
+<td>字符串对象</td>
+</tr>
+<tr>
+<td>Object[]</td>
+<td>jobjectArray</td>
+<td>任何Java对象的数组</td>
+</tr>
+<tr>
+<td>boolean[]</td>
+<td>jbooleanArray</td>
+<td>布尔型数组</td>
+</tr>
+<tr>
+<td>byte[]</td>
+<td>jbyteArray</td>
+<td>比特型数组</td>
+</tr>
+<tr>
+<td>char[]</td>
+<td>jcharArray</td>
+<td>字符型数组</td>
+</tr>
+<tr>
+<td>short[]</td>
+<td>jshortArray</td>
+<td>短整型数组</td>
+</tr>
+<tr>
+<td>int[]</td>
+<td>jintArray</td>
+<td>整型数组</td>
+</tr>
+<tr>
+<td>long[]</td>
+<td>jlongArray</td>
+<td>长整型数组</td>
+</tr>
+<tr>
+<td>float[]</td>
+<td>jfloatArray</td>
+<td>浮点型数组</td>
+</tr>
+<tr>
+<td>double[]</td>
+<td>jdoubleArray</td>
+<td>双浮点型数组</td>
+</tr>
+</tbody></table>
+<p>不过需要注意，引用类型是不能直接在Native层使用的，需要根据JNI函数进行类型转换后才可以使用。举个例子，Java层声明了<code>public native int getLength(int[] arr);</code>则对应的Native层函数应该对int[]进行如下转换：</p>
+<figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;jni.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">extern</span> <span class="string">"C"</span> <span class="function">JNIEXPORT jint JNICALL </span></span><br><span class="line"><span class="function"><span class="title">Java_com_example_myapplication_MainActivity_getLength</span><span class="params">((JNIEnv *env, jobject jobj, jintArray arr_) {</span></span></span><br><span class="line"><span class="params"><span class="function">    jint len = <span class="number">0</span>;</span></span></span><br><span class="line"><span class="params"><span class="function">    jint *arr = env-&gt;GetIntArrayElements(arr_, <span class="number">0</span>); <span class="comment">//根据JNI函数进行类型转换后才可以使用</span></span></span></span><br><span class="line"><span class="params"><span class="function">    len = env-&gt;GetArrayLength(arr_); <span class="comment">//获取int数组的长度</span></span></span></span><br><span class="line"><span class="params"><span class="function">    <span class="keyword">return</span> len;</span></span></span><br><span class="line"><span class="params"><span class="function">}</span></span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="方法和变量ID"><a href="#方法和变量ID" class="headerlink" title="方法和变量ID"></a>方法和变量ID</h3><p>Java层的方法Natvie层也不能直接使用，需要通过JNI提供的函数获取方法的ID，再根据这个ID通过JNI提供的函数获取到对应的方法，经过这几个步骤才可以在Native层调用Java层的方法，变量也是一样的道理。ID的结构体定义也在jni.h文件里：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">struct _jfieldID;                       /* opaque structure */</span><br><span class="line">typedef struct _jfieldID* jfieldID;     /* field IDs */</span><br><span class="line"></span><br><span class="line">struct _jmethodID;                      /* opaque structure */</span><br><span class="line">typedef struct _jmethodID* jmethodID;   /* method IDs */</span><br></pre></td></tr></tbody></table></figure>
+
+<p>举个例子，Java层的Person类有如下代码：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义</span></span><br><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="variable">mAge</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setAge</span><span class="params">(<span class="type">int</span> age)</span> {</span><br><span class="line">    <span class="built_in">this</span>.mAge = sex;</span><br><span class="line">}</span><br><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getAge</span><span class="params">()</span>{</span><br><span class="line">    <span class="keyword">return</span> mAge;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">native</span> <span class="keyword">void</span> <span class="title function_">agePlusOne</span><span class="params">()</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用</span></span><br><span class="line"><span class="type">Person</span> <span class="variable">person</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>();</span><br><span class="line">Log.d(TAG, <span class="string">"调用前：getAge() = "</span> + person.getAge());</span><br><span class="line">methodJni.agePlusOne();</span><br><span class="line">Log.d(TAG, <span class="string">"调用后：getAge() = "</span> + person.getAge());</span><br></pre></td></tr></tbody></table></figure>
+
+<p>对应的Native层代码如下：</p>
+<figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="string">"C"</span></span><br><span class="line"><span class="function">JNIEXPORT <span class="type">void</span> JNICALL</span></span><br><span class="line"><span class="function"><span class="title">Java_com_example_myapplication_MainActivity_agePlusOne</span><span class="params">(JNIEnv *env, jobject jobj)</span> </span>{</span><br><span class="line">    <span class="comment">// 1. 获取实例对应的 class</span></span><br><span class="line">    jclass jclazz = env-&gt;<span class="built_in">GetObjectClass</span>(jobj);</span><br><span class="line">    <span class="comment">// 2. 通过class获取相应的变量的 field id</span></span><br><span class="line">    jfieldID fid = env-&gt;<span class="built_in">GetFieldID</span>(jclazz, <span class="string">"mAge"</span>, <span class="string">"I"</span>);</span><br><span class="line">    <span class="comment">// 3. 通过 field id 获取对应的值</span></span><br><span class="line">    jint age = env-&gt;<span class="built_in">GetIntField</span>(jobj, fid);  <span class="comment">//注意，不是用 jclazz, 使用第二个参数 jobj</span></span><br><span class="line">    age++;</span><br><span class="line">    <span class="comment">// 4. 获取方法的 id</span></span><br><span class="line">    jmethodID mid = env-&gt;<span class="built_in">GetMethodID</span>(jclazz, <span class="string">"setAge"</span>, <span class="string">"(I)V"</span>);</span><br><span class="line">    <span class="comment">// 5. 通过该 class 调用对应的setAge()方法</span></span><br><span class="line">    env-&gt;<span class="built_in">CallVoidMethod</span>(jobj, mid, age);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>最終的打印結果：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MainActivity: 调用前：getAge() = 10</span><br><span class="line">MainActivity: 调用后：getAge() = 11</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="JNI-描述符"><a href="#JNI-描述符" class="headerlink" title="JNI 描述符"></a>JNI 描述符</h2><h3 id="域描述符"><a href="#域描述符" class="headerlink" title="域描述符"></a>域描述符</h3><h4 id="基础类型描述符"><a href="#基础类型描述符" class="headerlink" title="基础类型描述符"></a>基础类型描述符</h4><p>基础类型描述符常用于上述注册JNI函数时用到的函数签名，参数签名，除了boolean的描述符是Z，long类型的描述符是J之外，其他基础类型的描述符都是其类型名称的大写首字母：</p>
+<p>Java基础类型 域描述符</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>boolean</td>
+<td>Z</td>
+</tr>
+<tr>
+<td>long</td>
+<td>J</td>
+</tr>
+<tr>
+<td>int</td>
+<td>I</td>
+</tr>
+<tr>
+<td>char</td>
+<td>C</td>
+</tr>
+<tr>
+<td>short</td>
+<td>S</td>
+</tr>
+<tr>
+<td>float</td>
+<td>F</td>
+</tr>
+<tr>
+<td>double</td>
+<td>D</td>
+</tr>
+<tr>
+<td>void</td>
+<td>V</td>
+</tr>
+<tr>
+<td>byte</td>
+<td>B</td>
+</tr>
+</tbody></table>
+<h4 id="3-3-1-2-引用类型描述符"><a href="#3-3-1-2-引用类型描述符" class="headerlink" title="3.3.1.2 引用类型描述符"></a>3.3.1.2 引用类型描述符</h4><p>引用类型的描述符需要重点注意，类描述符前面需要加上’L’，后面需要加上’ ; ‘</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">L + 引用类描述符 + ;</span><br></pre></td></tr></tbody></table></figure>
+
+<p>比如String的域描述符就是<code>Ljava/lang/String;</code></p>
+<p>数组的域描述符也比较特殊，如果是n级数组，则域描述符有n个’ [ ‘，同时：数组类型为：</p>
+<ul>
+<li>基本数据类型：域描述符不加分号</li>
+<li>Class类：域描述符以分号结尾</li>
+</ul>
+<p>例如：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>[]    描述符为 [I</span><br><span class="line"><span class="type">double</span>[] 描述符为 [D</span><br><span class="line">String[] 描述符为 [Ljava/lang/String;</span><br><span class="line">Object[] 描述符为 [Ljava/lang/Object;</span><br><span class="line"><span class="type">int</span>[][]  描述符为 [[I</span><br><span class="line"><span class="type">double</span>[][] 描述符为 [[D</span><br><span class="line">ClassA[] 描述符为 [com/android/example/User;</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="类描述符"><a href="#类描述符" class="headerlink" title="类描述符"></a>类描述符</h3><p>类描述符是类的完整名称：L+包名+类名+;，java 中包名用’ . ‘分割，jni 中改为用’ / ‘分割。如com.android.example包下面的User类的类描述符就是：<code>Lcom/android/example/User;</code></p>
+<p>在Native层获取Java类对象可以通过FindClass()方法，如</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jclass jclazz = env-&gt;FindClass("Lcom/android/example/User;");</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="方法描述符"><a href="#方法描述符" class="headerlink" title="方法描述符"></a>方法描述符</h3><p>方法描述符规则是：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(参数……)返回类型</span><br></pre></td></tr></tbody></table></figure>
+
+<p>如果没有参数，可以不需要括号。例如：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  Java 层方法   ——&gt;  JNI 函数签名</span><br><span class="line">String getName()  ——&gt;  Ljava/lang/String;</span><br><span class="line">int getTotal(int a, int b)  ——&gt;  (II)I</span><br><span class="line">int getLength(int[] array) ——&gt; ([I)I</span><br><span class="line">void setAge(int age) ——&gt; (I)V</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="JNIEnV分析"><a href="#JNIEnV分析" class="headerlink" title="JNIEnV分析"></a>JNIEnV分析</h2><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Java_com_example_myapplication_MainActivity_getLength((JNIEnv *env, jobject jobj, jintArray arr_) {}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>在JNI函数中，第一个形参就是JNIEnv，JNIEnv是jni.h文件最重要的部分，定义如下</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> _<span class="title">JNIEnv</span>;</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> _<span class="title">JavaVM</span>;</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="type">const</span> <span class="class"><span class="keyword">struct</span> <span class="title">JNINativeInterface</span>* <span class="title">C_JNIEnv</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">if</span> defined(__cplusplus)</span></span><br><span class="line"><span class="keyword">typedef</span> _JNIEnv JNIEnv;  <span class="comment">// 14：C++ </span></span><br><span class="line"><span class="keyword">typedef</span> _JavaVM JavaVM;</span><br><span class="line"><span class="meta">#<span class="keyword">else</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="type">const</span> <span class="class"><span class="keyword">struct</span> <span class="title">JNINativeInterface</span>* <span class="title">JNIEnv</span>;</span> <span class="comment">// 15：C</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="type">const</span> <span class="class"><span class="keyword">struct</span> <span class="title">JNIInvokeInterface</span>* <span class="title">JavaVM</span>;</span></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"><span class="class"><span class="keyword">struct</span> _<span class="title">JNIEnv</span> {</span> <span class="comment">//16</span></span><br><span class="line">    <span class="comment">/* do not rename this; it does not seem to be entirely opaque */</span></span><br><span class="line">    <span class="type">const</span> <span class="class"><span class="keyword">struct</span> <span class="title">JNINativeInterface</span>* <span class="title">functions</span>;</span></span><br><span class="line">    ...</span><br><span class="line">     jstring <span class="title function_">NewStringUTF</span><span class="params">(<span class="type">const</span> <span class="type">char</span>* bytes)</span> <span class="comment">// 17</span></span><br><span class="line">    { <span class="keyword">return</span> functions-&gt;NewStringUTF(this, bytes); }</span><br><span class="line">    ...</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>其中JNINativeInterface的注释”Table of interface function pointers”翻译过来就是 是接口函数表指针，因此无论是上述C++还是C针对JNIEnv的定义，都代表JNIEnv是指向JNINativeInterface的指针，即是<code>指向函数表指针的指针</code>。很明显上面的JavaVM也是<code>指向函数表指针的指针</code></p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * Table of interface function pointers.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">JNINativeInterface</span> {</span></span><br><span class="line">    <span class="type">void</span>*       reserved0;</span><br><span class="line">    <span class="type">void</span>*       reserved1;</span><br><span class="line">    ...</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="C和C-的JNIEnv的区别"><a href="#C和C-的JNIEnv的区别" class="headerlink" title="C和C++的JNIEnv的区别"></a>C和C++的JNIEnv的区别</h3><p>我们具体分析下C和C++的JNIEnv的区别，先看C，对应上述源码[注释15]：</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// c的定义</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="type">const</span> <span class="class"><span class="keyword">struct</span> <span class="title">JNINativeInterface</span>* <span class="title">JNIEnv</span>;</span></span><br><span class="line"><span class="comment">// 在使用时，作为第一个形参：</span></span><br><span class="line">Java_com_example_myapplication_MainActivity_getLength((JNIEnv *env, jobject jobj, jintArray arr_) {}</span><br><span class="line"><span class="comment">// 可以转换为：</span></span><br><span class="line">Java_com_example_myapplication_MainActivity_getLength((JNINativeInterface* *env, jobject jobj, jintArray arr_) {}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>也就是说此时的env实际是一个二级指针，因此要获取到JNINativeInterface这个“接口函数表指针”的，需要执行<code>*env</code>,此时<code>*env</code>才可以去调用接口函数表里面的函数：例如：</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(*env)-&gt;NewStringUTF(env, <span class="string">"hello"</span>)</span><br></pre></td></tr></tbody></table></figure>
+
+<p>而C++的JNIEnv对应[注释14]：<code>typedef _JNIEnv JNIEnv; </code>其中_JNIEnv 的定义对应[注释16]，结构体定义了<code>JNINativeInterface* functions</code>，即定义了 JNINativeInterface 的结构体指针，因此</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// c++的定义</span></span><br><span class="line">`<span class="keyword">typedef</span> _JNIEnv JNIEnv;  </span><br><span class="line"><span class="comment">// 在使用时，作为第一个形参：</span></span><br><span class="line">Java_com_example_myapplication_MainActivity_getLength((JNIEnv *env, jobject jobj, jintArray arr_) {}</span><br><span class="line"><span class="comment">// 可以转换为：</span></span><br><span class="line">Java_com_example_myapplication_MainActivity_getLength((_JNIEnv *env, jobject jobj, jintArray arr_) {}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>如果需要调用[注释17]的NewStringUTF()方法，则只需要执行：</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// env不需要加' * ' 号，也不需要作为参数传入NewStringUTF()方法</span></span><br><span class="line">env-&gt;NewStringUTF(<span class="string">"hello"</span>)</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="JNIEnv的特点"><a href="#JNIEnv的特点" class="headerlink" title="JNIEnv的特点"></a>JNIEnv的特点</h3><ul>
+<li>JNIEnv是一个指针，指向一组JNI函数，如上面[注释17]的NewStringUTF()方法，通过这些方法实现了Java层和Native层的交互；</li>
+<li>在c文件的JNI函数，JNIEnv需要作为第一个函数参数，而在C++则不需要作为函数参数；</li>
+</ul>
+<h3 id="JavaEnv-和-JavaVM-的关系"><a href="#JavaEnv-和-JavaVM-的关系" class="headerlink" title="JavaEnv 和 JavaVM 的关系"></a>JavaEnv 和 JavaVM 的关系</h3><p>看[注释15]处，有：</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="type">const</span> <span class="class"><span class="keyword">struct</span> <span class="title">JNINativeInterface</span>* <span class="title">JNIEnv</span>;</span> </span><br><span class="line"><span class="keyword">typedef</span> <span class="type">const</span> <span class="class"><span class="keyword">struct</span> <span class="title">JNIInvokeInterface</span>* <span class="title">JavaVM</span>;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>JNIEnv和JavaVM定义完成一样，那么这两者有什么联系和区别：</p>
+<ul>
+<li>Android每个进程只有一个JavaVM虚拟机对象，但可以有多个线程，当新线程第一次调用JNI函数时，虚拟机会给该线程生成一个JNIEnv指针。所以JNIEnv是线程局部存储，保证多线程之间的JNI通讯都是独立的。因此一个进程只有一个 JavaVM，但可能有多个 JNIEnv；</li>
+<li>JNIEnv 内部的函数执行环境来源于 Dalvik 虚拟机；</li>
+<li>当本地的 C/C++ 代码想要获得当前线程所想要使用的 JNIEnv 时，可以使用 Dalvik VM 对象的 JavaVM* jvm-&gt;GetEnv()方法，该方法会返回当前线程所在的 JNIEnv*；</li>
+<li>Java 的 dex 字节码和 C/C++ 的 .so 同时运行 Dalvik VM 之内，共同使用一个进程空间；</li>
+</ul>
+
+                </div>
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/blog/tags/Android/">Android</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                            <div class="post-share-container border-box">
+    <ul class="share-list-wrap border-box">
+        <li class="qq share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to QQ"
+        >
+            <i class="fa-brands fa-qq"></i>
+        </li>
+        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
+            data-tooltip-content="Share to WeChat"
+            data-tooltip-img-tip="Scan by WeChat"
+            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
+        >
+            <i class="fa-brands fa-weixin"></i>
+        </li>
+        <li class="weibo share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to WeiBo"
+        >
+            <i class="fa-brands fa-weibo"></i>
+        </li>
+    </ul>
+</div>
+
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/blog/2024/06/05/Android-20-MVC%E3%80%81MVP%E3%80%81MVVM/"
+                                   title="MVC、MVP、MVVM"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">MVC、MVP、MVVM</span>
+                                        <span class="post-nav-item">Prev posts</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/blog/2024/06/05/Android-18-IntentService/"
+                                   title="IntentService"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">IntentService</span>
+                                        <span class="post-nav-item">Next posts</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc left-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <!-- use hexo-blog-encrypt -->
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFJNI%E3%80%81NDK"><span class="nav-number">1.</span> <span class="nav-text">什么是JNI、NDK</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JNI"><span class="nav-number">1.1.</span> <span class="nav-text">JNI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-JNI-%E4%B8%8E-NDK-%E7%9A%84%E8%81%94%E7%B3%BB%E5%92%8C%E5%8C%BA%E5%88%AB"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 JNI 与 NDK 的联系和区别</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JNI%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%B3%A8%E5%86%8C%E6%96%B9%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">JNI的两种注册方式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E6%B3%A8%E5%86%8C"><span class="nav-number">2.1.</span> <span class="nav-text">静态注册</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#native%E5%B1%82%E5%87%BD%E6%95%B0%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99"><span class="nav-number">2.2.</span> <span class="nav-text">native层函数命名规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E6%B3%A8%E5%86%8C%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="nav-number">2.3.</span> <span class="nav-text">静态注册的优缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E6%B3%A8%E5%86%8C"><span class="nav-number">2.4.</span> <span class="nav-text">动态注册</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JNI%E8%AF%AD%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">JNI语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JNI%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE"><span class="nav-number">3.1.</span> <span class="nav-text">JNI项目配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#build-gradle"><span class="nav-number">3.1.1.</span> <span class="nav-text">build.gradle</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-2-CMakeLists-txt%E6%96%87%E4%BB%B6"><span class="nav-number">3.1.2.</span> <span class="nav-text">3.1.2 CMakeLists.txt文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%98%A0%E5%B0%84"><span class="nav-number">3.2.</span> <span class="nav-text">数据映射</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%98%A0%E5%B0%84"><span class="nav-number">3.2.1.</span> <span class="nav-text">基本数据类型映射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%98%A0%E5%B0%84"><span class="nav-number">3.2.2.</span> <span class="nav-text">引用数据类型映射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E5%92%8C%E5%8F%98%E9%87%8FID"><span class="nav-number">3.2.3.</span> <span class="nav-text">方法和变量ID</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JNI-%E6%8F%8F%E8%BF%B0%E7%AC%A6"><span class="nav-number">3.3.</span> <span class="nav-text">JNI 描述符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%9F%E6%8F%8F%E8%BF%B0%E7%AC%A6"><span class="nav-number">3.3.1.</span> <span class="nav-text">域描述符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E7%B1%BB%E5%9E%8B%E6%8F%8F%E8%BF%B0%E7%AC%A6"><span class="nav-number">3.3.1.1.</span> <span class="nav-text">基础类型描述符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-1-2-%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B%E6%8F%8F%E8%BF%B0%E7%AC%A6"><span class="nav-number">3.3.1.2.</span> <span class="nav-text">3.3.1.2 引用类型描述符</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E6%8F%8F%E8%BF%B0%E7%AC%A6"><span class="nav-number">3.3.2.</span> <span class="nav-text">类描述符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E6%8F%8F%E8%BF%B0%E7%AC%A6"><span class="nav-number">3.3.3.</span> <span class="nav-text">方法描述符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JNIEnV%E5%88%86%E6%9E%90"><span class="nav-number">3.4.</span> <span class="nav-text">JNIEnV分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#C%E5%92%8CC-%E7%9A%84JNIEnv%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">3.4.1.</span> <span class="nav-text">C和C++的JNIEnv的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JNIEnv%E7%9A%84%E7%89%B9%E7%82%B9"><span class="nav-number">3.4.2.</span> <span class="nav-text">JNIEnv的特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaEnv-%E5%92%8C-JavaVM-%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-number">3.4.3.</span> <span class="nav-text">JavaEnv 和 JavaVM 的关系</span></a></li></ol></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+        &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2024
+        
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/blog/">MoMo</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+        <div class="count-info info-item">
+            
+
+            
+                <span class="count-item border-box uv">
+                    <span class="item-type border-box">Unique Visitor</span>
+                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
+                </span>
+            
+
+            
+                <span class="count-item border-box pv">
+                    <span class="item-type border-box">Page View</span>
+                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
+                </span>
+            
+        </div>
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools left-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-toggle-theme-mode flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <!-- use hexo-blog-encrypt -->
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFJNI%E3%80%81NDK"><span class="nav-number">1.</span> <span class="nav-text">什么是JNI、NDK</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JNI"><span class="nav-number">1.1.</span> <span class="nav-text">JNI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-JNI-%E4%B8%8E-NDK-%E7%9A%84%E8%81%94%E7%B3%BB%E5%92%8C%E5%8C%BA%E5%88%AB"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 JNI 与 NDK 的联系和区别</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JNI%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%B3%A8%E5%86%8C%E6%96%B9%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">JNI的两种注册方式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E6%B3%A8%E5%86%8C"><span class="nav-number">2.1.</span> <span class="nav-text">静态注册</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#native%E5%B1%82%E5%87%BD%E6%95%B0%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99"><span class="nav-number">2.2.</span> <span class="nav-text">native层函数命名规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E6%B3%A8%E5%86%8C%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="nav-number">2.3.</span> <span class="nav-text">静态注册的优缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E6%B3%A8%E5%86%8C"><span class="nav-number">2.4.</span> <span class="nav-text">动态注册</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JNI%E8%AF%AD%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">JNI语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JNI%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE"><span class="nav-number">3.1.</span> <span class="nav-text">JNI项目配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#build-gradle"><span class="nav-number">3.1.1.</span> <span class="nav-text">build.gradle</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-2-CMakeLists-txt%E6%96%87%E4%BB%B6"><span class="nav-number">3.1.2.</span> <span class="nav-text">3.1.2 CMakeLists.txt文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%98%A0%E5%B0%84"><span class="nav-number">3.2.</span> <span class="nav-text">数据映射</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%98%A0%E5%B0%84"><span class="nav-number">3.2.1.</span> <span class="nav-text">基本数据类型映射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%98%A0%E5%B0%84"><span class="nav-number">3.2.2.</span> <span class="nav-text">引用数据类型映射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E5%92%8C%E5%8F%98%E9%87%8FID"><span class="nav-number">3.2.3.</span> <span class="nav-text">方法和变量ID</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JNI-%E6%8F%8F%E8%BF%B0%E7%AC%A6"><span class="nav-number">3.3.</span> <span class="nav-text">JNI 描述符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%9F%E6%8F%8F%E8%BF%B0%E7%AC%A6"><span class="nav-number">3.3.1.</span> <span class="nav-text">域描述符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E7%B1%BB%E5%9E%8B%E6%8F%8F%E8%BF%B0%E7%AC%A6"><span class="nav-number">3.3.1.1.</span> <span class="nav-text">基础类型描述符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-1-2-%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B%E6%8F%8F%E8%BF%B0%E7%AC%A6"><span class="nav-number">3.3.1.2.</span> <span class="nav-text">3.3.1.2 引用类型描述符</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E6%8F%8F%E8%BF%B0%E7%AC%A6"><span class="nav-number">3.3.2.</span> <span class="nav-text">类描述符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E6%8F%8F%E8%BF%B0%E7%AC%A6"><span class="nav-number">3.3.3.</span> <span class="nav-text">方法描述符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JNIEnV%E5%88%86%E6%9E%90"><span class="nav-number">3.4.</span> <span class="nav-text">JNIEnV分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#C%E5%92%8CC-%E7%9A%84JNIEnv%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">3.4.1.</span> <span class="nav-text">C和C++的JNIEnv的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JNIEnv%E7%9A%84%E7%89%B9%E7%82%B9"><span class="nav-number">3.4.2.</span> <span class="nav-text">JNIEnv的特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaEnv-%E5%92%8C-JavaVM-%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-number">3.4.3.</span> <span class="nav-text">JavaEnv 和 JavaVM 的关系</span></a></li></ol></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+<!-- common -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/utils.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/header-shrink.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/back2top.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/toggle-theme.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/code-block.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/main.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/libs/anime.min.js"></script>
+
+<!-- local-search -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/local-search.min.js"></script>
+
+
+<!-- lazyload -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/lazyload.min.js"></script>
+
+
+<div class="pjax">
+    
+        <!-- post-helper -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/post/post-helper.min.js"></script>
+
+        <!-- toc -->
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/post/toc.min.js"></script>
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/post/share.min.js"></script>
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+</body>
+</html>

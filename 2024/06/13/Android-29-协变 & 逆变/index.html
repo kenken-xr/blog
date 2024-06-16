@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="MoMo">
+    
+    <title>
+        
+            协变 &amp; 逆变 |
+        
+        今天在干嘛
+    </title>
+    
+<link rel="stylesheet" href="/blog/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/blog/images/logoMoon.svg">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/regular.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/brands.min.css">
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"kenken-xr.github.io","root":"/blog/","language":"en","path":"search.json"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#f8a5c2","title":"今天在干嘛","author":"MoMo","avatar":"/images/avatar.jpg","logo":"/images/logoMoon.svg","favicon":"/images/logoMoon.svg"},"menu":{"home":"/","archives":"/archives","tags":"/tags","categories":"/categories","github":"https://github.com/kenken-xr"},"first_screen":{"enable":true,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":true,"links":{"github":"https://github.com/kenken-xr","weixin":"img | /images/wx.png","qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":true,"percent":true,"hide_header":false},"home":{"announcement":null,"category":true,"tag":true,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":true,"reward":{"enable":false,"img_link":null,"text":null},"img_align":"center"},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true,"layout":"left"},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"local_search":{"enable":true,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.36"},"waline":{"server_url":null,"reaction":false,"version":"3.2.1"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":true},"cdn":{"enable":true,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":2023,"word_count":true,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"/blog","source_data":{},"version":"4.1.3"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original post title","author":"Original post author","link":"Original post link"}
+  </script>
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/blog/atom.xml" title="MoMo" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left border-box">
+            
+                <a class="logo-image border-box" href="/blog/">
+                    <img src="/blog/images/logoMoon.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/blog/">
+               今天在干嘛
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/"
+                            >
+                                
+                                HOME
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/archives"
+                            >
+                                
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/tags"
+                            >
+                                
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/categories"
+                            >
+                                
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               target="_blank" rel="noopener" href="https://github.com/kenken-xr"
+                            >
+                                
+                                GITHUB
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/"
+                    >HOME</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/archives"
+                    >ARCHIVES</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/tags"
+                    >TAGS</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/categories"
+                    >CATEGORIES</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       target="_blank" rel="noopener" href="https://github.com/kenken-xr"
+                    >GITHUB</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        协变 &amp; 逆变
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/blog/images/avatar.jpg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">MoMo</span>
+                                
+                                    <span class="author-badge">Lv5</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2024-06-13 16:05:32</span>
+            </span>
+
+            <span class="meta-info-item post-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="datetime" data-updated="Thu Jun 13 2024 22:04:12 GMT+0800">2024-06-13 22:04:12</span>
+            </span>
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/blog/categories/%E6%9C%89%E5%9C%A8%E8%AE%A4%E7%9C%9F%E4%B8%8A%E7%8F%AD/">有在认真上班</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/blog/tags/Android/">Android</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/blog/tags/Kotlin/">Kotlin</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+            <span class="meta-info-item post-pv">
+                <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    <h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><p>假设Orange类是Fruit类的子类，以集合类List<t>为例：</t></p>
+<ul>
+<li><p><strong>型变：</strong> 用来描述类型转换后的继承关系（即协变、逆变和不变的统称）。比如：List<orange>是List<fruit>的子类型吗？答案是No，两者并没有关系，并不能相互读写数据。因此，型变是处理如List<orange>(List&lt;? extends Orange&gt;)和List<fruit>子类型关系的一种表达方式。</fruit></orange></fruit></orange></p>
+</li>
+<li><p><strong>协变(covariance)(&lt;? extends T&gt;)：</strong> 满足条件诸如List<orange>是List&lt;? extends Fruit&gt;的子类型时，称为协变。</orange></p>
+</li>
+<li><p><strong>逆变(covariance)(&lt;? super T&gt;)：</strong> 满足条件List<fruit>是List&lt;? super Orange&gt;的子类型时，称为逆变。</fruit></p>
+</li>
+<li><p><strong>不变(invariance)(T)：</strong> 表示List<orange>和List<fruit>不存在型变关系。</fruit></orange></p>
+</li>
+</ul>
+<h2 id="型变"><a href="#型变" class="headerlink" title="型变"></a>型变</h2><p>看一个不使用型变的例子：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 1.定义一个String类型的List</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">List&lt;String&gt; value1 = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;String&gt;();</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 2. 这里编译器报错，因为两者没有型变关系,无法直接赋值，后续操作会导致类型不安全</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">List&lt;Object&gt; value2 = value1; <span class="comment">//error</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 3.假如上面第2步编译通过了，那么此时add()这个整型数据1到value2中</span></span><br><span class="line"><span class="comment"> * 是没问题的，因为他的类型是Object。但是读取时会碰到困难，如第4步。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">value2.add(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 4.但此时读出来的是什么类型呢，上一步add了一个整型数据1,此时如果用String类</span></span><br><span class="line"><span class="comment"> * 型的变量接返回值，肯定不合适，因此运行时会报类型转换异常！！</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="type">String</span> <span class="variable">result</span> <span class="operator">=</span> value1.get(<span class="number">0</span>); <span class="comment">//error</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>上面举例说明了在不使用型变的情况下，对泛型数据的操作会面临种种困难，虽然保证了运行时参数类型的安全，却限制了接口的灵活性（编译器检查），比如：如果我们只调用value2(List<object>)的get()方法，不调用add()方法（只读取数据不写入数据），显然此时不会有类型的安全问题，那如何限制只能调用get()却不能add()方法呢？当然只能靠编译器限制了，让你调add()方法的时候编译都通不过就可以了。通配符就是干这件事的，通知编译器，限制我们对于某些方法的调用，以保证运行时的类型安全。<p></p>
+<h2 id="协变"><a href="#协变" class="headerlink" title="协变"></a>协变</h2><p>协变是指当一个类型参数 <code>T</code> 是另一个类型参数 <code>S</code> 的子类型时，容器类型 <code>Container&lt;T&gt;</code> 也是 <code>Container&lt;S&gt;</code> 的子类型。换句话说，当一个泛型类型的类型参数能够随着子类型的变化而变化时，我们就称这个泛型类型是协变的。</p>
+<p>在 Kotlin 中，协变使用 <code>out</code> 关键字来声明。例如，<code>out T</code> 表示类型参数 <code>T</code> 是协变的。</p>
+<figure class="highlight kotlin"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">Source</span>&lt;<span class="type">out T</span>&gt; {</span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">next</span><span class="params">()</span></span>: T</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>对于上面不型变的例子，我们可以做如下调整，就可以达到协变的目的：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 2. 这里编译器不会报错</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">List&lt;? <span class="keyword">extends</span> <span class="title class_">String</span>&gt; value2 = value1;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 3.但此处编译器报错了，编译器限制了写入数据的操作</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">value2.add(<span class="number">1</span>); <span class="comment">//error</span></span><br></pre></td></tr></tbody></table></figure>
+<p>但上面的简单例子太过简单，缺少继承关系，不能明显说明问题，下面仍以Orange类是Fruit类的子类来举例说明：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 1.定义一个类型上界限定为Fruit的List，即协变</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">List&lt;? <span class="keyword">extends</span> <span class="title class_">Fruit</span>&gt; fruits = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 2.编译器报错，不能添加任何类型的数据</span></span><br><span class="line"><span class="comment"> * 原因是：</span></span><br><span class="line"><span class="comment"> * List.add(T t)函数通过上面的类型指定后，参数会变成</span></span><br><span class="line"><span class="comment"> * &lt;? extends Fruit&gt;,从这个参数中，编译器无法知道需要哪个具体的Fruit子类型，</span></span><br><span class="line"><span class="comment"> * Orange、Banana甚至Fruit都可以，因此，为了保证类型安全，编译器拒绝任何类型。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">fruits.add(<span class="keyword">new</span> <span class="title class_">Orange</span>());</span><br><span class="line">fruits.add(<span class="keyword">new</span> <span class="title class_">Fruit</span>());</span><br><span class="line">fruits.add(<span class="keyword">new</span> <span class="title class_">Object</span>());</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 3.此处正常！！ 由于我们定义是指定了上界为Fruit，因此此处的返回值肯定至少是Fruit类型，</span></span><br><span class="line"><span class="comment"> * 而基类型可以引用子类型</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="type">Fruit</span> <span class="variable">f</span> <span class="operator">=</span> fruits.get(<span class="number">0</span>);</span><br></pre></td></tr></tbody></table></figure>
+
+
+<p>通过上面代码的可以看出，协变限制了参数中带T的方法调用，比如上面的add(T t)方法（我们称之为消费者方法），而允许生产者方法的调用如T get(int position)，以此来保证类型的安全。</p>
+<h2 id="逆变"><a href="#逆变" class="headerlink" title="逆变"></a>逆变</h2><p>逆变是指当一个类型参数 <code>T</code> 是另一个类型参数 <code>S</code> 的父类型时，容器类型 <code>Container&lt;T&gt;</code> 是 <code>Container&lt;S&gt;</code> 的子类型。换句话说，当一个泛型类型的类型参数能够随着父类型的变化而变化时，我们就称这个泛型类型是逆变的。</p>
+<p>在 Kotlin 中，逆变使用 <code>in</code> 关键字来声明。例如，<code>in T</code> 表示类型参数 <code>T</code> 是逆变的。</p>
+<figure class="highlight kotlin"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">Consumer</span>&lt;<span class="type">in T</span>&gt; {</span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">consume</span><span class="params">(item: <span class="type">T</span>)</span></span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>协变的反方向是逆变，在协变中我们可以安全地从泛型类中读取（从一个方法中返回），而在逆变中我们可以安全地向泛型类中写入（传递给一个方法）。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 1.定义一个Object的List,作为原始数据列表</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">List&lt;Object&gt; objects = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">objects.add(<span class="keyword">new</span> <span class="title class_">Object</span>()); <span class="comment">//添加数据没有问题</span></span><br><span class="line">objects.add(<span class="keyword">new</span> <span class="title class_">Orange</span>()); <span class="comment">//仍然没有问题，</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 2.定义一个类型下界限定为Fruit的List,并将objects赋值给它。</span></span><br><span class="line"><span class="comment"> * 此时编译不会报错，因为满足逆变的条件。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">List&lt;? <span class="built_in">super</span> Fruit&gt; fruits = objects;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 3.add(T t)函数，编译器不会报错，因为fruits接受Fruit的基类类型，</span></span><br><span class="line"><span class="comment"> * 而该类型可以引用其子类型（多态性）</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">fruits.add(<span class="keyword">new</span> <span class="title class_">Orange</span>());</span><br><span class="line">fruits.add(<span class="keyword">new</span> <span class="title class_">Fruit</span>());</span><br><span class="line">fruits.add(<span class="keyword">new</span> <span class="title class_">RedApple</span>());</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 4.此处编译器报错，因为fruits限定的是下界是Friut类型,因此，</span></span><br><span class="line"><span class="comment"> * 编译器并不知道确切的类型是什么，没法找到一个合适的类型接受返回值</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="type">Fruit</span> <span class="variable">f</span> <span class="operator">=</span> fruits.get(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 5.此处不会报错，因为Object是Fruit的最顶层基类，满足下界的限定</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="type">Object</span> <span class="variable">obj</span> <span class="operator">=</span> fruits.get(<span class="number">0</span>);</span><br></pre></td></tr></tbody></table></figure>
+<p>通过上面代码的注释可以看出，逆变限制了读取方法的调用，比如上面的T get(int position)方法（我们称之为生产者方法），而允许消费者方法的调用如add(T t)，依次来保证类型的安全。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
+<li><strong>协变</strong>用于生产者（Producer），即从容器中获取元素。</li>
+<li><strong>逆变</strong>用于消费者（Consumer），即向容器中添加元素。</li>
+</ul>
+<p>extends限定了通配符类型的上界，所以我们可以安全地从其中读取；<br>而super限定了通配符类型的下界，所以我们可以安全地向其中写入。</p>
+<p>我们把那些只能从中读取的对象称为生产者（Producer），我们可以从生产者中安全地读取；只能写入的对象称为消费者（Consumer）。<br>因此这里就是著名的PECS原则：Producer-Extends, Consumer-Super。</p>
+<h1 id="数组的协变"><a href="#数组的协变" class="headerlink" title="数组的协变"></a>数组的协变</h1><p>Java中数组是协变的：可以向子类型的数组赋予基类型的数组引用，由于数组在Java中是完全定义的，因此内建了编译期和运行时的检查，具体参见如下代码注释：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Fruit</span> {}</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Apple</span> <span class="keyword">extends</span> <span class="title class_">Fruit</span> {}</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Jonathan</span> <span class="keyword">extends</span> <span class="title class_">Apple</span> {}</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Orange</span> <span class="keyword">extends</span> <span class="title class_">Fruit</span> {}</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 创建了一个Apple数组，并将其赋值给一个Fruit数组引用,编译器和运行时都允许</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">Fruit[] fruits = <span class="keyword">new</span> <span class="title class_">Apple</span>[<span class="number">10</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 将子类对象放置到父类数组中,编译器和运行时都允许</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">fruits[<span class="number">0</span>] = <span class="keyword">new</span> <span class="title class_">Apple</span>();</span><br><span class="line">fruits[<span class="number">1</span>] = <span class="keyword">new</span> <span class="title class_">Jonathan</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span> {</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 将Apple的父类对象放置到子类数组中，编译器允许，但运行时检查抛出异常</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    fruits[<span class="number">2</span>] = <span class="keyword">new</span> <span class="title class_">Fruit</span>();</span><br><span class="line">} <span class="keyword">catch</span> (Exception e) {</span><br><span class="line">    Log.i(TAG, <span class="string">"array exception!"</span>, e);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span> {</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 将Apple的兄弟对象放置到数组中，编译器允许，但运行时检查抛出异常</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    fruits[<span class="number">3</span>] = <span class="keyword">new</span> <span class="title class_">Orange</span>();</span><br><span class="line">} <span class="keyword">catch</span> (Exception e) {</span><br><span class="line">    Log.i(TAG, <span class="string">"array exception!"</span>, e);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="自限定与协变"><a href="#自限定与协变" class="headerlink" title="自限定与协变"></a>自限定与协变</h1><p>Java中一个常见的自限定写法是：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Base</span>&lt;T <span class="keyword">extends</span> <span class="title class_">Base</span>&lt;T&gt;&gt; {</span><br><span class="line">    T element;</span><br><span class="line">    </span><br><span class="line">    T <span class="title function_">get</span><span class="params">()</span> {</span><br><span class="line">        <span class="keyword">return</span> element;</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">set</span><span class="params">(T t)</span> {</span><br><span class="line">        element = t;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>这种语法定义了一个基类，这个基类能够使用子类作为其参数、返回类型、作用域。</p>
+<h1 id="协变参数类型"><a href="#协变参数类型" class="headerlink" title="协变参数类型"></a>协变参数类型</h1><p>在非泛型代码中，参数类型不能随子类型发生变化。方法只能重载不能重写。在使用自限定类型时，方法接受子类型而不是基类型为参数：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 自限定协变参数类型</span></span><br><span class="line"><span class="comment"> * 方法接受只能接受子类型而不是基类型为参数</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &lt;T&gt;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">SetInterface</span>&lt;T <span class="keyword">extends</span> <span class="title class_">SetInterface</span>&lt;T&gt;&gt; {</span><br><span class="line"></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">set</span><span class="params">(T arg)</span>;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 具体的子类型</span></span><br><span class="line"><span class="comment"> * 避免重写基类的方法</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">SubSetInterface</span> <span class="keyword">extends</span> <span class="title class_">SetInterface</span>&lt;SubSetInterface&gt; {}</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test5</span><span class="params">(SubSetInterface s1, SubSetInterface s2, SetInterface sb)</span> {</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 编译通过</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    s1.set(s2);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 只能接受具体的子类型，不能接受SetInterface基类型</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="comment">//s1.set(sb); //error</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+
+<h1 id="协变返回类型"><a href="#协变返回类型" class="headerlink" title="协变返回类型"></a>协变返回类型</h1><p>继承自限定基类的子类，将产生确切的子类型作为其返回值．不过，这种实现java的多态性已经可以达到目的（基类引用子类）：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 自限定协变返回类型</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &lt;T&gt;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">GetInterface</span>&lt;T <span class="keyword">extends</span> <span class="title class_">GetInterface</span>&lt;T&gt;&gt; {</span><br><span class="line"></span><br><span class="line">    T <span class="title function_">get</span><span class="params">()</span>;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 具体的子类型</span></span><br><span class="line"><span class="comment"> * 避免重写基类的方法</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">SubGetInterface</span> <span class="keyword">extends</span> <span class="title class_">GetInterface</span>&lt;SubGetInterface&gt; {}</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test4</span><span class="params">(SubGetInterface g)</span> {</span><br><span class="line">    <span class="type">GetInterface</span> <span class="variable">s1</span> <span class="operator">=</span> g.get();</span><br><span class="line">    <span class="type">SubGetInterface</span> <span class="variable">s2</span> <span class="operator">=</span> g.get();</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></object></p>
+                </div>
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/blog/tags/Android/">Android</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/blog/tags/Kotlin/">Kotlin</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                            <div class="post-share-container border-box">
+    <ul class="share-list-wrap border-box">
+        <li class="qq share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to QQ"
+        >
+            <i class="fa-brands fa-qq"></i>
+        </li>
+        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
+            data-tooltip-content="Share to WeChat"
+            data-tooltip-img-tip="Scan by WeChat"
+            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
+        >
+            <i class="fa-brands fa-weixin"></i>
+        </li>
+        <li class="weibo share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to WeiBo"
+        >
+            <i class="fa-brands fa-weibo"></i>
+        </li>
+    </ul>
+</div>
+
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/blog/2024/06/13/%E7%BD%91%E7%BB%9C-2-HTTP/"
+                                   title="HTTP"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">HTTP</span>
+                                        <span class="post-nav-item">Prev posts</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/blog/2024/06/13/Android-28-%20%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B/"
+                                   title="线程和进程"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">线程和进程</span>
+                                        <span class="post-nav-item">Next posts</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc left-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <!-- use hexo-blog-encrypt -->
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9E%8B%E5%8F%98"><span class="nav-number">1.1.</span> <span class="nav-text">型变</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%8F%E5%8F%98"><span class="nav-number">1.2.</span> <span class="nav-text">协变</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%86%E5%8F%98"><span class="nav-number">1.3.</span> <span class="nav-text">逆变</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E5%8D%8F%E5%8F%98"><span class="nav-number">3.</span> <span class="nav-text">数组的协变</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%87%AA%E9%99%90%E5%AE%9A%E4%B8%8E%E5%8D%8F%E5%8F%98"><span class="nav-number">4.</span> <span class="nav-text">自限定与协变</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%8F%E5%8F%98%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B"><span class="nav-number">5.</span> <span class="nav-text">协变参数类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%8F%E5%8F%98%E8%BF%94%E5%9B%9E%E7%B1%BB%E5%9E%8B"><span class="nav-number">6.</span> <span class="nav-text">协变返回类型</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+        &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2024
+        
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/blog/">MoMo</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+        <div class="count-info info-item">
+            
+
+            
+                <span class="count-item border-box uv">
+                    <span class="item-type border-box">Unique Visitor</span>
+                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
+                </span>
+            
+
+            
+                <span class="count-item border-box pv">
+                    <span class="item-type border-box">Page View</span>
+                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
+                </span>
+            
+        </div>
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools left-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-toggle-theme-mode flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <!-- use hexo-blog-encrypt -->
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9E%8B%E5%8F%98"><span class="nav-number">1.1.</span> <span class="nav-text">型变</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%8F%E5%8F%98"><span class="nav-number">1.2.</span> <span class="nav-text">协变</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%86%E5%8F%98"><span class="nav-number">1.3.</span> <span class="nav-text">逆变</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E5%8D%8F%E5%8F%98"><span class="nav-number">3.</span> <span class="nav-text">数组的协变</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%87%AA%E9%99%90%E5%AE%9A%E4%B8%8E%E5%8D%8F%E5%8F%98"><span class="nav-number">4.</span> <span class="nav-text">自限定与协变</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%8F%E5%8F%98%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B"><span class="nav-number">5.</span> <span class="nav-text">协变参数类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%8F%E5%8F%98%E8%BF%94%E5%9B%9E%E7%B1%BB%E5%9E%8B"><span class="nav-number">6.</span> <span class="nav-text">协变返回类型</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+<!-- common -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/utils.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/header-shrink.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/back2top.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/toggle-theme.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/code-block.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/main.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/libs/anime.min.js"></script>
+
+<!-- local-search -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/local-search.min.js"></script>
+
+
+<!-- lazyload -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/lazyload.min.js"></script>
+
+
+<div class="pjax">
+    
+        <!-- post-helper -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/post/post-helper.min.js"></script>
+
+        <!-- toc -->
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/post/toc.min.js"></script>
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/post/share.min.js"></script>
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+</body>
+</html>

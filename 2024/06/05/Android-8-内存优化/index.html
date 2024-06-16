@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="MoMo">
+    
+    <title>
+        
+            Android内存优化 |
+        
+        今天在干嘛
+    </title>
+    
+<link rel="stylesheet" href="/blog/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/blog/images/logoMoon.svg">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/regular.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/brands.min.css">
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"kenken-xr.github.io","root":"/blog/","language":"en","path":"search.json"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#f8a5c2","title":"今天在干嘛","author":"MoMo","avatar":"/images/avatar.jpg","logo":"/images/logoMoon.svg","favicon":"/images/logoMoon.svg"},"menu":{"home":"/","archives":"/archives","tags":"/tags","categories":"/categories","github":"https://github.com/kenken-xr"},"first_screen":{"enable":true,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":true,"links":{"github":"https://github.com/kenken-xr","weixin":"img | /images/wx.png","qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":true,"percent":true,"hide_header":false},"home":{"announcement":null,"category":true,"tag":true,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":true,"reward":{"enable":false,"img_link":null,"text":null},"img_align":"center"},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true,"layout":"left"},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"local_search":{"enable":true,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.36"},"waline":{"server_url":null,"reaction":false,"version":"3.2.1"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":true},"cdn":{"enable":true,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":2023,"word_count":true,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"/blog","source_data":{},"version":"4.1.3"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original post title","author":"Original post author","link":"Original post link"}
+  </script>
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/blog/atom.xml" title="MoMo" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left border-box">
+            
+                <a class="logo-image border-box" href="/blog/">
+                    <img src="/blog/images/logoMoon.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/blog/">
+               今天在干嘛
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/"
+                            >
+                                
+                                HOME
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/archives"
+                            >
+                                
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/tags"
+                            >
+                                
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/categories"
+                            >
+                                
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               target="_blank" rel="noopener" href="https://github.com/kenken-xr"
+                            >
+                                
+                                GITHUB
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/"
+                    >HOME</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/archives"
+                    >ARCHIVES</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/tags"
+                    >TAGS</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/categories"
+                    >CATEGORIES</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       target="_blank" rel="noopener" href="https://github.com/kenken-xr"
+                    >GITHUB</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        Android内存优化
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/blog/images/avatar.jpg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">MoMo</span>
+                                
+                                    <span class="author-badge">Lv5</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2024-06-05 17:22:11</span>
+            </span>
+
+            <span class="meta-info-item post-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="datetime" data-updated="Thu Jun 13 2024 22:04:12 GMT+0800">2024-06-13 22:04:12</span>
+            </span>
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/blog/categories/%E6%9C%89%E5%9C%A8%E8%AE%A4%E7%9C%9F%E4%B8%8A%E7%8F%AD/">有在认真上班</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/blog/tags/Android/">Android</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+            <span class="meta-info-item post-pv">
+                <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    <ol>
+<li>什么是OOM、内存泄漏、内存抖动？如何发生的？ ⭐⭐⭐⭐⭐</li>
+<li>Handler导致的内存泄露你是如何解决的？ ⭐⭐⭐⭐</li>
+<li>知道如何定位内存泄漏吗？有什么工具？⭐⭐⭐⭐</li>
+<li>请至少例举出5种内存泄漏情况。⭐⭐⭐⭐⭐</li>
+<li>在 Android 中如何避免内存泄漏？⭐⭐⭐⭐⭐</li>
+<li>谈谈你项目中内存优化的一些经验⭐⭐⭐</li>
+</ol>
+<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>内存优化的目的是为了避免出现内存泄漏，内存溢出（OOM：Over Of Memory)、内存抖动等问题：</p>
+<ul>
+<li>内存泄漏：当一个对象A在程序中已经打算释放了，但有其他对象持有对象A的强引用，导致对象A不能正常被系统回收，继续占用着内存，如此反复使实际可使用内存越来越小。</li>
+<li>内存溢出：当内存使用量超过了虚拟机分配给当前程序的最大值时，就会发生内存溢出。出现这种情况很可能是加载的资源太多，如加载大图片，或者分配了很大的数组等变量，或者是太多的内存泄漏最终导致内存溢出；</li>
+<li>内存抖动：当内存频繁分配和回收导致内存不稳定，就会出现内存抖动，它通常表现为 频繁GC、内存曲线呈锯齿状；</li>
+</ul>
+<p>内存优化的意义：</p>
+<ul>
+<li>通过减少OOM，可以提高程序的稳定性；</li>
+<li>减少程序的内存占用，提高程序在后台进程的存活率；</li>
+<li>减少卡顿，提高程序的流畅度；</li>
+</ul>
+<p>本文会先从理论出发，先讨论引起内存异常的各种场景，接着讨论如何避免以及利用工具来分析，优化问题。</p>
+<h1 id="引起内存泄漏的场景及解决方法"><a href="#引起内存泄漏的场景及解决方法" class="headerlink" title="引起内存泄漏的场景及解决方法"></a>引起内存泄漏的场景及解决方法</h1><p>单个的内存泄漏一般不会引起系统异常，但如果众多的内存泄漏则可能导致内存溢出，最后导致系统异常。因此， 一起看看有哪些可能造成内存泄漏的场景。</p>
+<h2 id="Handler-内存泄漏"><a href="#Handler-内存泄漏" class="headerlink" title="Handler 内存泄漏"></a>Handler 内存泄漏</h2><p>Handler发出一个消息后，消息会储存在消息队列里，而每个消息都会对应一个目标Handler，也称为target，target是Handler的一个引用。因此如果消息一直存放在消息队列里，将导致Handler无法被回收。</p>
+<p>还有另一种情况，因为Handler一般是作为Activity的内部类，可以发送延迟执行的消息，如果在延迟阶段，我们把Activity关掉，此时因为消息队列还有未处理或者正在处理的消息，而消息队列里面的消息又持有Handler实例的引用，同时该Activity还被Handler这个内部类所持有，导致Activity无法被回收，没有真正退出并释放相关资源，最终就造成内存泄漏。</p>
+<p>工程上常用的方法是将 Handler 定义成静态的内部类，在内部持有 Activity 的弱引用，并在Acitivity的onDestroy()中调用handler.removeCallbacksAndMessages(null)及时移除所有消息。如果和面试官说了这两个方法，那你就100分过关了，但更进一步是建议将Handler抽离出来作为BaseHandler，然后每个Activity需要用到Handler的时候，就去继承BaseHandler。最佳解决方案具体代码：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这个是BaseHandler</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title class_">BaseHandler</span>&lt;T&gt; <span class="keyword">extends</span> <span class="title class_">Handler</span> {</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> WeakReference&lt;T&gt; mWeakReference; <span class="comment">//弱引用</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">protected</span> <span class="title function_">BaseHandler</span><span class="params">(T t)</span> {</span><br><span class="line">        mWeakReference = <span class="keyword">new</span> <span class="title class_">WeakReference</span>&lt;T&gt;(t);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title function_">handleMessage</span><span class="params">(T t, Message msg)</span>;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">handleMessage</span><span class="params">(Message msg)</span> {</span><br><span class="line">        <span class="built_in">super</span>.handleMessage(msg);</span><br><span class="line">        <span class="keyword">if</span> (mWeakReference == <span class="literal">null</span>) {</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="type">T</span> <span class="variable">t</span> <span class="operator">=</span> mWeakReference.get();</span><br><span class="line">        <span class="keyword">if</span> (t != <span class="literal">null</span>) {</span><br><span class="line">            handleMessage(t, msg);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">//然后在某个Activity中使用</span></span><br><span class="line"> <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">H</span> <span class="keyword">extends</span> <span class="title class_">BaseHandler</span>&lt;XuruiActivity&gt; { <span class="comment">//静态的内部类哦</span></span><br><span class="line">       </span><br><span class="line">        <span class="keyword">public</span> <span class="title function_">H</span><span class="params">(XuruiActivity activity)</span> {</span><br><span class="line">            <span class="built_in">super</span>(activity);</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">handleMessage</span><span class="params">(XuruiActivity activity, Message msg)</span> {</span><br><span class="line">            <span class="comment">//do something</span></span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"><span class="comment">//同时Activity的onDestroy函数取消掉所有消息</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onDestroy</span><span class="params">()</span> {</span><br><span class="line">    mMyHandler.removeCallbacksAndMessages(<span class="literal">null</span>);</span><br><span class="line">    <span class="built_in">super</span>.onDestroy();</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="非静态内部类的静态实例"><a href="#非静态内部类的静态实例" class="headerlink" title="非静态内部类的静态实例"></a>非静态内部类的静态实例</h2><p>非静态内部类依赖着外部类，因此会一直持有外部类的引用。如果外部类需要销毁时，非静态内部类还无法销毁，那么将导致外部类资源无法正常回收。例子就是上面2.1.1 的Handler，如果Handler定义为非静态内部类，就有可能导致所在的Activity无法正常被回收。解决方法有：</p>
+<ul>
+<li>将内部类设置为静态内部类</li>
+<li>将内部类抽取为一个单例</li>
+<li>尽量使用Application的Context，而不是Activity的Context（当然有时候必须使用Activity 的 Context）</li>
+</ul>
+<p>解决方案例子也可以参考2.1.1 的Handler。</p>
+<h2 id="资源性对象"><a href="#资源性对象" class="headerlink" title="资源性对象"></a>资源性对象</h2><p>资源性对象，比如文件、图片、Cursor等，使用后，如果忘记调用close()函数，就直接退出Activity，那将造成内存泄漏，因此要记得在适当的地方关闭资源性对象。</p>
+<h2 id="WebView"><a href="#WebView" class="headerlink" title="WebView"></a>WebView</h2><p>WebView开发现在越来越常见，只要在应用中使用了一次WebView，内存就不会释放掉。 因此建议对WebView单独开启一个独立进程，只要在合适的时机销毁进程即可正常释放内存。</p>
+<h2 id="静态变量持有大数据对象"><a href="#静态变量持有大数据对象" class="headerlink" title="静态变量持有大数据对象"></a>静态变量持有大数据对象</h2><p>众所周知静态变量的生命周期比较长，那如果有一个大数据对象（大数据对象指的是占用内存较大的数据，比如有些需要保存本地的数据，因为放数据库会稍微麻烦，没有用sharePreference来得方便，就把这一大堆数据直接转为字符串保存本地）。如果把这个保存在sharePreference的大数据赋值给静态变量，该静态变量长期存在，就一直占有着内存。所以，数据量足够大的情况下，建议考虑数据库，推荐使用第三方库GreenDao。</p>
+<h2 id="注册后没有注销"><a href="#注册后没有注销" class="headerlink" title="注册后没有注销"></a>注册后没有注销</h2><p>比如在Activity里注册了广播接收器，当Activity销毁时没有注销，那么将导致内存泄漏。</p>
+<h2 id="单例对象"><a href="#单例对象" class="headerlink" title="单例对象"></a>单例对象</h2><p>如果单例对象需要用到Context，那么很可能出现创建单例对象InstanceA时传入ActivityA的Context，当ActivityA退出时，InstanceA对象还存在并持有ActivityA的引用，这就导致了ActivityA无法被正常回收。 因此推荐尽量使用Application的Context。</p>
+<h2 id="集合只增不减"><a href="#集合只增不减" class="headerlink" title="集合只增不减"></a>集合只增不减</h2><p>当一个对象放到集合后，集合就持有该对象的引用，如果不把对象从集合中移除，就可能导致该对象无法被系统正常回收。因此需要记得不再使用的集合对象需要及时remove，或者执行clear()方法清空集合。</p>
+<h2 id="finalize"><a href="#finalize" class="headerlink" title="finalize()"></a>finalize()</h2><p>如果错误的覆盖了finalize()方法，会导致资源无法正确的回收，所以要重写该方法时需要多注意。</p>
+<h2 id="匿名内部类"><a href="#匿名内部类" class="headerlink" title="匿名内部类"></a>匿名内部类</h2><p>如下面代码，在实际开发中经常会使用到匿名内部类，而匿名内部类也和非静态内部类一样会持有外部类的引用。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Runnable</span> <span class="variable">beginFrontPhotoAutoTest</span> <span class="operator">=</span>  <span class="keyword">new</span> <span class="title class_">Runnable</span>() {</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> {</span><br><span class="line">        beginFrontPhotoTest();</span><br><span class="line">    }</span><br><span class="line">};</span><br><span class="line">mHandler.postDelayed(beginFrontPhotoAutoTest, <span class="number">3000</span>); <span class="comment">// 1</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>当执行了[注释1]后，就会出现和主线程异步的情况，就有可能造成Acitvity退出时，因为无法被正常回收的情况。因此一般在Acitvity 退出的时候，都需要将Handler消息清空。</p>
+<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>如果Bitmap对象不使用时没有调用recycle()释放内存，也会导致内存泄漏。当然在Android 3.0 以后，当Bitmap对象不使用后，将其引用设置为null即可，不需要再手动调用recycle()。而对图片的使用，推荐使用Glide或者LreCache等第三方库来做图片缓存管理。</p>
+<p>解决方法有：</p>
+<ul>
+<li>图片使用完或者未使用时，及时执行recycle()进行资源回收；</li>
+<li>大图片建议先压缩再放到内存里，用到BitmapFactory类；</li>
+<li>如果是不允许压缩的大图，比如地图等需要按原图尺寸加载，此时不可能一次性加载整图到内存，局部加载可以用到BitmapRegionDecoder类；</li>
+<li>选择合适的图片解码方式，Android默认的Bitmp解码率格式是ARGB_8888，这是一种高质量的图片格式，但对于一些半透明图片来说，推荐使用GRB_565格式，内存开销约为前者的一半；</li>
+<li>推荐使用Glide或者LreCache等第三方库；</li>
+</ul>
+<h1 id="内存抖动"><a href="#内存抖动" class="headerlink" title="内存抖动"></a>内存抖动</h1><p>内存抖动可能导致页面卡顿，甚至造成OOM。如果频繁创建对象，需要频繁分配内存，最后导致系统内存不足，或者产生很多地址不连续的内存碎片。而不连续的内存碎片是不可以分配给程序的，最后就造成了OOM。导致内存抖动的常见场景有：</p>
+<ul>
+<li>循环中创建占用内存较大的对象，比如bitmap，最后引起内存抖动；</li>
+<li>自定义View在onDraw中创建对象，因为自定义View的onDraw方法会被频繁调用。如果频繁创建对象，甚至较大的对象，会导致内存增加，甚至内存抖动；</li>
+</ul>
+<p>避免发生内存抖动，我们看看如何减少内存使用。</p>
+<h1 id="如何减少内存使用"><a href="#如何减少内存使用" class="headerlink" title="如何减少内存使用"></a>如何减少内存使用</h1><p>不仅为了避免出现内存泄漏，内存抖动，在实际开发中，也需要掌握减少内存使用的方法。</p>
+<ol>
+<li><p><strong>减小对象本身的内存占用</strong>：在可以达到相同实现的诸多方法中，选择空间损耗较小的方法可以减少内存使用：</p>
+<ul>
+<li><p>尽量使用int代替Enum：使用Enum会导致编译后的dex文件大小变大，且在使用过程中也会产生额外的内存占用；</p>
+</li>
+<li><p>使用轻量级的数据结构：经常可以看到使用HashMap等传统数据结构，相比起专为移动端操作系统使用的ArrayMap容器，前者效率较低，占用内存较大。还有SparesArray也更加的高效，避免了key和value的自动装箱和解箱；</p>
+</li>
+<li><p>StringBuilder：如果字符串通过’+’来拼接，会产生额外内存消耗，推荐使用StringBuilder来代替频繁的字符串拼接操作；</p>
+</li>
+<li><p>使用ProGuard来剔除不需要的代码；</p>
+</li>
+<li><p>慎用Static变量：因为Static变量的生命周期和程序的周期一样长；</p>
+</li>
+<li><p>优化布局层次，减少内存消耗；</p>
+</li>
+<li><p>不必为了实现某个单一的功能，就引入复杂的第三方库；</p>
+</li>
+<li><p>尽量避免在循环体内或者频繁调用的函数里创建对象；</p>
+</li>
+</ul>
+</li>
+<li><p><strong>内存对象复用</strong>：使用到相同的对象或者资源，如果已经创建，则尽量复用以减少内存使用：</p>
+<ul>
+<li><p>线程池：使用到多线程的时候，推荐使用线程池，因为线程池自动的帮忙处理好多线程复用的问题；</p>
+</li>
+<li><p>资源复用：Android系统内有自带很多资源，如字符串、颜色、图片、布局等，这些资源在App中是可以直接引用的，就不必再自己增加资源。同时，对于自己增加的资源，同样要考虑模块化和复用率；</p>
+</li>
+<li><p>避免在onDraw方法里面执行对象的创建：类似onDraw等频繁调用的方法，一定需要注意避免在这里做创建对象的操作，因为他会迅速增加内存的使用，而且很容易引起频繁的gc，甚至是内存抖动。</p>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="内存分析工具和内存分析命令"><a href="#内存分析工具和内存分析命令" class="headerlink" title="内存分析工具和内存分析命令"></a>内存分析工具和内存分析命令</h1><p>内存分析的工具和命令的具体使用不属于本面试专栏的范围，因此在这里仅作为引导，具体使用自行百度。</p>
+<h2 id="内存分析工具"><a href="#内存分析工具" class="headerlink" title="内存分析工具"></a>内存分析工具</h2><ol>
+<li>MAT工具： Memory Analyzer是一个快速且功能丰富的Java堆分析器，可帮助您查找内存泄漏并减少内存消耗；</li>
+<li>LeakCanary工具：一个自动检测内存泄漏的工具，LeakCanary 本质上是一个基于 MAT 进行 Android 应用程序内存泄漏自动化检测的的开源工具；</li>
+<li>Android Studio自带工具</li>
+</ol>
+<ul>
+<li>Memory Profiler工具：是 Android Profiler 中的一个组件，可帮助你分析应用卡顿、崩溃、内存泄漏等原因；</li>
+<li>Heap Viewer工具：堆内存查看工具，用于监控App的某一时刻的内存堆上的具体使用情况，从而帮助找出内存泄露；</li>
+<li>Allocation tracker工具：内存分配追踪工具，用于追踪一段时间的内存分配使用情况，能够知道执行一系列操作后，有哪些对象被分配空间。知道这些分配能使你调整相关的方法调用来优化app性能与内存使用。</li>
+</ul>
+<h2 id="内存分析命令"><a href="#内存分析命令" class="headerlink" title="内存分析命令"></a>内存分析命令</h2><p>对Android系统性能进行监控，包括CPU使用率、CPU使用率TOP5的进程、内存、内存占用TOP5进程、网络速度、磁盘速度都参考<a class="link" target="_blank" rel="noopener" href="https://juejin.cn/post/7104084305005477896">Android系统性能监控最全面分析与实践<i class="fas fa-external-link-alt"></i></a>。</p>
+<p>常用的内存分析指令有如下几个，具体使用详见参考文档：</p>
+<ul>
+<li>dumpsys meminfo</li>
+<li>procrank</li>
+<li>cat /proc/meminfo</li>
+<li>free</li>
+<li>ps</li>
+</ul>
+<h1 id="内存优化总结"><a href="#内存优化总结" class="headerlink" title="内存优化总结"></a>内存优化总结</h1><p>在平时的开发中，需要养成良好的代码习惯，从而避免内存泄漏，简单总结一下：</p>
+<ul>
+<li>对 Activity 等组件的引用应该控制在 Activity 的生命周期之内，如果可以使用Application的Context的情况下，优先使用Application的Context；</li>
+<li>静态变量或者静态内部类中慎用非静态外部成员变量，如果一定要用，则记得适当时机把非静态外部成员变量置空，同时建议用弱引用来引用外部类的变量；</li>
+<li>静态变量不要赋值大数据对象；</li>
+<li>将 Handler 定义成静态的内部类，在内部持有 Activity 的弱引用，并在Acitivity的onDestroy()中调用handler.removeCallbacksAndMessages(null)及时移除所有消息。更进一步建议将Handler抽离出来作为BaseHandler，然后每个Activity需要用到Handler的时候，就去继承BaseHandler。</li>
+<li>打开了文件、图片等资源性对象记得关闭；</li>
+<li>注册了BraodcastReceiver，ContentObserver等资源，注意在Activity销毁时注销掉；</li>
+<li>适当使用软引用，弱引用，确保对象可以在合适的时机回收；</li>
+<li>保持对对象生命周期的敏感，特别注意单例、静态对象、全局性集合等的生命周期，所以说意识很重要。</li>
+</ul>
+<p>而对于内存溢出，我们可以用try…catch…方式捕获，但是OOM往往是由于内存泄漏造成的，泄漏的部分多数情况下不在try语句块里，反而catch后不久就会发生OOM。所以OOM优化还是要从内存泄漏优化出发。</p>
+
+                </div>
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/blog/tags/Android/">Android</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                            <div class="post-share-container border-box">
+    <ul class="share-list-wrap border-box">
+        <li class="qq share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to QQ"
+        >
+            <i class="fa-brands fa-qq"></i>
+        </li>
+        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
+            data-tooltip-content="Share to WeChat"
+            data-tooltip-img-tip="Scan by WeChat"
+            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
+        >
+            <i class="fa-brands fa-weixin"></i>
+        </li>
+        <li class="weibo share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to WeiBo"
+        >
+            <i class="fa-brands fa-weibo"></i>
+        </li>
+    </ul>
+</div>
+
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/blog/2024/06/05/Android-9-%E4%BA%8B%E4%BB%B6%E5%88%86%E5%8F%91%E6%9C%BA%E5%88%B6/"
+                                   title="Androids事件分发机制"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Androids事件分发机制</span>
+                                        <span class="post-nav-item">Prev posts</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/blog/2024/06/05/Android-7-%E5%8D%A1%E9%A1%BF%E4%BC%98%E5%8C%96/"
+                                   title="Android卡顿优化"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Android卡顿优化</span>
+                                        <span class="post-nav-item">Next posts</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc left-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <!-- use hexo-blog-encrypt -->
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%95%E8%B5%B7%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E7%9A%84%E5%9C%BA%E6%99%AF%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">引起内存泄漏的场景及解决方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Handler-%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F"><span class="nav-number">2.1.</span> <span class="nav-text">Handler 内存泄漏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%9E%E9%9D%99%E6%80%81%E5%86%85%E9%83%A8%E7%B1%BB%E7%9A%84%E9%9D%99%E6%80%81%E5%AE%9E%E4%BE%8B"><span class="nav-number">2.2.</span> <span class="nav-text">非静态内部类的静态实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%84%E6%BA%90%E6%80%A7%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.3.</span> <span class="nav-text">资源性对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WebView"><span class="nav-number">2.4.</span> <span class="nav-text">WebView</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F%E6%8C%81%E6%9C%89%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.5.</span> <span class="nav-text">静态变量持有大数据对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E5%86%8C%E5%90%8E%E6%B2%A1%E6%9C%89%E6%B3%A8%E9%94%80"><span class="nav-number">2.6.</span> <span class="nav-text">注册后没有注销</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%95%E4%BE%8B%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.7.</span> <span class="nav-text">单例对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E5%8F%AA%E5%A2%9E%E4%B8%8D%E5%87%8F"><span class="nav-number">2.8.</span> <span class="nav-text">集合只增不减</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#finalize"><span class="nav-number">2.9.</span> <span class="nav-text">finalize()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%BF%E5%90%8D%E5%86%85%E9%83%A8%E7%B1%BB"><span class="nav-number">2.10.</span> <span class="nav-text">匿名内部类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E7%89%87"><span class="nav-number">2.11.</span> <span class="nav-text">图片</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E6%8A%96%E5%8A%A8"><span class="nav-number">3.</span> <span class="nav-text">内存抖动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%87%8F%E5%B0%91%E5%86%85%E5%AD%98%E4%BD%BF%E7%94%A8"><span class="nav-number">4.</span> <span class="nav-text">如何减少内存使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7%E5%92%8C%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%E5%91%BD%E4%BB%A4"><span class="nav-number">5.</span> <span class="nav-text">内存分析工具和内存分析命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7"><span class="nav-number">5.1.</span> <span class="nav-text">内存分析工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%E5%91%BD%E4%BB%A4"><span class="nav-number">5.2.</span> <span class="nav-text">内存分析命令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96%E6%80%BB%E7%BB%93"><span class="nav-number">6.</span> <span class="nav-text">内存优化总结</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+        &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2024
+        
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/blog/">MoMo</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+        <div class="count-info info-item">
+            
+
+            
+                <span class="count-item border-box uv">
+                    <span class="item-type border-box">Unique Visitor</span>
+                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
+                </span>
+            
+
+            
+                <span class="count-item border-box pv">
+                    <span class="item-type border-box">Page View</span>
+                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
+                </span>
+            
+        </div>
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools left-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-toggle-theme-mode flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <!-- use hexo-blog-encrypt -->
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%95%E8%B5%B7%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E7%9A%84%E5%9C%BA%E6%99%AF%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">引起内存泄漏的场景及解决方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Handler-%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F"><span class="nav-number">2.1.</span> <span class="nav-text">Handler 内存泄漏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%9E%E9%9D%99%E6%80%81%E5%86%85%E9%83%A8%E7%B1%BB%E7%9A%84%E9%9D%99%E6%80%81%E5%AE%9E%E4%BE%8B"><span class="nav-number">2.2.</span> <span class="nav-text">非静态内部类的静态实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%84%E6%BA%90%E6%80%A7%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.3.</span> <span class="nav-text">资源性对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WebView"><span class="nav-number">2.4.</span> <span class="nav-text">WebView</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F%E6%8C%81%E6%9C%89%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.5.</span> <span class="nav-text">静态变量持有大数据对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E5%86%8C%E5%90%8E%E6%B2%A1%E6%9C%89%E6%B3%A8%E9%94%80"><span class="nav-number">2.6.</span> <span class="nav-text">注册后没有注销</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%95%E4%BE%8B%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.7.</span> <span class="nav-text">单例对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E5%8F%AA%E5%A2%9E%E4%B8%8D%E5%87%8F"><span class="nav-number">2.8.</span> <span class="nav-text">集合只增不减</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#finalize"><span class="nav-number">2.9.</span> <span class="nav-text">finalize()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%BF%E5%90%8D%E5%86%85%E9%83%A8%E7%B1%BB"><span class="nav-number">2.10.</span> <span class="nav-text">匿名内部类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E7%89%87"><span class="nav-number">2.11.</span> <span class="nav-text">图片</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E6%8A%96%E5%8A%A8"><span class="nav-number">3.</span> <span class="nav-text">内存抖动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%87%8F%E5%B0%91%E5%86%85%E5%AD%98%E4%BD%BF%E7%94%A8"><span class="nav-number">4.</span> <span class="nav-text">如何减少内存使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7%E5%92%8C%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%E5%91%BD%E4%BB%A4"><span class="nav-number">5.</span> <span class="nav-text">内存分析工具和内存分析命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7"><span class="nav-number">5.1.</span> <span class="nav-text">内存分析工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%E5%91%BD%E4%BB%A4"><span class="nav-number">5.2.</span> <span class="nav-text">内存分析命令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96%E6%80%BB%E7%BB%93"><span class="nav-number">6.</span> <span class="nav-text">内存优化总结</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+<!-- common -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/utils.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/header-shrink.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/back2top.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/toggle-theme.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/code-block.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/main.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/libs/anime.min.js"></script>
+
+<!-- local-search -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/local-search.min.js"></script>
+
+
+<!-- lazyload -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/lazyload.min.js"></script>
+
+
+<div class="pjax">
+    
+        <!-- post-helper -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/post/post-helper.min.js"></script>
+
+        <!-- toc -->
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/post/toc.min.js"></script>
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/post/share.min.js"></script>
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+</body>
+</html>

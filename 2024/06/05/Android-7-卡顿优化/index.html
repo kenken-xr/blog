@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="MoMo">
+    
+    <title>
+        
+            Android卡顿优化 |
+        
+        今天在干嘛
+    </title>
+    
+<link rel="stylesheet" href="/blog/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/blog/images/logoMoon.svg">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/regular.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/brands.min.css">
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"kenken-xr.github.io","root":"/blog/","language":"en","path":"search.json"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#f8a5c2","title":"今天在干嘛","author":"MoMo","avatar":"/images/avatar.jpg","logo":"/images/logoMoon.svg","favicon":"/images/logoMoon.svg"},"menu":{"home":"/","archives":"/archives","tags":"/tags","categories":"/categories","github":"https://github.com/kenken-xr"},"first_screen":{"enable":true,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":true,"links":{"github":"https://github.com/kenken-xr","weixin":"img | /images/wx.png","qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":true,"percent":true,"hide_header":false},"home":{"announcement":null,"category":true,"tag":true,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":true,"reward":{"enable":false,"img_link":null,"text":null},"img_align":"center"},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true,"layout":"left"},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"local_search":{"enable":true,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.36"},"waline":{"server_url":null,"reaction":false,"version":"3.2.1"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":true},"cdn":{"enable":true,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":2023,"word_count":true,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"/blog","source_data":{},"version":"4.1.3"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original post title","author":"Original post author","link":"Original post link"}
+  </script>
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/blog/atom.xml" title="MoMo" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left border-box">
+            
+                <a class="logo-image border-box" href="/blog/">
+                    <img src="/blog/images/logoMoon.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/blog/">
+               今天在干嘛
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/"
+                            >
+                                
+                                HOME
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/archives"
+                            >
+                                
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/tags"
+                            >
+                                
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/categories"
+                            >
+                                
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               target="_blank" rel="noopener" href="https://github.com/kenken-xr"
+                            >
+                                
+                                GITHUB
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/"
+                    >HOME</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/archives"
+                    >ARCHIVES</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/tags"
+                    >TAGS</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/categories"
+                    >CATEGORIES</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       target="_blank" rel="noopener" href="https://github.com/kenken-xr"
+                    >GITHUB</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        Android卡顿优化
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/blog/images/avatar.jpg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">MoMo</span>
+                                
+                                    <span class="author-badge">Lv5</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2024-06-05 17:21:02</span>
+            </span>
+
+            <span class="meta-info-item post-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="datetime" data-updated="Thu Jun 13 2024 22:04:12 GMT+0800">2024-06-13 22:04:12</span>
+            </span>
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/blog/categories/%E6%9C%89%E5%9C%A8%E8%AE%A4%E7%9C%9F%E4%B8%8A%E7%8F%AD/">有在认真上班</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/blog/tags/Android/">Android</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+            <span class="meta-info-item post-pv">
+                <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    <ol>
+<li>造成系统卡顿的根本原因 ⭐⭐⭐</li>
+<li>什么是 ANR ？导致原因有哪些？⭐⭐⭐⭐⭐</li>
+<li>如何避免发生 ANR ？⭐⭐⭐⭐</li>
+<li>分别说说Activity、BroadcastReceiver、Serice最长可耗时时间为多少？⭐⭐⭐⭐⭐</li>
+<li>谈谈你项目中避免ANR的一些经验⭐⭐</li>
+<li>有什么方法和工具可以分析ANR ⭐⭐⭐</li>
+</ol>
+<h1 id="卡顿"><a href="#卡顿" class="headerlink" title="卡顿"></a>卡顿</h1><h2 id="造成卡顿的原因"><a href="#造成卡顿的原因" class="headerlink" title="造成卡顿的原因"></a>造成卡顿的原因</h2><p>造成卡顿的原因很多，如代码设计、内存占用、CPU使用率、IO操作等。这些因素造成的卡顿很难被追溯，所以发生卡顿的时候很难定位到此次卡顿的根因。</p>
+<h2 id="CPU使用情况获取的方法"><a href="#CPU使用情况获取的方法" class="headerlink" title="CPU使用情况获取的方法"></a>CPU使用情况获取的方法</h2><p>造成卡顿因素确实很多，但无论是哪个因素，最终造成的卡顿都会反映到CPU时间上。CPU时间包含用户时间和系统时间：</p>
+<ul>
+<li>用户时间：执行用户态应用程序代码所消耗的时间。</li>
+<li>系统时间：执行内核态系统调用所消耗的时间，<strong>包括I/O、锁、中断和其它系统调用所消耗的时间。</strong></li>
+</ul>
+<p>那么，有什么方法可以获取CPU使用率呢？<a class="link" target="_blank" rel="noopener" href="https://juejin.cn/post/7103341017318817828">《Android系统性能监控最全面分析与实践》<i class="fas fa-external-link-alt"></i></a>一文，详细介绍如何获取CPU整体使用率、每个核的使用率、占用CPU使用率最高的5个进程，这三个指标。在此，简单介绍获取CPU使用情况的方法：</p>
+<ul>
+<li>top指令</li>
+</ul>
+<p>top指令非常强大，如下图我们可以知道，系统当前有432个进程，总CPU使用率为800%，其中697%处于空闲状态，其中占用CPU使用率最高的是system_server进程，占用了23.6%的CPU。由此可见top指令可以监视系统整体和各个进程的CPU使用率，但无法获取每个核的使用率。</p>
+<p><img lazyload="" alt="image" data-src="https://uploadfiles.nowcoder.com/images/20231120/545613072_1700452148420/D2B5CA33BD970F64A6301FA75AE2EB22"></p>
+<ul>
+<li>ps指令</li>
+</ul>
+<p>ps(Process Status的缩写)指令是最基本同时也是非常强大的进程查看指令，可以查询系统内每个进程的运行状态、CPU使用率、占用的内存等，因为现在需要获取CPU使用率，可以执行：</p>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ps -eo pid,%cpu,CMD --sort=-%cpu |head -n 6</span><br><span class="line">指令解析：使用-o参数可自定义格式，这里只显示进程号、CPU使用率、进程名，并按CPU使用率降序排序，最后显示前5个进程。</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img lazyload="" alt="image" data-src="https://uploadfiles.nowcoder.com/images/20231120/545613072_1700452156439/D2B5CA33BD970F64A6301FA75AE2EB22"></p>
+<p>ps指令耗时是毫秒级别，优于top指令，然而也无法获取整体或者每个核的使用率</p>
+<ul>
+<li>dumpsys cpuinfo</li>
+</ul>
+<p>Android提供的dumpsys工具可以用于查看感兴趣的系统服务信息与状态，dumpsys cpuinfo可以用来查看安卓系统当前的cpu使用情况，执行的速度是非常快的，因为其打印的内容并非执行该命令的时候临时去更新的，而是系统内部有着相关的机制会在特定情况更新cpuinfo。为方便查看下图经过裁剪，我们可以看到系统整体CPU使用率和前5个进程的使用率，还缺少每个核的使用率，因此还不是最优的方案。不过在3.3小节dumpsys cpuinfo另有他用，其实现原理也可见下文介绍。</p>
+<p><img lazyload="" alt="image" data-src="https://uploadfiles.nowcoder.com/images/20231120/545613072_1700452166044/D2B5CA33BD970F64A6301FA75AE2EB22"></p>
+<ul>
+<li>读取/proc/stat文件</li>
+</ul>
+<p>读取/proc/stat文件来计算CPU使用率是目前最常见最有用的方法，Android源码获取CPU使用率也同样采用这种方法。</p>
+<ul>
+<li>读取/proc/[pid]/stat</li>
+</ul>
+<p>该文件包含了某一个进程的所有活动信息，该文件中所有值都是从系统启动开始累计到当前时刻，可通过改文件计算每个进程的CPU使用率。</p>
+<h1 id="什么是ANR"><a href="#什么是ANR" class="headerlink" title="什么是ANR"></a>什么是ANR</h1><p>Application Not Respongding，简称ANR，翻译为中文即是“应用程序无响应”。手机使用过程中，偶尔就会出现一个提示弹窗，说XXX软件无响应，让用户选择继续等待还是关闭软件。这就是发生了ANR。</p>
+<h2 id="Activity、BroadcastReceiver、Serice发生ANR的超时时间"><a href="#Activity、BroadcastReceiver、Serice发生ANR的超时时间" class="headerlink" title="Activity、BroadcastReceiver、Serice发生ANR的超时时间"></a>Activity、BroadcastReceiver、Serice发生ANR的超时时间</h2><p>Android系统会监控程序的响应情况，每个组件都有规定的发生ANR时间，具体是：</p>
+<ul>
+<li>Activity在5秒内无响应用户操作；</li>
+<li>BroadCastReceiver在10秒内未执行完所设置的操作,如果应用在后台，则延长到60秒；</li>
+<li>Service在20秒没有执行完操作，如果应用在后台，则延长到200秒；</li>
+</ul>
+<h2 id="常见的几种可能发生ANR的情况"><a href="#常见的几种可能发生ANR的情况" class="headerlink" title="常见的几种可能发生ANR的情况"></a>常见的几种可能发生ANR的情况</h2><ul>
+<li>主线程进行IO操作，引起阻塞；</li>
+<li>主线程执行耗时操作；</li>
+<li>主线程有错误操作，如Thread.sleep等直接导致主线程阻塞；</li>
+<li>执行速度缓慢的广播接收器；</li>
+<li>出现死锁；</li>
+<li>主线程使用Binder和另一个进程通讯，另一个进程需要很长时间才返回；</li>
+<li>主线程使用 SharedPrederence：SharedPrederence 调用 apply 方法，会创建一个等待锁放到 QueuedWork 中，并将真正数据持久化封装成一个任务放到异步队列中执行，任务执行结束会释放锁。Activity onStop 以及 Service 处理 onStop，onStartCommand 时，执行 QueuedWork.waitToFinish() 等待所有的等待锁释放。其实不管是 commit 还是 apply，都是在主线程进行 IO 操作，那么都是可能会产生 ANR 的。</li>
+</ul>
+<p>当ANR发生时，系统单独起一个AnrConsumer线程去记录当前应用的堆栈信息、CPU、内存占用、进程列表中各个线程的用户时间和系统时间占比等情况，输出logcat，并保存到/data/anr/traces.txt文件，然后再根据是否是前台进程判断是否弹出ANR弹窗。</p>
+<h1 id="改善ANR的方法"><a href="#改善ANR的方法" class="headerlink" title="改善ANR的方法"></a>改善ANR的方法</h1><p>ANR出现的类型一般分为两种：</p>
+<ul>
+<li>主线程耗时操作导致；</li>
+<li>CPU、内存、IO操作占用资源太高导致；</li>
+</ul>
+<p>因此，避免ANR的核心就是主线程中少执行耗时的代码，以及避免CPU使用率太高或者内存占用太高；</p>
+<ul>
+<li>耗时操作在子线程里处理，如使用AsyncTask、线程池、IntentService、RxJava等，不过笔者现在用的较多的是RxJava；</li>
+<li>在Activity的onCreate()和onResume()等方法少执行耗时的代码。 BroadcastReceiver中onReceive()也同理；</li>
+<li>查看对主线程所需资源持有的锁，将持有锁的时间降到最少，或者评估应用是否需要持有锁。如果需要使用锁来确定何时根据工作线程的处理情况来更新界面，建议使用AsyncTask机制在工作线程和主线程之间进行通信；</li>
+<li>如果程序在后台处理用户输入或者执行耗时操作，建议使用ProgressBar等控件可以让用户感知当前进度；</li>
+</ul>
+<h1 id="卡顿分析的方法和工具"><a href="#卡顿分析的方法和工具" class="headerlink" title="卡顿分析的方法和工具"></a>卡顿分析的方法和工具</h1><p>当ANR发生时，首先查看应用程序的堆栈信息，看看是否有死锁发生。接着查看ANR日志里CPU、IO、GC（垃圾回收）、system server等信息，进一步确认是否出现了CPU高使用率或者IO阻塞问题，或者大量的GC导致系统卡顿。以下介绍的方法或者工具仅起普及作用，具体的做法不属于本文内容，后续计划出一个Android项目实践的专栏再做详细介绍，敬请关注。卡顿优化可以:<a class="link" target="_blank" rel="noopener" href="https://juejin.cn/post/6844904066259091469">《 深入探索Android卡顿优化》<i class="fas fa-external-link-alt"></i></a></p>
+<ul>
+<li>traces.txt文件</li>
+</ul>
+<p>当一个进程发生了ANR，系统会在/data/anr目录下创建一个traces.txt文件，可以通过该文件分析定位出现ANR的原因。或者通过FileObserver来监听该文件的变化。</p>
+<ul>
+<li>ANR-WatchDog 高版本的Android系统需要root权限才能对/data/anr/trace.txt文件进行监听，因此可以使用ANR-WatchDog，这是一种非侵入式的ANR监控组件，可以用于线上ANR的监控。具体使用过程和原理参：<a class="link" target="_blank" rel="noopener" href="https://juejin.cn/post/6844904066259091469">《 深入探索Android卡顿优化》<i class="fas fa-external-link-alt"></i></a></li>
+<li>监听 SIGQUIT 信号</li>
+</ul>
+<p>这个来源于微信的 ANR 监控方案，这个原理是，当发生 ANR 的时候，系统会向发生 ANR 的进程发送一个 SIGQUIT 信号来 dump 进程堆栈。发生 ANR 的进程一定会收到 SIGQUIT 信号，但收到 SIGQUIT 信号的进程并不一定发生了 ANR。原因是发生了 ANR 时，系统并不只是会 dump 发生了 ANR 的进程，还会 dump 一些其他进程、比如 system_server 进程等，所以存在误报的情况。解决办法就是在监听 SIGQUIT 信号后，在 20s （20s 是 ANR dump 的 timeout 时间）内不断的轮询自己是否被设置了 NOT_RESPONDING 标志位，一旦发现有这个 flag，那么就可以认定是发生了一次 ANR。</p>
+<ul>
+<li>CPU Profiler</li>
+</ul>
+<p>gperftools是google开发的一款非常实用的工具集，CPU profiler是其中的工具之一，用于程序性能分析和监控。</p>
+<ul>
+<li>Systrace</li>
+</ul>
+<p>Systrace 是第一代系统级性能分析工具，Systrace利用了 Linux 的ftrace调试工具。基本原理是在代码里加了一些性能监控的埋点。它将 Android 系统和 App 的运行信息以图形化的方式展示出来。具体使用参考：<a class="link" target="_blank" rel="noopener" href="https://www.androidperformance.com/2019/05/28/Android-Systrace-About/">《Android Systrace 基础知识 – Systrace 简介》<i class="fas fa-external-link-alt"></i></a></p>
+<ul>
+<li>Perfetto</li>
+</ul>
+<p>Perfetto是新一代性能分析全栈工具，相比 Systrace 最大的改进是可以支持长时间数据抓取，也都是基于 Linux 内核的 Ftrace 机制实现了用户空间与内核空间关键事件的记录。</p>
+<ul>
+<li>Android Studio的CPU Profiler</li>
+</ul>
+<p>Android Studio集成的CPU分析工具，可以通过图形的形式展示执行时间和调用栈，信息也很全面，可以实时检查应用程序的CPU使用率和线程使用情况，还有函数调用及其开销时间。AS CPU Profiler 集成了多个性能分析工具：Perfetto、Simpleperf、Java Method Trace，它自然而然具备了这些工具的全部或部分功能。</p>
+<ul>
+<li>StrictMode StrictMode是Andraoid性能调优的利器，从名字上就知道，这是“严苛模式”。StrictMode不仅可以分析卡顿，也常用于捕获在应用主线程中发生的磁盘I/O、网络访问违例等问题，有助于开发应用时发现主线程上的意外 I/O 操作。StrictMode主要检测两大问题：线程策略（TreadPolicy）和VM策略（VmPolicy）：<ul>
+<li>ThreadPolicy线程策略：<ul>
+<li>自定义的耗时调用，使用detectCustomSlowCalls()开启；</li>
+<li>磁盘读取操作，使用detectDiskReads()开启；</li>
+<li>磁盘写入操作，使用detectDiskWrites()开启；</li>
+<li>网络操作，使用detectNetwork()开启。</li>
+</ul>
+</li>
+<li>VmPolicy虚拟机策略：<ul>
+<li>Activity泄漏，使用detectActivityLeaks()开启；</li>
+<li>未关闭的Closable对象泄漏，使用detectLeakedClosableObjects()开启；</li>
+<li>泄漏的Sqlite对象，使用detectLeakedSqlLiteObjects()开启；</li>
+<li>检测实例数量，使用setClassInstanceLimit()开启。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>其他的工具还有：Facebook开源库Profilo、腾讯的PerfDog等。</li>
+</ul>
+
+                </div>
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/blog/tags/Android/">Android</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                            <div class="post-share-container border-box">
+    <ul class="share-list-wrap border-box">
+        <li class="qq share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to QQ"
+        >
+            <i class="fa-brands fa-qq"></i>
+        </li>
+        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
+            data-tooltip-content="Share to WeChat"
+            data-tooltip-img-tip="Scan by WeChat"
+            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
+        >
+            <i class="fa-brands fa-weixin"></i>
+        </li>
+        <li class="weibo share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to WeiBo"
+        >
+            <i class="fa-brands fa-weibo"></i>
+        </li>
+    </ul>
+</div>
+
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/blog/2024/06/05/Android-8-%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96/"
+                                   title="Android内存优化"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Android内存优化</span>
+                                        <span class="post-nav-item">Prev posts</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/blog/2024/06/05/Android-6-Intent/"
+                                   title="Intent"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Intent</span>
+                                        <span class="post-nav-item">Next posts</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc left-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <!-- use hexo-blog-encrypt -->
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%A1%E9%A1%BF"><span class="nav-number">1.</span> <span class="nav-text">卡顿</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%A0%E6%88%90%E5%8D%A1%E9%A1%BF%E7%9A%84%E5%8E%9F%E5%9B%A0"><span class="nav-number">1.1.</span> <span class="nav-text">造成卡顿的原因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CPU%E4%BD%BF%E7%94%A8%E6%83%85%E5%86%B5%E8%8E%B7%E5%8F%96%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.2.</span> <span class="nav-text">CPU使用情况获取的方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFANR"><span class="nav-number">2.</span> <span class="nav-text">什么是ANR</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Activity%E3%80%81BroadcastReceiver%E3%80%81Serice%E5%8F%91%E7%94%9FANR%E7%9A%84%E8%B6%85%E6%97%B6%E6%97%B6%E9%97%B4"><span class="nav-number">2.1.</span> <span class="nav-text">Activity、BroadcastReceiver、Serice发生ANR的超时时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E5%87%A0%E7%A7%8D%E5%8F%AF%E8%83%BD%E5%8F%91%E7%94%9FANR%E7%9A%84%E6%83%85%E5%86%B5"><span class="nav-number">2.2.</span> <span class="nav-text">常见的几种可能发生ANR的情况</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%94%B9%E5%96%84ANR%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">改善ANR的方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%A1%E9%A1%BF%E5%88%86%E6%9E%90%E7%9A%84%E6%96%B9%E6%B3%95%E5%92%8C%E5%B7%A5%E5%85%B7"><span class="nav-number">4.</span> <span class="nav-text">卡顿分析的方法和工具</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+        &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2024
+        
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/blog/">MoMo</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+        <div class="count-info info-item">
+            
+
+            
+                <span class="count-item border-box uv">
+                    <span class="item-type border-box">Unique Visitor</span>
+                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
+                </span>
+            
+
+            
+                <span class="count-item border-box pv">
+                    <span class="item-type border-box">Page View</span>
+                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
+                </span>
+            
+        </div>
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools left-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-toggle-theme-mode flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <!-- use hexo-blog-encrypt -->
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%A1%E9%A1%BF"><span class="nav-number">1.</span> <span class="nav-text">卡顿</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%A0%E6%88%90%E5%8D%A1%E9%A1%BF%E7%9A%84%E5%8E%9F%E5%9B%A0"><span class="nav-number">1.1.</span> <span class="nav-text">造成卡顿的原因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CPU%E4%BD%BF%E7%94%A8%E6%83%85%E5%86%B5%E8%8E%B7%E5%8F%96%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.2.</span> <span class="nav-text">CPU使用情况获取的方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFANR"><span class="nav-number">2.</span> <span class="nav-text">什么是ANR</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Activity%E3%80%81BroadcastReceiver%E3%80%81Serice%E5%8F%91%E7%94%9FANR%E7%9A%84%E8%B6%85%E6%97%B6%E6%97%B6%E9%97%B4"><span class="nav-number">2.1.</span> <span class="nav-text">Activity、BroadcastReceiver、Serice发生ANR的超时时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E5%87%A0%E7%A7%8D%E5%8F%AF%E8%83%BD%E5%8F%91%E7%94%9FANR%E7%9A%84%E6%83%85%E5%86%B5"><span class="nav-number">2.2.</span> <span class="nav-text">常见的几种可能发生ANR的情况</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%94%B9%E5%96%84ANR%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">改善ANR的方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%A1%E9%A1%BF%E5%88%86%E6%9E%90%E7%9A%84%E6%96%B9%E6%B3%95%E5%92%8C%E5%B7%A5%E5%85%B7"><span class="nav-number">4.</span> <span class="nav-text">卡顿分析的方法和工具</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+<!-- common -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/utils.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/header-shrink.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/back2top.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/toggle-theme.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/code-block.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/main.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/libs/anime.min.js"></script>
+
+<!-- local-search -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/local-search.min.js"></script>
+
+
+<!-- lazyload -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/lazyload.min.js"></script>
+
+
+<div class="pjax">
+    
+        <!-- post-helper -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/post/post-helper.min.js"></script>
+
+        <!-- toc -->
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/post/toc.min.js"></script>
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/post/share.min.js"></script>
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+</body>
+</html>

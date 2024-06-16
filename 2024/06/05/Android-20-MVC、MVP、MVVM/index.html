@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="MoMo">
+    
+    <title>
+        
+            MVC、MVP、MVVM |
+        
+        今天在干嘛
+    </title>
+    
+<link rel="stylesheet" href="/blog/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/blog/images/logoMoon.svg">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/regular.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/brands.min.css">
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"kenken-xr.github.io","root":"/blog/","language":"en","path":"search.json"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#f8a5c2","title":"今天在干嘛","author":"MoMo","avatar":"/images/avatar.jpg","logo":"/images/logoMoon.svg","favicon":"/images/logoMoon.svg"},"menu":{"home":"/","archives":"/archives","tags":"/tags","categories":"/categories","github":"https://github.com/kenken-xr"},"first_screen":{"enable":true,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":true,"links":{"github":"https://github.com/kenken-xr","weixin":"img | /images/wx.png","qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":true,"percent":true,"hide_header":false},"home":{"announcement":null,"category":true,"tag":true,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":true,"reward":{"enable":false,"img_link":null,"text":null},"img_align":"center"},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true,"layout":"left"},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"local_search":{"enable":true,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.36"},"waline":{"server_url":null,"reaction":false,"version":"3.2.1"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":true},"cdn":{"enable":true,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":2023,"word_count":true,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"/blog","source_data":{},"version":"4.1.3"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original post title","author":"Original post author","link":"Original post link"}
+  </script>
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/blog/atom.xml" title="MoMo" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left border-box">
+            
+                <a class="logo-image border-box" href="/blog/">
+                    <img src="/blog/images/logoMoon.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/blog/">
+               今天在干嘛
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/"
+                            >
+                                
+                                HOME
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/archives"
+                            >
+                                
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/tags"
+                            >
+                                
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/categories"
+                            >
+                                
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               target="_blank" rel="noopener" href="https://github.com/kenken-xr"
+                            >
+                                
+                                GITHUB
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/"
+                    >HOME</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/archives"
+                    >ARCHIVES</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/tags"
+                    >TAGS</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/categories"
+                    >CATEGORIES</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       target="_blank" rel="noopener" href="https://github.com/kenken-xr"
+                    >GITHUB</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        MVC、MVP、MVVM
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/blog/images/avatar.jpg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">MoMo</span>
+                                
+                                    <span class="author-badge">Lv5</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2024-06-05 17:26:39</span>
+            </span>
+
+            <span class="meta-info-item post-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="datetime" data-updated="Thu Jun 13 2024 22:04:12 GMT+0800">2024-06-13 22:04:12</span>
+            </span>
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/blog/categories/%E6%9C%89%E5%9C%A8%E8%AE%A4%E7%9C%9F%E4%B8%8A%E7%8F%AD/">有在认真上班</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/blog/tags/Android/">Android</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+            <span class="meta-info-item post-pv">
+                <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    <ol>
+<li>MVC、MVP、MVVM的他们有什么区别和联系，如何演变的？ ⭐⭐⭐⭐⭐</li>
+<li>MVVM的优点和缺点 ⭐⭐⭐⭐</li>
+<li>为什么Activity旋转屏幕后ViewModel可以恢复数据 ⭐⭐</li>
+<li>ViewModel 的实例缓存到哪儿了 ⭐⭐</li>
+<li>什么时候 ViewModel#onCleared() 会被调用 ⭐⭐</li>
+</ol>
+<h1 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h1><p>如果需要设计一套人脸识别系统，用户输入自己姓名后，站在机器前面，机器就可以自动拍照并识别出用户的性别。程序员小帅不考虑软件架构，直接动手撸代码，最终功能虽然实现了，但是各种业务代码都写在同个文件里。过了一段时间，领导让小帅新增识别年龄的功能时，才发现代码非常臃肿，不利于二次开发。看过本文后，小帅重新设计了代码的架构：</p>
+<ul>
+<li>View：界面相关，将计人脸识别系统UI界面相关代码抽离出来，<strong>对应于xml布局文件</strong>；</li>
+<li>Controller：控制相关，将和UI界面操作相关以及判断相关的业务逻辑也抽离出来，比如判断用户是否输入姓名了，没有输入则不会开始采集用户照片等，<strong>对应于Activity</strong>；</li>
+<li>Model：数据相关，具体的性别识别算法运算等较为复杂的运算，本地数据的维护等；</li>
+</ul>
+<p>其中View和Model，一个单独负责界面，一个负责处理数据，比较好理解。而Controller就是接收View的指令，做一些逻辑判断或者调用Model做复杂运算后，再把结果反馈给View。通过如此分工，写页面，写业务逻辑，数据运算三者相互分离。</p>
+<p><img lazyload="" alt="image" data-src="https://uploadfiles.nowcoder.com/images/20231120/545613072_1700451922025/D2B5CA33BD970F64A6301FA75AE2EB22"></p>
+<p>然而，在实际的Android开发中，View层对应xml布局文件，其实能做的事情特别少，实际上关于该布局文件中的数据绑定的操作，事件处理的代码都在Activity中，造成了Activity既像View又像Controller，使得Activity变得臃肿。</p>
+<p>而且如果不涉及复杂的运算，那么Controller处理完简单的逻辑判断后就直接返回给View。甚至View可以跳过Controller，直接和Model进行交互。这就造成，本来Controller本来就应该依赖View和Model，而现在View也依赖Controller和Model，耦合性还是太高了，于是我们希望View和Model之间要彻底断开联系。</p>
+<h1 id="MVP"><a href="#MVP" class="headerlink" title="MVP"></a>MVP</h1><p>在MVC的基础上，用Presenter代替Controller，此时MVP具体为：</p>
+<ul>
+<li>View：不仅负责UI界面相关操作，还要负责用户交互，<strong>相当于Activity</strong>；</li>
+<li>Model：依然主要负责数据处理；</li>
+<li>Presenter：负责View和Model之间的交互；</li>
+</ul>
+<p>首先，明确下理解，在MVC中的View相当于布局文件，而在MVP中View相当于Activity；此时View和Model不再直接交互，而是使用Presenter作为二者交互的桥梁。Presenter里同时持有View和Model的引用，View也有Presenter的引用，但没有Model的引用。</p>
+<p>当View层中某个UI界面发起某个数据操作时，会调用Presenter的引用，Presenter再调用Model层的引用请求数据。当Model层的数据处理完后会调用Presenter层的回调通知Presenter层数据加载情况，最后Presenter层再调用View层的接口将加载后的数据展示给用户看。Model层是不会直接和View层产生通讯的。</p>
+<p><img lazyload="" alt="image" data-src="https://uploadfiles.nowcoder.com/images/20231120/545613072_1700451934629/D2B5CA33BD970F64A6301FA75AE2EB22"></p>
+<h1 id="MVVM"><a href="#MVVM" class="headerlink" title="MVVM"></a>MVVM</h1><p>如果你是做安卓系统开发，那么你可能会接触到MVC或者MVP，而不需要用到MVVM。但如果你是安卓应用开发，那么一定要懂得MVVM。</p>
+<p>在MVP中，Presenter更新View也需要很多烦人的代码，有没有什么方法，告诉View去监听某个数据，该数据发生变化时，View自动跟着变化呢？当然是有的，ViewModel随之诞生。ViewModel代替了Presenter，MVP变成了MVVM：Model-View-ViewModel。</p>
+<ul>
+<li>Model：和MVP中的Model一样，还是用来处理数据的；</li>
+<li>View：还是用来更新和处理UI界面以及和用户交互，相当于Activity。和MVP里的View的区别在于，View界面的更新从由Presenter驱动，变成了自动监听数据，随着数据变化而自动更新；</li>
+<li>ViewModel：Model和View的中介，处理逻辑中转任务的媒介。一个View可以绑定多个不同的ViewModel，一个ViewModel也可以被多个View同时绑定。</li>
+</ul>
+<p>那么，MVVM是如何做到View的自动更新呢？在此之前，需要掌握几个新概念：</p>
+<ul>
+<li>LifeCycle：LifeCycle是Google官方提供的管理生命周期事件的方法，可以更加方便地监听声明周期变化事件；</li>
+<li>LiveData：这是一种用来持有数据的对象，可以设置多个观察者监听LiveData对象，当数据发生改变时，会通知处于active状态（Started和Resume状态）的观察者，并执行设置好的动作。举个例子，我们可以提前设置ActivityA，ActivityB，FragmentA，这三者分别都去监听一个变量名为studentName的LiveDataA对象，也就是在这几个类里，都有下面几行代码。当studentName数值发生改变时，就设置tv_name控件的text改为studentName的新值。那么，当studentName发生改变时，假设ActivityA和FragmentA刚好处于active状态，则ActivityA和FragmentA就会执行tv_name.text = it，自动的修改控件的文本内容。而ActivityB不处于active状态，则不会有任何操作。</li>
+</ul>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">myViewModel.studentName.observe(<span class="built_in">this</span>) {</span><br><span class="line">    tv_name.text = it</span><br><span class="line">    }</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li>DataBinding：这是Googel发布的一个用来支持MVVM模式的框架。主要用来降低布局和逻辑的耦合度。以前都是在xml布局文件写好控件后，在Activity通过findViewById()方法绑定控件后，对控件做操作。而随着DataBinding的产生，我们可以直接在xml布局文件里直接将控件和数据绑定在一起，当数据改变时，控件自动更新。</li>
+</ul>
+<p>结合LiveData+DataBinding举个例子增进理解，以下例子参考于<a class="link" target="_blank" rel="noopener" href="https://github.com/TokyoAndroid/MVVMDemo">MVVMDemo <i class="fas fa-external-link-alt"></i></a>，读者可以下载该开源项目代码实际运行看看：</p>
+<p>首先看看布局文件：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"utf-8"</span>?&gt;</span><br><span class="line">&lt;layout xmlns:android=<span class="string">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    xmlns:app=<span class="string">"http://schemas.android.com/apk/res-auto"</span></span><br><span class="line">    xmlns:tools=<span class="string">"http://schemas.android.com/tools"</span></span><br><span class="line">    &gt;</span><br><span class="line"></span><br><span class="line">    &lt;data&gt;</span><br><span class="line">        &lt;!-- <span class="number">1</span> --&gt;</span><br><span class="line">        &lt;variable</span><br><span class="line">            name=<span class="string">"image"</span></span><br><span class="line">            type=<span class="string">"com.zw.mvvmdemo.bean.ImageUrlBean.UrlBean"</span>/&gt;</span><br><span class="line">    &lt;/data&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;android.support.constraint.ConstraintLayout</span><br><span class="line">        android:layout_width=<span class="string">"match_parent"</span></span><br><span class="line">        android:layout_height=<span class="string">"match_parent"</span>&gt;</span><br><span class="line"></span><br><span class="line">        &lt;ImageView</span><br><span class="line">            android:id=<span class="string">"@+id/myImageView"</span></span><br><span class="line">            &lt;!-- <span class="number">2</span> --&gt;</span><br><span class="line">            imageUrl=<span class="string">"@{image.BASE_IMAGE_ADDRESS_URL + image.url}"</span></span><br><span class="line">            app:layout_constraintLeft_toLeftOf=<span class="string">"parent"</span></span><br><span class="line">            app:layout_constraintTop_toTopOf=<span class="string">"parent"</span></span><br><span class="line">            android:layout_width=<span class="string">"match_parent"</span></span><br><span class="line">            android:layout_height=<span class="string">"200dp"</span> /&gt;</span><br><span class="line">    &lt;/android.support.constraint.ConstraintLayout&gt;</span><br><span class="line"></span><br><span class="line">&lt;/layout&gt;</span><br></pre></td></tr></tbody></table></figure>
+
+<p>首先看[注释1]，可以创建<data>变量：</data></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;variable</span><br><span class="line">    name=<span class="string">"image"</span></span><br><span class="line">    type=<span class="string">"com.zw.mvvmdemo.bean.ImageUrlBean.UrlBean"</span>/&gt;</span><br></pre></td></tr></tbody></table></figure>
+
+<p>在variable标签中：</p>
+<ul>
+<li>name：需要绑定数据的名称，名称可自定义;</li>
+<li>type：需要绑定数据的类型；</li>
+</ul>
+<p>所以，我们创建了一个名为“image”的<data>变量，并在[注释2]中使用，赋值给了另一个叫imageUrl的属性。imageUrl属性是我们自定义的一个属性，是通过DataBinding的注解BindingAdapter来声明的。</data></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">GetBingImageAdapter</span> {</span><br><span class="line"></span><br><span class="line">    <span class="meta">@BindingAdapter("imageUrl")</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">setImage</span><span class="params">(ImageView iv, String url)</span> { <span class="comment">//3</span></span><br><span class="line">        Glide.with(iv)</span><br><span class="line">                .load(url)</span><br><span class="line">                .into(iv);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>所以当[注释1]名为“image”的变量发生改变时，[注释2]名为“myImageView”的控件中的imageUrl属性就会随着改变，并调用[注释3]的回调函数setImage()方法，最终执行Glide这个第三方图片加载框架来刷新图片。</p>
+<p>那么就剩下最后一个问题，[注释1]名为“image”的变量什么时候会发生改变呢？我们可以在Activity中监听从网络获取到的图片的url地址，当url地址改变时，修改“image”变量的值：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">mViewModel.getImageUrl().observe(<span class="built_in">this</span>, <span class="keyword">new</span> <span class="title class_">Observer</span>&lt;UrlData&lt;ImageUrlBean.UrlBean&gt;&gt;() {</span><br><span class="line">           <span class="meta">@Override</span></span><br><span class="line">           <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onChanged</span><span class="params">(<span class="meta">@Nullable</span> UrlData&lt;ImageUrlBean.UrlBean&gt; data)</span> {</span><br><span class="line">               mDialog.dismiss();</span><br><span class="line">               <span class="keyword">if</span>(data.getErrorMsg() != <span class="literal">null</span>) {</span><br><span class="line">                   Toast.makeText(BingImageActivity.<span class="built_in">this</span>, data.getErrorMsg(),</span><br><span class="line">                           Toast.LENGTH_LONG).show();</span><br><span class="line">               }</span><br><span class="line">              </span><br><span class="line">               binding.setImage(data.getData()); <span class="comment">//4</span></span><br><span class="line">           }</span><br><span class="line">       });</span><br></pre></td></tr></tbody></table></figure>
+
+<p>其中getImageUrl()返回的变量的定义是：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> MutableLiveData&lt;UrlData&lt;ImageUrlBean.UrlBean&gt;&gt; mData;</span><br></pre></td></tr></tbody></table></figure>
+
+<p>没错，就是一个LiveData对象。最后通过[注释4]来修改“image”变量的值。有一个知识点要注意，如果“image”的名字改为“myImageValue”，则[注释4]的函数名应该同步改为setMyImageValue()。</p>
+<p>所谓的View能自动更新，其实是因为我们提前设置好了监听，也设置好了监听的对象数值改变后，View需要完成什么动作。</p>
+<h1 id="MVVM总结"><a href="#MVVM总结" class="headerlink" title="MVVM总结"></a>MVVM总结</h1><h2 id="MVVM的优点和缺点"><a href="#MVVM的优点和缺点" class="headerlink" title="MVVM的优点和缺点"></a>MVVM的优点和缺点</h2><p>总的来说，MVVM还是一个非常优秀的模式，主要体现在：</p>
+<ul>
+<li>数据和布局双向绑定，我们只需要关心数据数值的改变，而不再需要操心findViewById和setText()等繁复的代码的工作；</li>
+<li>一个View可以绑定多个ViewModel，一个ViewModel可以供多个View绑定，提高复用性和灵活性；</li>
+<li>自带生命周期管理，不用担心因为生命周期而出现bug；</li>
+</ul>
+<p>当然，MVVM也有缺点：</p>
+<ul>
+<li>View和ViewModel独立，如果出现bug定位问题较难；</li>
+<li>Binding类的生成可能需要多次Rebuild的操作，若Binding类过多，则编译工作会耗时很大；</li>
+<li>需要提前设置好数据监听，如果数值多，那就要设置很多监听；</li>
+<li>如果ViewModel层数据未改变，但却强制要View层改变UI控件时，就比较麻烦；</li>
+</ul>
+<h2 id="ViewModel-的实例缓存到哪儿了"><a href="#ViewModel-的实例缓存到哪儿了" class="headerlink" title="ViewModel 的实例缓存到哪儿了"></a>ViewModel 的实例缓存到哪儿了</h2><p>如果我们修改了系统语言再回到App，或者旋转了屏幕，都会发现APP中当前Activity重新创建了，但是ViewModel里面的LiveData对象实例并没有改变。这就是ViewModel的特性了。我们知道Activity保留现场的方法是onSaveInstanceState()，然后重新创建Activity时，onCreate()里通过Bundle恢复数据。不过该方法仅适合保存可以支持序列化的少量数据。而不适合大量数据。ViewModel的出现就完美解决了这个问题。</p>
+<p>我们看看ViewModel的创建方法：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//MyActivity中</span></span><br><span class="line">myViewModel = ViewModelProvider(<span class="built_in">this</span>).get(MyViewModel::class.java) <span class="comment">//5</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>我们创建 ViewModelProvider 对象并传入了 this 参数，即所在的MyActivity，然后通过 ViewModelProvider#get方法，传入 MyViewModel 的 class 类型，然后拿到了 MyViewModel 实例 myViewModel。看看ViewModelProvider的构造方法：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ViewModelProvider.java</span></span><br><span class="line"><span class="keyword">public</span> <span class="title function_">ViewModelProvider</span><span class="params">(<span class="meta">@NonNull</span> ViewModelStoreOwner owner)</span> { <span class="comment">//6</span></span><br><span class="line">        <span class="built_in">this</span>(owner.getViewModelStore(), owner <span class="keyword">instanceof</span> HasDefaultViewModelProviderFactory <span class="comment">//7</span></span><br><span class="line">                ? ((HasDefaultViewModelProviderFactory) owner).getDefaultViewModelProviderFactory()</span><br><span class="line">                : NewInstanceFactory.getInstance());</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>ViewModelProvider的构造函数，即[注释6]的ViewModelStoreOwner是什么？明明我们在 [注释5]传入的是this，即MyActivity。其实，MyActivity继承于ComponentActivity，ComponentActivity 类又实现了ViewModelStoreOwner 接口。所以[注释7]调用的owner.getViewModelStore()就是ComponentActivity类中的getViewModelStore()所返回的ViewModelStore 实例。同时，[注释7]的这个this()方法，就对应了ViewModelProvider的另一个构造函数：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ViewModelProvider.java</span></span><br><span class="line"><span class="keyword">public</span> <span class="title function_">ViewModelProvider</span><span class="params">(<span class="meta">@NonNull</span> ViewModelStore store, <span class="meta">@NonNull</span> Factory factory)</span> {</span><br><span class="line">        mFactory = factory;</span><br><span class="line">        mViewModelStore = store; <span class="comment">//8</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>所以[注释7]ComponentActivity类中的getViewModelStore()所返回的ViewModelStore 实例，最终是存放到了[注释8]，ViewModelProvider类中的mViewModelStore变量里。mViewModelStore是什么我们稍后再说。</p>
+<p>我们回到[注释5]，ViewModelProvider构造函数讲完了，该讲讲get()方法。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ViewModelProvider.java</span></span><br><span class="line"><span class="meta">@MainThread</span></span><br><span class="line"><span class="keyword">public</span> &lt;T <span class="keyword">extends</span> <span class="title class_">ViewModel</span>&gt; T <span class="title function_">get</span><span class="params">(<span class="meta">@NonNull</span> Class&lt;T&gt; modelClass)</span> {</span><br><span class="line">    <span class="type">String</span> <span class="variable">canonicalName</span> <span class="operator">=</span> modelClass.getCanonicalName();</span><br><span class="line">    <span class="keyword">if</span> (canonicalName == <span class="literal">null</span>) {</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalArgumentException</span>(<span class="string">"Local and anonymous classes can not be ViewModels"</span>);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> get(DEFAULT_KEY + <span class="string">":"</span> + canonicalName, modelClass); <span class="comment">//9</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>获取[注释5]传入的”MyViewModel::class.java” 的 CanonicalName , 调用了另一个 get 方法:</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ViewModelProvider.java</span></span><br><span class="line"><span class="meta">@MainThread</span></span><br><span class="line">    <span class="keyword">public</span> &lt;T <span class="keyword">extends</span> <span class="title class_">ViewModel</span>&gt; T <span class="title function_">get</span><span class="params">(<span class="meta">@NonNull</span> String key, <span class="meta">@NonNull</span> Class&lt;T&gt; modelClass)</span> {</span><br><span class="line">        <span class="comment">// 根据传入的key名称，从mViewModelStore缓存中查找是否有对应的已缓存的viewModel</span></span><br><span class="line">        <span class="type">ViewModel</span> <span class="variable">viewModel</span> <span class="operator">=</span> mViewModelStore.get(key);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//如果有</span></span><br><span class="line">        <span class="keyword">if</span> (modelClass.isInstance(viewModel)) {</span><br><span class="line">            <span class="keyword">if</span> (mFactory <span class="keyword">instanceof</span> OnRequeryFactory) {</span><br><span class="line">                ((OnRequeryFactory) mFactory).onRequery(viewModel);</span><br><span class="line">            }</span><br><span class="line">            <span class="comment">//那么直接返回传入的key对应的viewModel</span></span><br><span class="line">            <span class="keyword">return</span> (T) viewModel;</span><br><span class="line">        } <span class="keyword">else</span> {</span><br><span class="line">            <span class="comment">//noinspection StatementWithEmptyBody</span></span><br><span class="line">            <span class="keyword">if</span> (viewModel != <span class="literal">null</span>) {</span><br><span class="line">                <span class="comment">// <span class="doctag">TODO:</span> log a warning.</span></span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="comment">//如果没有，那么使用工厂模式创建 ViewModel 实例</span></span><br><span class="line">        <span class="keyword">if</span> (mFactory <span class="keyword">instanceof</span> KeyedFactory) {</span><br><span class="line">            viewModel = ((KeyedFactory) mFactory).create(key, modelClass);</span><br><span class="line">        } <span class="keyword">else</span> {</span><br><span class="line">            viewModel = mFactory.create(modelClass);</span><br><span class="line">        }</span><br><span class="line">        <span class="comment">//新创建的viewModel和对应的key存入mViewModelStore做缓存，方便下次重新从缓存中获取</span></span><br><span class="line">        mViewModelStore.put(key, viewModel);</span><br><span class="line">        <span class="comment">// 返回新创建的viewModel</span></span><br><span class="line">        <span class="keyword">return</span> (T) viewModel;</span><br><span class="line">    }</span><br></pre></td></tr></tbody></table></figure>
+
+<p>上面代码的逻辑也比较清晰，从代码中的put()和get()，不难猜到mViewModelStore应该是一个map对象，可以通过key值找到对应的value。果不其然，追溯源码找到：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">    <span class="comment">// ViewModelProvider.java中mViewModelStore 的定义</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> ViewModelStore mViewModelStore;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// ViewModelStore的定义在ViewModelStore.java类中</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ViewModelStore</span> {</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> HashMap&lt;String, ViewModel&gt; mMap = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;(); <span class="comment">//10</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">void</span> <span class="title function_">put</span><span class="params">(String key, ViewModel viewModel)</span> {</span><br><span class="line">        <span class="type">ViewModel</span> <span class="variable">oldViewModel</span> <span class="operator">=</span> mMap.put(key, viewModel);</span><br><span class="line">        <span class="keyword">if</span> (oldViewModel != <span class="literal">null</span>) {</span><br><span class="line">            oldViewModel.onCleared();</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">final</span> ViewModel <span class="title function_">get</span><span class="params">(String key)</span> {</span><br><span class="line">        <span class="keyword">return</span> mMap.get(key);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    Set&lt;String&gt; <span class="title function_">keys</span><span class="params">()</span> {</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">HashSet</span>&lt;&gt;(mMap.keySet());</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     *  Clears internal storage and notifies ViewModels that they are no longer used.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title function_">clear</span><span class="params">()</span> { <span class="comment">//14</span></span><br><span class="line">        <span class="keyword">for</span> (ViewModel vm : mMap.values()) {</span><br><span class="line">            vm.clear();</span><br><span class="line">        }</span><br><span class="line">        mMap.clear();</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>在[注释10]可以确定了，mViewModelStore变量确实是一个Map对象，保存着不同Activity对应的viewModel。比如[注释5]传入的MyViewModel::class.java，mViewModelStore这个Map中就缓存着MyViewModel::class.java对应的viewModel。回到本节的问题：“ViewModel 的实例缓存到哪儿了”？答案就是 ViewModel 的实例缓存到ViewModelProvider.java这个类中的mViewModelStore这个变量里。</p>
+<h2 id="为什么Activity旋转屏幕后ViewModel可以恢复数据"><a href="#为什么Activity旋转屏幕后ViewModel可以恢复数据" class="headerlink" title="为什么Activity旋转屏幕后ViewModel可以恢复数据"></a>为什么Activity旋转屏幕后ViewModel可以恢复数据</h2><p>我们回到[注释8]mViewModelStore = store中的store是[注释7]owner.getViewModelStore()提供的。也就是ComponentActivity.java类中的getViewModelStore()。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ComponentActivity.java</span></span><br><span class="line"> <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> ViewModelStore <span class="title function_">getViewModelStore</span><span class="params">()</span> {</span><br><span class="line">        <span class="keyword">if</span> (getApplication() == <span class="literal">null</span>) {</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalStateException</span>(<span class="string">"Your activity is not yet attached to the "</span></span><br><span class="line">                    + <span class="string">"Application instance. You can't request ViewModel before onCreate call."</span>);</span><br><span class="line">        }</span><br><span class="line">        <span class="comment">// mViewModelStore为null时</span></span><br><span class="line">        <span class="keyword">if</span> (mViewModelStore == <span class="literal">null</span>) {</span><br><span class="line">            <span class="type">NonConfigurationInstances</span> <span class="variable">nc</span> <span class="operator">=</span></span><br><span class="line">                    (NonConfigurationInstances) getLastNonConfigurationInstance(); <span class="comment">// 11</span></span><br><span class="line">            <span class="keyword">if</span> (nc != <span class="literal">null</span>) {</span><br><span class="line">                <span class="comment">// Restore the ViewModelStore from NonConfigurationInstances</span></span><br><span class="line">                mViewModelStore = nc.viewModelStore;</span><br><span class="line">            }</span><br><span class="line">            <span class="comment">// mViewModelStore还为null时，才手动创建</span></span><br><span class="line">            <span class="keyword">if</span> (mViewModelStore == <span class="literal">null</span>) {</span><br><span class="line">                mViewModelStore = <span class="keyword">new</span> <span class="title class_">ViewModelStore</span>();</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> mViewModelStore;</span><br><span class="line">    }</span><br></pre></td></tr></tbody></table></figure>
+
+<p>关键看看[注释11]，当mViewModelStore为null时，会调用 getLastNonConfigurationInstance() 获取 NonConfigurationInstances 对象 nc，当nc不为null时，赋值nc.viewModelStore给mViewModelStore。也就是说，之前创建的 viewModelStore 对象被缓存在 NonConfigurationInstances 中。也就是说，我们可以通过[注释11]getLastNonConfigurationInstance()获取之前创建的 viewModelStore 对象。</p>
+<p>那为什么可以通过[注释11]getLastNonConfigurationInstance()获取之前创建的 viewModelStore 对象呢？这是因为Activity 在因配置更改而销毁重建过程中会先调用 onRetainNonConfigurationInstance()方法：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 保留所有适当的非配置状态</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">   <span class="meta">@Override</span></span><br><span class="line">   <span class="meta">@Nullable</span></span><br><span class="line">   <span class="meta">@SuppressWarnings("deprecation")</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">final</span> Object <span class="title function_">onRetainNonConfigurationInstance</span><span class="params">()</span> {</span><br><span class="line">       <span class="comment">// Maintain backward compatibility.</span></span><br><span class="line">       <span class="type">Object</span> <span class="variable">custom</span> <span class="operator">=</span> onRetainCustomNonConfigurationInstance();</span><br><span class="line"></span><br><span class="line">       <span class="type">ViewModelStore</span> <span class="variable">viewModelStore</span> <span class="operator">=</span> mViewModelStore; <span class="comment">//12</span></span><br><span class="line">       <span class="comment">// 若 viewModelStore 为空，则尝试从 getLastNonConfigurationInstance() 中获取</span></span><br><span class="line">       <span class="keyword">if</span> (viewModelStore == <span class="literal">null</span>) {</span><br><span class="line">           <span class="comment">// No one called getViewModelStore(), so see if there was an existing</span></span><br><span class="line">           <span class="comment">// ViewModelStore from our last NonConfigurationInstance</span></span><br><span class="line">           <span class="type">NonConfigurationInstances</span> <span class="variable">nc</span> <span class="operator">=</span></span><br><span class="line">                   (NonConfigurationInstances) getLastNonConfigurationInstance();</span><br><span class="line">           <span class="keyword">if</span> (nc != <span class="literal">null</span>) {</span><br><span class="line">               viewModelStore = nc.viewModelStore;</span><br><span class="line">           }</span><br><span class="line">       }</span><br><span class="line"><span class="comment">// 依然为空，说明没有需要缓存的，则返回 null</span></span><br><span class="line">       <span class="keyword">if</span> (viewModelStore == <span class="literal">null</span> &amp;&amp; custom == <span class="literal">null</span>) {</span><br><span class="line">           <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">       }</span><br><span class="line">	</span><br><span class="line"><span class="comment">// 创建 NonConfigurationInstances 对象，并赋值 viewModelStore</span></span><br><span class="line">       <span class="type">NonConfigurationInstances</span> <span class="variable">nci</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">NonConfigurationInstances</span>();</span><br><span class="line">       nci.custom = custom;</span><br><span class="line">       nci.viewModelStore = viewModelStore; <span class="comment">//13</span></span><br><span class="line">       <span class="keyword">return</span> nci;</span><br><span class="line">   }</span><br></pre></td></tr></tbody></table></figure>
+
+<p>在[注释12-13]，会将现有的mViewModelStore进行缓存.当Activity重建后，就可以调用[注释11]getLastNonConfigurationInstance()获取之前创建的 viewModelStore 对象了。onRetainNonConfigurationInstance 方法和 getLastNonConfigurationInstance 是成对出现的。 所以回到本小节问题：“为什么Activity旋转屏幕后ViewModel可以恢复数据”？这就是因为Activity 因屏幕旋转而销毁时，mViewModelStore对象在onRetainNonConfigurationInstance()方法中缓存了下来，直到Activity重建后，通过getLastNonConfigurationInstance()重新获取出来。</p>
+<h2 id="什么时候-ViewModel-onCleared-会被调用"><a href="#什么时候-ViewModel-onCleared-会被调用" class="headerlink" title="什么时候 ViewModel#onCleared() 会被调用"></a>什么时候 ViewModel#onCleared() 会被调用</h2><p>我们看看4.2小节，ViewModelStore的代码中的[注释14]就有</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">    <span class="comment">// ViewModelStore的定义在ViewModelStore.java类中</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ViewModelStore</span> {</span><br><span class="line">   </span><br><span class="line">   ...</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title function_">clear</span><span class="params">()</span> { <span class="comment">//14</span></span><br><span class="line">        <span class="keyword">for</span> (ViewModel vm : mMap.values()) {</span><br><span class="line">            vm.clear(); <span class="comment">//15</span></span><br><span class="line">        }</span><br><span class="line">        mMap.clear();</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>最终在[注释15]vm.clear()，就调用了ViewModel的clear()方法：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title class_">ViewModel</span> {</span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onCleared</span><span class="params">()</span> {</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@MainThread</span></span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">void</span> <span class="title function_">clear</span><span class="params">()</span> {</span><br><span class="line">        mCleared = <span class="literal">true</span>;</span><br><span class="line">       </span><br><span class="line">        <span class="keyword">if</span> (mBagOfTags != <span class="literal">null</span>) {</span><br><span class="line">            <span class="keyword">synchronized</span> (mBagOfTags) {</span><br><span class="line">                <span class="keyword">for</span> (Object value : mBagOfTags.values()) {</span><br><span class="line">                    <span class="comment">// see comment for the similar call in setTagIfAbsent</span></span><br><span class="line">                    closeWithRuntimeException(value);</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        onCleared(); <span class="comment">//16</span></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>而ViewModel的clear()方法最终会执行[注释16]onCleared()。因此什么时候执行 ViewModel#onCleared() ，就看什么时候执行 ViewModelStore 的 clear() 方法。</p>
+<p>继续看源码，有：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ComponentActivity.java</span></span><br><span class="line"><span class="keyword">public</span> <span class="title function_">ComponentActivity</span><span class="params">()</span> {</span><br><span class="line">    ... </span><br><span class="line">    getLifecycle().addObserver(<span class="keyword">new</span> <span class="title class_">LifecycleEventObserver</span>() {</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onStateChanged</span><span class="params">(<span class="meta">@NonNull</span> LifecycleOwner source,</span></span><br><span class="line"><span class="params">                <span class="meta">@NonNull</span> Lifecycle.Event event)</span> {</span><br><span class="line">            <span class="keyword">if</span> (event == Lifecycle.Event.ON_DESTROY) { <span class="comment">//17</span></span><br><span class="line">                <span class="comment">// Clear out the available context</span></span><br><span class="line">                mContextAwareHelper.clearAvailableContext();</span><br><span class="line">                <span class="comment">// And clear the ViewModelStore</span></span><br><span class="line">                <span class="keyword">if</span> (!isChangingConfigurations()) { <span class="comment">//18</span></span><br><span class="line">                    getViewModelStore().clear();   <span class="comment">//19 </span></span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    });</span><br><span class="line">    ...</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>不难发现，在[注释17-18]，只要当前Activity处于ON_DESTROY状态且isChangingConfigurations() 返回 false，即当前Activity销毁不是因为 Configuration 的改变而被销毁的。就执行[注释19]getViewModelStore().clear()。进而执行 ViewModel#onCleared() 。问题解决。</p>
+
+                </div>
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/blog/tags/Android/">Android</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                            <div class="post-share-container border-box">
+    <ul class="share-list-wrap border-box">
+        <li class="qq share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to QQ"
+        >
+            <i class="fa-brands fa-qq"></i>
+        </li>
+        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
+            data-tooltip-content="Share to WeChat"
+            data-tooltip-img-tip="Scan by WeChat"
+            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
+        >
+            <i class="fa-brands fa-weixin"></i>
+        </li>
+        <li class="weibo share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to WeiBo"
+        >
+            <i class="fa-brands fa-weibo"></i>
+        </li>
+    </ul>
+</div>
+
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/blog/2024/06/05/Android-21-SharedPreferences/"
+                                   title="SharedPreferences"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">SharedPreferences</span>
+                                        <span class="post-nav-item">Prev posts</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/blog/2024/06/05/Android-19-JNI/"
+                                   title="JNI"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">JNI</span>
+                                        <span class="post-nav-item">Next posts</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc left-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <!-- use hexo-blog-encrypt -->
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MVC"><span class="nav-number">1.</span> <span class="nav-text">MVC</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MVP"><span class="nav-number">2.</span> <span class="nav-text">MVP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MVVM"><span class="nav-number">3.</span> <span class="nav-text">MVVM</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MVVM%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text">MVVM总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MVVM%E7%9A%84%E4%BC%98%E7%82%B9%E5%92%8C%E7%BC%BA%E7%82%B9"><span class="nav-number">4.1.</span> <span class="nav-text">MVVM的优点和缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ViewModel-%E7%9A%84%E5%AE%9E%E4%BE%8B%E7%BC%93%E5%AD%98%E5%88%B0%E5%93%AA%E5%84%BF%E4%BA%86"><span class="nav-number">4.2.</span> <span class="nav-text">ViewModel 的实例缓存到哪儿了</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88Activity%E6%97%8B%E8%BD%AC%E5%B1%8F%E5%B9%95%E5%90%8EViewModel%E5%8F%AF%E4%BB%A5%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE"><span class="nav-number">4.3.</span> <span class="nav-text">为什么Activity旋转屏幕后ViewModel可以恢复数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99-ViewModel-onCleared-%E4%BC%9A%E8%A2%AB%E8%B0%83%E7%94%A8"><span class="nav-number">4.4.</span> <span class="nav-text">什么时候 ViewModel#onCleared() 会被调用</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+        &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2024
+        
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/blog/">MoMo</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+        <div class="count-info info-item">
+            
+
+            
+                <span class="count-item border-box uv">
+                    <span class="item-type border-box">Unique Visitor</span>
+                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
+                </span>
+            
+
+            
+                <span class="count-item border-box pv">
+                    <span class="item-type border-box">Page View</span>
+                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
+                </span>
+            
+        </div>
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools left-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-toggle-theme-mode flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <!-- use hexo-blog-encrypt -->
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MVC"><span class="nav-number">1.</span> <span class="nav-text">MVC</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MVP"><span class="nav-number">2.</span> <span class="nav-text">MVP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MVVM"><span class="nav-number">3.</span> <span class="nav-text">MVVM</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MVVM%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text">MVVM总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MVVM%E7%9A%84%E4%BC%98%E7%82%B9%E5%92%8C%E7%BC%BA%E7%82%B9"><span class="nav-number">4.1.</span> <span class="nav-text">MVVM的优点和缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ViewModel-%E7%9A%84%E5%AE%9E%E4%BE%8B%E7%BC%93%E5%AD%98%E5%88%B0%E5%93%AA%E5%84%BF%E4%BA%86"><span class="nav-number">4.2.</span> <span class="nav-text">ViewModel 的实例缓存到哪儿了</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88Activity%E6%97%8B%E8%BD%AC%E5%B1%8F%E5%B9%95%E5%90%8EViewModel%E5%8F%AF%E4%BB%A5%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE"><span class="nav-number">4.3.</span> <span class="nav-text">为什么Activity旋转屏幕后ViewModel可以恢复数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99-ViewModel-onCleared-%E4%BC%9A%E8%A2%AB%E8%B0%83%E7%94%A8"><span class="nav-number">4.4.</span> <span class="nav-text">什么时候 ViewModel#onCleared() 会被调用</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+<!-- common -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/utils.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/header-shrink.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/back2top.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/toggle-theme.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/code-block.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/main.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/libs/anime.min.js"></script>
+
+<!-- local-search -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/local-search.min.js"></script>
+
+
+<!-- lazyload -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/lazyload.min.js"></script>
+
+
+<div class="pjax">
+    
+        <!-- post-helper -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/post/post-helper.min.js"></script>
+
+        <!-- toc -->
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/post/toc.min.js"></script>
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/post/share.min.js"></script>
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+</body>
+</html>

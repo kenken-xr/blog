@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="MoMo">
+    
+    <title>
+        
+            HashMap &amp; HashTable |
+        
+        今天在干嘛
+    </title>
+    
+<link rel="stylesheet" href="/blog/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/blog/images/logoMoon.svg">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/regular.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/brands.min.css">
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"kenken-xr.github.io","root":"/blog/","language":"en","path":"search.json"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#f8a5c2","title":"今天在干嘛","author":"MoMo","avatar":"/images/avatar.jpg","logo":"/images/logoMoon.svg","favicon":"/images/logoMoon.svg"},"menu":{"home":"/","archives":"/archives","tags":"/tags","categories":"/categories","github":"https://github.com/kenken-xr"},"first_screen":{"enable":true,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":true,"links":{"github":"https://github.com/kenken-xr","weixin":"img | /images/wx.png","qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":true,"percent":true,"hide_header":false},"home":{"announcement":null,"category":true,"tag":true,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":true,"reward":{"enable":false,"img_link":null,"text":null},"img_align":"center"},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true,"layout":"left"},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"local_search":{"enable":true,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.36"},"waline":{"server_url":null,"reaction":false,"version":"3.2.1"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":true},"cdn":{"enable":true,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":2023,"word_count":true,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"/blog","source_data":{},"version":"4.1.3"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original post title","author":"Original post author","link":"Original post link"}
+  </script>
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/blog/atom.xml" title="MoMo" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left border-box">
+            
+                <a class="logo-image border-box" href="/blog/">
+                    <img src="/blog/images/logoMoon.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/blog/">
+               今天在干嘛
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/"
+                            >
+                                
+                                HOME
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/archives"
+                            >
+                                
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/tags"
+                            >
+                                
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/categories"
+                            >
+                                
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               target="_blank" rel="noopener" href="https://github.com/kenken-xr"
+                            >
+                                
+                                GITHUB
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/"
+                    >HOME</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/archives"
+                    >ARCHIVES</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/tags"
+                    >TAGS</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/categories"
+                    >CATEGORIES</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       target="_blank" rel="noopener" href="https://github.com/kenken-xr"
+                    >GITHUB</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        HashMap &amp; HashTable
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/blog/images/avatar.jpg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">MoMo</span>
+                                
+                                    <span class="author-badge">Lv5</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2024-06-13 11:04:52</span>
+            </span>
+
+            <span class="meta-info-item post-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="datetime" data-updated="Thu Jun 13 2024 22:04:12 GMT+0800">2024-06-13 22:04:12</span>
+            </span>
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/blog/categories/%E6%9C%89%E5%9C%A8%E8%AE%A4%E7%9C%9F%E4%B8%8A%E7%8F%AD/">有在认真上班</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/blog/tags/Android/">Android</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/blog/tags/Kotlin/">Kotlin</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+            <span class="meta-info-item post-pv">
+                <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    <h1 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h1><p>HashMap 和 HashTable 没有太大的差别,基本就是<strong>HashMap 方法没有 synchronized 修饰，线程非安全，HashTable 线程安全</strong>；</p>
+<ul>
+<li><p>HashMap 几乎可以等价于 Hashtable，除了 HashMap 是非 synchronized 的，并可以接受 null(HashMap 可以接受为 null 的键值(key)和值(value)，而 Hashtable 则不行)。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//HashMap 的 hash 算法对 null 有特殊处理 -&gt; 赋值为 0</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> <span class="title function_">hash</span><span class="params">(Object key)</span> {</span><br><span class="line"><span class="type">int</span> h;</span><br><span class="line"><span class="keyword">return</span> (key == <span class="literal">null</span>) ? <span class="number">0</span> : (h = key.hashCode()) ^ (h &gt;&gt;&gt; <span class="number">16</span>);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">//HashTable 的 hash 算法沿用 Object -&gt; 不允许 null（空指针异常）</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">native</span> <span class="type">int</span> <span class="title function_">hashCode</span><span class="params">()</span>;</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p><strong>HashMap 是非 synchronized，而 Hashtable 是 synchronized</strong>，这意味着<strong>Hashtable 是线程安全的</strong>，多个线程可以共享一个 Hashtable；而如果没有正确的同步的话，多个线程是不能共享 HashMap 的。Java 5 提供了 ConcurrentHashMap，它是 HashTable 的替代，比 HashTable 的扩展性更好。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//HashMap:</span></span><br><span class="line"><span class="keyword">public</span> V <span class="title function_">get</span><span class="params">(Object key)</span> {</span><br><span class="line">  Node&lt;K,V&gt; e;</span><br><span class="line">  <span class="keyword">return</span> (e = getNode(hash(key), key)) == <span class="literal">null</span> ? <span class="literal">null</span> : e.value;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">//HashTable</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">synchronized</span> V <span class="title function_">get</span><span class="params">(Object key)</span> {</span><br><span class="line">  Entry&lt;?,?&gt; tab[] = table;</span><br><span class="line">  <span class="type">int</span> <span class="variable">hash</span> <span class="operator">=</span> key.hashCode();</span><br><span class="line">  <span class="comment">//HashTable 重写的计算散列表索引</span></span><br><span class="line">  <span class="type">int</span> <span class="variable">index</span> <span class="operator">=</span> (hash &amp; <span class="number">0x7FFFFFFF</span>) % tab.length;</span><br><span class="line">  <span class="keyword">for</span> (Entry&lt;?,?&gt; e = tab[index] ; e != <span class="literal">null</span> ; e = e.next) {</span><br><span class="line">    <span class="keyword">if</span> ((e.hash == hash) &amp;&amp; e.key.equals(key)) {</span><br><span class="line">    <span class="keyword">return</span> (V)e.value;</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>另一个区别是 HashMap 的迭代器(Iterator)是 fail-fast 迭代器，而 Hashtable 的 enumerator 迭代器不是 fail-fast 的。所以当有其它线程改变了 HashMap 的结构（增加或者移除元素），将会抛出 ConcurrentModificationException，但迭代器本身的 remove()方法移除元素则不会抛出 ConcurrentModificationException 异常。但这并不是一个一定发生的行为，要看 JVM。这条同样也是 Enumeration 和 Iterator 的区别。</p>
+</li>
+<li><p>由于 Hashtable 是线程安全的也是 synchronized，所以在单线程环境下它比 HashMap 要慢。如果不需要同步，只需要单一线程，那么使用 HashMap 性能要好过 Hashtable。</p>
+</li>
+<li><p>HashMap 不能保证随着时间的推移 Map 中的元素次序是不变的。</p>
+</li>
+</ul>
+<h2 id="要注意的一些重要术语"><a href="#要注意的一些重要术语" class="headerlink" title="要注意的一些重要术语"></a>要注意的一些重要术语</h2><ol>
+<li><p>sychronized 意味着在一次仅有一个线程能够更改 Hashtable。就是说任何线程要更新 Hashtable 时要首先获得同步锁，其它线程要等到同步锁被释放之后才能再次获得同步锁更新 Hashtable。</p>
+</li>
+<li><p>Fail-safe 和 iterator 迭代器相关。如果某个集合对象创建了 Iterator 或者 ListIterator，然后其它的线程试图“结构上”更改集合对象，将会抛出 ConcurrentModificationException 异常。但其它线程可以通过 set()方法更改集合对象是允许的，因为这并没有从“结构上”更改集合。但是假如已经从结构上进行了更改，再调用 set()方法，将会抛出 IllegalArgumentException 异常。</p>
+</li>
+<li><p>结构上的更改指的是删除或者插入一个元素，这样会影响到 map 的结构。</p>
+</li>
+</ol>
+<h2 id="能否让-HashMap-同步？"><a href="#能否让-HashMap-同步？" class="headerlink" title="能否让 HashMap 同步？"></a>能否让 HashMap 同步？</h2><p>HashMap 可以通过下面的语句进行同步：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Map</span> <span class="variable">m</span> <span class="operator">=</span> Collections.synchronizeMap(hashMap);</span><br></pre></td></tr></tbody></table></figure>
+
+<p>HashTable 算是一种被淘汰的存储结构，几乎被 HashMap 替换，如果不是因为有兼容代码必须使用 HashTable，理应不再使用，就算因为线程安全也有 ConcurrentHashMap 而不是继续使用 HashTable</p>
+<h1 id="HashMap-底层实现"><a href="#HashMap-底层实现" class="headerlink" title="HashMap 底层实现"></a>HashMap 底层实现</h1><p>数组+链表实现，初始链表大小为 8，链表超过 8 转变为红黑树</p>
+<ol>
+<li>put 一个数据时,计算 key 的 hash 值，⼆次 hash 然后对数组⻓度取模，对应到数组下标，</li>
+<li>如果没有产⽣ hash 冲突(下标位置没有元素)，则直接创建 Node 存⼊数组，</li>
+<li>如果产⽣ hash 冲突（链表有数据），先进⾏ equal()⽐较，相同则取代该元素，不同，则是追加到<strong>链表</strong>末尾(jdk1.8)<ol>
+<li>链表⾼度达到 8（储存值数量到达 8），则转变为红⿊树，⻓度低于 6 则将红⿊树转回链表</li>
+<li>也就是超过 8 就不存在链表了,只剩下数组+红黑树</li>
+<li>转变为红⿊树也是可能因为防止有些人搞事情，跑来攻击，整成很长的链表，搞成红黑树去查询就没问题了</li>
+</ol>
+</li>
+<li>key 为 null，存在下标 0 的位置（null 的 hash 值特殊处理）</li>
+<li><strong>链表主要是用来解决 hash 冲突的</strong></li>
+</ol>
+<h2 id="解决哈希冲突"><a href="#解决哈希冲突" class="headerlink" title="解决哈希冲突"></a>解决哈希冲突</h2><p>HashMap 底层是采用<strong>数组结构</strong>来存储数据元素，数组的默认长度是 16，当我们通过 put 方法去添加数据的时候，HashMap 会根据 key 的 hash 值进行取模运算，最终把这样一个值保存到数组的指定位置。</p>
+<p>但是这样的设计方式会存在 hash 冲突的问题，也就是两个不同的 hash 值的 key，取模后会落到同一个数组下标，所以 HashMap 引入了一个链式寻址法来解决 hash 冲突的问题。也就是说对于存在冲突的 key，HashMap 把这些 key 组成一个单向链表，然后采用<strong>尾插法</strong>把这样一个 key 保存到链表的一个尾部，另外，为了避免链表过长导致查询效率下降，所以当链表长度大于 8 并且数组长度大于等于 64 的时候，HashMap 会把当前链表转换为红黑树，从而去减少链表数据查询的时间复杂度来提升查询效率。</p>
+<p><strong>链地址法（Separate Chaining）</strong></p>
+<p>在链地址法中，每个哈希桶（槽位）都维护一个链表（或其他数据结构，如红黑树），当发生哈希冲突时，新的元素被添加到相应槽位的链表中。这样，同一个槽位上的元素形成了一个链表，可以通过链表来存储具有相同哈希值的多个元素。</p>
+<p>基本思想：</p>
+<ul>
+<li>插入操作： 当需要插入一个新元素时，首先计算其哈希值，然后定位到相应的哈希桶。如果该桶为空，直接插入；如果不为空，将新元素添加到链表的末尾。</li>
+<li>查找操作： 查找时同样计算哈希值并定位到相应的哈希桶，然后在链表中查找目标元素。</li>
+<li>删除操作： 删除操作也需要先找到对应的哈希桶，然后在链表中删除目标元素。</li>
+</ul>
+<p>这种方法的优势在于它相对简单，易于实现，而且可以有效地处理大量的哈希冲突。然而，性能取决于链表的长度，当链表变得过长时，可能会降低查找效率。在实际应用中，一些哈希表实现可能会在链表长度达到一定阈值时，转换为更高效的数据结构，如红黑树，以提高性能。</p>
+<p>把存在 hash 冲突的 key， 以单向链表的方式来存储，存在冲突的 key 直接以单向链表的方式进行存储</p>
+<p><img lazyload="" alt="image" data-src="https://developer.qcloudimg.com/http-save/yehe-7396097/13f79ca7bc62ed66b0033ce8f19296e6.png"></p>
+<h2 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h2><ul>
+<li>红黑树因为排序过，通过左旋右旋查找快</li>
+<li>当数据很多很多的时候用树结构去增删改查会贼快</li>
+<li>数据很多时，树结构是一种非常优秀的结构</li>
+</ul>
+<h2 id="HashMap-的初始容量"><a href="#HashMap-的初始容量" class="headerlink" title="HashMap 的初始容量"></a>HashMap 的初始容量</h2><ul>
+<li>初始数组大小 16 -&gt; DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4;</li>
+<li>初始链表大小 8 -&gt; TREEIFY_THRESHOLD = 8;</li>
+<li>初始加载因子 0.75 -&gt; DEFAULT_LOAD_FACTOR = 0.75f;</li>
+<li>初始树型容量 64 -&gt; MIN_TREEIFY_CAPACITY = 64;</li>
+</ul>
+<h2 id="如果-HashMap-的大小超过了负载因子-load-factor-定义的容量，怎么办？"><a href="#如果-HashMap-的大小超过了负载因子-load-factor-定义的容量，怎么办？" class="headerlink" title="如果 HashMap 的大小超过了负载因子(load factor)定义的容量，怎么办？"></a>如果 HashMap 的大小超过了负载因子(load factor)定义的容量，怎么办？</h2><ul>
+<li>默认的负载因子大小为 0.75</li>
+<li>也就是说，当一个 map 填满了 75%的 bucket 时候，和其它集合类(如 ArrayList 等)一样，将会创建原来 HashMap 大小的两倍的 bucket 数组，来重新调整 map 的大小，并将原来的对象放入新的 bucket 数组中。</li>
+<li>负载因子在 0.7 左右最好，扩容很多结构对象都是扩容 2 倍大差不差</li>
+<li>因为 2 的倍数用二进制表示是只有一个 1 其他都是 0 的一串数字,之后运算方便<ul>
+<li>0001,0010,0100,1000, 1 0000</li>
+</ul>
+</li>
+</ul>
+<h2 id="HashMap-扩容原理"><a href="#HashMap-扩容原理" class="headerlink" title="HashMap 扩容原理"></a>HashMap 扩容原理</h2><p>(当数组大小 &gt; 加载因子 * 数组长度)时,HashMap 会触发扩容</p>
+<ul>
+<li><p>如果 HashMap 是键值对数据大于阀值,容量翻倍(数据个数大于阀值扩容)</p>
+</li>
+<li><p>如果 HashMap 中链表长度大于等于 8 时(链表长度大于 8 时扩容)</p>
+<ul>
+<li>此时不会立即转换为树,而是先判断数组容量是否大于 6<ul>
+<li>如果数组容量是 16 或 32,进行一次扩容</li>
+<li>使用扩容重新调整数据的存放位置来缩短链表长度</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ((newCap = oldCap &lt;&lt; <span class="number">1</span>) &lt; MAXIMUM_CAPACITY &amp;&amp; oldCap &gt;= DEFAULT_INITIAL_CAPACITY){</span><br><span class="line">newThr = oldThr &lt;&lt; <span class="number">1</span>; <span class="comment">// 2 倍</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>旧散列的数据迁移到新的散列中,做了一个位运算 e.hash &amp; oldCap 判断链表是否也要改变位置,新的索引位置 = 旧的位置 + 旧的数组长度</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 当 node 的 hash 值 &amp; 旧容量位 == 0 时,这个数据是不需要换桶位置的</span></span><br><span class="line"><span class="keyword">if</span> ((e.hash &amp; oldCap) == <span class="number">0</span>) {</span><br><span class="line"><span class="keyword">if</span> (loTail == <span class="literal">null</span>)</span><br><span class="line">loHead = e;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">loTail.next = e;</span><br><span class="line">loTail = e;</span><br><span class="line">}</span><br><span class="line"><span class="comment">// 当 hash 值 &amp; 旧容量位 != 0 时,这个数据是需要换位置的,而且换的位置为：旧桶的位置 + oldCap</span></span><br><span class="line"><span class="keyword">else</span> {</span><br><span class="line"><span class="keyword">if</span> (hiTail == <span class="literal">null</span>)</span><br><span class="line">hiHead = e;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">hiTail.next = e;</span><br><span class="line">hiTail = e;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></li>
+</ul>
+<h2 id="HashMap-在高并发下-会出现环形链表"><a href="#HashMap-在高并发下-会出现环形链表" class="headerlink" title="HashMap 在高并发下,会出现环形链表?"></a>HashMap 在高并发下,会出现环形链表?</h2><ul>
+<li><p>jdk1.7 map 采用链表头节点插入,多线程扩容会出现环形链表</p>
+</li>
+<li><p>jdk1.8 map 采用链表尾节点插入(永远向后,不会产生回环),多线程扩容不会出现环形链表</p>
+</li>
+</ul>
+<h2 id="HashMap-的线程不安全主要体现哪里"><a href="#HashMap-的线程不安全主要体现哪里" class="headerlink" title="HashMap 的线程不安全主要体现哪里?"></a>HashMap 的线程不安全主要体现哪里?</h2><ol>
+<li><p>在 JDK1.7 中，当并发执行扩容操作时会造成环形链和数据丢失的情况。</p>
+</li>
+<li><p>在 JDK1.8 中，在并发执行 put 操作时会发生数据覆盖的情况。</p>
+</li>
+</ol>
+<p>HashMap 的 put()方法中，有 modCount++的操作，即调用 put()时，修改次数加 1，“i++”操作，从表面上看 i++ 只是一行代码，但实际上它并不是一个原子操作，它的执行步骤主要分为三步，而且在每步操作之间都有可能被打断。</p>
+<figure class="highlight txt"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">第一个步骤是: 读取；</span><br><span class="line">第二个步骤是: 增加；</span><br><span class="line">第三个步骤是: 保存。</span><br></pre></td></tr></tbody></table></figure>
+
+<p>从源码的角度，或者说从理论上来讲，证明 HashMap 是线程非安全的。因为如果有多个线程同时调用 put() 方法的话，它很有可能会把 modCount 的值计算错。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">++modCount;</span><br><span class="line"><span class="keyword">if</span> (++size &gt; threshold)</span><br><span class="line">resize();</span><br></pre></td></tr></tbody></table></figure>
+
+                </div>
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/blog/tags/Android/">Android</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/blog/tags/Kotlin/">Kotlin</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                            <div class="post-share-container border-box">
+    <ul class="share-list-wrap border-box">
+        <li class="qq share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to QQ"
+        >
+            <i class="fa-brands fa-qq"></i>
+        </li>
+        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
+            data-tooltip-content="Share to WeChat"
+            data-tooltip-img-tip="Scan by WeChat"
+            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
+        >
+            <i class="fa-brands fa-weixin"></i>
+        </li>
+        <li class="weibo share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to WeiBo"
+        >
+            <i class="fa-brands fa-weibo"></i>
+        </li>
+    </ul>
+</div>
+
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/blog/2024/06/13/Android-30-%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%89%98%E6%9C%BA%E5%88%B6/"
+                                   title="双亲委托机制 &amp; 垃圾回收机制"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">双亲委托机制 &amp; 垃圾回收机制</span>
+                                        <span class="post-nav-item">Prev posts</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/blog/2024/06/13/Android-24-ArrayList%20&%20LinkedList/"
+                                   title="ArrayList &amp; LinkedList"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">ArrayList &amp; LinkedList</span>
+                                        <span class="post-nav-item">Next posts</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc left-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <!-- use hexo-blog-encrypt -->
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8C%BA%E5%88%AB"><span class="nav-number">1.</span> <span class="nav-text">区别</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E4%B8%80%E4%BA%9B%E9%87%8D%E8%A6%81%E6%9C%AF%E8%AF%AD"><span class="nav-number">1.1.</span> <span class="nav-text">要注意的一些重要术语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%BD%E5%90%A6%E8%AE%A9-HashMap-%E5%90%8C%E6%AD%A5%EF%BC%9F"><span class="nav-number">1.2.</span> <span class="nav-text">能否让 HashMap 同步？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HashMap-%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.</span> <span class="nav-text">HashMap 底层实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E5%93%88%E5%B8%8C%E5%86%B2%E7%AA%81"><span class="nav-number">2.1.</span> <span class="nav-text">解决哈希冲突</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%A2%E9%BB%91%E6%A0%91"><span class="nav-number">2.2.</span> <span class="nav-text">红黑树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HashMap-%E7%9A%84%E5%88%9D%E5%A7%8B%E5%AE%B9%E9%87%8F"><span class="nav-number">2.3.</span> <span class="nav-text">HashMap 的初始容量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C-HashMap-%E7%9A%84%E5%A4%A7%E5%B0%8F%E8%B6%85%E8%BF%87%E4%BA%86%E8%B4%9F%E8%BD%BD%E5%9B%A0%E5%AD%90-load-factor-%E5%AE%9A%E4%B9%89%E7%9A%84%E5%AE%B9%E9%87%8F%EF%BC%8C%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F"><span class="nav-number">2.4.</span> <span class="nav-text">如果 HashMap 的大小超过了负载因子(load factor)定义的容量，怎么办？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HashMap-%E6%89%A9%E5%AE%B9%E5%8E%9F%E7%90%86"><span class="nav-number">2.5.</span> <span class="nav-text">HashMap 扩容原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HashMap-%E5%9C%A8%E9%AB%98%E5%B9%B6%E5%8F%91%E4%B8%8B-%E4%BC%9A%E5%87%BA%E7%8E%B0%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8"><span class="nav-number">2.6.</span> <span class="nav-text">HashMap 在高并发下,会出现环形链表?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HashMap-%E7%9A%84%E7%BA%BF%E7%A8%8B%E4%B8%8D%E5%AE%89%E5%85%A8%E4%B8%BB%E8%A6%81%E4%BD%93%E7%8E%B0%E5%93%AA%E9%87%8C"><span class="nav-number">2.7.</span> <span class="nav-text">HashMap 的线程不安全主要体现哪里?</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+        &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2024
+        
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/blog/">MoMo</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+        <div class="count-info info-item">
+            
+
+            
+                <span class="count-item border-box uv">
+                    <span class="item-type border-box">Unique Visitor</span>
+                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
+                </span>
+            
+
+            
+                <span class="count-item border-box pv">
+                    <span class="item-type border-box">Page View</span>
+                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
+                </span>
+            
+        </div>
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools left-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-toggle-theme-mode flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <!-- use hexo-blog-encrypt -->
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8C%BA%E5%88%AB"><span class="nav-number">1.</span> <span class="nav-text">区别</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E4%B8%80%E4%BA%9B%E9%87%8D%E8%A6%81%E6%9C%AF%E8%AF%AD"><span class="nav-number">1.1.</span> <span class="nav-text">要注意的一些重要术语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%BD%E5%90%A6%E8%AE%A9-HashMap-%E5%90%8C%E6%AD%A5%EF%BC%9F"><span class="nav-number">1.2.</span> <span class="nav-text">能否让 HashMap 同步？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HashMap-%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.</span> <span class="nav-text">HashMap 底层实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E5%93%88%E5%B8%8C%E5%86%B2%E7%AA%81"><span class="nav-number">2.1.</span> <span class="nav-text">解决哈希冲突</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%A2%E9%BB%91%E6%A0%91"><span class="nav-number">2.2.</span> <span class="nav-text">红黑树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HashMap-%E7%9A%84%E5%88%9D%E5%A7%8B%E5%AE%B9%E9%87%8F"><span class="nav-number">2.3.</span> <span class="nav-text">HashMap 的初始容量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C-HashMap-%E7%9A%84%E5%A4%A7%E5%B0%8F%E8%B6%85%E8%BF%87%E4%BA%86%E8%B4%9F%E8%BD%BD%E5%9B%A0%E5%AD%90-load-factor-%E5%AE%9A%E4%B9%89%E7%9A%84%E5%AE%B9%E9%87%8F%EF%BC%8C%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F"><span class="nav-number">2.4.</span> <span class="nav-text">如果 HashMap 的大小超过了负载因子(load factor)定义的容量，怎么办？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HashMap-%E6%89%A9%E5%AE%B9%E5%8E%9F%E7%90%86"><span class="nav-number">2.5.</span> <span class="nav-text">HashMap 扩容原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HashMap-%E5%9C%A8%E9%AB%98%E5%B9%B6%E5%8F%91%E4%B8%8B-%E4%BC%9A%E5%87%BA%E7%8E%B0%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8"><span class="nav-number">2.6.</span> <span class="nav-text">HashMap 在高并发下,会出现环形链表?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HashMap-%E7%9A%84%E7%BA%BF%E7%A8%8B%E4%B8%8D%E5%AE%89%E5%85%A8%E4%B8%BB%E8%A6%81%E4%BD%93%E7%8E%B0%E5%93%AA%E9%87%8C"><span class="nav-number">2.7.</span> <span class="nav-text">HashMap 的线程不安全主要体现哪里?</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+<!-- common -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/utils.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/header-shrink.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/back2top.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/toggle-theme.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/code-block.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/main.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/libs/anime.min.js"></script>
+
+<!-- local-search -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/local-search.min.js"></script>
+
+
+<!-- lazyload -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/lazyload.min.js"></script>
+
+
+<div class="pjax">
+    
+        <!-- post-helper -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/post/post-helper.min.js"></script>
+
+        <!-- toc -->
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/post/toc.min.js"></script>
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/post/share.min.js"></script>
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+</body>
+</html>

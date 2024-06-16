@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="MoMo">
+    
+    <title>
+        
+            HandlerThread |
+        
+        今天在干嘛
+    </title>
+    
+<link rel="stylesheet" href="/blog/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/blog/images/logoMoon.svg">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/regular.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/brands.min.css">
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"kenken-xr.github.io","root":"/blog/","language":"en","path":"search.json"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#f8a5c2","title":"今天在干嘛","author":"MoMo","avatar":"/images/avatar.jpg","logo":"/images/logoMoon.svg","favicon":"/images/logoMoon.svg"},"menu":{"home":"/","archives":"/archives","tags":"/tags","categories":"/categories","github":"https://github.com/kenken-xr"},"first_screen":{"enable":true,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":true,"links":{"github":"https://github.com/kenken-xr","weixin":"img | /images/wx.png","qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":true,"percent":true,"hide_header":false},"home":{"announcement":null,"category":true,"tag":true,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":true,"reward":{"enable":false,"img_link":null,"text":null},"img_align":"center"},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true,"layout":"left"},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"local_search":{"enable":true,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.36"},"waline":{"server_url":null,"reaction":false,"version":"3.2.1"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":true},"cdn":{"enable":true,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":2023,"word_count":true,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"/blog","source_data":{},"version":"4.1.3"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original post title","author":"Original post author","link":"Original post link"}
+  </script>
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/blog/atom.xml" title="MoMo" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left border-box">
+            
+                <a class="logo-image border-box" href="/blog/">
+                    <img src="/blog/images/logoMoon.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/blog/">
+               今天在干嘛
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/"
+                            >
+                                
+                                HOME
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/archives"
+                            >
+                                
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/tags"
+                            >
+                                
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/categories"
+                            >
+                                
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               target="_blank" rel="noopener" href="https://github.com/kenken-xr"
+                            >
+                                
+                                GITHUB
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/"
+                    >HOME</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/archives"
+                    >ARCHIVES</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/tags"
+                    >TAGS</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/categories"
+                    >CATEGORIES</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       target="_blank" rel="noopener" href="https://github.com/kenken-xr"
+                    >GITHUB</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        HandlerThread
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/blog/images/avatar.jpg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">MoMo</span>
+                                
+                                    <span class="author-badge">Lv5</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2024-06-05 17:25:31</span>
+            </span>
+
+            <span class="meta-info-item post-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="datetime" data-updated="Thu Jun 13 2024 22:04:12 GMT+0800">2024-06-13 22:04:12</span>
+            </span>
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/blog/categories/%E6%9C%89%E5%9C%A8%E8%AE%A4%E7%9C%9F%E4%B8%8A%E7%8F%AD/">有在认真上班</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/blog/tags/Android/">Android</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+            <span class="meta-info-item post-pv">
+                <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    <ol>
+<li>HandlerThread是什么？⭐⭐⭐⭐⭐</li>
+<li>HandlerThread原理和使用场景？⭐⭐⭐</li>
+</ol>
+<h1 id="HandlerThread是什么？"><a href="#HandlerThread是什么？" class="headerlink" title="HandlerThread是什么？"></a>HandlerThread是什么？</h1><p>在安卓开发中，如果需要执行耗时操作，则可以开启子线程来完成，然而手动创建销毁线程又麻烦又消耗系统性能，因此可以使用<strong>线程池</strong>来完成。如果还需要在线程中使用Handler异步消息机制，或者需要实现子线程和子线程之间的通讯（Handler是主线程和子线程之间的通讯），那么就可以用<strong>HandlerThreaad</strong>。</p>
+<p>HandlerThread是Google封装好的一个类，它的内部有自己的Looper对象，可以进行Loop轮询，用于执行多个耗时操作，而不需要多次开启线程，本质是使用Handler和Looper实现的。</p>
+<h1 id="HandlerThread怎么使用"><a href="#HandlerThread怎么使用" class="headerlink" title="HandlerThread怎么使用"></a>HandlerThread怎么使用</h1><p>如果我们需要使用HandlerThread来读取一个大文件的内容，可以这么写：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Xuruictivity</span> <span class="keyword">extends</span> <span class="title class_">AppCompatActivity</span> {</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> <span class="variable">MSG_READ_INFO</span> <span class="operator">=</span> <span class="number">100</span>;</span><br><span class="line">    <span class="type">Handler</span> <span class="variable">mMainHandler</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Handler</span>();</span><br><span class="line">    <span class="keyword">private</span> Handler mThreadHandler;</span><br><span class="line">    <span class="keyword">private</span> HandlerThread mHandlerThread;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">boolean</span> <span class="variable">isFinish</span> <span class="operator">=</span> <span class="literal">false</span>; </span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onCreate</span><span class="params">(Bundle savedInstanceState)</span> {</span><br><span class="line">        <span class="built_in">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_xurui);</span><br><span class="line">        initHandlerThread(); <span class="comment">//1</span></span><br><span class="line">        startHandlerThread(); </span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">initHandlerThread</span><span class="params">()</span> {</span><br><span class="line">        mHandlerThread = <span class="keyword">new</span> <span class="title class_">HandlerThread</span>(<span class="string">"Xurui"</span>); <span class="comment">//2</span></span><br><span class="line">        mHandlerThread.start(); <span class="comment">//3 </span></span><br><span class="line">        mThreadHandler = <span class="keyword">new</span> <span class="title class_">Handler</span>(mHandlerThread.getLooper()) { <span class="comment">//4</span></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">handleMessage</span><span class="params">(Message msg)</span> {</span><br><span class="line">                <span class="keyword">switch</span> (msg.what) {</span><br><span class="line">                    <span class="keyword">case</span> MSG_READ_INFO: {</span><br><span class="line">                        readFileInfo();</span><br><span class="line">                        <span class="comment">// 如果没有读完，则继续</span></span><br><span class="line">                        <span class="keyword">if</span> (!isFinish) {</span><br><span class="line">                            mThreadHandler.sendEmptyMessage(MSG_READ_INFO);</span><br><span class="line">                        }</span><br><span class="line">                    }</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">default</span>:</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                }</span><br><span class="line">                </span><br><span class="line">            }</span><br><span class="line">        };</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 模拟读取文件</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">readFileInfo</span><span class="params">()</span> {</span><br><span class="line">        <span class="keyword">try</span> {</span><br><span class="line">            <span class="comment">//模拟耗时</span></span><br><span class="line">            Thread.sleep(<span class="number">1200</span>);</span><br><span class="line">            mMainHandler.post(<span class="keyword">new</span> <span class="title class_">Runnable</span>() {</span><br><span class="line">                <span class="meta">@Override</span></span><br><span class="line">                <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> {</span><br><span class="line">                    <span class="comment">// 读取大文件内容</span></span><br><span class="line">                }</span><br><span class="line">            });</span><br><span class="line">        } <span class="keyword">catch</span> (InterruptedException e) {</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">startHandlerThread</span><span class="params">()</span> {</span><br><span class="line">       mThreadHandler.sendEmptyMessage(MSG_READ_INFO);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onPause</span><span class="params">()</span> {</span><br><span class="line">        <span class="built_in">super</span>.onPause();</span><br><span class="line">        mThreadHandler.removeMessages(MSG_READ_INFO); <span class="comment">//5</span></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onDestroy</span><span class="params">()</span> {</span><br><span class="line">        <span class="built_in">super</span>.onDestroy();</span><br><span class="line">        mHandlerThread.quit();<span class="comment">//6</span></span><br><span class="line">        mMainHandler.removeCallbacksAndMessages(<span class="literal">null</span>); <span class="comment">//7</span></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>使用mHandlerThread的looper创建的mThreadHandler，对应注释4，里面的handleMessage是可以进行耗时操作的，因为它是执行在mHandlerThread所在的子线程。因此其优点是不会阻塞主线程，但是多任务时也需要有序执行，导致执行效率低。因此HandlerThread比较适合<strong>耗时不且不会产生较大的阻塞</strong>，比如读取文件，操作数据库等，至于网络IO操作这种可能有较大阻塞等，HandlerThread并不适合。</p>
+<p>HandlerThread的使用方法：</p>
+<ol>
+<li>创建HandlerThread实例：对应注释2，其中“xurui”是子线程的名字，可以随意取；</li>
+<li>执行start函数来启动HandlerThread线程：对应注释3；</li>
+<li>将HandlerThread和Handler绑定：对应注释4；</li>
+<li>然后执行startHandlerThread()就行了，最后记得退出HandlerThread，对应注释6。</li>
+</ol>
+<h1 id="源码分析"><a href="#源码分析" class="headerlink" title="源码分析"></a>源码分析</h1><p>HandlerThread的源码仅仅100+行，因此直接copy完整的源码，不做任何删减（下面源码是android9.0.0的源码）。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HandlerThread</span> <span class="keyword">extends</span> <span class="title class_">Thread</span> {</span><br><span class="line">     <span class="type">int</span> mPriority;</span><br><span class="line">     <span class="type">int</span> <span class="variable">mTid</span> <span class="operator">=</span> -<span class="number">1</span>;</span><br><span class="line">     Looper mLooper;</span><br><span class="line">     <span class="keyword">private</span> <span class="meta">@Nullable</span> Handler mHandler;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">public</span> <span class="title function_">HandlerThread</span><span class="params">(String name)</span> { <span class="comment">//1</span></span><br><span class="line">         <span class="built_in">super</span>(name);</span><br><span class="line">         mPriority = Process.THREAD_PRIORITY_DEFAULT;</span><br><span class="line">     }</span><br><span class="line"></span><br><span class="line">       <span class="comment">/**</span></span><br><span class="line"><span class="comment">      * Constructs a HandlerThread.</span></span><br><span class="line"><span class="comment">      * <span class="doctag">@param</span> name</span></span><br><span class="line"><span class="comment">      * <span class="doctag">@param</span> priority The priority to run the thread at. The value supplied must be from</span></span><br><span class="line"><span class="comment">      * {<span class="doctag">@link</span> android.os.Process} and not from java.lang.Thread.</span></span><br><span class="line"><span class="comment">      */</span></span><br><span class="line">     <span class="keyword">public</span> <span class="title function_">HandlerThread</span><span class="params">(String name, <span class="type">int</span> priority)</span> { <span class="comment">//2</span></span><br><span class="line">         <span class="built_in">super</span>(name);</span><br><span class="line">         mPriority = priority;</span><br><span class="line">     }</span><br><span class="line"></span><br><span class="line">       <span class="comment">/**</span></span><br><span class="line"><span class="comment">      * Call back method that can be explicitly overridden if needed to execute some</span></span><br><span class="line"><span class="comment">      * setup before Looper loops.</span></span><br><span class="line"><span class="comment">      */</span></span><br><span class="line">     <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onLooperPrepared</span><span class="params">()</span> {</span><br><span class="line">     }</span><br><span class="line"></span><br><span class="line">       <span class="meta">@Override</span></span><br><span class="line">     <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> {</span><br><span class="line">         mTid = Process.myTid();</span><br><span class="line">         Looper.prepare(); <span class="comment">//3</span></span><br><span class="line">         <span class="keyword">synchronized</span> (<span class="built_in">this</span>) {</span><br><span class="line">             mLooper = Looper.myLooper();</span><br><span class="line">             notifyAll(); <span class="comment">//4 </span></span><br><span class="line">         }</span><br><span class="line">         Process.setThreadPriority(mPriority);</span><br><span class="line">         onLooperPrepared();</span><br><span class="line">         Looper.loop(); <span class="comment">//5</span></span><br><span class="line">         mTid = -<span class="number">1</span>;</span><br><span class="line">     }</span><br><span class="line"></span><br><span class="line">       <span class="comment">/**</span></span><br><span class="line"><span class="comment">      * This method returns the Looper associated with this thread. If this thread not been started</span></span><br><span class="line"><span class="comment">      * or for any reason isAlive() returns false, this method will return null. If this thread</span></span><br><span class="line"><span class="comment">      * has been started, this method will block until the looper has been initialized.</span></span><br><span class="line"><span class="comment">      * <span class="doctag">@return</span> The looper.</span></span><br><span class="line"><span class="comment">      */</span></span><br><span class="line">     <span class="keyword">public</span> Looper <span class="title function_">getLooper</span><span class="params">()</span> { <span class="comment">//6</span></span><br><span class="line">         <span class="keyword">if</span> (!isAlive()) {</span><br><span class="line">             <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">         }</span><br><span class="line"></span><br><span class="line">           <span class="comment">// If the thread has been started, wait until the looper has been created.</span></span><br><span class="line">         <span class="keyword">synchronized</span> (<span class="built_in">this</span>) {</span><br><span class="line">             <span class="keyword">while</span> (isAlive() &amp;&amp; mLooper == <span class="literal">null</span>) {</span><br><span class="line">                 <span class="keyword">try</span> {</span><br><span class="line">                     wait(); <span class="comment">//7</span></span><br><span class="line">                 } <span class="keyword">catch</span> (InterruptedException e) {</span><br><span class="line">                 }</span><br><span class="line">             }</span><br><span class="line">         }</span><br><span class="line">         <span class="keyword">return</span> mLooper;</span><br><span class="line">     }</span><br><span class="line"></span><br><span class="line">       <span class="comment">/**</span></span><br><span class="line"><span class="comment">      * <span class="doctag">@return</span> a shared {<span class="doctag">@link</span> Handler} associated with this thread</span></span><br><span class="line"><span class="comment">      * <span class="doctag">@hide</span></span></span><br><span class="line"><span class="comment">      */</span></span><br><span class="line">     <span class="meta">@NonNull</span></span><br><span class="line">     <span class="keyword">public</span> Handler <span class="title function_">getThreadHandler</span><span class="params">()</span> {</span><br><span class="line">         <span class="keyword">if</span> (mHandler == <span class="literal">null</span>) {</span><br><span class="line">             mHandler = <span class="keyword">new</span> <span class="title class_">Handler</span>(getLooper());</span><br><span class="line">          }</span><br><span class="line">          <span class="keyword">return</span> mHandler;</span><br><span class="line">      }</span><br><span class="line"></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">       * Quits the handler thread's looper.</span></span><br><span class="line"><span class="comment">       * &lt;p&gt;</span></span><br><span class="line"><span class="comment">       * Causes the handler thread's looper to terminate without processing any</span></span><br><span class="line"><span class="comment">       * more messages in the message queue.</span></span><br><span class="line"><span class="comment">       * &lt;/p&gt;&lt;p&gt;</span></span><br><span class="line"><span class="comment">       * Any attempt to post messages to the queue after the looper is asked to quit will fail.</span></span><br><span class="line"><span class="comment">       * For example, the {<span class="doctag">@link</span> Handler#sendMessage(Message)} method will return false.</span></span><br><span class="line"><span class="comment">       * &lt;/p&gt;&lt;p class="note"&gt;</span></span><br><span class="line"><span class="comment">       * Using this method may be unsafe because some messages may not be delivered</span></span><br><span class="line"><span class="comment">       * before the looper terminates.  Consider using {<span class="doctag">@link</span> #quitSafely} instead to ensure</span></span><br><span class="line"><span class="comment">       * that all pending work is completed in an orderly manner.</span></span><br><span class="line"><span class="comment">       * &lt;/p&gt;</span></span><br><span class="line"><span class="comment">       *</span></span><br><span class="line"><span class="comment">       * <span class="doctag">@return</span> True if the looper looper has been asked to quit or false if the</span></span><br><span class="line"><span class="comment">       * thread had not yet started running.</span></span><br><span class="line"><span class="comment">       *</span></span><br><span class="line"><span class="comment">       * <span class="doctag">@see</span> #quitSafely</span></span><br><span class="line"><span class="comment">       */</span></span><br><span class="line">      <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">quit</span><span class="params">()</span> {</span><br><span class="line">          <span class="type">Looper</span> <span class="variable">looper</span> <span class="operator">=</span> getLooper();</span><br><span class="line">          <span class="keyword">if</span> (looper != <span class="literal">null</span>) {</span><br><span class="line">              looper.quit();</span><br><span class="line">              <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">          }</span><br><span class="line">          <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">      }</span><br><span class="line"></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">       * Quits the handler thread's looper safely.</span></span><br><span class="line"><span class="comment">       * &lt;p&gt;</span></span><br><span class="line"><span class="comment">       * Causes the handler thread's looper to terminate as soon as all remaining messages</span></span><br><span class="line"><span class="comment">       * in the message queue that are already due to be delivered have been handled.</span></span><br><span class="line"><span class="comment">       * Pending delayed messages with due times in the future will not be delivered.</span></span><br><span class="line"><span class="comment">       * &lt;/p&gt;&lt;p&gt;</span></span><br><span class="line"><span class="comment">       * Any attempt to post messages to the queue after the looper is asked to quit will fail.</span></span><br><span class="line"><span class="comment">       * For example, the {<span class="doctag">@link</span> Handler#sendMessage(Message)} method will return false.</span></span><br><span class="line"><span class="comment">       * &lt;/p&gt;&lt;p&gt;</span></span><br><span class="line"><span class="comment">       * If the thread has not been started or has finished (that is if</span></span><br><span class="line"><span class="comment">       * {<span class="doctag">@link</span> #getLooper} returns null), then false is returned.</span></span><br><span class="line"><span class="comment">       * Otherwise the looper is asked to quit and true is returned.</span></span><br><span class="line"><span class="comment">       * &lt;/p&gt;</span></span><br><span class="line"><span class="comment">       *</span></span><br><span class="line"><span class="comment">       * <span class="doctag">@return</span> True if the looper looper has been asked to quit or false if the</span></span><br><span class="line"><span class="comment">       * thread had not yet started running.</span></span><br><span class="line"><span class="comment">       */</span></span><br><span class="line">      <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">quitSafely</span><span class="params">()</span> {</span><br><span class="line">          <span class="type">Looper</span> <span class="variable">looper</span> <span class="operator">=</span> getLooper();</span><br><span class="line">          <span class="keyword">if</span> (looper != <span class="literal">null</span>) {</span><br><span class="line">              looper.quitSafely();</span><br><span class="line">              <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">          }</span><br><span class="line">          <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">      }</span><br><span class="line"></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">       * Returns the identifier of this thread. See Process.myTid().</span></span><br><span class="line"><span class="comment">       */</span></span><br><span class="line">      <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getThreadId</span><span class="params">()</span> {</span><br><span class="line">          <span class="keyword">return</span> mTid;</span><br><span class="line">      }</span><br><span class="line">}  </span><br></pre></td></tr></tbody></table></figure>
+
+<ol>
+<li>构造方法<ol>
+<li>关键看看注释2的构造函数，其中name是该线程的名字，priority是线程的优先级，在此默认是THREAD_PRIORITY_DEFAULT，这些宏是在 Process 中定义的，值越小，进程优先级越高，主线程的优先级也是THREAD_PRIORITY_DEFAULT。</li>
+</ol>
+</li>
+<li>run方法<ol>
+<li>在该方法里，执行了很经典的函数，也就是注释3的 Looper.prepare()，该方法主要是创建Looper实例，只有创建了Looper实例，才能将HandlerThread和handler绑定在一起。因此需要先执行start（）函数，执行后，线程会交给虚拟机进行调度并自动调用run（）方法。</li>
+</ol>
+</li>
+<li>HandlerThread和handler绑定<ol>
+<li>这里关键是看看getLooper()函数，对应注释6，这里也有synchronized，同时还有wait()方法，众所周知，wait()和notifyAll()是搭配使用来实现线程同步的。这里为了获取到mLooper对象，需要进行线程同步。因为我们希望getLooper()函数只有在线程创建成功且Looper实例也创建成功时才返回，因此在注释7开始阻塞，直到注释4已经创建完Looper实例时才唤醒。</li>
+</ol>
+</li>
+<li>quit和quitSafe方法<ol>
+<li>最后看看如何退出线程。当调用quit和quitSafe方法就可以退出Looper消息循环并退出线程，从名字上就可以知道后者是“安全退出“。</li>
+<li>跟踪这两个方法，会跑到MessageQueue.java里的：</li>
+</ol>
+</li>
+</ol>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">quit</span><span class="params">(<span class="type">boolean</span> safe)</span> {</span><br><span class="line">     <span class="keyword">if</span> (!mQuitAllowed) {</span><br><span class="line">         <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalStateException</span>(<span class="string">"Main thread not allowed to quit."</span>);</span><br><span class="line">     }</span><br><span class="line"></span><br><span class="line">     <span class="keyword">synchronized</span> (<span class="built_in">this</span>) {</span><br><span class="line">         <span class="keyword">if</span> (mQuitting) {</span><br><span class="line">             <span class="keyword">return</span>;</span><br><span class="line">         }</span><br><span class="line">         mQuitting = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">         <span class="keyword">if</span> (safe) {</span><br><span class="line">             removeAllFutureMessagesLocked(); <span class="comment">//8</span></span><br><span class="line">         } <span class="keyword">else</span> {</span><br><span class="line">             removeAllMessagesLocked(); <span class="comment">//9</span></span><br><span class="line">         }</span><br><span class="line"></span><br><span class="line">         <span class="comment">// We can assume mPtr != 0 because mQuitting was previously false.</span></span><br><span class="line">         nativeWake(mPtr);</span><br><span class="line">     }</span><br><span class="line"> }</span><br></pre></td></tr></tbody></table></figure>
+
+<p>如果安全则调用注释8，不安全调用注释9.继续看源码。removeAllMessagesLocked()只是遍历链表并把所有消息移除掉，最后将mMessages设置为null。而removeAllFutureMessagesLocked()会根据when变量，对应下面注释10，如果当前没有处理消息则同样移除所有消息，否则等待消息处理完毕后再退出循环。</p>
+<p>因此这里所谓的安全或者不安全是因为quit()方法无论当前是否有处理消息，都强制移除所有回调，所以不安全。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">removeAllMessagesLocked</span><span class="params">()</span> {</span><br><span class="line">    <span class="type">Message</span> <span class="variable">p</span> <span class="operator">=</span> mMessages;</span><br><span class="line">    <span class="keyword">while</span> (p != <span class="literal">null</span>) {</span><br><span class="line">        <span class="type">Message</span> <span class="variable">n</span> <span class="operator">=</span> p.next;</span><br><span class="line">        p.recycleUnchecked();</span><br><span class="line">        p = n;</span><br><span class="line">    }</span><br><span class="line">    mMessages = <span class="literal">null</span>;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">removeAllFutureMessagesLocked</span><span class="params">()</span> {</span><br><span class="line">    <span class="keyword">final</span> <span class="type">long</span> <span class="variable">now</span> <span class="operator">=</span> SystemClock.uptimeMillis();</span><br><span class="line">    <span class="type">Message</span> <span class="variable">p</span> <span class="operator">=</span> mMessages;</span><br><span class="line">    <span class="keyword">if</span> (p != <span class="literal">null</span>) {</span><br><span class="line">        <span class="keyword">if</span> (p.when &gt; now) { <span class="comment">//10</span></span><br><span class="line">            removeAllMessagesLocked();</span><br><span class="line">        } <span class="keyword">else</span> {</span><br><span class="line">            Message n;</span><br><span class="line">            <span class="keyword">for</span> (;;) {</span><br><span class="line">                n = p.next;</span><br><span class="line">                <span class="keyword">if</span> (n == <span class="literal">null</span>) {</span><br><span class="line">                    <span class="keyword">return</span>;</span><br><span class="line">                }</span><br><span class="line">                <span class="keyword">if</span> (n.when &gt; now) {</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                }</span><br><span class="line">                p = n;</span><br><span class="line">            }</span><br><span class="line">            p.next = <span class="literal">null</span>;</span><br><span class="line">            <span class="keyword">do</span> {</span><br><span class="line">                p = n;</span><br><span class="line">                n = p.next;</span><br><span class="line">                p.recycleUnchecked();</span><br><span class="line">            } <span class="keyword">while</span> (n != <span class="literal">null</span>);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ol>
+<li>HandlerThread 是内部会创建Looper的线程，因此只能作为子线程使用；</li>
+<li>HandlerThread 需要配合 Handler 使用，HandlerThread 的耗时操作在handleMessage()中执行，因为此时执行的是在HandlerThread所在的子线程执行的，但不能像普通线程一样在run()方法中进行，因为HanderThread的run()方法已经被写死。</li>
+<li>HandlerThread和Handler绑定之前，必须先调用 mHandlerThread.start() 让 run() 方法跑起来.。</li>
+</ol>
+
+                </div>
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/blog/tags/Android/">Android</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                            <div class="post-share-container border-box">
+    <ul class="share-list-wrap border-box">
+        <li class="qq share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to QQ"
+        >
+            <i class="fa-brands fa-qq"></i>
+        </li>
+        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
+            data-tooltip-content="Share to WeChat"
+            data-tooltip-img-tip="Scan by WeChat"
+            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
+        >
+            <i class="fa-brands fa-weixin"></i>
+        </li>
+        <li class="weibo share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to WeiBo"
+        >
+            <i class="fa-brands fa-weibo"></i>
+        </li>
+    </ul>
+</div>
+
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/blog/2024/06/05/Android-18-IntentService/"
+                                   title="IntentService"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">IntentService</span>
+                                        <span class="post-nav-item">Prev posts</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/blog/2024/06/05/Android-16-Fragment/"
+                                   title="Fragment"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Fragment</span>
+                                        <span class="post-nav-item">Next posts</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc left-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <!-- use hexo-blog-encrypt -->
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HandlerThread%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">HandlerThread是什么？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HandlerThread%E6%80%8E%E4%B9%88%E4%BD%BF%E7%94%A8"><span class="nav-number">2.</span> <span class="nav-text">HandlerThread怎么使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90"><span class="nav-number">3.</span> <span class="nav-text">源码分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+        &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2024
+        
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/blog/">MoMo</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+        <div class="count-info info-item">
+            
+
+            
+                <span class="count-item border-box uv">
+                    <span class="item-type border-box">Unique Visitor</span>
+                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
+                </span>
+            
+
+            
+                <span class="count-item border-box pv">
+                    <span class="item-type border-box">Page View</span>
+                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
+                </span>
+            
+        </div>
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools left-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-toggle-theme-mode flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <!-- use hexo-blog-encrypt -->
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HandlerThread%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">HandlerThread是什么？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HandlerThread%E6%80%8E%E4%B9%88%E4%BD%BF%E7%94%A8"><span class="nav-number">2.</span> <span class="nav-text">HandlerThread怎么使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90"><span class="nav-number">3.</span> <span class="nav-text">源码分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+<!-- common -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/utils.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/header-shrink.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/back2top.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/toggle-theme.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/code-block.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/main.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/libs/anime.min.js"></script>
+
+<!-- local-search -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/local-search.min.js"></script>
+
+
+<!-- lazyload -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/lazyload.min.js"></script>
+
+
+<div class="pjax">
+    
+        <!-- post-helper -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/post/post-helper.min.js"></script>
+
+        <!-- toc -->
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/post/toc.min.js"></script>
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/post/share.min.js"></script>
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+</body>
+</html>

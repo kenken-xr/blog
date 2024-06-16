@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="MoMo">
+    
+    <title>
+        
+            Androids事件分发机制 |
+        
+        今天在干嘛
+    </title>
+    
+<link rel="stylesheet" href="/blog/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/blog/images/logoMoon.svg">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/regular.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/brands.min.css">
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"kenken-xr.github.io","root":"/blog/","language":"en","path":"search.json"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#f8a5c2","title":"今天在干嘛","author":"MoMo","avatar":"/images/avatar.jpg","logo":"/images/logoMoon.svg","favicon":"/images/logoMoon.svg"},"menu":{"home":"/","archives":"/archives","tags":"/tags","categories":"/categories","github":"https://github.com/kenken-xr"},"first_screen":{"enable":true,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":true,"links":{"github":"https://github.com/kenken-xr","weixin":"img | /images/wx.png","qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":true,"percent":true,"hide_header":false},"home":{"announcement":null,"category":true,"tag":true,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":true,"reward":{"enable":false,"img_link":null,"text":null},"img_align":"center"},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true,"layout":"left"},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"local_search":{"enable":true,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.36"},"waline":{"server_url":null,"reaction":false,"version":"3.2.1"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":true},"cdn":{"enable":true,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":2023,"word_count":true,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"/blog","source_data":{},"version":"4.1.3"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original post title","author":"Original post author","link":"Original post link"}
+  </script>
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/blog/atom.xml" title="MoMo" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left border-box">
+            
+                <a class="logo-image border-box" href="/blog/">
+                    <img src="/blog/images/logoMoon.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/blog/">
+               今天在干嘛
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/"
+                            >
+                                
+                                HOME
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/archives"
+                            >
+                                
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/tags"
+                            >
+                                
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/categories"
+                            >
+                                
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               target="_blank" rel="noopener" href="https://github.com/kenken-xr"
+                            >
+                                
+                                GITHUB
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/"
+                    >HOME</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/archives"
+                    >ARCHIVES</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/tags"
+                    >TAGS</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/categories"
+                    >CATEGORIES</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       target="_blank" rel="noopener" href="https://github.com/kenken-xr"
+                    >GITHUB</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        Androids事件分发机制
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/blog/images/avatar.jpg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">MoMo</span>
+                                
+                                    <span class="author-badge">Lv5</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2024-06-05 17:22:52</span>
+            </span>
+
+            <span class="meta-info-item post-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="datetime" data-updated="Thu Jun 13 2024 22:04:12 GMT+0800">2024-06-13 22:04:12</span>
+            </span>
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/blog/categories/%E6%9C%89%E5%9C%A8%E8%AE%A4%E7%9C%9F%E4%B8%8A%E7%8F%AD/">有在认真上班</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/blog/tags/Android/">Android</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+            <span class="meta-info-item post-pv">
+                <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    <ol>
+<li>什么是事件分发机制，以及对应流程⭐⭐⭐⭐⭐</li>
+<li>MotionEvent的认识？Cancel事件是什么情况下触发的⭐⭐⭐</li>
+<li>OnTouchListener &amp; OnTouchEvent &amp; OnClickListener三者之间的关系⭐⭐⭐⭐</li>
+</ol>
+<h1 id="触摸事件分发流程"><a href="#触摸事件分发流程" class="headerlink" title="触摸事件分发流程"></a>触摸事件分发流程</h1><p><img lazyload="" alt="image" data-src="https://uploadfiles.nowcoder.com/images/20221227/545613072_1672132965590/D2B5CA33BD970F64A6301FA75AE2EB22"></p>
+<p>我们知道View的结构是树形结构，View可以放在ViewGroup中，ViewGroup也可以放在另一个ViewGroup中，如此就形成了层层嵌套的关系。当我们触摸到屏幕后，就会生成一个Touch事件，常见的Touch事件有：</p>
+<ul>
+<li>MotionEvent.ACTION_DOWN：按下</li>
+<li>MotionEvent.ACTION_MOVE：滑动</li>
+<li>MotionEvent.ACTION_CANCEL：非人为原因结束本次事件</li>
+<li>MotionEvent.ACTION_UP：抬起 一般来说，一个事件会经过：按下 –》 滑动 –》抬起，这三个阶段，并在这个过程中会有非人为原因结束本次触摸流程。这些事件会在代码里会封装成一个MotionEvent。那么，当MotionEvent产生后，系统就会将其传递给View树，MotionEvent在View的层级传递，并最终得到处理的过程，就是触摸事件分发流程。一个流程的传递顺序是：</li>
+</ul>
+<blockquote>
+<p>Activity/Window –&gt; ViewGroup –&gt; View</p>
+</blockquote>
+<p>其中，View就是各种控件，如Button、TextView等，而ViewGroup是View的子类，因此本质上也是一个View，只不过ViewGroup可以包含多个子View和定义布局参数。</p>
+<h1 id="触摸事件分发的3个重要方法"><a href="#触摸事件分发的3个重要方法" class="headerlink" title="触摸事件分发的3个重要方法"></a>触摸事件分发的3个重要方法</h1><p>有以下3个重要方法是必须掌握的：</p>
+<ul>
+<li>dispatchTouchEvent(MotionEvent ev)：进行事件的分发，在View和ViewGroup类都有该方法，下文会对该方法的源码进行分析，需要区分清楚；</li>
+<li>onInterceptTouchEvent(MotionEvent ev)：进行事件拦截，在dispatchTouchEvent()中调用，在分发的过程中判断是否需要进行拦截，需要注意的是只有ViewGroup有该方法，View是没有提供该方法的。如果返回true代表拦截，返回false代表不拦截；</li>
+<li>onTouchEvent(MotionEvent ev)：触摸事件处理，同样在dispatchTouchEvent()方法中进行调用，如果返回true代表已处理事件，返回false代表不处理事件，事件继续传递。</li>
+</ul>
+<p>ViewGroup的dispatchTouchEvent()，源码是Android9.0.0=》/frameworks/base/core/java/android/view/ViewGroup.java：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">dispatchTouchEvent</span><span class="params">(MotionEvent ev)</span> {</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">if</span> (!disallowIntercept) {</span><br><span class="line">        intercepted = onInterceptTouchEvent(ev);  <span class="comment">//1</span></span><br><span class="line">        ev.setAction(action); <span class="comment">// restore action in case it was changed</span></span><br><span class="line">    } <span class="keyword">else</span> {</span><br><span class="line">        intercepted = <span class="literal">false</span>;</span><br><span class="line">    }</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">if</span> (actionMasked == MotionEvent.ACTION_DOWN</span><br><span class="line">            || (split &amp;&amp; actionMasked == MotionEvent.ACTION_POINTER_DOWN)</span><br><span class="line">            || actionMasked == MotionEvent.ACTION_HOVER_MOVE) {</span><br><span class="line">        ...</span><br><span class="line">        <span class="keyword">if</span> (newTouchTarget == <span class="literal">null</span> &amp;&amp; childrenCount != <span class="number">0</span>) {</span><br><span class="line">            ...</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> childrenCount - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) { <span class="comment">//2:遍历ViewGroup的子View</span></span><br><span class="line">                <span class="keyword">final</span> <span class="type">int</span> <span class="variable">childIndex</span> <span class="operator">=</span> getAndVerifyPreorderedIndex(</span><br><span class="line">                        childrenCount, i, customOrder);</span><br><span class="line">                <span class="keyword">final</span> <span class="type">View</span> <span class="variable">child</span> <span class="operator">=</span> getAndVerifyPreorderedView(</span><br><span class="line">                        preorderedList, children, childIndex);</span><br><span class="line"></span><br><span class="line">                ...</span><br><span class="line">                resetCancelNextUpFlag(child);</span><br><span class="line">                <span class="keyword">if</span> (dispatchTransformedTouchEvent(ev, <span class="literal">false</span>, child, idBitsToAssign)) { <span class="comment">//3</span></span><br><span class="line">                    ...</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                }</span><br><span class="line"></span><br><span class="line">                ...</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>在[注释1]调用了onInterceptTouchEvent()方法来判断是否要拦截当前的事件。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">onInterceptTouchEvent</span><span class="params">(MotionEvent ev)</span> {</span><br><span class="line">      <span class="keyword">if</span> (ev.isFromSource(InputDevice.SOURCE_MOUSE)</span><br><span class="line">              &amp;&amp; ev.getAction() == MotionEvent.ACTION_DOWN</span><br><span class="line">              &amp;&amp; ev.isButtonPressed(MotionEvent.BUTTON_PRIMARY)</span><br><span class="line">              &amp;&amp; isOnScrollbarThumb(ev.getX(), ev.getY())) {</span><br><span class="line">          <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">      }</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  }</span><br></pre></td></tr></tbody></table></figure>
+
+<p>可以看出onInterceptTouchEvent()默认返回false，代表不拦截。接着在[注释2]遍历ViewGroup的子View，如果子View可以接收到触摸事件，则会执行[注释3]dispatchTransformedTouchEvent()：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="type">boolean</span> <span class="title function_">dispatchTransformedTouchEvent</span><span class="params">(MotionEvent event, <span class="type">boolean</span> cancel,</span></span><br><span class="line"><span class="params">                                              View child, <span class="type">int</span> desiredPointerIdBits)</span> {</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">if</span> (child == <span class="literal">null</span>) {</span><br><span class="line">        handled = <span class="built_in">super</span>.dispatchTouchEvent(transformedEvent); <span class="comment">//4</span></span><br><span class="line">    } <span class="keyword">else</span> {</span><br><span class="line">        <span class="keyword">final</span> <span class="type">float</span> <span class="variable">offsetX</span> <span class="operator">=</span> mScrollX - child.mLeft;</span><br><span class="line">        <span class="keyword">final</span> <span class="type">float</span> <span class="variable">offsetY</span> <span class="operator">=</span> mScrollY - child.mTop;</span><br><span class="line">        transformedEvent.offsetLocation(offsetX, offsetY);</span><br><span class="line">        <span class="keyword">if</span> (! child.hasIdentityMatrix()) {</span><br><span class="line">            transformedEvent.transform(child.getInverseMatrix());</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        handled = child.dispatchTouchEvent(transformedEvent); <span class="comment">//5</span></span><br><span class="line">    }</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> handled;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>在[注释4]，如果当前的ViewGroup没有View则调用父类的dispatchTouchEvent()，在[注释5]如果有子View，则调用子View的dispatchTouchEvent()。因为ViewGroup类也是继承View类的，因此[注释4]super.dispatchTouchEvent(transformedEvent)对应的源码在：/frameworks/base/core/java/android/view/View.java</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">dispatchTouchEvent</span><span class="params">(MotionEvent event)</span> {</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">if</span> (onFilterTouchEventForSecurity(event)) {</span><br><span class="line">        <span class="keyword">if</span> ((mViewFlags &amp; ENABLED_MASK) == ENABLED &amp;&amp; handleScrollBarDragging(event)) {</span><br><span class="line">            result = <span class="literal">true</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="comment">//noinspection SimplifiableIfStatement</span></span><br><span class="line">        <span class="type">ListenerInfo</span> <span class="variable">li</span> <span class="operator">=</span> mListenerInfo;</span><br><span class="line">        <span class="keyword">if</span> (li != <span class="literal">null</span> &amp;&amp; li.mOnTouchListener != <span class="literal">null</span> <span class="comment">///6</span></span><br><span class="line">                &amp;&amp; (mViewFlags &amp; ENABLED_MASK) == ENABLED</span><br><span class="line">                &amp;&amp; li.mOnTouchListener.onTouch(<span class="built_in">this</span>, event)) { <span class="comment">//7</span></span><br><span class="line">            result = <span class="literal">true</span>;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (!result &amp;&amp; onTouchEvent(event)) { <span class="comment">//8</span></span><br><span class="line">            result = <span class="literal">true</span>;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>这个函数要稍微捋一捋，如果[注释6]mOnTouchListener不为空且[注释7]mOnTouchListener.onTouch()返回true，则result设置为true，因此[注释8]的onTouchEvent(event)就不执行，反之则执行。</p>
+<p>最后，看看三大重要方法最后一个的onTouchEvent()，同样在View.java里：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">onTouchEvent</span><span class="params">(MotionEvent event)</span> {</span><br><span class="line">      ...</span><br><span class="line">      <span class="keyword">final</span> <span class="type">boolean</span> <span class="variable">clickable</span> <span class="operator">=</span> ((viewFlags &amp; CLICKABLE) == CLICKABLE <span class="comment">//9</span></span><br><span class="line">              || (viewFlags &amp; LONG_CLICKABLE) == LONG_CLICKABLE) <span class="comment">//10</span></span><br><span class="line">              || (viewFlags &amp; CONTEXT_CLICKABLE) == CONTEXT_CLICKABLE;</span><br><span class="line">      ...</span><br><span class="line">      <span class="keyword">if</span> (clickable || (viewFlags &amp; TOOLTIP) == TOOLTIP) {</span><br><span class="line">      <span class="keyword">switch</span> (action) {</span><br><span class="line">          <span class="keyword">case</span> MotionEvent.ACTION_UP: <span class="comment">// 11</span></span><br><span class="line">              ...</span><br><span class="line">              <span class="keyword">if</span> (mPerformClick == <span class="literal">null</span>) {</span><br><span class="line">                  mPerformClick = <span class="keyword">new</span> <span class="title class_">PerformClick</span>(); <span class="comment">//12</span></span><br><span class="line">              }</span><br><span class="line">              <span class="keyword">if</span> (!post(mPerformClick)) {</span><br><span class="line">                  performClickInternal();</span><br><span class="line">              }</span><br><span class="line">          ...</span><br><span class="line">          <span class="keyword">break</span>;</span><br><span class="line">          <span class="keyword">case</span> MotionEvent.ACTION_DOWN:</span><br><span class="line">          ...</span><br><span class="line">          <span class="keyword">break</span>;</span><br><span class="line">          <span class="keyword">case</span> MotionEvent.ACTION_CANCEL:</span><br><span class="line">          ...</span><br><span class="line">          <span class="keyword">break</span>;</span><br><span class="line">          <span class="keyword">case</span> MotionEvent.ACTION_MOVE:</span><br><span class="line">          ...</span><br><span class="line">          <span class="keyword">break</span>;</span><br><span class="line">      }</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  }</span><br></pre></td></tr></tbody></table></figure>
+
+<p>从上面代码知道，[注释9]的CLICKABLE（点击）和[注释10]的LONG_CLICKABLE（长按点击）有一个为true，则会进入switch循环处理这个事件。最后在ACTION_UP[注释11]事件会调用performClick()[注释12]方法：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">performClick</span><span class="params">()</span> {</span><br><span class="line">    <span class="keyword">final</span> <span class="type">boolean</span> result;</span><br><span class="line">    <span class="keyword">final</span> <span class="type">ListenerInfo</span> <span class="variable">li</span> <span class="operator">=</span> mListenerInfo;</span><br><span class="line">    <span class="keyword">if</span> (li != <span class="literal">null</span> &amp;&amp; li.mOnClickListener != <span class="literal">null</span>) {</span><br><span class="line">        playSoundEffect(SoundEffectConstants.CLICK);</span><br><span class="line">        li.mOnClickListener.onClick(<span class="built_in">this</span>);</span><br><span class="line">        result = <span class="literal">true</span>;</span><br><span class="line">    } <span class="keyword">else</span> {</span><br><span class="line">        result = <span class="literal">false</span>;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_CLICKED);</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>如果View设置了点击事件OnClickListener，那么它的onClick()方法就会被执行。</p>
+<h1 id="onTouch-、onTouchEvent-、onClick-傻傻分不清？"><a href="#onTouch-、onTouchEvent-、onClick-傻傻分不清？" class="headerlink" title="onTouch()、onTouchEvent()、onClick()傻傻分不清？"></a>onTouch()、onTouchEvent()、onClick()傻傻分不清？</h1><p>这三个方法，相信很多读者都经常见过，到底谁的优先级更高呢？结合[注释7][注释8][注释12]，可以看出，如果执行了onTouch()并返回false才会执行onTouchEvent()，在执行onTouchEvent()时如果调用了setOnClickListener()注册了点击事件回调，则还会执行OnClick()，因此三者的优先级为：</p>
+<blockquote>
+<p>onTouch() &gt; onTouchEvent() &gt; OnClick()</p>
+</blockquote>
+<h1 id="事件分发总结"><a href="#事件分发总结" class="headerlink" title="事件分发总结"></a>事件分发总结</h1><h2 id="表格总结"><a href="#表格总结" class="headerlink" title="表格总结"></a>表格总结</h2><p><img lazyload="" alt="image" data-src="https://uploadfiles.nowcoder.com/images/20221227/545613072_1672132951045/D2B5CA33BD970F64A6301FA75AE2EB22"></p>
+<p>上面表格里的“事件列”是指一个事件序列有：ACTION_DOWN、ACTION_MOVE、ACTION_UP等。大部分情况由上面的表格就可以概括了。</p>
+<h2 id="伪代码表示"><a href="#伪代码表示" class="headerlink" title="伪代码表示"></a>伪代码表示</h2><p>如果用伪代码可以如下表示：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 父View调用dispatchTouchEvent()开始分发事件</span></span><br><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">dispatchTouchEvent</span><span class="params">(MotionEvent event)</span>{</span><br><span class="line">    <span class="type">boolean</span> <span class="variable">consume</span> <span class="operator">=</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="comment">// 父View决定是否拦截事件</span></span><br><span class="line">    <span class="keyword">if</span>(onInterceptTouchEvent(event)){</span><br><span class="line">        <span class="comment">// 父View调用onTouchEvent(event)消费事件，如果该方法返回true，表示</span></span><br><span class="line">        <span class="comment">// 该View消费了该事件，后续该事件序列的事件（Down、Move、Up）将不会在传递</span></span><br><span class="line">        <span class="comment">// 该其他View。</span></span><br><span class="line">        consume = onTouchEvent(event);</span><br><span class="line">    }<span class="keyword">else</span>{</span><br><span class="line">        <span class="comment">// 调用子View的dispatchTouchEvent(event)方法继续分发事件</span></span><br><span class="line">        consume = child.dispatchTouchEvent(event);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> consume;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>以下总结的非常好，因此直接抄录至刘偶像的博客，最后升华下本文的理解：<a class="link" target="_blank" rel="noopener" href="http://liuwangshu.cn/application/view/5-dispatchingevents.html">参考文献<i class="fas fa-external-link-alt"></i></a></p>
+<h2 id="事件由上到下的传递规则"><a href="#事件由上到下的传递规则" class="headerlink" title="事件由上到下的传递规则"></a>事件由上到下的传递规则</h2><p>当点击事件产生后会由Activity来处理再传递给Window再传递给顶层的ViewGroup，一般在事件传递中只考虑ViewGroup的onInterceptTouchEvent()方法，因为一般情况我们不会去重写dispatchTouchEvent()方法。</p>
+<p>对于根ViewGroup，点击事件首先传递给它的dispatchTouchEvent()方法，如果该ViewGroup的onInterceptTouchEvent()方法返回true，则表示它要拦截这个事件，这个事件就会交给它的onTouchEvent()方法处理，如果onInterceptTouchEvent()方法返回false，则表示它不拦截这个事件，则交给它的子元素的dispatchTouchEvent()来处理，如此的反复下去。如果传递给最底层的View，View是没有子View的，就会调用View的dispatchTouchEvent()方法，一般情况下最终会调用View的onTouchEvent()方法。</p>
+<p>举个现实的例子，就是我们的应用产生了重大的bug，这个bug首先会汇报给技术总监那：</p>
+<p>技术总监（顶层ViewGroup)→技术经理（中层ViewGroup)→工程师（底层View)<br>技术总监不拦截，把bug分给了技术经理，技术经理不拦截把bug分给了工程师，工程师没有下属只有自己处理了。<br>事件由上而下传递返回值规则为：true，拦截，不继续向下传递；false，不拦截，继续向下传递。</p>
+<h2 id="事件由下而上的传递规则"><a href="#事件由下而上的传递规则" class="headerlink" title="事件由下而上的传递规则"></a>事件由下而上的传递规则</h2><p>点击事件传给最底层的View，如果他的onTouchEvent()方法返回true，则事件由最底层的View消耗并处理了，如果返回false则表示该View不做处理，则传递给父View的onTouchEvent()处理，如果父View的onTouchEvent()仍旧返回返回false，则继续传递给改父View的父View处理，如此的反复下去。</p>
+<p>再返回我们现实的例子，工程师发现这个bug太难搞不定（onTouchEvent()返回false)，他只能交给上级技术经理处理，如果技术经理也搞不定（onTouchEvent()返回false)，那就把bug传给技术总监，技术总监一看bug很简单就解决了（onTouchEvent()返回true)。</p>
+<p>事件由下而上传递返回值规则为：true，处理了，不继续向上传递；false，不处理，继续向上传递。</p>
+
+                </div>
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/blog/tags/Android/">Android</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                            <div class="post-share-container border-box">
+    <ul class="share-list-wrap border-box">
+        <li class="qq share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to QQ"
+        >
+            <i class="fa-brands fa-qq"></i>
+        </li>
+        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
+            data-tooltip-content="Share to WeChat"
+            data-tooltip-img-tip="Scan by WeChat"
+            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
+        >
+            <i class="fa-brands fa-weixin"></i>
+        </li>
+        <li class="weibo share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to WeiBo"
+        >
+            <i class="fa-brands fa-weibo"></i>
+        </li>
+    </ul>
+</div>
+
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/blog/2024/06/05/Android-10-%E7%BA%BF%E7%A8%8B%E6%B1%A0/"
+                                   title="线程池"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">线程池</span>
+                                        <span class="post-nav-item">Prev posts</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/blog/2024/06/05/Android-8-%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96/"
+                                   title="Android内存优化"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Android内存优化</span>
+                                        <span class="post-nav-item">Next posts</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc left-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <!-- use hexo-blog-encrypt -->
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A6%E6%91%B8%E4%BA%8B%E4%BB%B6%E5%88%86%E5%8F%91%E6%B5%81%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">触摸事件分发流程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A6%E6%91%B8%E4%BA%8B%E4%BB%B6%E5%88%86%E5%8F%91%E7%9A%843%E4%B8%AA%E9%87%8D%E8%A6%81%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">触摸事件分发的3个重要方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#onTouch-%E3%80%81onTouchEvent-%E3%80%81onClick-%E5%82%BB%E5%82%BB%E5%88%86%E4%B8%8D%E6%B8%85%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">onTouch()、onTouchEvent()、onClick()傻傻分不清？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E5%88%86%E5%8F%91%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text">事件分发总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A8%E6%A0%BC%E6%80%BB%E7%BB%93"><span class="nav-number">4.1.</span> <span class="nav-text">表格总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%AA%E4%BB%A3%E7%A0%81%E8%A1%A8%E7%A4%BA"><span class="nav-number">4.2.</span> <span class="nav-text">伪代码表示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E7%94%B1%E4%B8%8A%E5%88%B0%E4%B8%8B%E7%9A%84%E4%BC%A0%E9%80%92%E8%A7%84%E5%88%99"><span class="nav-number">4.3.</span> <span class="nav-text">事件由上到下的传递规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E7%94%B1%E4%B8%8B%E8%80%8C%E4%B8%8A%E7%9A%84%E4%BC%A0%E9%80%92%E8%A7%84%E5%88%99"><span class="nav-number">4.4.</span> <span class="nav-text">事件由下而上的传递规则</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+        &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2024
+        
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/blog/">MoMo</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+        <div class="count-info info-item">
+            
+
+            
+                <span class="count-item border-box uv">
+                    <span class="item-type border-box">Unique Visitor</span>
+                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
+                </span>
+            
+
+            
+                <span class="count-item border-box pv">
+                    <span class="item-type border-box">Page View</span>
+                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
+                </span>
+            
+        </div>
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools left-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-toggle-theme-mode flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <!-- use hexo-blog-encrypt -->
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A6%E6%91%B8%E4%BA%8B%E4%BB%B6%E5%88%86%E5%8F%91%E6%B5%81%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">触摸事件分发流程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A6%E6%91%B8%E4%BA%8B%E4%BB%B6%E5%88%86%E5%8F%91%E7%9A%843%E4%B8%AA%E9%87%8D%E8%A6%81%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">触摸事件分发的3个重要方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#onTouch-%E3%80%81onTouchEvent-%E3%80%81onClick-%E5%82%BB%E5%82%BB%E5%88%86%E4%B8%8D%E6%B8%85%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">onTouch()、onTouchEvent()、onClick()傻傻分不清？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E5%88%86%E5%8F%91%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text">事件分发总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A8%E6%A0%BC%E6%80%BB%E7%BB%93"><span class="nav-number">4.1.</span> <span class="nav-text">表格总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%AA%E4%BB%A3%E7%A0%81%E8%A1%A8%E7%A4%BA"><span class="nav-number">4.2.</span> <span class="nav-text">伪代码表示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E7%94%B1%E4%B8%8A%E5%88%B0%E4%B8%8B%E7%9A%84%E4%BC%A0%E9%80%92%E8%A7%84%E5%88%99"><span class="nav-number">4.3.</span> <span class="nav-text">事件由上到下的传递规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E7%94%B1%E4%B8%8B%E8%80%8C%E4%B8%8A%E7%9A%84%E4%BC%A0%E9%80%92%E8%A7%84%E5%88%99"><span class="nav-number">4.4.</span> <span class="nav-text">事件由下而上的传递规则</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+<!-- common -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/utils.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/header-shrink.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/back2top.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/toggle-theme.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/code-block.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/main.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/libs/anime.min.js"></script>
+
+<!-- local-search -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/local-search.min.js"></script>
+
+
+<!-- lazyload -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/lazyload.min.js"></script>
+
+
+<div class="pjax">
+    
+        <!-- post-helper -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/post/post-helper.min.js"></script>
+
+        <!-- toc -->
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/post/toc.min.js"></script>
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/post/share.min.js"></script>
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+</body>
+</html>
