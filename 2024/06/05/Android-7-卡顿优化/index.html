@@ -9,7 +9,7 @@
     
     <title>
         
-            Android卡顿优化 |
+            Android卡顿优化(ANR) |
         
         今天在干嘛
     </title>
@@ -208,7 +208,7 @@
             <div class="post-content-bottom border-box">
                 
                     <div class="post-title">
-                        Android卡顿优化
+                        Android卡顿优化(ANR)
                     </div>
                 
 
@@ -223,7 +223,7 @@
                             <div class="author border-box">
                                 <span class="name">MoMo</span>
                                 
-                                    <span class="author-badge">Lv5</span>
+                                    <span class="author-badge">Lv4</span>
                                 
                             </div>
                             <div class="meta-info border-box">
@@ -241,7 +241,7 @@
 
             <span class="meta-info-item post-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="datetime" data-updated="Thu Jun 13 2024 22:04:12 GMT+0800">2024-06-13 22:04:12</span>
+                <span class="datetime" data-updated="Sun Jun 16 2024 16:12:06 GMT+0800">2024-06-16 16:12:06</span>
             </span>
         
 
@@ -353,7 +353,7 @@
 </ul>
 <p>因此，避免ANR的核心就是主线程中少执行耗时的代码，以及避免CPU使用率太高或者内存占用太高；</p>
 <ul>
-<li>耗时操作在子线程里处理，如使用AsyncTask、线程池、IntentService、RxJava等，不过笔者现在用的较多的是RxJava；</li>
+<li>耗时操作在子线程里处理，如使用AsyncTask、线程池、IntentService、RxJava等；</li>
 <li>在Activity的onCreate()和onResume()等方法少执行耗时的代码。 BroadcastReceiver中onReceive()也同理；</li>
 <li>查看对主线程所需资源持有的锁，将持有锁的时间降到最少，或者评估应用是否需要持有锁。如果需要使用锁来确定何时根据工作线程的处理情况来更新界面，建议使用AsyncTask机制在工作线程和主线程之间进行通信；</li>
 <li>如果程序在后台处理用户输入或者执行耗时操作，建议使用ProgressBar等控件可以让用户感知当前进度；</li>

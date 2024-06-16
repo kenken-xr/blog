@@ -223,7 +223,7 @@
                             <div class="author border-box">
                                 <span class="name">MoMo</span>
                                 
-                                    <span class="author-badge">Lv5</span>
+                                    <span class="author-badge">Lv4</span>
                                 
                             </div>
                             <div class="meta-info border-box">
@@ -241,7 +241,7 @@
 
             <span class="meta-info-item post-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="datetime" data-updated="Thu Jun 13 2024 22:04:12 GMT+0800">2024-06-13 22:04:12</span>
+                <span class="datetime" data-updated="Sun Jun 16 2024 16:41:32 GMT+0800">2024-06-16 16:41:32</span>
             </span>
         
 
@@ -295,49 +295,19 @@
 <li>Fragment的使用方式⭐⭐⭐</li>
 <li>你有遇到过哪些关于Fragment的问题，如何处理的？⭐⭐⭐</li>
 </ol>
-<p>看完以下的解析，一定可以让面试官眼前一亮。</p>
+<p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/20230301/944365-db402563d4da3a2c.png"></p>
 <h1 id="什么是Fragment"><a href="#什么是Fragment" class="headerlink" title="什么是Fragment"></a>什么是Fragment</h1><p>刚开始学习Activity的时候，一个界面就是一个Activity。那么，如果想在一个Activity界面上镶嵌另一个界面如何做呢？Fragment翻译为“片段，破片”，可以理解为“显示在Activity中的Activity”，为解决Android碎片化而生。Fragment可以作为一个Activity界面中<strong>独立的子界面</strong>，拥有自己的生命周期，也可以接受用户的触摸事件。我们可以在一个Activity界面上添加多个Fragment子界面，并且每个Fragment都可以动态的添加、删除、替换，从而使得安卓界面开发具有更强大的灵活性。</p>
-<p>比如微信首页有“微信”、“通讯录”、“发现”、“我”，这4个子界面就是4个Fragment。我们在设计Fragment的时候，需要考虑模块化和可复用化。最后，总结一下使用Fragment的优势：</p>
+<p>比如微信首页有“微信”、“通讯录”、“发现”、“我”，这4个子界面就是4个Fragment。我们在设计Fragment的时候，需要考虑模块化和可复用化。Fragment的优势：</p>
 <ul>
 <li>可以把一个Activity分为多个可复用的组件，使得UI开发更加有灵活性，之前一个Activity如果需要多个布局的话，就需要设置多个布局文件，又麻烦，性能也不高；</li>
 <li>每个Fragment都是独立的个体，可以动态的添加、删除、替换等，同时也可以同一个Fragment供多个Activity使用；</li>
 <li>与Activity切换相比，Fragment属于轻量切换，Fragment的出现，解决了Activity之间切换不流畅的问题；</li>
 <li>与View相比，View也可以实现在一个Activity上部署几个子界面，但View不能通过startActivityForResult()方法（现在建议使用：registerForActivityResult()方法）接收到返回结果，而且View通常更关注视图的实现；</li>
 </ul>
-<h1 id="Fragment的生命周期"><a href="#Fragment的生命周期" class="headerlink" title="Fragment的生命周期"></a>Fragment的生命周期</h1><p>Fragment的生命周期是Fragment面试题里最常问的，就是和Activity生命周期的比较，同时学习Fragment的生命周期最好也是结合Activity的生命周期来学习，因为Fragment是依附于Activity存在的，所以它的生命周期也受到Activity的生命周期影响。</p>
+<h1 id="Fragment的生命周期"><a href="#Fragment的生命周期" class="headerlink" title="Fragment的生命周期"></a>Fragment的生命周期</h1><p>因为Fragment是依附于Activity存在的，所以它的生命周期也受到Activity的生命周期影响。</p>
 <p><img lazyload="" alt="image" data-src="https://uploadfiles.nowcoder.com/images/20231120/545613072_1700451268450/D2B5CA33BD970F64A6301FA75AE2EB22"></p>
-<p>结合我们熟悉的Activity生命周期来学习：</p>
-<ul>
-<li>Activity::onCreate()<ul>
-<li><strong>Fragment::onAttach()</strong></li>
-<li>*Fragment::onCreate()</li>
-<li>*<strong>Fragment::onCreateView()</strong></li>
-<li>*<strong>Fragment::onActivityCreated()</strong></li>
-</ul>
-</li>
-<li>Activity::onStart()<ul>
-<li>*Fragment::onStart()</li>
-</ul>
-</li>
-<li>Activity::onResume()<ul>
-<li>*Fragment::onResume()</li>
-</ul>
-</li>
-<li>Activity::onPause()<ul>
-<li>*Fragment::onPause()</li>
-</ul>
-</li>
-<li>Activity::onStop()<ul>
-<li>*Fragment::onStop()</li>
-</ul>
-</li>
-<li>Activity::onDestroy()<ul>
-<li>*<strong>Fragment::onDestroyView()</strong></li>
-<li>*Fragment::onDestroy()</li>
-<li>*<strong>Fragment::onDetach()</strong></li>
-</ul>
-</li>
-</ul>
+<p><strong>简化版</strong></p>
+<p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/20230301/944365-0f9670e55a52403c.png"></p>
 <p>Activity一般有创建-开始-继续-暂停-停止-销毁共六大阶段，Fragment同样也经历了这六大阶段。从上面可以看到最大的差别在于创建-销毁这两个阶段，多出了以下5个方法(上面加粗的5个方法)：</p>
 <ol>
 <li>onAttach(Activity)：当Fragment与Activity发生关联时调用，即将Fragment绑定到Activity时，并且在这个方法可以通过getArguments()方法获取传入该Fragment的参数；</li>
@@ -351,6 +321,7 @@
 <li>除了onCreateView()，如果重写了其他的方法，则必须调用父类对于该方法的实现；</li>
 <li>Activity每一个生命周期都会引发Fragment调用同样的回调，如Activity收到onStop()后，里面的每个Fragment都会收到onStop()，同理，Fragment的onResume()也是在Activity的onResume()之后调用。但是onAttach()-&gt;onCreate()-&gt;onCreateView()-&gt;onActivityCreated()-&gt;onStart()都是在Activity的onStart()中调用的;</li>
 </ul>
+<p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/20230301/944365-64745b22288f10a4.png"></p>
 <h1 id="Fragment的使用方式"><a href="#Fragment的使用方式" class="headerlink" title="Fragment的使用方式"></a>Fragment的使用方式</h1><p>Fragment的使用方式包括静态使用和动态使用。其中，静态是直接在xml布局文件中声明Fragment，动态则是使用代码来动态实现。</p>
 <h2 id="静态使用"><a href="#静态使用" class="headerlink" title="静态使用"></a>静态使用</h2><p>步骤：</p>
 <ul>
