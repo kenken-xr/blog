@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="MoMo">
+    
+    <title>
+        
+            一些优化 |
+        
+        今天在干嘛
+    </title>
+    
+<link rel="stylesheet" href="/blog/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/blog/images/logoMoon.svg">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/regular.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/brands.min.css">
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"kenken-xr.github.io","root":"/blog/","language":"en","path":"search.json"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#f8a5c2","title":"今天在干嘛","author":"MoMo","avatar":"/images/avatar.jpg","logo":"/images/logoMoon.svg","favicon":"/images/logoMoon.svg"},"menu":{"home":"/","archives":"/archives","tags":"/tags","categories":"/categories","github":"https://github.com/kenken-xr"},"first_screen":{"enable":true,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":true,"links":{"github":"https://github.com/kenken-xr","weixin":"img | /images/wx.png","qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":true,"percent":true,"hide_header":false},"home":{"announcement":null,"category":true,"tag":true,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":true,"reward":{"enable":false,"img_link":null,"text":null},"img_align":"center"},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true,"layout":"left"},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"local_search":{"enable":true,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.36"},"waline":{"server_url":null,"reaction":false,"version":"3.2.1"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":true},"cdn":{"enable":true,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":2023,"word_count":true,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"/blog","source_data":{},"version":"4.1.3"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original post title","author":"Original post author","link":"Original post link"}
+  </script>
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/blog/atom.xml" title="MoMo" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left border-box">
+            
+                <a class="logo-image border-box" href="/blog/">
+                    <img src="/blog/images/logoMoon.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/blog/">
+               今天在干嘛
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/"
+                            >
+                                
+                                HOME
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/archives"
+                            >
+                                
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/tags"
+                            >
+                                
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/categories"
+                            >
+                                
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               target="_blank" rel="noopener" href="https://github.com/kenken-xr"
+                            >
+                                
+                                GITHUB
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/"
+                    >HOME</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/archives"
+                    >ARCHIVES</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/tags"
+                    >TAGS</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/categories"
+                    >CATEGORIES</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       target="_blank" rel="noopener" href="https://github.com/kenken-xr"
+                    >GITHUB</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        一些优化
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/blog/images/avatar.jpg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">MoMo</span>
+                                
+                                    <span class="author-badge">Lv5</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2024-06-17 15:55:42</span>
+            </span>
+
+            <span class="meta-info-item post-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="datetime" data-updated="Mon Jun 17 2024 16:41:46 GMT+0800">2024-06-17 16:41:46</span>
+            </span>
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/blog/categories/%E6%9C%89%E5%9C%A8%E8%AE%A4%E7%9C%9F%E4%B8%8A%E7%8F%AD/">有在认真上班</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/blog/tags/%E4%BC%98%E5%8C%96/">优化</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+            <span class="meta-info-item post-pv">
+                <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    <p>先⽤C++开发了具备QQ IM核⼼功能的跨平台内核层：把IM核⼼业务逻辑（好友、群、频道等消息逻辑、资料与关系链逻辑、图⽚语⾳视频等富媒体收发逻辑、实时⾳视频逻辑等）， QQ通⽤组件（数据库、协议编解码、 ⽹络传输等），以及线程/⽹络/IO等通⽤资源管理模块和操作系统封装部分，<strong>由原来的各平台原⽣语⾔实现，统⼀下沉到C++跨平台层</strong>。  </p>
+<p><strong>对资源做了统⼀管理调配，使⽤合理的线程模型和⽆锁访问</strong>，提升IM核⼼性能：</p>
+<ul>
+<li>线程数量管控： 1个主逻辑线程 + 若⼲业务调度线程（个位数） + 动态线程池（4⾄16个）。</li>
+<li>性能监控能⼒：对线程任务执⾏耗时、对DB任务执⾏耗时、 DB同SQL执⾏次数做数据监控上报。</li>
+<li>屏蔽多线程感知：线程异步调⽤的执⾏结果，会切回到原调⽤者所在线程上执⾏，开发者感知不到多线程的存在，避免性能恶化。</li>
+<li>避免死锁：线程之间避免⽤锁直接访问，提倡采⽤异步的⽅式获取。  </li>
+</ul>
+<h2 id="IM全链路架构重写升级"><a href="#IM全链路架构重写升级" class="headerlink" title="IM全链路架构重写升级"></a>IM全链路架构重写升级</h2><h3 id="存在问题"><a href="#存在问题" class="headerlink" title="存在问题"></a>存在问题</h3><p>IM消息数据源复杂，升级过程的遇到的第⼀个难点就是<strong>数据转换及存量数据迁移</strong>到新版本问题：</p>
+<ul>
+<li>好友消息没有唯⼀标识字段，导⼊和去重影响⼤。</li>
+<li>群消息没有⽀持漫游，消息⽆唯⼀字段。</li>
+<li>各平台消息数据格式不同，复杂度⾼， iOS和Android分别有228种和194种消息类型。</li>
+<li>富媒体（图⽚、视频、语⾳、 ⽂件）资源，存储的⽬ 录结构、命名都不同。</li>
+<li>特殊消息，如结构化消息、 Ark消息、 ⼩灰条消息，需要做转换，完成业务的梳理和下架⼯作。</li>
+<li>有因为各种功能的变迁带来的遗留数据问题，如已经退出或者解散的群和讨论组等。  </li>
+</ul>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>⽤⼤⼩、性能、安全性综合最优⽅案设计跨平台统⼀的全新客户端DB，</p>
+<ul>
+<li>控⼤⼩：好友的uid为字符串，做主key会导致DB过⼤，为每个uid分配⼀个64位的本地index，从1开始。</li>
+<li>提性能：流⽔和消息⼀个事务⼊DB（防丢失），凑够100条(可配置)才提交到搜索表，提交成功后删除流⽔。</li>
+<li>业务完整性： ⽤户搜索时，主动提交⼀次流⽔表的存量消息，防⽌搜索不到。</li>
+<li>搜索性能：采⽤SQLite最新的FTS5搜索引擎，搜索性能⼤幅提升。</li>
+<li>分类查询：做好了各种索引，能快速分类查找（如图⽚/⽂件/表情/链接等）， ⽼QQ基本分类⽆索引。</li>
+<li>安全加密：改造SQLite，全库加密  </li>
+</ul>
+<p>把客户端和后台通信的ID升级成了字符串，不再是4字节的QQ号。不仅在账号安全上更有利，更重要的是为后续我们彻底突破42亿的账号数量限制打下了基础。  </p>
+<ul>
+<li>账号数量存在上限  -&gt; 突破42亿限制</li>
+<li>易被便利存在安全隐患 -&gt; 账号不会被遍历</li>
+<li>回收账号影响用户体验 -&gt; 牵引完成容器化和架构升级</li>
+</ul>
+<h4 id="启动框架的重构，"><a href="#启动框架的重构，" class="headerlink" title="启动框架的重构，"></a><strong>启动框架的重构</strong>，</h4><p>通过对启动项任务的重编排，对启动阶段进⾏中⼼化统⼀管理，在减少初始化的模块数量与函数调⽤量的基础上，按I/O密集、 ⽹络密集、 CPU密集等类型进⾏重新编排，并通过埋点上报、监控拦截、 trace分析，在CI过程中持续进⾏防劣化检测。  </p>
+<ul>
+<li>启动任务与代码耦合严重，牵一发动全身。 -&gt; 简化启动阶段，仅加载最小集。</li>
+<li>无法有效编排管控措施。 -&gt; 统一任务规范，合理编排，灵活配置，减少跳变</li>
+<li>监控与定位效率低。 -&gt; 代码与权限收归，统一监控。</li>
+</ul>
+<h4 id="消息相关核⼼模块的优化"><a href="#消息相关核⼼模块的优化" class="headerlink" title="消息相关核⼼模块的优化"></a><strong>消息相关核⼼模块的优化</strong></h4><p>以聊天窗⼜（AIO）为例，基于全新数据流架构 + 数据预加载 + UI逻辑并⾏化的设计思路，完成单向数据流驱动与异步加载渲染，系统资源全⼒供给AIO消息列表，最终性能指标提升明显， AIO内查看、跳转、滑动消息，顺畅丝滑。核⼼技术优化⽅案：</p>
+<ol>
+<li>采⽤基于单向数据流的MVI（Model-View-Intent）架构，实现业务解耦</li>
+<li>预加载和异步渲染，实现消息⽆缝滑动</li>
+<li>消息加载并⾏化，减少⾸屏和滑动时的加载时间</li>
+<li>消息动态加载、释放，优化内存占⽤</li>
+<li>200+业务组件懒加载，实现数据分层和按需加载</li>
+</ol>
+<p>==MVI==</p>
+<p>它建立在单一的、不可变的状态（State）上，所有的状态变化都是通过一个循环流（Cycle）来管理的。</p>
+<p>Model：代表应用的状态。在MVI中，状态是不可变的，任何状态的变化都会产生一个新的状态对象。<br>View：负责展示状态（Model）并将用户的操作转换为Intent。<br>Intent：不是Android中的Intent，而是用户意图的表示，它告诉应用需要做什么。这些意图会被转换为状态改变。</p>
+<p>MVI架构的核心思想在于，所有的数据流动都应该是单向的和可预测的。</p>
+<p><strong>MVI的优点</strong><br>可预测性：由于状态是不可变的，且所有状态变化都是单向和循环的，这使得系统的行为更加可预测。<br>简化调试：单一的状态和单向数据流让时间旅行调试成为可能，我们可以很容易地追踪状态的变化。<br>易于测试：每个组件都有明确的职责，且状态的不可变性使得编写测试变得更简单。</p>
+<p><strong>MVI的缺点</strong><br>状态管理：在复杂的应用中，管理单一的状态可能会变得困难。<br>样板代码：应用MVI可能需要写更多的样板代码来定义状态、意图等。</p>
+<p><strong>使用场景</strong><br>MVI特别适合于需要强大响应性和状态管理的应用，如实时聊天、表单验证和复杂交互的应用程序</p>
+<p>消息列表单项进⾏了区域划分，所有的节点项都继承于同一个Item，BaseChatItem，并重写⾥⾯areItemsTheSame、areContentsTheSame、 getChangePayload这⼏个接⼝，来<strong>让Diff差分判断的时候确定指定节点数据是否需要进⾏更新以及相应的⼀个更新区域</strong>。 在列表数据发⽣更新的时候，<strong>RecyclerView借助DiffUtil进⾏差量更新操作</strong>，其采⽤<strong>Myer</strong>算法来计算需要增删改的节点和相应节点区域，并将增量数据变化通知给RecyclerView来达到增量更新的⽬的。  </p>
+<p>由于越细粒度的位置划分虽然能更精确的控制处理特定区域的更新，但同时也会带来更⼤规模的类离散问题。所以综合考虑消息列表更新位置和相应的UI控件结构（不同控件可可能对应同⼀个位置区域） ，主要将节点项区域拆分成了如图多个不同的 Part 区域，每个Part 除了提供默认的通⽤项处理操作（⽐如设置默认值，复⽤重置） ，同时提供注⼊逻辑，以⽀持业务根据⾃身需要对对应区域变动进⾏处理。  </p>
+<p>注： ==Myer算法==解决的是最⻓公共⼦序列问题（LCS）的等价问题——最⼩编辑脚本（SES）问题，是时间复杂度为为O(ND)的diff算法，其基于动态规划实现。它<strong>通过将每个字符与其相应的参考字符进⾏⽐较来确定哪些字符需要被插⼊、删除或替换</strong>。该算法⾸先初始化⼀个⼆维数组，该数组包含两个字符串的⻓度以及两个字符串中每个位置的最佳编辑操作。然后，该算法通过⽐较两个字符串的每⼀对字符来更新这个⼆维数组，并确定哪些字符需要被插⼊、删除或替换，最终⽣成⼀系列的编辑操作，通过通过该操作能将第⼀个字符串转为第⼆个字符串。</p>
+<p>就以diff两个字符串为例，其中N为两个字符串⻓度之和， D为两个字符串的差异部分的总⻓度。如示例图，对于序列X=ABCABBA及序列Y=CBABAC得到相应的编辑图，其连通左上到右下顶点的最短路径的解即为该问题的最优解。  </p>
+<p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/20230301/image-20240616194013881.png"></p>
+<figure class="highlight kotlin"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">longestCommonSubsequence</span><span class="params">(text1: <span class="type">String</span>, text2: <span class="type">String</span>)</span></span>: <span class="built_in">Int</span> {</span><br><span class="line">        <span class="keyword">val</span> m = text1.length + <span class="number">1</span></span><br><span class="line">        <span class="keyword">val</span> n = text2.length + <span class="number">1</span></span><br><span class="line">        <span class="keyword">val</span> dp = Array(m) { IntArray(n) }</span><br><span class="line">        dp[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> (i <span class="keyword">in</span> <span class="number">1</span> until m) {</span><br><span class="line">            <span class="keyword">for</span> (j <span class="keyword">in</span> <span class="number">1</span> until n) {</span><br><span class="line">  							<span class="comment">// 如果当前字符相等，这说明多了一个公共字符，那么长度就是前一个最长公共子序列加１；如果不相等，那么长度应该是前面的两个中较大者</span></span><br><span class="line">                <span class="keyword">if</span> (text1[i - <span class="number">1</span>] == text2[j - <span class="number">1</span>]) {</span><br><span class="line">                    dp[i][j] = dp[i - <span class="number">1</span>][j - <span class="number">1</span>] + <span class="number">1</span></span><br><span class="line">                } <span class="keyword">else</span> {</span><br><span class="line">                    dp[i][j] = Math.max(dp[i - <span class="number">1</span>][j], dp[i][j - <span class="number">1</span>])</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> dp[m - <span class="number">1</span>][n - <span class="number">1</span>]</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<p>范围管理：梳理需求、明确人力时间</p>
+<p>明确目标</p>
+<p>分层协作：拆模块</p>
+<p>风险管理：bug看板可视化、自动化推送进展</p>
+<p>上线后持续监测情况即时修复</p>
+<h2 id="UI层面——ListAdapter"><a href="#UI层面——ListAdapter" class="headerlink" title="UI层面——ListAdapter"></a>UI层面——ListAdapter</h2><p>基于跨平台提供的数据， UI层⾯在做数据展示的时候，最好也需要有⼀个全量数据更新的⽅案。于是，直接采⽤<strong>ListAdapter</strong>就成了⼀个⾮常好的选择：</p>
+<ul>
+<li>⾃动计算差异： ListAdapter使⽤ DiffUtil⾃动计算列表数据的差异，并根据这些差异进⾏最⼩化的更新。这可以提⾼列表的性能，特别是当列表数据量⼤的时候。</li>
+<li>简化代码： ListAdapter处理了许多繁琐的更新列表数据的⼯作，如计算差异、调⽤正确的notify⽅法等。简化代码，更加专注在数据处理， ⽽不是在Diff逻辑上。</li>
+<li>提⾼⽤户体验： 提供平滑的动画效果，为后续Item动画的开发提供了巨⼤的便利，当列表数据发⽣变化时， ⽤户可以清楚地看到哪些项被添加、删除或移动。</li>
+<li>线程安全：ubmitList⽅法可以在任何线程上调⽤，它会<strong>⾃动在主线程上处理列表数据的更新</strong>。这可以避免在主线程上进⾏耗时的差异计算，从⽽避免UI卡顿。  </li>
+</ul>
+<p>ListAdapter里面维护着线程池并且还会为我们将视图修改操作移到主线程，这样我们就可以很方便的使用DiffUtil</p>
+<p>实际上,DiffUtil算法还是耗时间的,如果数据更多,估计时间也会随之增多,所以,<strong>官方推荐开启个异步线程来处理计算,之后分发操作再切换UI线程进行数据的更新操作</strong></p>
+<figure class="highlight kotlin"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">RvAdapter</span>() : ListAdapter&lt;Person, RvAdapter.ViewHolder&gt;(diffCallback) {</span><br><span class="line"></span><br><span class="line">    <span class="keyword">companion</span> <span class="keyword">object</span> {</span><br><span class="line">        <span class="keyword">val</span> diffCallback = <span class="keyword">object</span> : DiffUtil.ItemCallback&lt;Person&gt;() {</span><br><span class="line">            <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">areItemsTheSame</span><span class="params">(oldItem: <span class="type">Person</span>, newItem: <span class="type">Person</span>)</span></span>: <span class="built_in">Boolean</span> {</span><br><span class="line">                <span class="keyword">return</span> oldItem.id == newItem.id</span><br><span class="line">            }</span><br><span class="line"></span><br><span class="line">            <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">areContentsTheSame</span><span class="params">(oldItem: <span class="type">Person</span>, newItem: <span class="type">Person</span>)</span></span>: <span class="built_in">Boolean</span> {</span><br><span class="line">                <span class="comment">//如果新数据和旧数据的名称和年龄相同,则视为两个item的内容相同</span></span><br><span class="line">                <span class="keyword">return</span> oldItem.age == newItem.age &amp;&amp; oldItem.name == newItem.name</span><br><span class="line">            }</span><br><span class="line"></span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">ViewHolder</span>(itemView: View) : RecyclerView.ViewHolder(itemView) {</span><br><span class="line">        <span class="keyword">var</span> tvAge: TextView = itemView.findViewById(R.id.tvAge)</span><br><span class="line">        <span class="keyword">var</span> tvName: TextView = itemView.findViewById(R.id.tvUserName)</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onCreateViewHolder</span><span class="params">(parent: <span class="type">ViewGroup</span>, viewType: <span class="type">Int</span>)</span></span>: ViewHolder {</span><br><span class="line">        <span class="keyword">val</span> itemView = View.inflate(parent.context, R.layout.rv_item_person, <span class="literal">null</span>)</span><br><span class="line">        <span class="keyword">return</span> ViewHolder(itemView)</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onBindViewHolder</span><span class="params">(holder: <span class="type">ViewHolder</span>, position: <span class="type">Int</span>)</span></span> {</span><br><span class="line">        <span class="keyword">val</span> item = getItem(position)</span><br><span class="line">        holder.tvName.text = item.name</span><br><span class="line">        holder.tvAge.text = item.age.toString()</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>之后的数据增删改查都需要调用adapter提供的<code>submitList()</code>方法即可</strong></p>
+<figure class="highlight kotlin"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> oldList = adapter.currentList</span><br><span class="line"></span><br><span class="line"><span class="keyword">val</span> newList = oldList.map { it }.toMutableList()</span><br><span class="line">newList.removeAt(<span class="number">10</span>)</span><br><span class="line"><span class="comment">//下标2加个新数据</span></span><br><span class="line">newList.add(<span class="number">2</span>, Person(<span class="number">90</span>, <span class="string">"我的"</span>, <span class="number">72</span>))</span><br><span class="line">adapter.submitList(list)</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><h3 id="首屏优化"><a href="#首屏优化" class="headerlink" title="首屏优化"></a>首屏优化</h3><p>在UI层之前，任意⼀步出现⾼耗时，都有可能会导致⾸次进⼊到⼿Q的时候，看到⼀个空⽩的⻚⾯。因此降低NT、数据处理层这两个环节的耗时就变成了⼗分重要的事情。</p>
+<h4 id="降低NT⾸屏回调的耗时——快照"><a href="#降低NT⾸屏回调的耗时——快照" class="headerlink" title="降低NT⾸屏回调的耗时——快照"></a>降低NT⾸屏回调的耗时——快照</h4><p>要降低NTSDK的耗时是不太可控的， 其主要原因是NTSDK在启动时， NTSDK会加载各个模块的DB，并且在各个模块中进⾏数据处理，这部分的操作都是异步的，并不在主线程，因此⽆法保证在启动过程中，数据处理完成⼀定早于消息列表⾸屏绘制。因此，消息列表快照就成为了⼀个不错的选择：</p>
+<p><strong>可以让上层的⾸屏数据不再依赖于NTSDK初始化以及⾸次抛数据</strong>     </p>
+<ul>
+<li>在NTSDK回调上层数据变化的时候， UI层⾯采⽤⼀定的策略，定时去获取消息列表Top N数据的⼆进制，并且持久化到⽂件中。</li>
+<li>在启动的时候，将快照数据从⽂件中读出，并且解码，作为⾸屏数据进⾏展示。   </li>
+</ul>
+<p>在数据的刷新的时候，触发⼀个任务，对数据进⾏持久化。  </p>
+<h4 id="降低⾸屏数据处理的耗时——⾸屏数据分段处理"><a href="#降低⾸屏数据处理的耗时——⾸屏数据分段处理" class="headerlink" title="降低⾸屏数据处理的耗时——⾸屏数据分段处理"></a>降低⾸屏数据处理的耗时——⾸屏数据分段处理</h4><p>通过快照处理之后，我们发现数据处理耗时也是⼀个瓶颈。设计之初，为了降低在UI线程做的任务，我们将很多事情都移动到了异步线程，提前去获取数据， ⽐如：<br>头像：我们会在数据处理环节中，提前将头像获取⼀次，保证完成⽹络下线、解码。<br>摘要：提前把各种Element进⾏拼接、转换，保证在到了UI线程只需要调⽤setText。<br>昵称以及各种关系链标记：提前把各种关系链铭牌进⾏提醒获取，保证不需要阻塞UI线程进⾏获取。  </p>
+<p>为了提⾼⾸屏数据上屏的效率，我们对⾸屏数据进⾏了裁剪，即：</p>
+<ul>
+<li>⾸屏上屏的时候，仅只⽤Top N数据，第⼀次仅处理少部分的数量，同时部分业务数据不进⾏处理（⽐如各种互动标识、表情Icon） ，保证优先刷新到屏幕中。</li>
+<li>保证第⼆次优先刷新，保证⾸屏的全量数据进⾏刷新，保证数据的完整性。  </li>
+</ul>
+<h4 id="降低数据传递的耗时——Flow改Callback"><a href="#降低数据传递的耗时——Flow改Callback" class="headerlink" title="降低数据传递的耗时——Flow改Callback"></a>降低数据传递的耗时——Flow改Callback</h4><p>⾸次在框架设计上，我们在数据仓库连接VM、 VM连接UI上都采⽤Flow， 原因是Flow有以下的⼀些优势：简化异步编程： Flow是Kotlin中的⼀种处理异步数据流的⽅式，同步的⽅式编写异步代码， ⼤⼤简化了异步编程。</p>
+<p>⽀持协程： Flow是协程友好的，它可以在协程中使⽤，并且⽀持协程的取消和异常处理机制。<br>⽀持操作符： Flow提供了⼀系列的操作符，如map、 filter、 reduce等，可以更⽅便地处理数据流。<br>⽀持主动数据丢弃： ⼀些特定的Flow可以帮我们drop old，减少数据处理的压⼒。</p>
+<p>但是，采⽤Flow也带来了⼀些问题：<br>启动阶段线程负载⾼，协程调度缓慢。<br>协程切换虽然花销少，但是仍然存在协程切换。</p>
+<p><strong>线程切换开销</strong>：<code>Flow</code>操作可能涉及协程的线程切换，这会带来一定的开销。</p>
+<p><strong>背压策略</strong>：<code>Flow</code>的背压策略可能会导致数据处理延迟，尤其是在数据生成速度和消费速度不匹配时。处理数据流中生产者和消费者速率不匹配问题的一种机制。在流处理系统中，生产者是生成数据的源头，消费者是消费数据的终端。如果生产者生成数据的速度超过了消费者处理数据的速度，就会出现数据积压的问题，这时就需要背压策略来控制和协调数据流。</p>
+<p>​    <strong>实时数据处理</strong>：在实时数据处理场景中，比如传感器数据、点击流数据等，使用 <code>buffer</code> 或 <code>conflate</code> 可以有效处理数据流。</p>
+<p>​    <strong>批量数据处理</strong>：在批量数据处理场景中，比如大数据分析，使用 <code>buffer</code> 可以暂存数据，等待批量处理。</p>
+<p>​    <strong>用户界面更新</strong>：在用户界面更新场景中，比如滚动列表更新，使用 <code>conflate</code> 或 <code>latest</code> 可以避免频繁的UI更新，提升性能。</p>
+<figure class="highlight kotlin"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用 buffer 操作符可以为流添加一个缓冲区，当消费者处理不过来时，数据会被暂时存储在缓冲区中。</span></span><br><span class="line">flow {</span><br><span class="line">    repeat(<span class="number">10</span>) {</span><br><span class="line">        emit(it)</span><br><span class="line">        delay(<span class="number">100</span>) <span class="comment">// 模拟生产速度</span></span><br><span class="line">    }</span><br><span class="line">}.buffer(<span class="number">5</span>) <span class="comment">// 设置缓冲区大小</span></span><br><span class="line">.collect {</span><br><span class="line">    delay(<span class="number">200</span>) <span class="comment">// 模拟消费速度</span></span><br><span class="line">    println(it)</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用 conflate 操作符可以合并最新的值，当消费者处理不过来时，会丢弃旧的数据，只保留最新的数据。</span></span><br><span class="line">flow {</span><br><span class="line">    repeat(<span class="number">10</span>) {</span><br><span class="line">        emit(it)</span><br><span class="line">        delay(<span class="number">100</span>) <span class="comment">// 模拟生产速度</span></span><br><span class="line">    }</span><br><span class="line">}.conflate()</span><br><span class="line">.collect {</span><br><span class="line">    delay(<span class="number">200</span>) <span class="comment">// 模拟消费速度</span></span><br><span class="line">    println(it)</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用 drop 操作符可以在缓冲区满时丢弃新产生的数据，避免缓冲区过载。</span></span><br><span class="line">flow {</span><br><span class="line">    repeat(<span class="number">10</span>) {</span><br><span class="line">        emit(it)</span><br><span class="line">        delay(<span class="number">100</span>) <span class="comment">// 模拟生产速度</span></span><br><span class="line">    }</span><br><span class="line">}.buffer(<span class="number">5</span>).drop(<span class="number">5</span>) <span class="comment">// 缓冲区满时丢弃新数据</span></span><br><span class="line">.collect {</span><br><span class="line">    delay(<span class="number">200</span>) <span class="comment">// 模拟消费速度</span></span><br><span class="line">    println(it)</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用 latest 操作符可以只保留最新的数据，丢弃未处理的旧数据。</span></span><br><span class="line">flow {</span><br><span class="line">    repeat(<span class="number">10</span>) {</span><br><span class="line">        emit(it)</span><br><span class="line">        delay(<span class="number">100</span>) <span class="comment">// 模拟生产速度</span></span><br><span class="line">    }</span><br><span class="line">}.buffer(<span class="number">5</span>).collectLatest {</span><br><span class="line">    delay(<span class="number">200</span>) <span class="comment">// 模拟消费速度</span></span><br><span class="line">    println(it)</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>调度器问题</strong>：使用不适当的调度器也可能导致延迟。例如，在主线程上执行耗时操作会阻塞 UI 更新，导致延迟。</p>
+<p><strong>冷启动延迟</strong>：<code>Flow</code>是冷流，在订阅时才开始执行。第一次订阅可能会有一些初始化开销，导致延迟。</p>
+<p><strong>硬件和系统资源</strong>：设备的硬件性能、系统资源利用率等也会影响执行效率。</p>
+<p>我们在测试过程中，发现在同⼀个线程下，采⽤Flow传递数据，仍然会有偶现的150ms-200ms的延迟（启动阶段） 。最终，我们将数据仓库连接VM部分切换成了Callback。  </p>
+<h3 id="滑动优化"><a href="#滑动优化" class="headerlink" title="滑动优化"></a>滑动优化</h3><h4 id="降低UI线程耗时——UI预创建"><a href="#降低UI线程耗时——UI预创建" class="headerlink" title="降低UI线程耗时——UI预创建"></a>降低UI线程耗时——UI预创建</h4><p>在滑动的过程中，有相当⼀部分卡顿是发⽣在了⾸次滑动的时候，其主要原因是在⾸次滑动的时候，有⼀定概率会触发绑定新的ViewHolder， ⽽RecyclerView中没有缓存，因此需要触发⼀次CreateViewHolder。 ⽽LayoutInflate的过程中是相对⽐较重的，耗时不稳定。 ⽽⼀旦出现⾼耗时， 给⽤户的体验就是滑动过程中出现了掉帧。</p>
+<ul>
+<li>将Item的UI从Xml转换为Code：即采⽤代码编写UI，减少触发LayoutInflate的耗时。</li>
+<li>启动⼀个异步线程，在⾸屏UI绘制完成之后，对部分可以服⽤的UI进⾏预创建，保证在滑动的时候，即使触发了CreateViewHolder，也可以以⼀个⽐较低的耗时，返回⼀个Item ViewHolder。 </li>
+</ul>
+<h4 id="⽆锁化更新"><a href="#⽆锁化更新" class="headerlink" title="⽆锁化更新"></a>⽆锁化更新</h4><p>上层消息处理为了⽀持异步化处理，同时保证结果的顺序性，采⽤了系统提供的HandlerThread +Handler 的⽅式。 HandlerThread 保证异步顺序的原理是实际是通过 MessageQueue 来实现的，其是Android 框架层⾥⾯的⼀个核⼼类，主要基于双向链表实现队列式的消息处理。  </p>
+<h4 id="阻塞式并发处理"><a href="#阻塞式并发处理" class="headerlink" title="阻塞式并发处理"></a>阻塞式并发处理</h4><p>数据处理这⾥，基于上屏速度的考虑，对于列表数据项的处理采⽤当前线程+异步多线程来提⾼加速效率（实测数据多的情况下， ⾮⾸次能提⾼约30%） 。这⾥有⼀个问题，这⼀块需要保证顺序，那么如何对异步线程进⾏阻塞管控？对⽐信号量、读写锁的⽅式，这⾥考虑主要是对于线程数和消息处理项数的处理，通过利⽤<strong>CountDownLatch + AtomaticInteger</strong> 结合使⽤，即保证异步并发处理，同时在任务处理完继续顺序执⾏接下来的逻辑。  </p>
+<h3 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h3><h4 id="代码及静态资源"><a href="#代码及静态资源" class="headerlink" title="代码及静态资源"></a><strong>代码及静态资源</strong></h4><p>加载如此庞大的代码会占用大量内存。因此，仍然需要进行代码瘦身、静态资源优化、分包和按需加载等优化措施。</p>
+<ul>
+<li>代码瘦身。对于第三方包或 SDK，它们往往包含了完备的 Web 兼容性及能力，而有些并不是必需的。进行定制裁剪或独立实现，以减少代码的加载。</li>
+<li>不完全按照每个页面（窗口）以及模块复用次数来进行制订，按照场景模块来进行细粒度的定制。<ul>
+<li>以打开一个窗口到进入使用场景为例：</li>
+<li>1）窗口池中预启动的窗口页面只加载必须执行的基础代码；</li>
+<li>2）当打开具体窗口时加载对应的路由后页面入口代码；</li>
+<li>3）当具体使用不同功能时动态加载，如点击搜索、打开表情面板、转发消息激活好友选择器的时候才会分别加载对应功能模块代码。</li>
+</ul>
+</li>
+<li>静态资源（如 SVG、base64 图像）在加载时也会占用不少内存，按需加载的策略：只在可见时加载，不可见时主动销毁和回收。</li>
+<li>提升执行效率和代码保护的，将 JS 代码转成了字节码。跳过了源码编译，直接将字节码交给 V8 执行，但在程序报错还原堆栈等运行时步骤中，V8 仍然会引用源码字符串。为了去掉这份源码，我们使用和源码等长的空格来占位，但通过 devtool 检查发现这些空格字符串仍会占用不少内存空间。最终，我们采取修改和移除 V8 对源码字符串引用的方式，彻底解决了源码字符串的内存占用问题。</li>
+</ul>
+<h4 id="图片资源"><a href="#图片资源" class="headerlink" title="图片资源"></a><strong>图片资源</strong></h4><ul>
+<li>一张分辨率为 4000 x 2750 的图片，结合设备屏幕像素和聊天区设计尺寸，只需渲染宽度为 567 像素的分辨率图像即可清晰展示。如果以宽度为 4000 像素的分辨率渲染，理论上两者位图所占用的内存大小差距可达 50 倍，并且还会因为渲染带来性能损失。在聊天消息列表中的大部分图片仅仅起到预览作用，缩略图渲染就满足了需要。而仅仅在用户真正打开图片查看器放大查看时，才会需要用原图渲染。</li>
+</ul>
+<p>根据屏幕设备信息和计算展示区域所需实际渲染分辨率，当原图分辨率超出计算所需值，则先调用压缩服务进行图片压缩，生成渲染所需分辨率的缩略图，并在聊天区域进行渲染上屏。在这个策略的优化下，一般聊天图片场景测试下来，使用缩略图比原图约有 30M ~ 50M 的内存优化。</p>
+<h4 id="DOM-元素数量"><a href="#DOM-元素数量" class="headerlink" title="DOM 元素数量"></a><strong>DOM 元素数量</strong></h4><p>严格的控制DOM 元素使用数量，采用”所见即占用“的 渲染策略。只有视口所见的内容才会渲染对应 DOM 元素。其他所有组件在不渲染展示时，均会移除组件及其 DOM 元素来避免其内存开销。</p>
+<p>我们<strong>将普通分页列表替换为虚拟滚动列表</strong>，并且对列表滚动 buffer 进行极限压缩甚至是 0 buffer 。由于不再一味采取空间换时间，没有 buffer 的情况下必然面对列表滑动性能挑战，因此也需不断优化各类 item 组件渲染性能。</p>
+<p>精简组件 DOM 层级，移除非核心组件 keep-alive (重新优化渲染性能) 等方式，大账号使用下整体的 DOM 数量从 13000 减少到控制在平均 4000 以内，这部分优化减少约 20M 内存。</p>
+<h4 id="渲染图层"><a href="#渲染图层" class="headerlink" title="渲染图层"></a><strong>渲染图层</strong></h4><p>渲染图层方面，在渲染时满足某些特殊条件的渲染层，会被浏览器自动提升为合成层，达到提升渲染性能的目的。但是每个合成层都占用额外的内存，应当去掉过量且不必要的合成层来控制图层带来的内存占用。当然结合渲染性能考量，对于高频且列表等核心模块，是可以单独提升合成层。</p>
+<p>在桌面端 QQ 中通过超级调色盘可以为进行色彩换肤，在这个场景中全局各模块有不少单独提升的合成层来实现毛玻璃、渐变和纹理效果。另外还有许多不经意间被提升的隐式合成层。通过对不必要的合成层进行移除与合并，整体也优化了约 9.3M 内存。</p>
+<h4 id="结构化消息"><a href="#结构化消息" class="headerlink" title="结构化消息"></a><strong>结构化消息</strong></h4><p>QQ 支持丰富的消息类型，从简单的文本、图文消息，到复杂的 lottie 表情、下图所示的业务可定制的结构化消息等。我们知道 JavaScript 是单线程的，这些消息同时上屏的时候可能会出现过长的上屏任务而导致 UI 卡顿，给到用户的感受就是切换消息列表卡顿，消息上屏慢等糟糕的体验。</p>
+<p>使用了 JavaScript 事件机制结合 WebWorker 来实现消息异步上屏，并使用 OffscreenCanvas +  Worker 池绘制来提升渲染性能。</p>
+<p>为了在 Canvas 中实现 CSS 的 Flex 布局效果，我们采用了跨平台的布局解决方案，将 Yoga 编译成 WebAssembly 运行在 WebWorker 中。Yoga 官方编译采用的是 asm.js 的方案， 这种方案不支持动态分配内存，可以看到它默认分配了一个较高的内存，达到了 128M。</p>
+<p>为了优化 WebAssembly 的内存占用，我们调整了编译方式，将 Yoga 编译成独立的 wasm 文件，这种方式相比 asm.js 支持动态内存分配。同时结合聊天窗口的消息卸载策略，经过不断的测试调优，在既要保证初始内存较少又要尽可能避免内存爆发式增长带来的性能损耗的前提下，我们把 WebAssembly 的初始内存分配优化到 2M，再加上对象共享、享元模式等策略，WebWorker 的内存占用有了非常可观的优化。</p>
+<p>复杂的聊天消息虽然是必不可少的功能，但是实际的消息量还是远少于普通的图文消息，因此在保证用户体验的前提下，在合适的条件下适时销毁 WebWorker 是一个合理的策略，而随着 WebWorker 被销毁这个线程所占用的内存也能被完全释放。</p>
+<h4 id="Lottie-及动画方案选型"><a href="#Lottie-及动画方案选型" class="headerlink" title="Lottie 及动画方案选型"></a><strong>Lottie 及动画方案选型</strong></h4><p>超级表情采用 Lottie 动画技术方案，有高清高帧率高质量特点，但同时也为我们带来了渲染的高成本。为了保证 Lottie 的高帧率和减少 CPU 占用，我们缓存了 Lottie 渲染器生成的动画帧，内存消耗成为了首要问题。</p>
+<p>对其进行定量分析，超级表情 Lottie 资源继承自手机 QQ，尺寸是 512 × 512，动画帧以 int8 数组存储，所以一帧动画为 512 × 512 × 4 / 1024 bit= 1024 Kb = 1Mb，一个普通大小的超级表情，例如庆祝表情，有 160 帧动画，依据缓存 9/10 帧动画的策略，庆祝表情会占用 144Mb 内存，虽然是可回收的，但也无疑是巨大的内存消耗。关注到 Lottie 渲染的内存消耗后，我们主要从以下 2 步入手：</p>
+<ul>
+<li>缓存的动画帧尺寸：桌面端 lottie 渲染大小为 120 × 120，考虑到需要保持 Lottie 动画的高质量，缓存的动画帧尺寸调整为实际尺寸大小的两倍，即 240 × 240，降低内存消耗 72%。经设计确认，清淅度上也没有明显的差异；</li>
+<li>缓存策略：缓存 9/10 的动画帧减少到缓存 3/4，降低内存消耗 35%，而且调整之后帧率还能得到保障；</li>
+</ul>
+<p>旧策略对于渲染过且暂时不用的 Lottie 表情，会 buffer 它的第一帧，总共 31 个 Lottie 表情：2.3k * 31 = 7M（最多），经评估之后，我们暂时也拿掉了该策略。</p>
+<h4 id="聊天列表与消息"><a href="#聊天列表与消息" class="headerlink" title="聊天列表与消息"></a><strong>聊天列表与消息</strong></h4><p>列表在静态与滚动过程中，维持消息组件的数量多少决很大程度决定整个app内存占用。消息数据从服务端拉取后会存储在本地 DB，根据策略会将当前会话的消息数据缓存在内存中。</p>
+<p>随着滚动加载，消息缓存占用的内存也越多，所以也有一定动态阈值的策略，丢弃滚动方向相反的旧消息，从而将内存控制在可接受范围。如果用户重新操作又需要加载时，这请求底层向本地磁盘 DB 重新拉取。</p>
+<p>最早版本中对消息上屏没有丢弃策略，内存增量没有很好控制。于是采用分页列表，屏内保持固定几页消息（约 30 ~ 50 条消息，视屏幕尺寸决定），超过范围的消息进行丢弃，列表高度由屏内消息直接撑起，用户通过触顶或触底进行上下一页消息的加载。</p>
+<p>但这带来些点问题：一方面随着触顶触底，滚动条频繁跳动的体验并不好；另一方面列表高度由不定高的组件渲染消息来维持，不得不始终保留 30 ~ 50 条消息以撑起滚动高度，不可见消息的那部分便造成内存的浪费。</p>
+<ul>
+<li>使用<strong>虚拟列表</strong>维持计算高度后，列表不再依赖保持真实消息内容的渲染，理论上我们可以将可视区域以外的消息实例全部销毁，仅保留用户可见的消息，最大程度地压缩消息实例数量，指保留很少的 buffer 消息实例。在实际滚动中由于消息实例在滚动过程被不断创建和销毁，占用主线程，影响 UI 绘制和用户输入。因此我们还做了：<ul>
+<li>1.对创建销毁做一定聚合，批量处理消息上屏。</li>
+<li>精简优化单条组件的渲染性能。</li>
+<li>不同滚动方向调整上下不同 buffer 大小 等等措施。</li>
+<li>会话切换和窗口聚失焦最小化等操作时对不再使用的消息资源内存进行主动回收。</li>
+</ul>
+</li>
+</ul>
+<h4 id="消灭内存泄漏"><a href="#消灭内存泄漏" class="headerlink" title="消灭内存泄漏"></a>消灭内存泄漏</h4><p>我们知道 V8 有自己的垃圾回收机制，虽然它在 GC（垃圾回收）方面有着其各种策略，并做了各种优化从而尽可能的确保垃圾得以回收，但我们仍应当避免任何可能导致无法回收的代码操作。常见的例子包括：</p>
+<ul>
+<li>未移除的监听器和定时器：在监听事件处理函数其中引用的不被释放导致的泄漏。</li>
+<li>游离 DOM 未释放：移出 document 后游离 DOM 仍存在引用导致无法释放。较多发生于框架的组件销毁时，相关监听未取消导致组件没有释放的情况。</li>
+<li>监控 / 打点导致的泄漏：在使用 Performance.mark 打点监控时，产生 PerformanceMark 对象，在用完之后没有手动清除，也会导致内存泄漏。</li>
+<li>console.error 导致的泄漏：控制台持有被打印对象始终不释放，导致应用的泄漏。</li>
+<li>其他不当的闭包及隐式的全局变量。</li>
+</ul>
+<p>以上是桌面 QQ 在早期遇到的常见问题</p>
+<p>为了避免频繁采集上报内存指标所带来的的性能消耗，设定了一定时间的采集间隔，同时针对使用场景的采集做了抽样。并将渲染进程 pid 映射寻找窗口名，只在若干次采集后再做聚合计算，通过 SDK 上报到 prometheus + grafana 的指标观测平台。</p>
+<h4 id="防劣化与自动化测试"><a href="#防劣化与自动化测试" class="headerlink" title="防劣化与自动化测试"></a>防劣化与自动化测试</h4><p>建设一个防劣化平台，主要通过自动化的端对端 (e2e) 测试来持续监控项目集成后的性能变化。</p>
+<ul>
+<li>定时对主干上集成构建的程序进自动化 e2e 测试；</li>
+<li>除了对功能的冒烟测试外，针对重点关注的性能指标，构造了对应的帐号和环境，编辑特定的用例，用于采集性能指标；</li>
+<li>通过将采集和采样的指标上报到防劣化的监控平台，来监控项目集成后的性能变化，如会话切换响应时间、内存占用、CPU 使用率等；</li>
+<li>监控平台提供按版本和时间的指标曲线、对比，方便查看和分析性能变化情况。同时打通企业微信机器人，对性能指标情况进行实时推送告警；</li>
+<li>根据告警信息对应的版本信息和代码记录，排查情况，闭环问题。</li>
+</ul>
+<h2 id="⽆限列表"><a href="#⽆限列表" class="headerlink" title="⽆限列表"></a>⽆限列表</h2><h4 id="滑动区域判断更新"><a href="#滑动区域判断更新" class="headerlink" title="滑动区域判断更新"></a>滑动区域判断更新</h4><p>⽆限列表在整个列表中的数据区域类似⼀个滑动窗⼝，窗⼝区域有⼀定⼤⼩变动限制， ⽽可视区域则是尽可能保持在滑动窗⼝中间，这样能保持⽤户在进⾏上下滑的时候，在各处基本都能保证顺畅滑动。<br>当前消息列表界⾯的列表使⽤的Android的系统控件RecyclerView，通过监听RecyclerView.OnScrollListener，并根据列表位移值进⾏滚动⽅向判定，以及借助LinearLayoutManager.findFirstVisibleItemPosition()和LinearLayoutManager.findLastVisibleItemPosition() 判断当前滚动的位置，当触及触发位置时，则进⾏对应⽅向数据的加载  </p>
+<p>上划dy &gt; 0  ：加载底部数据</p>
+<p>下滑dy &lt; 0  ：加载顶部数据</p>
+<h4 id="翻⻚过程UI的动态更新"><a href="#翻⻚过程UI的动态更新" class="headerlink" title="翻⻚过程UI的动态更新"></a>翻⻚过程UI的动态更新</h4><p>数据刷新主要有两点：</p>
+<ol>
+<li>上层数据层维护⼀份基本数据，当NTSDK通知数据更新时，对新增变更数据进⾏增量数据处理，同时与原数据进⾏合并形成新的数据集合，这时获取到UI需要更新的数据集合。</li>
+<li>列表使⽤数据层处理之后的数据集合进⾏UI更新， UI更新借助 Android 系统提供的⼯具DiffUtil进⾏列表的增量Diff，然后对列表执⾏notifyItemInserted、 notifyItemChanged、 notifyItemRemoved等操作，配合处理元素上的Payload，从⽽实现增量的对特定节点项或者特定项的某些区域进⾏更新。  </li>
+</ol>
+<h4 id="跳转特定项-未读项处理"><a href="#跳转特定项-未读项处理" class="headerlink" title="跳转特定项 | 未读项处理"></a>跳转特定项 | 未读项处理</h4><p>由于⽆限列表分⻚的数据不可能是全量的， ⽆法直接在缓存查找之后进⾏跳转，所以结构设计的考虑点如何处理可能异步数据刷新带来的定位问题结合性能和容错的问题，主要将结构分成上下两块：</p>
+<p>上⾯⼀部分先⾛当前缓存⻚⾯的查找，如果找不到，则不需要通过NT再去查找。</p>
+<p>下⾯⼀块是在查找不到的情况，通过NT查找，并处理查找数据定位情况， 重点在于数据状态缓存，然后在发⽣数据刷新的时候根据该缓存状态再去跳转  </p>
+<img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/20230301/image-20240616194825764.png" width="50%">
+
+<h4 id="无限列表功能的设计与"><a href="#无限列表功能的设计与" class="headerlink" title="无限列表功能的设计与"></a>无限列表功能的设计与</h4><h5 id="优化为仅缓存可视区部分的会话详细信息，以及影响列表排序的关键字段"><a href="#优化为仅缓存可视区部分的会话详细信息，以及影响列表排序的关键字段" class="headerlink" title="优化为仅缓存可视区部分的会话详细信息，以及影响列表排序的关键字段"></a>优化为仅缓存可视区部分的会话详细信息，以及影响列表排序的关键字段</h5><p>列表中的会话是在不停变动的。为保证吞吐以及灵活性，SDK 提供的多为异步接口。基于上述原因，在发生临界会话跳变或删除时，就变得难以处理：从会话 z 处触发向后拉取（拉取更旧的会话）；由于是异步接口，在执行拉取动作前，会话 z 收到了一条新的消息，新位置位于会话 a 前；此时，底层执行拉取动作，返回给上层的列表并不符合预期。  </p>
+<p>随着会话增多，内存占用仍会增加  </p>
+<h5 id="按-UI-绝对位置进行拉取"><a href="#按-UI-绝对位置进行拉取" class="headerlink" title="按 UI 绝对位置进行拉取"></a>按 UI 绝对位置进行拉取</h5><p>用户从列表绝对位置为 200 处向后拉取； 绝对位置 200 处所在的会话收到新消息，位置发生变动，此时有新的会话占据了列表 200 的位置；底层执行拉取动作，返回给上层是更新后的 201-400 处的会话。相较于方案一，该方案不需要关心处在拉取位置处的具体会话，反而是直接返回拉取位置处新的会话即可。<br>缺点：随着会话的增多，额外的内存占用仍会参加</p>
+<h5 id="使用-DB-排序取代内存排序，"><a href="#使用-DB-排序取代内存排序，" class="headerlink" title="使用 DB 排序取代内存排序，"></a>使用 DB 排序取代内存排序，</h5><p>用户从缓存中的第 200 个会话来时拉取；底层缓存中的列表发生变化；底层执行拉取动作，从当前缓存的第 200 个会话开始拉取，<br>我们认为结果是符合预期的。<br>缺点：依赖 DB 排序，需要新增并维护排序字段，方案相对复杂，且相比于内存排序，耗时较长。  </p>
+
+                </div>
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/blog/tags/%E4%BC%98%E5%8C%96/">优化</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                            <div class="post-share-container border-box">
+    <ul class="share-list-wrap border-box">
+        <li class="qq share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to QQ"
+        >
+            <i class="fa-brands fa-qq"></i>
+        </li>
+        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
+            data-tooltip-content="Share to WeChat"
+            data-tooltip-img-tip="Scan by WeChat"
+            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
+        >
+            <i class="fa-brands fa-weixin"></i>
+        </li>
+        <li class="weibo share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to WeiBo"
+        >
+            <i class="fa-brands fa-weibo"></i>
+        </li>
+    </ul>
+</div>
+
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/blog/2024/06/17/Android-32-volatile/"
+                                   title="volatile"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">volatile</span>
+                                        <span class="post-nav-item">Prev posts</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/blog/2024/06/16/Android-31-Synchronized/"
+                                   title="Synchronized"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Synchronized</span>
+                                        <span class="post-nav-item">Next posts</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc left-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <!-- use hexo-blog-encrypt -->
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#IM%E5%85%A8%E9%93%BE%E8%B7%AF%E6%9E%B6%E6%9E%84%E9%87%8D%E5%86%99%E5%8D%87%E7%BA%A7"><span class="nav-number">1.</span> <span class="nav-text">IM全链路架构重写升级</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%98%E5%9C%A8%E9%97%AE%E9%A2%98"><span class="nav-number">1.1.</span> <span class="nav-text">存在问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="nav-number">1.2.</span> <span class="nav-text">解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8%E6%A1%86%E6%9E%B6%E7%9A%84%E9%87%8D%E6%9E%84%EF%BC%8C"><span class="nav-number">1.2.1.</span> <span class="nav-text">启动框架的重构，</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B6%88%E6%81%AF%E7%9B%B8%E5%85%B3%E6%A0%B8%E2%BC%BC%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BC%98%E5%8C%96"><span class="nav-number">1.2.2.</span> <span class="nav-text">消息相关核⼼模块的优化</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UI%E5%B1%82%E9%9D%A2%E2%80%94%E2%80%94ListAdapter"><span class="nav-number">2.</span> <span class="nav-text">UI层面——ListAdapter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E5%8C%96"><span class="nav-number">3.</span> <span class="nav-text">优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A6%96%E5%B1%8F%E4%BC%98%E5%8C%96"><span class="nav-number">3.1.</span> <span class="nav-text">首屏优化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%99%8D%E4%BD%8ENT%E2%BE%B8%E5%B1%8F%E5%9B%9E%E8%B0%83%E7%9A%84%E8%80%97%E6%97%B6%E2%80%94%E2%80%94%E5%BF%AB%E7%85%A7"><span class="nav-number">3.1.1.</span> <span class="nav-text">降低NT⾸屏回调的耗时——快照</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%99%8D%E4%BD%8E%E2%BE%B8%E5%B1%8F%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E7%9A%84%E8%80%97%E6%97%B6%E2%80%94%E2%80%94%E2%BE%B8%E5%B1%8F%E6%95%B0%E6%8D%AE%E5%88%86%E6%AE%B5%E5%A4%84%E7%90%86"><span class="nav-number">3.1.2.</span> <span class="nav-text">降低⾸屏数据处理的耗时——⾸屏数据分段处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%99%8D%E4%BD%8E%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%92%E7%9A%84%E8%80%97%E6%97%B6%E2%80%94%E2%80%94Flow%E6%94%B9Callback"><span class="nav-number">3.1.3.</span> <span class="nav-text">降低数据传递的耗时——Flow改Callback</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%BB%91%E5%8A%A8%E4%BC%98%E5%8C%96"><span class="nav-number">3.2.</span> <span class="nav-text">滑动优化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%99%8D%E4%BD%8EUI%E7%BA%BF%E7%A8%8B%E8%80%97%E6%97%B6%E2%80%94%E2%80%94UI%E9%A2%84%E5%88%9B%E5%BB%BA"><span class="nav-number">3.2.1.</span> <span class="nav-text">降低UI线程耗时——UI预创建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%BD%86%E9%94%81%E5%8C%96%E6%9B%B4%E6%96%B0"><span class="nav-number">3.2.2.</span> <span class="nav-text">⽆锁化更新</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%98%BB%E5%A1%9E%E5%BC%8F%E5%B9%B6%E5%8F%91%E5%A4%84%E7%90%86"><span class="nav-number">3.2.3.</span> <span class="nav-text">阻塞式并发处理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="nav-number">3.3.</span> <span class="nav-text">性能优化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%8F%8A%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90"><span class="nav-number">3.3.1.</span> <span class="nav-text">代码及静态资源</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90"><span class="nav-number">3.3.2.</span> <span class="nav-text">图片资源</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DOM-%E5%85%83%E7%B4%A0%E6%95%B0%E9%87%8F"><span class="nav-number">3.3.3.</span> <span class="nav-text">DOM 元素数量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B8%B2%E6%9F%93%E5%9B%BE%E5%B1%82"><span class="nav-number">3.3.4.</span> <span class="nav-text">渲染图层</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E5%8C%96%E6%B6%88%E6%81%AF"><span class="nav-number">3.3.5.</span> <span class="nav-text">结构化消息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Lottie-%E5%8F%8A%E5%8A%A8%E7%94%BB%E6%96%B9%E6%A1%88%E9%80%89%E5%9E%8B"><span class="nav-number">3.3.6.</span> <span class="nav-text">Lottie 及动画方案选型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%81%8A%E5%A4%A9%E5%88%97%E8%A1%A8%E4%B8%8E%E6%B6%88%E6%81%AF"><span class="nav-number">3.3.7.</span> <span class="nav-text">聊天列表与消息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B6%88%E7%81%AD%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F"><span class="nav-number">3.3.8.</span> <span class="nav-text">消灭内存泄漏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%98%B2%E5%8A%A3%E5%8C%96%E4%B8%8E%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95"><span class="nav-number">3.3.9.</span> <span class="nav-text">防劣化与自动化测试</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%BD%86%E9%99%90%E5%88%97%E8%A1%A8"><span class="nav-number">4.</span> <span class="nav-text">⽆限列表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%BB%91%E5%8A%A8%E5%8C%BA%E5%9F%9F%E5%88%A4%E6%96%AD%E6%9B%B4%E6%96%B0"><span class="nav-number">4.0.1.</span> <span class="nav-text">滑动区域判断更新</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BF%BB%E2%BB%9A%E8%BF%87%E7%A8%8BUI%E7%9A%84%E5%8A%A8%E6%80%81%E6%9B%B4%E6%96%B0"><span class="nav-number">4.0.2.</span> <span class="nav-text">翻⻚过程UI的动态更新</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B7%B3%E8%BD%AC%E7%89%B9%E5%AE%9A%E9%A1%B9-%E6%9C%AA%E8%AF%BB%E9%A1%B9%E5%A4%84%E7%90%86"><span class="nav-number">4.0.3.</span> <span class="nav-text">跳转特定项 | 未读项处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%97%A0%E9%99%90%E5%88%97%E8%A1%A8%E5%8A%9F%E8%83%BD%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E"><span class="nav-number">4.0.4.</span> <span class="nav-text">无限列表功能的设计与</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BC%98%E5%8C%96%E4%B8%BA%E4%BB%85%E7%BC%93%E5%AD%98%E5%8F%AF%E8%A7%86%E5%8C%BA%E9%83%A8%E5%88%86%E7%9A%84%E4%BC%9A%E8%AF%9D%E8%AF%A6%E7%BB%86%E4%BF%A1%E6%81%AF%EF%BC%8C%E4%BB%A5%E5%8F%8A%E5%BD%B1%E5%93%8D%E5%88%97%E8%A1%A8%E6%8E%92%E5%BA%8F%E7%9A%84%E5%85%B3%E9%94%AE%E5%AD%97%E6%AE%B5"><span class="nav-number">4.0.4.1.</span> <span class="nav-text">优化为仅缓存可视区部分的会话详细信息，以及影响列表排序的关键字段</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%8C%89-UI-%E7%BB%9D%E5%AF%B9%E4%BD%8D%E7%BD%AE%E8%BF%9B%E8%A1%8C%E6%8B%89%E5%8F%96"><span class="nav-number">4.0.4.2.</span> <span class="nav-text">按 UI 绝对位置进行拉取</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-DB-%E6%8E%92%E5%BA%8F%E5%8F%96%E4%BB%A3%E5%86%85%E5%AD%98%E6%8E%92%E5%BA%8F%EF%BC%8C"><span class="nav-number">4.0.4.3.</span> <span class="nav-text">使用 DB 排序取代内存排序，</span></a></li></ol></li></ol></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+        &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2024
+        
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/blog/">MoMo</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+        <div class="count-info info-item">
+            
+
+            
+                <span class="count-item border-box uv">
+                    <span class="item-type border-box">Unique Visitor</span>
+                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
+                </span>
+            
+
+            
+                <span class="count-item border-box pv">
+                    <span class="item-type border-box">Page View</span>
+                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
+                </span>
+            
+        </div>
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools left-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-toggle-theme-mode flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <!-- use hexo-blog-encrypt -->
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#IM%E5%85%A8%E9%93%BE%E8%B7%AF%E6%9E%B6%E6%9E%84%E9%87%8D%E5%86%99%E5%8D%87%E7%BA%A7"><span class="nav-number">1.</span> <span class="nav-text">IM全链路架构重写升级</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%98%E5%9C%A8%E9%97%AE%E9%A2%98"><span class="nav-number">1.1.</span> <span class="nav-text">存在问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="nav-number">1.2.</span> <span class="nav-text">解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8%E6%A1%86%E6%9E%B6%E7%9A%84%E9%87%8D%E6%9E%84%EF%BC%8C"><span class="nav-number">1.2.1.</span> <span class="nav-text">启动框架的重构，</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B6%88%E6%81%AF%E7%9B%B8%E5%85%B3%E6%A0%B8%E2%BC%BC%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BC%98%E5%8C%96"><span class="nav-number">1.2.2.</span> <span class="nav-text">消息相关核⼼模块的优化</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UI%E5%B1%82%E9%9D%A2%E2%80%94%E2%80%94ListAdapter"><span class="nav-number">2.</span> <span class="nav-text">UI层面——ListAdapter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E5%8C%96"><span class="nav-number">3.</span> <span class="nav-text">优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A6%96%E5%B1%8F%E4%BC%98%E5%8C%96"><span class="nav-number">3.1.</span> <span class="nav-text">首屏优化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%99%8D%E4%BD%8ENT%E2%BE%B8%E5%B1%8F%E5%9B%9E%E8%B0%83%E7%9A%84%E8%80%97%E6%97%B6%E2%80%94%E2%80%94%E5%BF%AB%E7%85%A7"><span class="nav-number">3.1.1.</span> <span class="nav-text">降低NT⾸屏回调的耗时——快照</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%99%8D%E4%BD%8E%E2%BE%B8%E5%B1%8F%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E7%9A%84%E8%80%97%E6%97%B6%E2%80%94%E2%80%94%E2%BE%B8%E5%B1%8F%E6%95%B0%E6%8D%AE%E5%88%86%E6%AE%B5%E5%A4%84%E7%90%86"><span class="nav-number">3.1.2.</span> <span class="nav-text">降低⾸屏数据处理的耗时——⾸屏数据分段处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%99%8D%E4%BD%8E%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%92%E7%9A%84%E8%80%97%E6%97%B6%E2%80%94%E2%80%94Flow%E6%94%B9Callback"><span class="nav-number">3.1.3.</span> <span class="nav-text">降低数据传递的耗时——Flow改Callback</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%BB%91%E5%8A%A8%E4%BC%98%E5%8C%96"><span class="nav-number">3.2.</span> <span class="nav-text">滑动优化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%99%8D%E4%BD%8EUI%E7%BA%BF%E7%A8%8B%E8%80%97%E6%97%B6%E2%80%94%E2%80%94UI%E9%A2%84%E5%88%9B%E5%BB%BA"><span class="nav-number">3.2.1.</span> <span class="nav-text">降低UI线程耗时——UI预创建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%BD%86%E9%94%81%E5%8C%96%E6%9B%B4%E6%96%B0"><span class="nav-number">3.2.2.</span> <span class="nav-text">⽆锁化更新</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%98%BB%E5%A1%9E%E5%BC%8F%E5%B9%B6%E5%8F%91%E5%A4%84%E7%90%86"><span class="nav-number">3.2.3.</span> <span class="nav-text">阻塞式并发处理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="nav-number">3.3.</span> <span class="nav-text">性能优化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%8F%8A%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90"><span class="nav-number">3.3.1.</span> <span class="nav-text">代码及静态资源</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%BE%E7%89%87%E8%B5%84%E6%BA%90"><span class="nav-number">3.3.2.</span> <span class="nav-text">图片资源</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DOM-%E5%85%83%E7%B4%A0%E6%95%B0%E9%87%8F"><span class="nav-number">3.3.3.</span> <span class="nav-text">DOM 元素数量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B8%B2%E6%9F%93%E5%9B%BE%E5%B1%82"><span class="nav-number">3.3.4.</span> <span class="nav-text">渲染图层</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E5%8C%96%E6%B6%88%E6%81%AF"><span class="nav-number">3.3.5.</span> <span class="nav-text">结构化消息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Lottie-%E5%8F%8A%E5%8A%A8%E7%94%BB%E6%96%B9%E6%A1%88%E9%80%89%E5%9E%8B"><span class="nav-number">3.3.6.</span> <span class="nav-text">Lottie 及动画方案选型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%81%8A%E5%A4%A9%E5%88%97%E8%A1%A8%E4%B8%8E%E6%B6%88%E6%81%AF"><span class="nav-number">3.3.7.</span> <span class="nav-text">聊天列表与消息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B6%88%E7%81%AD%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F"><span class="nav-number">3.3.8.</span> <span class="nav-text">消灭内存泄漏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%98%B2%E5%8A%A3%E5%8C%96%E4%B8%8E%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95"><span class="nav-number">3.3.9.</span> <span class="nav-text">防劣化与自动化测试</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%BD%86%E9%99%90%E5%88%97%E8%A1%A8"><span class="nav-number">4.</span> <span class="nav-text">⽆限列表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%BB%91%E5%8A%A8%E5%8C%BA%E5%9F%9F%E5%88%A4%E6%96%AD%E6%9B%B4%E6%96%B0"><span class="nav-number">4.0.1.</span> <span class="nav-text">滑动区域判断更新</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BF%BB%E2%BB%9A%E8%BF%87%E7%A8%8BUI%E7%9A%84%E5%8A%A8%E6%80%81%E6%9B%B4%E6%96%B0"><span class="nav-number">4.0.2.</span> <span class="nav-text">翻⻚过程UI的动态更新</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B7%B3%E8%BD%AC%E7%89%B9%E5%AE%9A%E9%A1%B9-%E6%9C%AA%E8%AF%BB%E9%A1%B9%E5%A4%84%E7%90%86"><span class="nav-number">4.0.3.</span> <span class="nav-text">跳转特定项 | 未读项处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%97%A0%E9%99%90%E5%88%97%E8%A1%A8%E5%8A%9F%E8%83%BD%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E"><span class="nav-number">4.0.4.</span> <span class="nav-text">无限列表功能的设计与</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BC%98%E5%8C%96%E4%B8%BA%E4%BB%85%E7%BC%93%E5%AD%98%E5%8F%AF%E8%A7%86%E5%8C%BA%E9%83%A8%E5%88%86%E7%9A%84%E4%BC%9A%E8%AF%9D%E8%AF%A6%E7%BB%86%E4%BF%A1%E6%81%AF%EF%BC%8C%E4%BB%A5%E5%8F%8A%E5%BD%B1%E5%93%8D%E5%88%97%E8%A1%A8%E6%8E%92%E5%BA%8F%E7%9A%84%E5%85%B3%E9%94%AE%E5%AD%97%E6%AE%B5"><span class="nav-number">4.0.4.1.</span> <span class="nav-text">优化为仅缓存可视区部分的会话详细信息，以及影响列表排序的关键字段</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%8C%89-UI-%E7%BB%9D%E5%AF%B9%E4%BD%8D%E7%BD%AE%E8%BF%9B%E8%A1%8C%E6%8B%89%E5%8F%96"><span class="nav-number">4.0.4.2.</span> <span class="nav-text">按 UI 绝对位置进行拉取</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-DB-%E6%8E%92%E5%BA%8F%E5%8F%96%E4%BB%A3%E5%86%85%E5%AD%98%E6%8E%92%E5%BA%8F%EF%BC%8C"><span class="nav-number">4.0.4.3.</span> <span class="nav-text">使用 DB 排序取代内存排序，</span></a></li></ol></li></ol></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+<!-- common -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/utils.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/header-shrink.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/back2top.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/toggle-theme.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/code-block.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/main.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/libs/anime.min.js"></script>
+
+<!-- local-search -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/local-search.min.js"></script>
+
+
+<!-- lazyload -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/lazyload.min.js"></script>
+
+
+<div class="pjax">
+    
+        <!-- post-helper -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/post/post-helper.min.js"></script>
+
+        <!-- toc -->
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/post/toc.min.js"></script>
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/post/share.min.js"></script>
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+</body>
+</html>

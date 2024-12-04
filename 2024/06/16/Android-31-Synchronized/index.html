@@ -223,7 +223,7 @@
                             <div class="author border-box">
                                 <span class="name">MoMo</span>
                                 
-                                    <span class="author-badge">Lv4</span>
+                                    <span class="author-badge">Lv5</span>
                                 
                             </div>
                             <div class="meta-info border-box">
@@ -241,7 +241,7 @@
 
             <span class="meta-info-item post-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="datetime" data-updated="Sun Jun 16 2024 20:31:29 GMT+0800">2024-06-16 20:31:29</span>
+                <span class="datetime" data-updated="Mon Jun 17 2024 16:41:46 GMT+0800">2024-06-17 16:41:46</span>
             </span>
         
 
@@ -291,11 +291,11 @@
                 <div class="post-content keep-markdown-body ">
                     
 
-                    <h1 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h1><p>保证同一时刻最多只有1个线程执行 被<code>Synchronized</code>修饰的方法 / 代码</p>
+                    <h1 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h1><p>保证同一时刻最多只有 1 个线程执行 被<code>Synchronized</code>修饰的方法 / 代码</p>
 <p>其他线程 必须等待当前线程执行完该方法 / 代码块后才能执行该方法 / 代码块</p>
 <h1 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h1><p><strong>保证线程安全，解决多线程中的并发同步问题（实现的是阻塞型并发）</strong>，具体场景如下：</p>
 <ol>
-<li>修饰 实例方法 / 代码块时，（同步）保护的是同一个对象方法的调用 &amp;  当前实例对象</li>
+<li>修饰 实例方法 / 代码块时，（同步）保护的是同一个对象方法的调用 &amp; 当前实例对象</li>
 <li>修饰 静态方法 / 代码块时，（同步）保护的是 静态方法的调用 &amp; class 类对象</li>
 </ol>
 <h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><ol>
@@ -305,16 +305,67 @@
 <p>监视器锁（monitor）的本质 依赖于 底层操作系统的互斥锁（Mutex Lock）实现</p>
 <h1 id="具体使用"><a href="#具体使用" class="headerlink" title="具体使用"></a>具体使用</h1><p><code>Synchronized</code> 用于 修饰 代码块、类的实例方法 &amp; 静态方法</p>
 <h2 id="锁的类型-amp-等级"><a href="#锁的类型-amp-等级" class="headerlink" title="锁的类型 &amp; 等级"></a>锁的类型 &amp; 等级</h2><p>由于<code>Synchronized</code> 会修饰 代码块、类的实例方法 &amp; 静态方法，故分为不同锁的类型</p>
-<p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/20230301/944365-1cd5176979d4a9f6.png"></p>
+<table>
+  <thead>
+    <tr>
+      <th>类型</th>
+      <th>定义</th>
+      <th>作用</th>
+      <th>使用</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>对象锁</td>
+      <td>含 synchronized 方法/代码块的类的实例对象</td>
+      <td>控制同步方法之间的同步</td>
+      <td>
+        <ul>
+          <li>使用前必须先获得对象的锁</li>
+          线程进入 synchronized 方法获取该对象的锁，若此对象的锁被其他调用者占用，则线程将被阻塞
+          <li>Java的所有对象都含有1个互斥锁，锁由JVM自动获取和释放</li>
+          <li>synchronized方法运行期间如出现异常会终止，JVM 会自动释放锁</li>
+          <li>当用 synchronized 加锁的代码块时，方法结束时由 JVM 自动释放锁</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>方法锁<br>(也属于对象锁)</td>
+      <td>使用 synchronized 修饰的方法</td>
+      <td>控制同步方法之间的同步</td>
+      <td>
+        synchronized方法控制对类成员变量的访问
+        <ul>
+          <li>每个类实例对应一把锁</li>
+          <li>每个synchronized方法都必须获得调用该方法的类实例的锁方能执行，否则所属线程阻塞</li>
+          <li>方法一旦执行，就独占该锁，直到从该方法返回时才将锁释放，此后被阻塞的线程方能获得该锁，重新进入可执行状态</li>
+          <li>所有声明为synchronized的成员函数中至多只有一个处于可执行状态，从而有效避免了类成员变量的访问冲突</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>类锁</td>
+      <td>使用 synchronized 修饰静态方法 / 代码块（类锁实际是锁 Class 对象，但具体表现为：锁静态方法 / 代码块）</td>
+      <td>控制静态方法 / 静态变量之间的同步</td>
+      <td>
+        <ul>
+          <li>一个静态的方法被申明为synchronized。此类所有的实例化对象在调用此方法，共用同一把锁</li>
+          <li>一个类不论被实例化多少次，其静态方法 &amp; 变量在内存中都只有1份</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 <p>之间的区别</p>
 <p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/20230301/944365-73825030c7a118fd.png"></p>
 <h2 id="使用规则"><a href="#使用规则" class="headerlink" title="使用规则"></a>使用规则</h2><p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/20230301/944365-c4d981a833c3ff65.png"></p>
-<h2 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 对象锁</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span>{ </span><br><span class="line">  <span class="comment">// 对象锁：形式1(方法锁) </span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title function_">Method1</span><span class="params">()</span>{ </span><br><span class="line">      System.out.println(<span class="string">"我是对象锁也是方法锁"</span>); </span><br><span class="line">      <span class="keyword">try</span>{ </span><br><span class="line">          Thread.sleep(<span class="number">500</span>); </span><br><span class="line">      } <span class="keyword">catch</span> (InterruptedException e){ </span><br><span class="line">          e.printStackTrace(); </span><br><span class="line">      } </span><br><span class="line"></span><br><span class="line">  } </span><br><span class="line"></span><br><span class="line">  <span class="comment">// 对象锁：形式2（代码块形式） </span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">Method2</span><span class="params">()</span>{ </span><br><span class="line">      <span class="keyword">synchronized</span> (<span class="built_in">this</span>){ </span><br><span class="line">          System.out.println(<span class="string">"我是对象锁"</span>); </span><br><span class="line">          <span class="keyword">try</span>{ </span><br><span class="line">              Thread.sleep(<span class="number">500</span>); </span><br><span class="line">          } <span class="keyword">catch</span> (InterruptedException e){ </span><br><span class="line">              e.printStackTrace(); </span><br><span class="line">          } </span><br><span class="line">      } </span><br><span class="line"></span><br><span class="line">  } </span><br><span class="line">｝</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 方法锁（即对象锁中的形式1）</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title function_">Method1</span><span class="params">()</span>{ </span><br><span class="line">      System.out.println(<span class="string">"我是对象锁也是方法锁"</span>); </span><br><span class="line">      <span class="keyword">try</span>{ </span><br><span class="line">          Thread.sleep(<span class="number">500</span>); </span><br><span class="line">      } <span class="keyword">catch</span> (InterruptedException e){ </span><br><span class="line">          e.printStackTrace(); </span><br><span class="line">      } </span><br><span class="line"></span><br><span class="line">  } </span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 类锁</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span>{ </span><br><span class="line">　<span class="comment">// 类锁：形式1 ：锁静态方法</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title function_">Method1</span><span class="params">()</span>{ </span><br><span class="line">      System.out.println(<span class="string">"我是类锁一号"</span>); </span><br><span class="line">      <span class="keyword">try</span>{ </span><br><span class="line">          Thread.sleep(<span class="number">500</span>); </span><br><span class="line">      } <span class="keyword">catch</span> (InterruptedException e){ </span><br><span class="line">          e.printStackTrace(); </span><br><span class="line">      } </span><br><span class="line"></span><br><span class="line">  } </span><br><span class="line"> </span><br><span class="line">  <span class="comment">// 类锁：形式2 ：锁静态代码块</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">Method2</span><span class="params">()</span>{ </span><br><span class="line">      <span class="keyword">synchronized</span> (Test.class){ </span><br><span class="line">          System.out.println(<span class="string">"我是类锁二号"</span>); </span><br><span class="line">          <span class="keyword">try</span>{ </span><br><span class="line">              Thread.sleep(<span class="number">500</span>); </span><br><span class="line">          } <span class="keyword">catch</span> (InterruptedException e){ </span><br><span class="line">              e.printStackTrace(); </span><br><span class="line">          } </span><br><span class="line"></span><br><span class="line">      } </span><br><span class="line"></span><br><span class="line">  } </span><br><span class="line">｝</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 对象锁</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span>{</span><br><span class="line">  <span class="comment">// 对象锁：形式1(方法锁)</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title function_">Method1</span><span class="params">()</span>{</span><br><span class="line">      System.out.println(<span class="string">"我是对象锁也是方法锁"</span>);</span><br><span class="line">      <span class="keyword">try</span>{</span><br><span class="line">          Thread.sleep(<span class="number">500</span>);</span><br><span class="line">      } <span class="keyword">catch</span> (InterruptedException e){</span><br><span class="line">          e.printStackTrace();</span><br><span class="line">      }</span><br><span class="line"></span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 对象锁：形式2（代码块形式）</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">Method2</span><span class="params">()</span>{</span><br><span class="line">      <span class="keyword">synchronized</span> (<span class="built_in">this</span>){</span><br><span class="line">          System.out.println(<span class="string">"我是对象锁"</span>);</span><br><span class="line">          <span class="keyword">try</span>{</span><br><span class="line">              Thread.sleep(<span class="number">500</span>);</span><br><span class="line">          } <span class="keyword">catch</span> (InterruptedException e){</span><br><span class="line">              e.printStackTrace();</span><br><span class="line">          }</span><br><span class="line">      }</span><br><span class="line"></span><br><span class="line">  }</span><br><span class="line">｝</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 方法锁（即对象锁中的形式1）</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title function_">Method1</span><span class="params">()</span>{</span><br><span class="line">      System.out.println(<span class="string">"我是对象锁也是方法锁"</span>);</span><br><span class="line">      <span class="keyword">try</span>{</span><br><span class="line">          Thread.sleep(<span class="number">500</span>);</span><br><span class="line">      } <span class="keyword">catch</span> (InterruptedException e){</span><br><span class="line">          e.printStackTrace();</span><br><span class="line">      }</span><br><span class="line"></span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 类锁</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span>{</span><br><span class="line">　<span class="comment">// 类锁：形式1 ：锁静态方法</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title function_">Method1</span><span class="params">()</span>{</span><br><span class="line">      System.out.println(<span class="string">"我是类锁一号"</span>);</span><br><span class="line">      <span class="keyword">try</span>{</span><br><span class="line">          Thread.sleep(<span class="number">500</span>);</span><br><span class="line">      } <span class="keyword">catch</span> (InterruptedException e){</span><br><span class="line">          e.printStackTrace();</span><br><span class="line">      }</span><br><span class="line"></span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 类锁：形式2 ：锁静态代码块</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">Method2</span><span class="params">()</span>{</span><br><span class="line">      <span class="keyword">synchronized</span> (Test.class){</span><br><span class="line">          System.out.println(<span class="string">"我是类锁二号"</span>);</span><br><span class="line">          <span class="keyword">try</span>{</span><br><span class="line">              Thread.sleep(<span class="number">500</span>);</span><br><span class="line">          } <span class="keyword">catch</span> (InterruptedException e){</span><br><span class="line">              e.printStackTrace();</span><br><span class="line">          }</span><br><span class="line"></span><br><span class="line">      }</span><br><span class="line"></span><br><span class="line">  }</span><br><span class="line">｝</span><br></pre></td></tr></tbody></table></figure>
 
-<h2 id="特别注意"><a href="#特别注意" class="headerlink" title="特别注意"></a>特别注意</h2><p><code>Synchronized</code>修饰方法时存在缺陷：若修饰1个大的方法，将会大大影响效率</p>
+<h2 id="特别注意"><a href="#特别注意" class="headerlink" title="特别注意"></a>特别注意</h2><p><code>Synchronized</code>修饰方法时存在缺陷：若修饰 1 个大的方法，将会大大影响效率</p>
 <p>若使用<code>Synchronized</code>关键字修饰线程类的<code>run()</code>，由于<code>run()</code>在线程的整个生命期内一直在运行，因此将导致它对本类任何<code>Synchronized</code>方法的调用都永远不会成功</p>
 <p><strong>解决方案：</strong> 使用 <code>Synchronized</code>关键字声明代码块<br>该解决方案灵活性高：可针对任意代码块 &amp; 任意指定上锁的对象</p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">synchronized</span>(syncObject) { </span><br><span class="line">  <span class="comment">// 访问或修改被锁保护的共享状态 </span></span><br><span class="line">  <span class="comment">// 上述方法 必须 获得对象 syncObject（类实例或类）的锁</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">synchronized</span>(syncObject) {</span><br><span class="line">  <span class="comment">// 访问或修改被锁保护的共享状态</span></span><br><span class="line">  <span class="comment">// 上述方法 必须 获得对象 syncObject（类实例或类）的锁</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <h1 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h1><p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/20230301/944365-afe57fc30465511a.png"></p>
 <p>注：原子性、可见性、有序性的定义</p>
@@ -322,14 +373,144 @@
 <h1 id="其他控制并发-线程同步方式"><a href="#其他控制并发-线程同步方式" class="headerlink" title="其他控制并发 / 线程同步方式"></a>其他控制并发 / 线程同步方式</h1><h2 id="Lock、ReentrantLock"><a href="#Lock、ReentrantLock" class="headerlink" title="Lock、ReentrantLock"></a>Lock、ReentrantLock</h2><ul>
 <li>简介</li>
 </ul>
-<p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/20230301/944365-0579d1cac4d4c814.png"></p>
+<table>
+  <thead>
+    <tr>
+      <th>类型</th>
+      <th>定义</th>
+      <th>作用</th>
+      <th>特点</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Lock</td>
+      <td>接口<br>(Java5 后引入)</td>
+      <td>提供了比使用 synchronized 更广泛的锁定操作，功能更强大</td>
+      <td>
+        <ul>
+          <li>允许更灵活地使用锁（获取 &amp; 释放顺序，不同的作用范围）</li>
+          <li>支持多个相关的 Condition 对象</li>
+        </ul>
+        <p>Condition 对象:</p>
+        <ul>
+          <li>定义：接口</li>
+          <li>作用：解决 Object 的监视器方法（wait, notify 和 notifyAll） 的局限，分解成不同对象，以便精确地控制这些对象与线程的交互</li>
+          <li>锁：每个锁对象可以绑定多个 Condition 对象</li>
+          <li>常用的 Lock 实现类：ReentrantLock，ReadWriteLock（实现类 ReentrantReadWriteLock）</li>
+          <li>Lock 替代了 synchronized 方法和语句的使用，Lock 的 Condition 对象替代了 synchronized 的 Object 监视器方法使用</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>ReentrantLock</td>
+      <td>Lock 的实现类<br>一个可重入的互斥锁 Lock<br>(重入性：自己可以再次获取自己的内部锁)</td>
+      <td>提供了比使用 synchronized 更广泛的锁定操作，功能更强大</td>
+      <td>
+        <p>ReentrantLock 相对于 synchronized 多了 3 个高级功能：</p>
+        <ol>
+          <li>公平锁：保证线程获取锁时的公平顺序（先来后到的线程获取锁）
+            <ul>
+                <li>synchronlzed=非公平锁:在等待队列里随机挑选1个线程执行任务，即后进来的线程也可和前边等待锁的线程竞争锁资源</li>
+                <li>非公平领执行效率高:因为公平锁要实现顺序执行=维护1个有序队列，每次获取锁时需先是不是线程队列的第1个，才会让线程获得锁</li>
+                <li>非公平锁产生饥馕现象:即有些线程(优先级较低)可能永远也无法获取CPU的执行权，优先级高的线程会不断执行</li>
+            </ul>
+          </li>
+          <li>等待可中断:在持有锁的线程长时间不释放锁时，等待的线程可选择放弃等待</li>
+          <p>ReentrantLock的lock机制有2种:</p>
+            <ul>
+                <li>忽略中断锁:在持有锁的线程长时间不释故锁时，忽略 [待等待线程] 响应 [不再等待锁而中断等待] 的请求</li>
+                <li>响应中断锁:在持有锁的线程长时间不释放锁时，响应 [待等待线程] 希望 [不再等待锁而希望中断等待] 的请求，即 [让其中断线程] 而完全放弃等待锁</li>
+            </ul>
+            <p>例子说明</p>
+            <ul>
+                <li>B2个线程去竞争锁，A线程得到了锁，B线程等待;由于等待时间太久，B线程不想等了，希望中断等待去处理其他任务，此时ReentranlLock就提供了上述2种机制来处
+瑾改情况:</li>
+                <li>选择 [忽略中断锁机制]:即忽路B线程不再等待锁而希望中断 的请求，继续B线程等待</li>
+                <li>选择 [响应中断]:即 响应B线程不再等待锁而希望中断的请求， 让B线程中断等待，从而可以做其他任务</li>
+            </ul>
+          <li>绑定多个 Condition 对象：通过多个 newCondition 可获得多个 Condition 对象，可以简单的通过 await()，signal() 实现复杂的线程同步功能</li>
+        </ol>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 <ul>
 <li>区别</li>
 </ul>
-<p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/20230301/944365-92abf2b6f92f6802.png"></p>
+<table>
+  <thead>
+    <tr>
+      <th rowspan="2">类型</th>
+      <th rowspan="2">功能 &amp; 性能</th>
+      <th colspan="4">关于锁</th>
+      <th rowspan="2">应用场景</th>
+      <th colspan="2">其他</th>
+    </tr>
+    <tr>
+      <th>锁机制</th>
+      <th>锁的范围</th>
+      <th>锁的获取</th>
+      <th>锁的释放</th>
+      <th>产生死锁的可能性</th>
+      <th>执行操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>synchronized</td>
+      <td>实现线程切换需从用户态转换到内核态，从而效率低</td>
+      <td>悲观锁<br>(线程获得的是独占锁:其他线程只能依靠阻塞来等待线程释放锁)</td>
+      <td>synchronized 修饰的范围（方法 &amp; 块）<br></td>
+      <td>强制要求获得锁</td>
+      <td>自动释放<br>（JVM）</td>
+      <td>一般情况下优先使用</td>
+      <td>容易产生死锁<br>（一旦产生死锁问题，线程将一直阻塞 结果=请求成功or一直阻塞）</td>
+      <td>托管给 JVM 执行</td>
+    </tr>
+    <tr>
+      <td>Lock<br>(ReentrantLock)</td>
+      <td>
+        功能更强大 &amp; 更好的性能
+        <ul>
+          <li>公平锁</li>
+          <li>等待可中断</li>
+          <li>可绑定多个 Condition 对象</li>
+        </ul>
+      </td>
+      <td>乐观锁<br>(每次不加锁&amp;假设无冲突而去完成某项操作;若因为冲突失数就重试，直到成功为止)</td>
+      <td>可跨方法，灵活性更大<br>(Lock 的使用基于方法调用)</td>
+      <td>不强制要求获得锁</td>
+      <td>手动释放<br>(最好在 finally 块中释放)</td>
+      <td>
+        需公平锁、等待可中断、绑定多个 Condition 对象时<br>
+        <ur>
+            <li>某个线程在等待1个锁的控制权时需中断等待
+            </li><li>需分开处理wait-notfy，ReentrantLock里面的Condltion应用，能够控制notify哪个线程</li>
+            <li>具有公平锁功能，每个到来的线程都将排队等候</li>
+        </ur>
+        （比如实现生产者和消费者的多线程唤醒机制）
+      </td>
+      <td>
+        不容易产生死锁<br>
+        <ul>
+          <li>提供了可中断的锁获取方式，能确保下述运行的处理</li>
+          <li>每次公平锁的线程等待可中断</li>
+          <li>能绑定多个 Condition，可实现更精确的 wait-notify 组合</li>
+          <li>有自公平机制，能均衡线程的执行</li>
+        </ul>
+      </td>
+      <td>Java 写的控制锁的代码</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
 <h2 id="CAS"><a href="#CAS" class="headerlink" title="CAS"></a>CAS</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p><code>Compare And Swap</code>，即 比较 并 交换，是一种解决并发操作的乐观锁</p>
 <p><code>synchronized</code>锁住的代码块：同一时刻只能由一个线程访问，属于悲观锁</p>
-<h3 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h3><p>CAS的操作参数</p>
+<h3 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h3><p>CAS 的操作参数</p>
 <ul>
 <li>内存位置（A）</li>
 <li>预期原值（B）</li>
@@ -340,18 +521,19 @@
 <h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><p>资源耗费少：相对于<code>synchronized</code>，省去了挂起线程、恢复线程的开销</p>
 <p>但若迟迟得不到更新，死循环对<code>CPU</code>资源也是一种浪费</p>
 <h3 id="具体实现方式"><a href="#具体实现方式" class="headerlink" title="具体实现方式"></a>具体实现方式</h3><ul>
-<li>使用CAS有个“先检查后执行”的操作</li>
-<li>而这种操作在Java中是典型的不安全的操作，所以 <code>CAS</code>在实际中是<strong>由<code>C++</code>通过调用CPU指令实现的</strong></li>
+<li>使用 CAS 有个“先检查后执行”的操作</li>
+<li>而这种操作在 Java 中是典型的不安全的操作，所以 <code>CAS</code>在实际中是<strong>由<code>C++</code>通过调用 CPU 指令实现的</strong></li>
 <li>具体过程<ol>
-<li>CAS在Java中的体现为Unsafe类</li>
-<li>Unsafe类会通过C++直接获取到属性的内存地址</li>
-<li>接下来CAS由C++的Atomic::cmpxchg系列方法实现</li>
+<li>CAS 在 Java 中的体现为 Unsafe 类</li>
+<li>Unsafe 类会通过 C++直接获取到属性的内存地址</li>
+<li>接下来 CAS 由 C++的 Atomic::cmpxchg 系列方法实现</li>
 </ol>
 </li>
 </ul>
 <h3 id="应用：AtomicInteger"><a href="#应用：AtomicInteger" class="headerlink" title="应用：AtomicInteger"></a>应用：<code>AtomicInteger</code></h3><p>对 i++ 与 i–，通过<code>compareAndSet</code> &amp; 一个死循环实现</p>
-<p>而<code>compareAndSet</code>函数内部 = 通过<code>jni</code>操作<code>CAS</code>指令。直到CAS操作成功跳出循环</p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">volatile</span> <span class="type">int</span> value; </span><br><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment"> * Gets the current value. </span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> the current value </span></span><br><span class="line"><span class="comment"> */</span> </span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="type">int</span> <span class="title function_">get</span><span class="params">()</span> { </span><br><span class="line">    <span class="keyword">return</span> value; </span><br><span class="line">} </span><br><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment"> * Atomically increments by one the current value. </span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> the previous value </span></span><br><span class="line"><span class="comment"> */</span> </span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="type">int</span> <span class="title function_">getAndIncrement</span><span class="params">()</span> { </span><br><span class="line">    <span class="keyword">for</span> (;;) { </span><br><span class="line">        <span class="type">int</span> <span class="variable">current</span> <span class="operator">=</span> get(); </span><br><span class="line">        <span class="type">int</span> <span class="variable">next</span> <span class="operator">=</span> current + <span class="number">1</span>; </span><br><span class="line">        <span class="keyword">if</span> (compareAndSet(current, next)) </span><br><span class="line">            <span class="keyword">return</span> current; </span><br><span class="line">    } </span><br><span class="line">} </span><br><span class="line"></span><br><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment"> * Atomically decrements by one the current value. </span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> the previous value </span></span><br><span class="line"><span class="comment"> */</span> </span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="type">int</span> <span class="title function_">getAndDecrement</span><span class="params">()</span> { </span><br><span class="line">    <span class="keyword">for</span> (;;) { </span><br><span class="line">        <span class="type">int</span> <span class="variable">current</span> <span class="operator">=</span> get(); </span><br><span class="line">        <span class="type">int</span> <span class="variable">next</span> <span class="operator">=</span> current - <span class="number">1</span>; </span><br><span class="line">        <span class="keyword">if</span> (compareAndSet(current, next)) </span><br><span class="line">            <span class="keyword">return</span> current; </span><br><span class="line">    } </span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>而<code>compareAndSet</code>函数内部 = 通过<code>jni</code>操作<code>CAS</code>指令。直到 CAS 操作成功跳出循环</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">volatile</span> <span class="type">int</span> value;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Gets the current value.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> the current value</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="type">int</span> <span class="title function_">get</span><span class="params">()</span> {</span><br><span class="line">    <span class="keyword">return</span> value;</span><br><span class="line">}</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Atomically increments by one the current value.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> the previous value</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="type">int</span> <span class="title function_">getAndIncrement</span><span class="params">()</span> {</span><br><span class="line">    <span class="keyword">for</span> (;;) {</span><br><span class="line">        <span class="type">int</span> <span class="variable">current</span> <span class="operator">=</span> get();</span><br><span class="line">        <span class="type">int</span> <span class="variable">next</span> <span class="operator">=</span> current + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (compareAndSet(current, next))</span><br><span class="line">            <span class="keyword">return</span> current;</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Atomically decrements by one the current value.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> the previous value</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="type">int</span> <span class="title function_">getAndDecrement</span><span class="params">()</span> {</span><br><span class="line">    <span class="keyword">for</span> (;;) {</span><br><span class="line">        <span class="type">int</span> <span class="variable">current</span> <span class="operator">=</span> get();</span><br><span class="line">        <span class="type">int</span> <span class="variable">next</span> <span class="operator">=</span> current - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (compareAndSet(current, next))</span><br><span class="line">            <span class="keyword">return</span> current;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
                 </div>
                 
 
@@ -403,6 +585,22 @@
 
                 
                     <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/blog/2024/06/17/%E4%B8%80%E4%BA%9B%E4%BC%98%E5%8C%96/"
+                                   title="一些优化"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">一些优化</span>
+                                        <span class="post-nav-item">Prev posts</span>
+                                    </span>
+                                </a>
+                            </div>
                         
                         
                             <div class="next-post">
