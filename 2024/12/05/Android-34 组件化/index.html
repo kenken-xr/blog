@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="MoMo">
+    
+    <title>
+        
+            组件化 |
+        
+        今天在干嘛
+    </title>
+    
+<link rel="stylesheet" href="/blog/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/blog/images/logoMoon.svg">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/regular.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/brands.min.css">
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"kenken-xr.github.io","root":"/blog/","language":"en","path":"search.json"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#f8a5c2","title":"今天在干嘛","author":"MoMo","avatar":"/images/avatar.jpg","logo":"/images/logoMoon.svg","favicon":"/images/logoMoon.svg"},"menu":{"home":"/","archives":"/archives","tags":"/tags","categories":"/categories","github":"https://github.com/kenken-xr"},"first_screen":{"enable":true,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":true,"links":{"github":"https://github.com/kenken-xr","weixin":"img | /images/wx.png","qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":true,"percent":true,"hide_header":false},"home":{"announcement":null,"category":true,"tag":true,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":true,"reward":{"enable":false,"img_link":null,"text":null},"img_align":"center"},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true,"layout":"left"},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"local_search":{"enable":true,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.36"},"waline":{"server_url":null,"reaction":false,"version":"3.2.1"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":true},"cdn":{"enable":true,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":2023,"word_count":true,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"/blog","source_data":{},"version":"4.1.3"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original post title","author":"Original post author","link":"Original post link"}
+  </script>
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/blog/atom.xml" title="MoMo" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left border-box">
+            
+                <a class="logo-image border-box" href="/blog/">
+                    <img src="/blog/images/logoMoon.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/blog/">
+               今天在干嘛
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/"
+                            >
+                                
+                                HOME
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/archives"
+                            >
+                                
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/tags"
+                            >
+                                
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/categories"
+                            >
+                                
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               target="_blank" rel="noopener" href="https://github.com/kenken-xr"
+                            >
+                                
+                                GITHUB
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/"
+                    >HOME</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/archives"
+                    >ARCHIVES</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/tags"
+                    >TAGS</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/categories"
+                    >CATEGORIES</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       target="_blank" rel="noopener" href="https://github.com/kenken-xr"
+                    >GITHUB</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        组件化
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/blog/images/avatar.jpg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">MoMo</span>
+                                
+                                    <span class="author-badge">Lv5</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2024-12-05 15:01:05</span>
+            </span>
+
+            <span class="meta-info-item post-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="datetime" data-updated="Mon Dec 09 2024 15:39:33 GMT+0800">2024-12-09 15:39:33</span>
+            </span>
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/blog/categories/%E6%9C%89%E5%9C%A8%E8%AE%A4%E7%9C%9F%E4%B8%8A%E7%8F%AD/">有在认真上班</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/blog/tags/Android/">Android</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+            <span class="meta-info-item post-pv">
+                <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    <h1 id="组件化路由框架存在的意义"><a href="#组件化路由框架存在的意义" class="headerlink" title="组件化路由框架存在的意义"></a>组件化路由框架存在的意义</h1><p>在一些复杂的业务场景下，业务需求灵活性强，很多功能都是动态配置的，可以提前进行配置，进行预部署。</p>
+<p>组件化的本质是解耦合，解耦合的关键是解决页面之间的依赖关系。</p>
+<p>考虑到性能的关系，要求我们的路由框架支持编译期注解。</p>
+<p>路由框架主要就是解决业务模块之间跳转、路由拦截等需求。</p>
+<p><strong>怎么实现?</strong><br>EventBus?<br>广播?<br>隐式意图<br>类加载Style?<br>自己用数据结构Map实现?</p>
+<h1 id="APT工作流程"><a href="#APT工作流程" class="headerlink" title="APT工作流程"></a>APT工作流程</h1><ol>
+<li>定义注解(@xxxX)</li>
+<li>APT扫描代码中的注解</li>
+<li>APT依据定义好的注解处理方式进行操作，生成java文件</li>
+<li>build工程，生成.class文件</li>
+</ol>
+<p><strong>AnnotationProcessor</strong><br>AnnotationProcessor是APT工具中的一种，是google开发的内置框架，不需要引入，可以直接在build.gradle文件中使用。</p>
+<p><strong>AnnotationProcessor和Provided的区别</strong><br>AnnotatignPrcessgr只在编译的时候执行依赖的库，但是库最终不打包到apk中，编译库中的代码没有直接使用的意义，也没有提供开放的api调用，最终的目的是得到编译库中生成的文件，供我们调用。</p>
+<p>Provided虽然也是编译时执行，最终不会打包到apk中，但是跟AnngtatignProcessor有着根本的不同。</p>
+<h1 id="传统页面路由操作方式缺陷"><a href="#传统页面路由操作方式缺陷" class="headerlink" title="传统页面路由操作方式缺陷"></a>传统页面路由操作方式缺陷</h1><ol>
+<li>多人协同开发的时候，大家都去AndroidManifest.xml中定义各种IntentEilter，爆炸</li>
+<li>登录、埋点这种非常通用的逻辑怎么处理?AOP怎么控制?</li>
+</ol>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Intent</span> <span class="variable">intent</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Intent</span>(mContext, XXActivity.class);</span><br><span class="line">intent.putExtra(<span class="string">"key"</span> <span class="string">"value"</span>);</span><br><span class="line">startActivity(intent);</span><br><span class="line">startActivityForResult(intent, <span class="number">100</span>);</span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="组件化页面路由优势"><a href="#组件化页面路由优势" class="headerlink" title="组件化页面路由优势"></a>组件化页面路由优势</h1><ol>
+<li>多模块分开发</li>
+<li>允许自定义拦截</li>
+<li>提供IOC容器</li>
+<li>提供降级处理</li>
+<li>支持InstanRun</li>
+</ol>
+<h1 id="Aroute路由怎么处理的"><a href="#Aroute路由怎么处理的" class="headerlink" title="Aroute路由怎么处理的?"></a>Aroute路由怎么处理的?</h1><p><a href="https://kenken-xr.github.io/blog/2024/12/09/Android-35%20ARouter/">ARouter</a></p>
+<p><strong>路由的本质是键值对</strong></p>
+<p>通过APT技术，寻找到所有带有注解@Router的组件，将其注解值path和对应的Activity保存到一个map里，可以吗?内存处理问题?</p>
+<p>对于一个大型项目，组件数量会很多，可能会有一两百或者更多，把这么多组件都放到这个Map里，显然会对内存造成很大的压力。怎么解决?</p>
+<figure class="highlight gradle"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">android {</span><br><span class="line">  compilesdkVersion <span class="number">28</span></span><br><span class="line">  defaultconfig{</span><br><span class="line">    <span class="comment">//ARouter需要添加内容</span></span><br><span class="line">    javaCompileoptions{</span><br><span class="line">      annotationProcessorOptions{</span><br><span class="line">        arguments = [moduleName:<span class="keyword">project</span>.getName()]</span><br><span class="line">      }</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">dependencies</span>{</span><br><span class="line">  <span class="comment">// 添加依赖</span></span><br><span class="line">  <span class="comment">// 替换成最新版本，需要注意的是api</span></span><br><span class="line">  <span class="comment">// 要与compiler匹配使用，均使用最新版可以保证兼容</span></span><br><span class="line">  api <span class="string">'com.alibaba:arouter-api:1.3.1'</span></span><br><span class="line">  annotationProcessorcom.alibaba:arouter-compiler:<span class="number">1.1</span>.<span class="number">4</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyApplication</span> <span class="keyword">extends</span> <span class="title class_">Application</span>{</span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">oncreate</span><span class="params">()</span>{</span><br><span class="line">    <span class="built_in">super</span>.onCreate();</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 打印日志</span></span><br><span class="line">    ARouter.openLog();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 开启调试模式(如果在InstantRun模式下运行，必须开启调试模式!</span></span><br><span class="line">    ARouter.openDebug(); </span><br><span class="line"></span><br><span class="line">    <span class="comment">// 推荐在Application中初始化</span></span><br><span class="line">    ARouter.init( application: <span class="built_in">this</span>);</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onTerminate</span><span class="params">()</span>{</span><br><span class="line">    <span class="built_in">super</span>.onTerminate();</span><br><span class="line">    ARouter.getInstance().destroy();</span><br><span class="line">  }</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在支持路由的页面上添加注解(必选)</span></span><br><span class="line"><span class="comment">// 这里的路径需要注意的是至少需要有两级，/xx/xx//真正开发中，我们可以建立一个类来集中管理这些页面跳转的名称</span></span><br><span class="line"><span class="comment">//真正开发中，我们可以建立一个类来集中管理这些页面跳转的名称</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@Route(path="/app/Activity1")</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Activity1</span> <span class="keyword">extends</span> <span class="title class_">AppCompatActivity</span>{</span><br><span class="line">  </span><br><span class="line">  <span class="meta">@Autowired</span></span><br><span class="line">  String name;</span><br><span class="line">  </span><br><span class="line">  <span class="meta">@Autowired</span><span class="comment">//自动注入参数</span></span><br><span class="line">  <span class="type">int</span> age;</span><br><span class="line">  </span><br><span class="line">  <span class="meta">@Autowired(name="test")</span> <span class="comment">//自动注入参数</span></span><br><span class="line">  Bean bean;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> Textview key_tv;</span><br><span class="line">  <span class="keyword">private</span> TextView name tv;</span><br><span class="line">  </span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onCreate</span><span class="params">(Bundle savedInstancestate)</span>{</span><br><span class="line">    <span class="built_in">super</span>.onCreate(savedInstancestate);</span><br><span class="line">    setcontentview(R.layout.activity2);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//使用该方法后，上面的@Autowired才能实现自动注入</span></span><br><span class="line">    ARouter.getInstance().inject( thiz: <span class="built_in">this</span>);</span><br><span class="line">    key_tv= findviewById(R.id.key tv);</span><br><span class="line">    name tv=findviewById(R.id.name tv);</span><br><span class="line">    key_tv.setText(<span class="string">"name"</span>+ name + <span class="string">"age==&gt;"</span>+age + <span class="string">""</span>);</span><br><span class="line">    name_tv.setText(bean+<span class="string">""</span>);</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//如果你想实现页面跳转，同时进行值传递，可以采用以下方法支持动画和url</span></span><br><span class="line">ARouter.getInstance()</span><br><span class="line">  .build(path: <span class="string">"/app/Activity1"</span>)</span><br><span class="line">  .withInt(<span class="string">"age"</span>,<span class="number">38</span>)</span><br><span class="line">  .withstring(<span class="string">"name"</span>, <span class="string">"John"</span>)</span><br><span class="line">  .withParcelable(<span class="string">"test"</span>,<span class="keyword">new</span> <span class="title class_">Gean</span>( luge: <span class="string">"luge"</span>,i: <span class="number">38</span>))</span><br><span class="line">  .navigation();</span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="路由实践"><a href="#路由实践" class="headerlink" title="路由实践"></a>路由实践</h1><h2 id="基础实现"><a href="#基础实现" class="headerlink" title="基础实现"></a>基础实现</h2><p>单例模式保证路由表只有一份</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Router</span>{</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">volatile</span> Router mInstance;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> <span class="title function_">Router</span><span class="params">()</span> {}</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> Router <span class="title function_">getInstance</span><span class="params">()</span> {</span><br><span class="line">    <span class="keyword">if</span>(mInstance == <span class="literal">null</span>){</span><br><span class="line">      <span class="keyword">synchronized</span>(Router.class){</span><br><span class="line">        <span class="keyword">if</span>(mInstance == <span class="literal">null</span>){</span><br><span class="line">          mInstance = <span class="keyword">new</span> <span class="title class_">Router</span>();</span><br><span class="line">        }</span><br><span class="line">      }</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> mInstance;</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 路由表</span></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> Map&lt;String,class&lt;? <span class="keyword">extends</span> <span class="title class_">Activity</span>&gt;&gt; routers = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>基于单例模式构建，主要包含路由表的创建与维护、页面跳转以及路由注册功能。</p>
+<ol>
+<li><p>单例模式确保了整个应用中仅有一份路由表实例，避免了数据的不一致性。</p>
+</li>
+<li><p>在路由表中存储了路径与 Activity 类的映射关系，通过提供跳转方法，依据传入的路径从路由表获取对应的 Activity 类，进而创建 Intent 实现页面跳转。</p>
+</li>
+</ol>
+<p><strong>路由注册过程存在缺陷，所有模块的路由信息均在 Application 的 onCreate 方法中集中注册，当模块数量增多时，会导致 Application 类极度臃肿，代码的可维护性与扩展性显著下降。</strong></p>
+<h3 id="跳转"><a href="#跳转" class="headerlink" title="跳转"></a>跳转</h3><p>实现跳转的方法，传递需要跳转的路径，从路由表中找到对应的Activity</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">startActivity</span><span class="params">(Activity activity,string path)</span> {</span><br><span class="line">  Class&lt;? <span class="keyword">extends</span> <span class="title class_">Activity</span>&gt; cls = routers.get(path);</span><br><span class="line">  <span class="keyword">if</span> (cls != <span class="literal">null</span>){</span><br><span class="line">    <span class="type">Intent</span> <span class="variable">intent</span> <span class="operator">=</span><span class="keyword">new</span> <span class="title class_">Intent</span>(activity, cls);</span><br><span class="line">    activity.startActivity(intent);</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>使用时通过</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Router.getInstance().startActivity( activity: <span class="built_in">this</span>, path: <span class="string">"/wm/main"</span> )</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h3><p>将数据写入路由表</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">regiest</span><span class="params">(String path, Class&lt;? extends Activity&gt; cls)</span>{</span><br><span class="line">  routers.put(path,cls);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>在application启动的时候完成注册<br>这个类在app模块中，出于所有模块的最上层，可以拿到所有子模块类的引用</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MTApplication</span> <span class="keyword">extends</span> <span class="title class_">Application</span>  {</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">oncreate</span><span class="params">()</span>{</span><br><span class="line">    <span class="built_in">super</span>.onCreate();</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  Router.getInstance().register( path:<span class="string">"/wm/main"</span>, WMActivity.class);</span><br><span class="line">  Router.getInstance().register( path: <span class="string">"/food/main"</span>, FoodActivity.class);</span><br><span class="line">  Router.getInstance().register( path: <span class="string">"/food/main"</span>, FoodActivity.class):</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<blockquote>
+<p>1个模块需要注册10个路由信息，10个模块<br>Application极度臃肿</p>
+</blockquote>
+<h2 id="去除中心化"><a href="#去除中心化" class="headerlink" title="去除中心化"></a>去除中心化</h2><p><strong>下沉注册项</strong>，解决原始实现中 Application 过于臃肿的问题</p>
+<p>为每个子模块都添加一个注册类，用来注册路由信息，每个子类继承于父类</p>
+<p>通过创建 IRouteLoad 接口，让每个子模块实现该接口并负责自身路由信息的注册，从而将注册逻辑分散到各个子模块。</p>
+<p>同时，利用反射机制在 Router 类中动态加载并调用这些子模块的注册类，实现路由信息的整合。</p>
+<p><strong>但此方法存在局限性，由于 Router 位于底层，业务模块在上层，底层无法直接知晓上层的类，只能借助反射动态获取，这在一定程度上影响了性能与代码的简洁性。</strong></p>
+<h3 id="定义接口与子模块注册类"><a href="#定义接口与子模块注册类" class="headerlink" title="定义接口与子模块注册类"></a>定义接口与子模块注册类</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义路由加载接口，所有子模块的注册类都需要实现此接口</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">IRouteLoad</span> {</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">loadInto</span><span class="params">(Map&lt;String, Class&lt;? extends Activity&gt;&gt; routers)</span>;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">// 以 A 模块为例的注册类</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ARouter</span> <span class="keyword">implements</span> <span class="title class_">IRouteLoad</span> {</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">loadInto</span><span class="params">(Map&lt;String, Class&lt;? extends Activity&gt;&gt; routers)</span> {</span><br><span class="line">        routers.put(<span class="string">"/food/main"</span>, FoodActivity.class);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="在-Router-类中整合注册"><a href="#在-Router-类中整合注册" class="headerlink" title="在 Router 类中整合注册"></a>在 Router 类中整合注册</h3><p>在Router类中调用注册方法</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">init</span><span class="params">(Application application)</span> {</span><br><span class="line">  <span class="comment">// 手动调用各个子模块的注册类进行路由注册，这种方式仍然不够灵活且依赖反射</span></span><br><span class="line">  <span class="keyword">new</span> <span class="title class_">FoodRouter</span>().loadInto(routers);</span><br><span class="line">  <span class="keyword">new</span> <span class="title class_">WMRouter</span>().loadInto(routers);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="反射实现动态注册"><a href="#反射实现动态注册" class="headerlink" title="反射实现动态注册"></a>反射实现动态注册</h3><p>怎么才能拿到实例？ -&gt; 反射</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> {</span><br><span class="line">  <span class="comment">// 根据类名获取类对象</span></span><br><span class="line">  Class&lt;?&gt; cls = Class.forName(<span class="string">"com.enjoy.routers.FoodRouter"</span>);</span><br><span class="line">  <span class="comment">// 创建实例并强转为 IRouteLoad 接口类型</span></span><br><span class="line">  <span class="type">IRouteLoad</span> <span class="variable">o</span> <span class="operator">=</span> (IRouteLoad) cls.newInstance();</span><br><span class="line">  <span class="comment">// 调用注册方法将路由信息加载到路由表</span></span><br><span class="line">  o.loadInto(routers);</span><br><span class="line">} <span class="keyword">catch</span> (Exception e) {</span><br><span class="line">  e.printStackTrace();</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>但是这样写不行，Route在底层，业务模块子类在上层，底层是不知道上层的类的，只有上层知道下层</p>
+<p>怎么做？</p>
+<blockquote>
+<p>编译流程：class -&gt;dex-&gt; apk<br>1、拿到apk，找到所有的类(pms)<br>2、从apk dex中找到所有com.enjoy.routers包下同时实现了IRouteLoad的类(ClassLoader)</p>
+</blockquote>
+<p>所有安装过的apk都会复制一份在/data/app/…/base.apk中，通过pms可以拿到</p>
+<p>通过pms(包管理器)获得程序所有的apk(instant run会产生很多split apk)</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> List&lt;String&gt; <span class="title function_">getSourcePaths</span><span class="params">(Context context)</span> <span class="keyword">throws</span> PackageManager.NameNotFoundException {</span><br><span class="line">  <span class="type">ApplicationInfo</span> <span class="variable">applicationInfo</span> <span class="operator">=</span> context.getPackageManager.getApplicationInfo(context.getPackageName()，flags:<span class="number">0</span>);</span><br><span class="line">  List&lt;String&gt;sourcePaths =<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">  <span class="comment">//当前应用的apk 文件</span></span><br><span class="line">  sourcePaths.add(applicationInfo.sourceDir);</span><br><span class="line">  <span class="comment">//instant run</span></span><br><span class="line">  <span class="keyword">if</span>(BUiLd.VERSION.SDK INT&gt;= BUiLd.VERSION CODES.LOLLIPOP){</span><br><span class="line">    <span class="keyword">if</span>(<span class="literal">null</span> != applicationInfo.splitSourceDirs) {</span><br><span class="line">      sourcePaths.addAll(Arrays.asList(applicationInfo.splitsourceDirs));</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">  <span class="keyword">return</span> sourcePaths;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>通过包名返回类的名称</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> Set&lt;String&gt; <span class="title function_">getfileNameByPackageName</span><span class="params">(Application context, <span class="keyword">final</span> stringpackageName)</span> <span class="keyword">throws</span> PackageManager.NameNotFoundException {</span><br><span class="line">  <span class="comment">//拿到apk当中的dex地址，dexFile最终处理Class</span></span><br><span class="line">  <span class="keyword">final</span> set&lt;string&gt; classNames = <span class="keyword">new</span> <span class="title class_">Hashset</span>&lt;&gt;();</span><br><span class="line">  List&lt;String&gt; paths = getSourcePaths(context);</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">final</span> string path :paths) {</span><br><span class="line">    <span class="type">DexFile</span> <span class="variable">dexfile</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">try</span> {</span><br><span class="line">      <span class="comment">//加载apk中的dex并迪片获得所台packageName 类</span></span><br><span class="line">      dexfile =<span class="keyword">new</span> <span class="title class_">DexFile</span>(path);</span><br><span class="line">      Enumeration&lt;String&gt; dexFntries =dexfile.entries();</span><br><span class="line">      <span class="keyword">while</span>(dexEntries.hasMoreElements()){</span><br><span class="line">        <span class="comment">// com.xxx.xxx.XXX</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">className</span> <span class="operator">=</span> dexntries.nextElement();</span><br><span class="line">        <span class="keyword">if</span>(className.startsWith(packageName)){</span><br><span class="line">          classNames.add(className);</span><br><span class="line">        }</span><br><span class="line">      }</span><br><span class="line">    } <span class="keyword">catch</span>(IExceptione) {</span><br><span class="line">      e.printStackTrace();</span><br><span class="line">    } <span class="keyword">finally</span> {</span><br><span class="line">      <span class="keyword">if</span>(<span class="literal">null</span> != dexfile){</span><br><span class="line">        <span class="keyword">try</span> {</span><br><span class="line">          dexfile.close();</span><br><span class="line">        } <span class="keyword">catch</span>(IOException e){</span><br><span class="line">          e.printStackTrace();</span><br><span class="line">        } </span><br><span class="line">      }</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">  <span class="keyword">return</span> classNames;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>使用</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> {</span><br><span class="line">  <span class="comment">// 拿到所有com.enjoy.routers包下的类名</span></span><br><span class="line">  Set&lt;String&gt;classNames = ClassUtils.getFileNameByPackageName(application,packageName:<span class="string">"com.enjoy.routers"</span>);</span><br><span class="line">  <span class="keyword">for</span>(String className :classNames){</span><br><span class="line">  <span class="comment">// 通过反射获取类</span></span><br><span class="line">    Class&lt;?&gt; cls =Class.forName(className);</span><br><span class="line">    <span class="comment">// 如果实现了IRouteLoad</span></span><br><span class="line">    <span class="keyword">if</span>(IRouteLoad.class.isAssignableFrom(cls)){</span><br><span class="line">      <span class="comment">// 强转为IRouteLoad</span></span><br><span class="line">      <span class="type">IRouteLoad</span> <span class="variable">load</span> <span class="operator">=</span>(IRouteLoad) cls.newInstance();</span><br><span class="line">      <span class="comment">// 注册</span></span><br><span class="line">      load.loadInto(routers);</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">}<span class="keyword">catch</span>(Exception e) {</span><br><span class="line">  e.printstackTrace():</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="APT自动生成路由注册类"><a href="#APT自动生成路由注册类" class="headerlink" title="APT自动生成路由注册类"></a>APT自动生成路由注册类</h2><p>APT:annotation processor tools 注解处理器</p>
+<p>其原理是在编译期间扫描源代码中的注解信息，然后根据这些注解生成额外的代码文件，从而实现自动化的代码生成，减少手动编写重复代码的工作量并降低出错概率。在路由框架中，利用 APT 可以自动生成路由注册类，使得路由信息的注册更加智能和高效。</p>
+<p>监听:监听javac编译java文件，有指定的注解，就回调注解处理器代码</p>
+<p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/Android-34%20%E7%BB%84%E4%BB%B6%E5%8C%96/%E8%B7%AF%E7%94%B1%E4%BC%98%E5%8C%96.png"></p>
+<h3 id="定义注解"><a href="#定义注解" class="headerlink" title="定义注解"></a>定义注解</h3><p>定义一个用于标记路由类或方法的注解</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.lang.annotation.ElementType;</span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.Retention;</span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.RetentionPolicy;</span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.Target;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Target(ElementType.TYPE)</span> <span class="comment">// 表示该注解可以应用于类上</span></span><br><span class="line"><span class="meta">@Retention(RetentionPolicy.CLASS)</span> <span class="comment">// 表示在编译期保留该注解信息</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Route {</span><br><span class="line">    String <span class="title function_">path</span><span class="params">()</span>; <span class="comment">// 路由路径</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="编写-APT-处理器"><a href="#编写-APT-处理器" class="headerlink" title="编写 APT 处理器"></a>编写 APT 处理器</h3><p>创建一个类继承自 AbstractProcessor，并重写 process 方法来处理注解：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.enjoy.router.compiler;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.set;</span><br><span class="line"><span class="keyword">import</span> javax.annotation.processing.AbstractProcessor;</span><br><span class="line"><span class="keyword">import</span> javax.annotation.processing.RoundEnvironment;</span><br><span class="line"><span class="keyword">import</span> javax.lang.model.element.TypeElement;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 导入相关的自动生成代码的类库，例如用于生成 Java 类文件的类</span></span><br><span class="line"><span class="keyword">import</span> com.squareup.javapoet.ClassName;</span><br><span class="line"><span class="keyword">import</span> com.squareup.javapoet.JavaFile;</span><br><span class="line"><span class="keyword">import</span> com.squareup.javapoet.MethodSpec;</span><br><span class="line"><span class="keyword">import</span> com.squareup.javapoet.ParameterizedTypeName;</span><br><span class="line"><span class="keyword">import</span> com.squareup.javapoet.TypeSpec;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 配置自动服务，让编译器能够找到我们的注解处理器</span></span><br><span class="line"><span class="comment">// 注意：这部分代码可能需要根据项目结构和 gradle 版本进行调整</span></span><br><span class="line"><span class="comment">// 例如，如果是 Android 项目，可能需要在对应的 Android 模块的 build.gradle 文件中进行配置</span></span><br><span class="line"><span class="comment">// 并且可能需要使用不同的插件和配置方式来启用自动服务</span></span><br><span class="line"><span class="meta">@AutoService(Processor.class)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">A</span> <span class="keyword">extends</span> <span class="title class_">AbstractProcessor</span> {</span><br><span class="line">  <span class="keyword">private</span> Messager messager;</span><br><span class="line">  <span class="keyword">private</span> Elements elementUtils;</span><br><span class="line">  <span class="keyword">private</span> Filer filer;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title function_">init</span><span class="params">(ProcessingEnvironment processingEnv)</span> {</span><br><span class="line">      <span class="built_in">super</span>.init(processingEnv);</span><br><span class="line">      <span class="comment">// 初始化一些工具类，用于打印日志、获取元素信息和生成文件</span></span><br><span class="line">      messager = processingEnv.getMessager();</span><br><span class="line">      elementUtils = processingEnv.getElementUtils();</span><br><span class="line">      filer = processingEnv.getFiler();</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">process</span><span class="params">(Set&lt;? extends TypeElement&gt; annotations, RoundEnvironment roundEnv)</span> {</span><br><span class="line">      <span class="comment">// 用于存储找到的带有 Route 注解的类信息</span></span><br><span class="line">      List&lt;RouteClass&gt; routeClasses = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 遍历所有被 Route 注解标记的元素（这里是类）</span></span><br><span class="line">      <span class="keyword">for</span> (Element element : roundEnv.getElementsAnnotatedWith(Route.class)) {</span><br><span class="line">          <span class="keyword">if</span> (element <span class="keyword">instanceof</span> TypeElement) {</span><br><span class="line">              <span class="type">TypeElement</span> <span class="variable">typeElement</span> <span class="operator">=</span> (TypeElement) element;</span><br><span class="line">              <span class="comment">// 获取注解中的路径信息</span></span><br><span class="line">              <span class="type">String</span> <span class="variable">path</span> <span class="operator">=</span> typeElement.getAnnotation(Route.class).path();</span><br><span class="line">              <span class="comment">// 将类信息和路径信息封装成 RouteClass 对象并添加到列表中</span></span><br><span class="line">              routeClasses.add(<span class="keyword">new</span> <span class="title class_">RouteClass</span>(path, typeElement));</span><br><span class="line">          }</span><br><span class="line">      }</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 如果找到了带有 Route 注解的类，则生成路由注册类</span></span><br><span class="line">      <span class="keyword">if</span> (!routeClasses.isEmpty()) {</span><br><span class="line">          generateRouterMap(routeClasses);</span><br><span class="line">      }</span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">generateRouterMap</span><span class="params">(List&lt;RouteClass&gt; routeClasses)</span> {</span><br><span class="line">      <span class="keyword">try</span> {</span><br><span class="line">          <span class="comment">// 定义生成的注册类的类名</span></span><br><span class="line">          <span class="type">ClassName</span> <span class="variable">routerMapClassName</span> <span class="operator">=</span> ClassName.get(<span class="string">"com.enjoy.router"</span>, <span class="string">"RouterMap"</span>);</span><br><span class="line">          <span class="comment">// 定义注册方法的参数类型，即路由表的类型</span></span><br><span class="line">          <span class="type">ParameterizedTypeName</span> <span class="variable">mapType</span> <span class="operator">=</span> ParameterizedTypeName.get(</span><br><span class="line">                  ClassName.get(Map.class),</span><br><span class="line">                  ClassName.get(String.class),</span><br><span class="line">                  ClassName.get(Class.class).parameterizedBy(ClassName.get(Activity.class))</span><br><span class="line">          );</span><br><span class="line"></span><br><span class="line">          <span class="comment">// 构建注册方法</span></span><br><span class="line">          MethodSpec.<span class="type">Builder</span> <span class="variable">loadIntoMethodBuilder</span> <span class="operator">=</span> MethodSpec.methodBuilder(<span class="string">"loadInto"</span>)</span><br><span class="line">                .addModifiers(Modifier.PUBLIC)</span><br><span class="line">                .addAnnotation(Override.class)</span><br><span class="line">                .addParameter(mapType, <span class="string">"routers"</span>);</span><br><span class="line"></span><br><span class="line">          <span class="comment">// 遍历 RouteClass 列表，生成将每个路由类注册到路由表的代码</span></span><br><span class="line">          <span class="keyword">for</span> (RouteClass routeClass : routeClasses) {</span><br><span class="line">              loadIntoMethodBuilder.addStatement(<span class="string">"routers.put($S, $T.class)"</span>, routeClass.path, routeClass.typeElement);</span><br><span class="line">          }</span><br><span class="line"></span><br><span class="line">          <span class="comment">// 构建注册类</span></span><br><span class="line">          <span class="type">TypeSpec</span> <span class="variable">routerMapClass</span> <span class="operator">=</span> TypeSpec.classBuilder(<span class="string">"RouterMap"</span>)</span><br><span class="line">                .addSuperinterface(ClassName.get(<span class="string">"com.enjoy.router"</span>, <span class="string">"IRouteLoad"</span>))</span><br><span class="line">                .addModifiers(Modifier.PUBLIC)</span><br><span class="line">                .addMethod(loadIntoMethodBuilder.build())</span><br><span class="line">                .build();</span><br><span class="line"></span><br><span class="line">          <span class="comment">// 使用 JavaFile 类将生成的注册类写入文件</span></span><br><span class="line">          JavaFile.builder(<span class="string">"com.enjoy.router"</span>, routerMapClass)</span><br><span class="line">                .build()</span><br><span class="line">                .writeTo(filer);</span><br><span class="line"></span><br><span class="line">      } <span class="keyword">catch</span> (Exception e) {</span><br><span class="line">          <span class="comment">// 如果生成过程中出现错误，打印错误信息</span></span><br><span class="line">          messager.printMessage(Diagnostic.Kind.ERROR, <span class="string">"Error generating RouterMap class: "</span> + e.getMessage());</span><br><span class="line">      }</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="keyword">public</span> Set&lt;String&gt; <span class="title function_">getSupportedAnnotationTypes</span><span class="params">()</span> {</span><br><span class="line">      <span class="comment">// 指定该处理器支持处理的注解类型</span></span><br><span class="line">      Set&lt;String&gt; annotations = <span class="keyword">new</span> <span class="title class_">LinkedHashSet</span>&lt;&gt;();</span><br><span class="line">      annotations.add(Route.class.getCanonicalName());</span><br><span class="line">      <span class="keyword">return</span> annotations;</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="keyword">public</span> SourceVersion <span class="title function_">getSupportedSourceVersion</span><span class="params">()</span> {</span><br><span class="line">      <span class="comment">// 指定支持的 Java 版本</span></span><br><span class="line">      <span class="keyword">return</span> SourceVersion.latestSupported();</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 内部类，用于封装带有 Route 注解的类信息</span></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">RouteClass</span> {</span><br><span class="line">      String path;</span><br><span class="line">      TypeElement typeElement;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">public</span> <span class="title function_">RouteClass</span><span class="params">(String path, TypeElement typeElement)</span> {</span><br><span class="line">          <span class="built_in">this</span>.path = path;</span><br><span class="line">          <span class="built_in">this</span>.typeElement = typeElement;</span><br><span class="line">      }</span><br><span class="line">  }</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<p>使用 @AutoService 的方式来自动注册此处理器，会在 build/classes/java/main 下生成 META-INF/services/javax.annotation.processing.Processor 文件：</p>
+<p>在上述代码中：</p>
+<ul>
+<li><p><code>init</code> 方法用于初始化一些在注解处理过程中需要用到的工具类，如 Messager（用于打印编译期的日志信息）、Elements（用于获取元素相关信息）和 Filer（用于生成新的文件）。</p>
+</li>
+<li><p><code>process</code> 方法是核心处理逻辑，它遍历所有被 Route 注解标记的类元素，获取注解中的路径信息，并将类信息和路径信息封装成 RouteClass 对象存储在列表中。然后，如果找到了带有注解的类，就调用 generateRouterMap 方法生成路由注册类。</p>
+</li>
+<li><p><code>generateRouterMap</code> 方法首先定义了生成的注册类的类名和注册方法的参数类型（即路由表的类型），然后构建注册方法，通过遍历 RouteClass 列表，生成将每个路由类注册到路由表的代码语句（如 addStatement 方法中的代码）。接着构建注册类，使其实现 IRouteLoad 接口，并将注册方法添加到类中。最后，使用 JavaFile 类将生成的注册类写入文件系统。</p>
+</li>
+</ul>
+<h3 id="配置-APT-处理器"><a href="#配置-APT-处理器" class="headerlink" title="配置 APT 处理器"></a>配置 APT 处理器</h3><p>在项目的 build.gradle 文件中进行如下配置，使得 APT 处理器能够在编译时被调用：</p>
+<figure class="highlight gradle"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">apply plugin: <span class="string">'java-library'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">dependencies</span> {</span><br><span class="line">    <span class="comment">// 添加注解处理器库的依赖</span></span><br><span class="line">    annotationProcessor <span class="string">'com.google.auto.service:auto-service:1.0-rc7'</span></span><br><span class="line">    <span class="comment">// 添加用于生成代码的库的依赖，如 Javapoet</span></span><br><span class="line">    implementation <span class="string">'com.squareup.javapoet:javapoet:1.13.0'</span></span><br><span class="line">    <span class="comment">// 其他可能需要的依赖，如用于处理注解的相关库</span></span><br><span class="line">    implementation <span class="string">'javax.annotation:javax.annotation-api:1.3.2'</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>在编译项目时，APT 就会自动扫描带有 Route 注解的类，根据注解信息生成路由注册类，该注册类实现了 IRouteLoad 接口，并在 loadInto 方法中包含了将所有带有 Route 注解的类注册到路由表的代码。这样就实现了路由注册的自动化，无需手动编写大量的注册代码，提高了开发效率和代码质量，同时也减少了因手动编写注册代码而可能产生的错误。</p>
+<h2 id="字节码插桩优化路由初始性能"><a href="#字节码插桩优化路由初始性能" class="headerlink" title="字节码插桩优化路由初始性能"></a>字节码插桩优化路由初始性能</h2><p>自定义gradle插件+字节码插桩</p>
+<p>在原始实现中，如 <code>getFileNameByPackageName</code> 方法在运行时遍历 apk 中所有类来获取特定包名下的类，这一过程耗时严重，影响程序启动速度。</p>
+<p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/20230301/%E5%AD%97%E8%8A%82%E7%A0%81%E6%8F%92%E6%A1%A9.png"></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(dexEntries.hasMoreElements()){</span><br><span class="line">  <span class="comment">// com.xxx.xxx.XXX</span></span><br><span class="line">  <span class="type">String</span> <span class="variable">className</span> <span class="operator">=</span> dexntries.nextElement();</span><br><span class="line">  <span class="keyword">if</span>(className.startsWith(packageName)){</span><br><span class="line">    classNames.add(className);</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>在路由系统的原始实现中，存在一个性能瓶颈问题。例如 <code>getFileNameByPackageName</code> 方法，它在运行时需要遍历整个 APK 中的所有类，目的是获取特定包名下的类。这一过程非常耗时，尤其是在 APK 包含大量类文件的情况下，会严重拖慢程序的启动速度。因为在程序启动时，路由系统需要尽快完成初始化，以便能够响应页面跳转等操作，而这种全量类的扫描操作会占用大量的启动时间，导致用户体验不佳。</p>
+<p>为了解决这个问题，引入字节码插桩技术。通过在编译期间对字节码进行修改，将原本在运行时进行的全量类扫描和路由信息加载操作提前到编译期完成。具体来说，就是在 <code>loadRouterMap</code> 方法中插入预先生成的路由信息加载逻辑，这样在运行时，如果已经通过字节码插桩完成了路由信息的加载，就可以直接跳过耗时的类扫描过程，从而显著提高程序启动速度与路由初始化性能。</p>
+<p>字节码插桩的实现需要借助相关字节码操作库，这里主要使用了 ASM 库。ASM 是一个强大的 Java 字节码操作框架，它允许我们直接读取、修改和生成 Java 字节码。在自定义 Gradle 插件的逻辑中，利用 ASM 对字节码进行分析与修改。</p>
+<p>同时，为了在 Gradle 构建过程中实现字节码插桩，需要自定义 Gradle 插件。这个插件将在 Gradle 构建的特定阶段介入，对项目中的字节码进行处理。</p>
+<p>在 gradle 构建脚本中应用自定义插件：</p>
+<figure class="highlight gradle"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apply plugin: com.enjoy.router</span><br></pre></td></tr></tbody></table></figure>
+
+<p>修改 getFileNameByPackageName 方法：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="variable">registerByPlugin</span> <span class="operator">=</span> <span class="literal">false</span>;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">loadRouterMap</span><span class="params">()</span>{}</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> Set&lt;String&gt; <span class="title function_">getfileNameByPackageName</span><span class="params">(Application context, <span class="keyword">final</span> stringpackageName)</span> <span class="keyword">throws</span> PackageManager.NameNotFoundException {</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 添加</span></span><br><span class="line">  loadRouterMap();</span><br><span class="line">  <span class="keyword">if</span> (registerByPlugin) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 剩下代码</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>最终运行后<code>loadRouterMap</code>中会自动写入</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">FoodRouter</span>().loadInto(routers);</span><br><span class="line"><span class="keyword">new</span> <span class="title class_">WMRouter</span>().loadInto(routers);</span><br><span class="line">registerByPlugin = <span class="literal">true</span>;</span><br></pre></td></tr></tbody></table></figure>
+
+<p>不直接在<code>loadRouterMap</code>中实现方法是因为：</p>
+<ol>
+<li>目前处在框架开发，不知道业务开发的模块</li>
+<li>拿不到上层代码的引用</li>
+</ol>
+<p>在gradle编译时可以拿到所有类的编译，再将业务代码的类(ARounter、BRouter…)插入到Router中</p>
+<p>在项目同级目录下新建一个目录<code>buildSrc/src/main/java</code>，其中<code>buildSrc</code>名称固定，在这个文件夹下新建一个类</p>
+<p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/Android-34%20%E7%BB%84%E4%BB%B6%E5%8C%96/buildSrc%E7%9B%AE%E5%BD%95%E5%B1%82%E7%BA%A7.png"></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">A</span>{</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">test</span><span class="params">()</span>{</span><br><span class="line">    System.out.println(<span class="string">"11111111111111111"</span>);</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>这个类可以在gradle中通过</p>
+<figure class="highlight gradle"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A.test()</span><br></pre></td></tr></tbody></table></figure>
+
+<p>直接调用</p>
+<h3 id="自定义-Gradle-插件的构建与配置"><a href="#自定义-Gradle-插件的构建与配置" class="headerlink" title="自定义 Gradle 插件的构建与配置"></a>自定义 Gradle 插件的构建与配置</h3><h4 id="自定义插件类的实现"><a href="#自定义插件类的实现" class="headerlink" title="自定义插件类的实现"></a>自定义插件类的实现</h4><p>在 <code>buildSrc/src/main/java/com.enjoy.plugin</code> 目录下创建 <code>MyPlugin.java</code> 文件</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.enjoy.plugin;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.gradle.api.Plugin;</span><br><span class="line"><span class="keyword">import</span> org.gradle.api.Project;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyPlugin</span> <span class="keyword">implements</span> <span class="title class_">Plugin</span>&lt;Project&gt;{</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">apply</span><span class="params">(Project target)</span>{</span><br><span class="line">    System.out.println(<span class="string">"1111"</span>);</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>在 apply 方法中，我们目前只是简单地打印了一个信息。但在实际的路由字节码插桩场景中，这里将是我们注册各种转换和处理逻辑的地方。<br>在应用模块（例如 app 目录）下的 <code>build.gradle </code>中，应用我们的自定义插件：</p>
+<figure class="highlight gradle"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apply plugin:com.enjoy.plugin.MyPlugin</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="引入Android依赖"><a href="#引入Android依赖" class="headerlink" title="引入Android依赖"></a>引入Android依赖</h4><p>由于字节码插桩技术需要用到 Android 提供的 Transform API，需要在插件中引入相关依赖。在 <code>buildSrc</code> 目录下新建 <code>build.gradle</code> 文件，并添：</p>
+<figure class="highlight gradle"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">repositories</span>{</span><br><span class="line">  google()</span><br><span class="line">  jcenter()</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">dependencies</span> {</span><br><span class="line">  implementation <span class="string">'com.android.tools.build:gradle:4.1.0'</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>这里引入了 com.android.tools.build:gradle 依赖，它包含了我们需要的 Transform API 以及其他与 Android 构建相关的工具和类。</p>
+<h4 id="注册Transform"><a href="#注册Transform" class="headerlink" title="注册Transform"></a>注册Transform</h4><p>在 MyPlugin 类中，我们需要获取 Android 扩展，并注册 <code>MyTransform</code>类。<code>MyTransform</code> 类将负责实际的字节码转换和插桩操作。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.enjoy.plugin;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.android.build.gradle.AppExtension;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.gradle.api.Plugin;</span><br><span class="line"><span class="keyword">import</span> org.gradle.api.Project;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyPlugin</span> <span class="keyword">implements</span> <span class="title class_">Plugin</span>&lt;Project&gt; {</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">apply</span><span class="params">(Project target)</span> {</span><br><span class="line">        <span class="comment">// 获取 Android 扩展</span></span><br><span class="line">        <span class="type">AppExtension</span> <span class="variable">android</span> <span class="operator">=</span> target.getExtensions().getByType(AppExtension.class);</span><br><span class="line">        <span class="comment">// 注册 MyTransform</span></span><br><span class="line">        android.registerTransform(<span class="keyword">new</span> <span class="title class_">MyTransform</span>());</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="MyTransform-类的详细解析"><a href="#MyTransform-类的详细解析" class="headerlink" title="MyTransform 类的详细解析"></a>MyTransform 类的详细解析</h3><h4 id="基本信息定义"><a href="#基本信息定义" class="headerlink" title="基本信息定义"></a>基本信息定义</h4><p><code>MyTransform</code> 类实现了 <code>Transform</code> 接口，这个接口定义了一系列方法，用于在 Gradle 构建过程中对字节码进行转换。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.android.build.api.transform.Transform;</span><br><span class="line"><span class="keyword">import</span> java.util.set;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyTransform</span> <span class="keyword">implements</span> <span class="title class_">Transform</span> {</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Override</span> </span><br><span class="line">  <span class="keyword">public</span> string <span class="title function_">getName</span><span class="params">()</span>{</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"com.enjoy.plugin"</span>;</span><br><span class="line">  }</span><br><span class="line">  </span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 处理类型</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">  <span class="meta">@Override</span> </span><br><span class="line">  <span class="keyword">public</span> set&lt;Qualifiedcontent.contentType&gt; getInputTypes(){</span><br><span class="line">    <span class="keyword">return</span> TransformManager.CONTENT_CLASS;</span><br><span class="line">  }</span><br><span class="line">  </span><br><span class="line">   <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 处理范围</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="keyword">public</span> set&lt;?<span class="built_in">super</span> Qualifiedcontent.scope&gt; getscopes(){</span><br><span class="line">    <span class="keyword">return</span> TransformManager.SCOPE_FULL_PROJECT;</span><br><span class="line">  }   </span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 是否增量编译</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">  <span class="meta">@Overridepublic</span> <span class="type">boolean</span> <span class="title function_">isIncremental</span><span class="params">()</span>{</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li><strong>getName</strong> 方法返回这个转换的名称，这里我们设置为 “com.enjoy.plugin”。</li>
+<li><strong>getInputTypes</strong> 方法指定了我们要处理的内容类型，这里设置为 TransformManager.CONTENT_CLASS，表示我们要处理的是类文件。</li>
+<li><strong>getScopes</strong> 方法定义了处理的范围，TransformManager.SCOPE_FULL_PROJECT 表示处理整个项目的类文件，包括主模块和依赖的库模块。</li>
+<li><strong>isIncremental</strong> 方法设置为 false，表示不使用增量编译，每次构建都会对所有类文件进行处理。</li>
+</ul>
+<h4 id="transform-方法：核心处理逻辑"><a href="#transform-方法：核心处理逻辑" class="headerlink" title="transform 方法：核心处理逻辑"></a>transform 方法：核心处理逻辑</h4><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">transform</span><span class="params">(<span class="meta">@NonNull</span> TransformInvocation transformInvocation)</span> <span class="keyword">throws</span> TransformException, InterruptedException, IOException {</span><br><span class="line">  Collection&lt;TransformInput&gt; inputs = transformInvocation.getInputs();</span><br><span class="line">  <span class="type">TransformOutputProvider</span> <span class="variable">outputProvider</span> <span class="operator">=</span> transformInvocation.getOutputProvider();</span><br><span class="line">  outputProvider.deleteAll();</span><br><span class="line">  <span class="keyword">for</span> (TransformInput input : inputs) {</span><br><span class="line">    <span class="comment">// 引入本插件的模块所有的类以Directory的形式获取</span></span><br><span class="line">    Collection&lt;DirectoryInput&gt; directoryInputs = input.getDirectoryInputs();</span><br><span class="line">    processsDireactory(directoryInputs, outputProvider);</span><br><span class="line">    <span class="comment">// 依赖，包括依赖的 library模块(如:OkHTTP、除APP所有其他模块的class) 以jar包形式获取</span></span><br><span class="line">    Collection&lt;JarInput&gt; jarInputs = input.getJarInputs();</span><br><span class="line">    <span class="comment">//处理jar 包</span></span><br><span class="line">    processJar(jarInputs,outputProvider);</span><br><span class="line">    <span class="comment">//插桩</span></span><br><span class="line">    <span class="keyword">if</span> (destFile != <span class="literal">null</span>) {</span><br><span class="line">      RegisterCodeGenerator.insertInitCodeTo(registerList, destFile);</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>从 transformInvocation 中获取输入信息（TransformInput）和输出提供者（TransformOutputProvider）。然后，删除输出目录下的所有文件，为新生成的字节码文件腾出空间。</li>
+<li>遍历输入信息中的目录输入（DirectoryInput）和 JAR 输入（JarInput）。对于目录输入，调用 processDirectory 方法进行处理（这里未展示 processDirectory 方法的具体实现，但它主要是对目录中的类文件进行遍历和处理）；对于 JAR 输入，调用 processJar 方法进行处理（同样未展示具体实现，主要是处理 JAR 包中的类文件）。</li>
+<li>如果满足条件（destFile 不为空），则调用 RegisterCodeGenerator.insertInitCodeTo 方法进行插桩操作。这个方法是整个字节码插桩的关键部分，它将在特定的类文件（这里是与路由相关的类文件）中插入预先生成的路由信息加载逻辑。</li>
+</ul>
+<h3 id="RegisterCodeGenerator-类：插桩逻辑的核心实现"><a href="#RegisterCodeGenerator-类：插桩逻辑的核心实现" class="headerlink" title="RegisterCodeGenerator 类：插桩逻辑的核心实现"></a>RegisterCodeGenerator 类：插桩逻辑的核心实现</h3><h4 id="insertInitCodeTo"><a href="#insertInitCodeTo" class="headerlink" title="insertInitCodeTo"></a>insertInitCodeTo</h4><p>这个方法的主要目的是对指定的 JAR 文件（这里是包含 Router.class 的 JAR 文件）进行处理。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">insertInitCodeTo</span><span class="params">(List&lt;String&gt; registerList, File jarFile)</span> <span class="keyword">throws</span> IOException {</span><br><span class="line">    <span class="comment">// 创建一个临时文件</span></span><br><span class="line">    <span class="type">File</span> <span class="variable">optJar</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(jarFile.getParent(), jarFile.getName() + <span class="string">".opt"</span>);</span><br><span class="line">    <span class="keyword">if</span> (optJar.exists()) {</span><br><span class="line">        optJar.delete();</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">// 操作 Router.class 所在的jar</span></span><br><span class="line">    <span class="type">JarFile</span> <span class="variable">file</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JarFile</span>(jarFile);</span><br><span class="line">    Enumeration&lt;JarEntry&gt; enumeration = file.entries();</span><br><span class="line">    <span class="type">JarOutputStream</span> <span class="variable">jarOutputStream</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JarOutputStream</span>(<span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(optJar));</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 把jarFile中的文件一个个拷贝到optJar中</span></span><br><span class="line">    <span class="keyword">while</span> (enumeration.hasMoreElements()) {</span><br><span class="line">        <span class="type">JarEntry</span> <span class="variable">jarEntry</span> <span class="operator">=</span> enumeration.nextElement();</span><br><span class="line">        <span class="type">String</span> <span class="variable">entryName</span> <span class="operator">=</span> jarEntry.getName();</span><br><span class="line">        <span class="type">ZipEntry</span> <span class="variable">zipEntry</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ZipEntry</span>(entryName);</span><br><span class="line">        <span class="type">InputStream</span> <span class="variable">inputStream</span> <span class="operator">=</span> file.getInputStream(jarEntry);</span><br><span class="line">        jarOutputStream.putNextEntry(zipEntry);</span><br><span class="line">        <span class="keyword">if</span> (entryName.equals(<span class="string">"com/enjoy/router/api/Router.class"</span>)) {</span><br><span class="line">            <span class="comment">// 插桩</span></span><br><span class="line">            <span class="type">byte</span>[] bytes = referHackWhenInit(registerList, inputStream);</span><br><span class="line">            jarOutputStream.write(bytes);</span><br><span class="line">        } <span class="keyword">else</span> {</span><br><span class="line">            <span class="comment">// 直接拷贝</span></span><br><span class="line">            jarOutputStream.write(IOUtils.toByteArray(inputStream));</span><br><span class="line">        }</span><br><span class="line">        inputStream.close();</span><br><span class="line">        jarOutputStream.closeEntry();</span><br><span class="line">    }</span><br><span class="line">    file.close();</span><br><span class="line">    <span class="keyword">if</span> (jarFile.exists()) {</span><br><span class="line">        jarFile.delete();</span><br><span class="line">    }</span><br><span class="line">    optJar.renameTo(jarFile);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>创建一个临时文件 optJar，用于存储修改后的字节码。</li>
+<li>打开原始的 JAR 文件 jarFile，遍历其中的每个条目（JarEntry）。对于每个条目，如果是我们要插桩的 Router.class 文件，则调用 referHackWhenInit 方法获取修改后的字节码，并将其写入到新的 JAR 文件（optJar）中；如果不是 Router.class 文件，则直接将原始字节码拷贝到新的 JAR 文件中。</li>
+<li>关闭原始 JAR 文件，删除原始 JAR 文件，并将临时文件 optJar 重命名为原始 JAR 文件的名称，完成字节码的替换。</li>
+</ul>
+<h4 id="referHackWhenInit"><a href="#referHackWhenInit" class="headerlink" title="referHackWhenInit"></a>referHackWhenInit</h4><p>插桩操作的核心逻辑之一</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="type">byte</span>[] referHackWhenInit(List&lt;String&gt; registerList, InputStream inputStream) <span class="keyword">throws</span> IOException {</span><br><span class="line">    <span class="comment">// class的分析器</span></span><br><span class="line">    <span class="type">ClassReader</span> <span class="variable">cr</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ClassReader</span>(inputStream);</span><br><span class="line">    <span class="comment">// class的输出器</span></span><br><span class="line">    <span class="type">ClassWriter</span> <span class="variable">cw</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ClassWriter</span>(cr, ClassWriter.COMPUTE_FRAMES);</span><br><span class="line">    <span class="comment">// class的访问者监听</span></span><br><span class="line">    <span class="type">ClassVisitor</span> <span class="variable">cv</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MyClassVisitor</span>(Opcodes.ASM5, cw, registerList);</span><br><span class="line">    <span class="comment">// 启动分析</span></span><br><span class="line">    cr.accept(cv, ClassReader.EXPAND_FRAMES);</span><br><span class="line">    <span class="keyword">return</span> cw.toByteArray();</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li>创建一个 ClassReader 对象，它用于读取输入流中的字节码信息，就像一个字节码解析器。</li>
+<li>创建一个 ClassWriter 对象，它用于生成修改后的字节码。这里使用 ClassWriter.COMPUTE_FRAMES 模式，让 ASM 自动计算字节码的栈帧信息，简化了我们的开发。</li>
+<li>创建一个自定义的 MyClassVisitor 类的实例，这个类继承自 ClassVisitor，它将在类的访问过程中进行插桩操作。将 MyClassVisitor 传递给 ClassReader 的 accept 方法，启动字节码的分析和修改过程。</li>
+<li>返回修改后的字节码数组</li>
+</ul>
+<h4 id="MyClassVisitor类"><a href="#MyClassVisitor类" class="headerlink" title="MyClassVisitor类"></a>MyClassVisitor类</h4><p><code>MyClassVisitor</code> 类继承自 <code>ClassVisitor</code>，它在类的方法访问过程中进行特殊处理。当访问到名为 <code>loadRouterMap</code> 的方法时，它会创建一个自定义的 <code>RouteMethodVisitor</code> 类的实例，用于在这个方法中插入特定的字节码指令。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">MyClassVisitor</span> <span class="keyword">extends</span> <span class="title class_">ClassVisitor</span> {</span><br><span class="line">  <span class="keyword">private</span> List&lt;String&gt; registerList;</span><br><span class="line"></span><br><span class="line">  MyClassVisitor(<span class="type">int</span> api, ClassVisitor cv, List&lt;String&gt; registerList) {</span><br><span class="line">    <span class="built_in">super</span>(api, cv);</span><br><span class="line">    <span class="built_in">this</span>.registerList = registerList;</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="keyword">public</span> MethodVisitor <span class="title function_">visitMethod</span><span class="params">(<span class="type">int</span> access, String name, String desc, String signature, String[] exceptions)</span> {</span><br><span class="line">    <span class="type">MethodVisitor</span> <span class="variable">mv</span> <span class="operator">=</span> <span class="built_in">super</span>.visitMethod(access, name, desc, signature, exceptions);</span><br><span class="line">    <span class="keyword">if</span> (name.equals(<span class="string">"loadRouterMap"</span>)) {</span><br><span class="line">      <span class="comment">// 插桩</span></span><br><span class="line">      mv = <span class="keyword">new</span> <span class="title class_">RouteMethodVisitor</span>(Opcodes.ASM5, mv, registerList);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> mv;</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="RouteMethodVisitor类"><a href="#RouteMethodVisitor类" class="headerlink" title="RouteMethodVisitor类"></a>RouteMethodVisitor类</h4><p><code>RouteMethodVisitor</code> 类继承自 <code>MethodVisitor</code>，它在方法的指令访问过程中进行插桩操作</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">RouteMethodVisitor</span> <span class="keyword">extends</span> <span class="title class_">MethodVisitor</span> {</span><br><span class="line">  <span class="keyword">private</span> List&lt;String&gt; registerList;</span><br><span class="line"></span><br><span class="line">  RouteMethodVisitor(<span class="type">int</span> api, MethodVisitor mv, List&lt;String&gt; registerList) {</span><br><span class="line">    <span class="built_in">super</span>(api, mv);</span><br><span class="line">    <span class="built_in">this</span>.registerList = registerList;</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 得到方法体中所有的指令</span></span><br><span class="line"><span class="comment">   *</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> opcode</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">visitInsn</span><span class="params">(<span class="type">int</span> opcode)</span> {</span><br><span class="line">    <span class="keyword">if</span> (opcode &gt;= Opcodes.IRETURN &amp;&amp; opcode &lt;= Opcodes.RETURN) {</span><br><span class="line">      <span class="comment">// registerList: foodRouter、wmRouter</span></span><br><span class="line">      <span class="keyword">for</span> (String name : registerList) {</span><br><span class="line">        <span class="comment">// 创建 对应类型对象</span></span><br><span class="line">        mv.visitTypeInsn(Opcodes.NEW, name);</span><br><span class="line">        <span class="comment">// 复制栈顶因为INVOKESPECIAL 会消耗一个</span></span><br><span class="line">        mv.visitInsn(Opcodes.DUP);</span><br><span class="line">        mv.visitMethodInsn(Opcodes.INVOKESPECIAL, name, <span class="string">"&lt;init&gt;"</span>, <span class="string">"()V"</span>, <span class="literal">false</span>);</span><br><span class="line">        mv.visitFieldInsn(Opcodes.GETSTATIC, <span class="string">"com/enjoy/router/api/Router"</span>, <span class="string">"routers"</span>, <span class="string">"Ljava/util/Map"</span>);</span><br><span class="line">        mv.visitMethodInsn(Opcodes.INVOKEVIRTUAL, name, <span class="string">"loadInto"</span>, <span class="string">"(Ljava/util/Map;)V"</span>, <span class="literal">false</span>);</span><br><span class="line">      }</span><br><span class="line">      <span class="comment">// 把registerByPlugin 设置为true</span></span><br><span class="line">      mv.visitInsn(Opcodes.ICONST_1);</span><br><span class="line">      mv.visitFieldInsn(Opcodes.PUTSTATIC, <span class="string">"com/enjoy/router/api/Router"</span>, <span class="string">"registerByPlugin"</span>, <span class="string">"Z"</span>);</span><br><span class="line">    }</span><br><span class="line">    <span class="built_in">super</span>.visitInsn(opcode);</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>当遇到方法返回指令（opcode 在 Opcodes.IRETURN 到 Opcodes.RETURN 之间）时，它会遍历 registerList 中的每个注册类名。</p>
+<p>对于每个注册类名，它会创建该类的一个实例（通过 visitTypeInsn、visitInsn 和 visitMethodInsn 指令），然后调用该实例的 loadInto 方法，将路由信息加载到 Router 类的 routers 映射表中。</p>
+<p>将 registerByPlugin 静态变量设置为 true，表示路由信息已经通过插桩方式加载完成。这样在运行时，getFileNameByPackageName 方法就可以根据这个标志直接跳过耗时的类扫描过程，从而提高程序的启动速度和路由初始化性能。</p>
+<h5 id="ASN"><a href="#ASN" class="headerlink" title="ASN"></a>ASN</h5><p>操作Java 字节码的框架，按照Class文件的格式，解析、修改、生成Class，可以动态生成类或者增强现有类的全功能。</p>
+<p>正如GSON操作json的框架。</p>
+<p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/Android-34%20%E7%BB%84%E4%BB%B6%E5%8C%96/ASM.png"></p>
+<h5 id="整体思路"><a href="#整体思路" class="headerlink" title="整体思路"></a>整体思路</h5><p>目标是在<code>loadRouterMap</code>方法的字节码中插入类似如下的指令逻辑：</p>
+<p>其中<code>FoodRouter</code>和<code>WMRouter</code>都是动态生成的，他们都继承了<code>Router类</code>，有几个就会生成几个，最后把<code>registerByPlugin</code>置为<code>true</code>。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">FoodRouter</span>().loadInto(routers);</span><br><span class="line"><span class="keyword">new</span> <span class="title class_">WMRouter</span>().loadInto(routers);</span><br><span class="line">registerByPlugin = <span class="literal">true</span>;</span><br></pre></td></tr></tbody></table></figure>
+
+<p>在字节码层面，这涉及到创建类的实例（使用 NEW 指令创建对象，配合 INVOKESPECIAL 调用构造函数初始化对象）、调用实例方法（通过 INVOKEVIRTUAL 指令）以及设置静态变量（使用 PUTSTATIC 指令）等操作。并且由于 FoodRouter 和 WMRouter 这类路由注册类是动态生成的，数量不确定，所以需要遍历它们的列表来依次插入对应的指令。</p>
+<p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/Android-34%20%E7%BB%84%E4%BB%B6%E5%8C%96/javap.png"></p>
+<figure class="highlight cmd"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">javac Router.java</span><br><span class="line">javap -v Router.class</span><br></pre></td></tr></tbody></table></figure>
+
+<h5 id="代码实现步骤"><a href="#代码实现步骤" class="headerlink" title="代码实现步骤"></a>代码实现步骤</h5><p>修改 visitInsn 方法来插入具体指令</p>
+<p>visitInsn 方法是在遍历方法体字节码指令时，对特定指令（这里关注方法返回指令）进行处理并插入我们期望指令的关键方法，修改后的代码如下：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 得到方法体中所有的指令</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> opcode</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">visitInsn</span><span class="params">(<span class="type">int</span> opcode)</span> {</span><br><span class="line">  <span class="keyword">if</span> (opcode &gt;= Opcodes.IRETURN &amp;&amp; opcode &lt;= Opcodes.RETURN) {</span><br><span class="line">    <span class="comment">// registerList: foodRouter、wmRouter</span></span><br><span class="line">    <span class="keyword">for</span> (String name : registerList) {</span><br><span class="line">      <span class="comment">// 创建 对应类型对象</span></span><br><span class="line">      mv.visitTypeInsn(Opcodes.NEW, name);</span><br><span class="line">      <span class="comment">// 复制栈顶因为INVOKESPECIAL 会消耗一个</span></span><br><span class="line">      mv.visitInsn(Opcodes.DUP);</span><br><span class="line">      mv.visitMethodInsn(Opcodes.INVOKESPECIAL, name, <span class="string">"&lt;init&gt;"</span>, <span class="string">"()V"</span>, <span class="literal">false</span>);</span><br><span class="line">      mv.visitFieldInsn(Opcodes.GETSTATIC, <span class="string">"com/enjoy/router/api/Router"</span>, <span class="string">"routers"</span>, <span class="string">"Ljava/util/Map"</span>);</span><br><span class="line">      mv.visitMethodInsn(Opcodes.INVOKEVIRTUAL, name, <span class="string">"loadInto"</span>, <span class="string">"(Ljava/util/Map;)V"</span>, <span class="literal">false</span>);</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">// 把registerByPlugin 设置为true</span></span><br><span class="line">    mv.visitInsn(Opcodes.ICONST_1);</span><br><span class="line">    mv.visitFieldInsn(Opcodes.PUTSTATIC, <span class="string">"com/enjoy/router/api/Router"</span>, <span class="string">"registerByPlugin"</span>, <span class="string">"Z"</span>);</span><br><span class="line">  }</span><br><span class="line">  <span class="built_in">super</span>.visitInsn(opcode);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>在上述代码中：</p>
+<ol>
+<li><p>外层的 for 循环遍历 registerList，针对每个动态生成的路由注册类执行以下操作：</p>
+</li>
+<li><p>首先通过 visitTypeInsn 配合 Opcodes.NEW 创建类的实例，将创建对象的指令插入字节码中。</p>
+</li>
+<li><p>接着使用 visitInsn 配合 Opcodes.DUP 复制栈顶元素，这是为了后续调用构造函数做准备，因为 INVOKESPECIAL 指令在调用实例的构造函数时会消耗一个栈顶元素作为 this 指针。</p>
+</li>
+<li><p>然后通过 visitMethodInsn 调用构造函数进行初始化，指定了构造函数的名称 <init>、描述符 ()V（表示无参且返回 void）以及所属的类（即当前循环的路由注册类）。</init></p>
+</li>
+<li><p>再通过 visitFieldInsn 获取 Router 类中的静态 routers 字段，以便传递给 loadInto 方法作为参数。</p>
+</li>
+<li><p>最后使用 visitMethodInsn 调用当前路由注册类实例的 loadInto 方法，将路由信息加载到 routers 映射表中，这里指定了方法的名称 loadInto、参数类型描述符 (Ljava/util/Map;)V（表示接收一个 Map 类型参数且返回 void）以及所属的类（当前路由注册类）。</p>
+</li>
+<li><p>在循环结束后，通过 visitInsn 配合 Opcodes.ICONST_1 将整数常量 1 压入栈顶，然后使用 visitFieldInsn 配合 PUTSTATIC 操作码将 registerByPlugin 静态变量设置为 true，完成整个插桩逻辑中关键指令的插入。</p>
+</li>
+</ol>
+<p>这样，在编译期间，通过字节码插桩就能够在 loadRouterMap 方法中插入我们期望的路由信息加载逻辑以及设置相应的完成标志，从而避免在运行时去遍历查找路由注册类，提高了路由初始化性能。</p>
+
+                </div>
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/blog/tags/Android/">Android</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                            <div class="post-share-container border-box">
+    <ul class="share-list-wrap border-box">
+        <li class="qq share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to QQ"
+        >
+            <i class="fa-brands fa-qq"></i>
+        </li>
+        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
+            data-tooltip-content="Share to WeChat"
+            data-tooltip-img-tip="Scan by WeChat"
+            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
+        >
+            <i class="fa-brands fa-weixin"></i>
+        </li>
+        <li class="weibo share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to WeiBo"
+        >
+            <i class="fa-brands fa-weibo"></i>
+        </li>
+    </ul>
+</div>
+
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/blog/2024/12/09/Android-35%20ARouter/"
+                                   title="ARouter"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">ARouter</span>
+                                        <span class="post-nav-item">Prev posts</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/blog/2024/12/04/Android-33%20MMKV/"
+                                   title="MMKV"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">MMKV</span>
+                                        <span class="post-nav-item">Next posts</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc left-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <!-- use hexo-blog-encrypt -->
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%84%E4%BB%B6%E5%8C%96%E8%B7%AF%E7%94%B1%E6%A1%86%E6%9E%B6%E5%AD%98%E5%9C%A8%E7%9A%84%E6%84%8F%E4%B9%89"><span class="nav-number">1.</span> <span class="nav-text">组件化路由框架存在的意义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#APT%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">APT工作流程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BC%A0%E7%BB%9F%E9%A1%B5%E9%9D%A2%E8%B7%AF%E7%94%B1%E6%93%8D%E4%BD%9C%E6%96%B9%E5%BC%8F%E7%BC%BA%E9%99%B7"><span class="nav-number">3.</span> <span class="nav-text">传统页面路由操作方式缺陷</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%84%E4%BB%B6%E5%8C%96%E9%A1%B5%E9%9D%A2%E8%B7%AF%E7%94%B1%E4%BC%98%E5%8A%BF"><span class="nav-number">4.</span> <span class="nav-text">组件化页面路由优势</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Aroute%E8%B7%AF%E7%94%B1%E6%80%8E%E4%B9%88%E5%A4%84%E7%90%86%E7%9A%84"><span class="nav-number">5.</span> <span class="nav-text">Aroute路由怎么处理的?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B7%AF%E7%94%B1%E5%AE%9E%E8%B7%B5"><span class="nav-number">6.</span> <span class="nav-text">路由实践</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E5%AE%9E%E7%8E%B0"><span class="nav-number">6.1.</span> <span class="nav-text">基础实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B7%B3%E8%BD%AC"><span class="nav-number">6.1.1.</span> <span class="nav-text">跳转</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E5%86%8C"><span class="nav-number">6.1.2.</span> <span class="nav-text">注册</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%BB%E9%99%A4%E4%B8%AD%E5%BF%83%E5%8C%96"><span class="nav-number">6.2.</span> <span class="nav-text">去除中心化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E6%8E%A5%E5%8F%A3%E4%B8%8E%E5%AD%90%E6%A8%A1%E5%9D%97%E6%B3%A8%E5%86%8C%E7%B1%BB"><span class="nav-number">6.2.1.</span> <span class="nav-text">定义接口与子模块注册类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8-Router-%E7%B1%BB%E4%B8%AD%E6%95%B4%E5%90%88%E6%B3%A8%E5%86%8C"><span class="nav-number">6.2.2.</span> <span class="nav-text">在 Router 类中整合注册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8D%E5%B0%84%E5%AE%9E%E7%8E%B0%E5%8A%A8%E6%80%81%E6%B3%A8%E5%86%8C"><span class="nav-number">6.2.3.</span> <span class="nav-text">反射实现动态注册</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#APT%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E8%B7%AF%E7%94%B1%E6%B3%A8%E5%86%8C%E7%B1%BB"><span class="nav-number">6.3.</span> <span class="nav-text">APT自动生成路由注册类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3"><span class="nav-number">6.3.1.</span> <span class="nav-text">定义注解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E5%86%99-APT-%E5%A4%84%E7%90%86%E5%99%A8"><span class="nav-number">6.3.2.</span> <span class="nav-text">编写 APT 处理器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-APT-%E5%A4%84%E7%90%86%E5%99%A8"><span class="nav-number">6.3.3.</span> <span class="nav-text">配置 APT 处理器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E8%8A%82%E7%A0%81%E6%8F%92%E6%A1%A9%E4%BC%98%E5%8C%96%E8%B7%AF%E7%94%B1%E5%88%9D%E5%A7%8B%E6%80%A7%E8%83%BD"><span class="nav-number">6.4.</span> <span class="nav-text">字节码插桩优化路由初始性能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89-Gradle-%E6%8F%92%E4%BB%B6%E7%9A%84%E6%9E%84%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE"><span class="nav-number">6.4.1.</span> <span class="nav-text">自定义 Gradle 插件的构建与配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8F%92%E4%BB%B6%E7%B1%BB%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="nav-number">6.4.1.1.</span> <span class="nav-text">自定义插件类的实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%95%E5%85%A5Android%E4%BE%9D%E8%B5%96"><span class="nav-number">6.4.1.2.</span> <span class="nav-text">引入Android依赖</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B3%A8%E5%86%8CTransform"><span class="nav-number">6.4.1.3.</span> <span class="nav-text">注册Transform</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MyTransform-%E7%B1%BB%E7%9A%84%E8%AF%A6%E7%BB%86%E8%A7%A3%E6%9E%90"><span class="nav-number">6.4.2.</span> <span class="nav-text">MyTransform 类的详细解析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF%E5%AE%9A%E4%B9%89"><span class="nav-number">6.4.2.1.</span> <span class="nav-text">基本信息定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#transform-%E6%96%B9%E6%B3%95%EF%BC%9A%E6%A0%B8%E5%BF%83%E5%A4%84%E7%90%86%E9%80%BB%E8%BE%91"><span class="nav-number">6.4.2.2.</span> <span class="nav-text">transform 方法：核心处理逻辑</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RegisterCodeGenerator-%E7%B1%BB%EF%BC%9A%E6%8F%92%E6%A1%A9%E9%80%BB%E8%BE%91%E7%9A%84%E6%A0%B8%E5%BF%83%E5%AE%9E%E7%8E%B0"><span class="nav-number">6.4.3.</span> <span class="nav-text">RegisterCodeGenerator 类：插桩逻辑的核心实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#insertInitCodeTo"><span class="nav-number">6.4.3.1.</span> <span class="nav-text">insertInitCodeTo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#referHackWhenInit"><span class="nav-number">6.4.3.2.</span> <span class="nav-text">referHackWhenInit</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MyClassVisitor%E7%B1%BB"><span class="nav-number">6.4.3.3.</span> <span class="nav-text">MyClassVisitor类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#RouteMethodVisitor%E7%B1%BB"><span class="nav-number">6.4.3.4.</span> <span class="nav-text">RouteMethodVisitor类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#ASN"><span class="nav-number">6.4.3.4.1.</span> <span class="nav-text">ASN</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%B4%E4%BD%93%E6%80%9D%E8%B7%AF"><span class="nav-number">6.4.3.4.2.</span> <span class="nav-text">整体思路</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0%E6%AD%A5%E9%AA%A4"><span class="nav-number">6.4.3.4.3.</span> <span class="nav-text">代码实现步骤</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+        &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2024
+        
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/blog/">MoMo</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+        <div class="count-info info-item">
+            
+
+            
+                <span class="count-item border-box uv">
+                    <span class="item-type border-box">Unique Visitor</span>
+                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
+                </span>
+            
+
+            
+                <span class="count-item border-box pv">
+                    <span class="item-type border-box">Page View</span>
+                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
+                </span>
+            
+        </div>
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools left-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-toggle-theme-mode flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <!-- use hexo-blog-encrypt -->
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%84%E4%BB%B6%E5%8C%96%E8%B7%AF%E7%94%B1%E6%A1%86%E6%9E%B6%E5%AD%98%E5%9C%A8%E7%9A%84%E6%84%8F%E4%B9%89"><span class="nav-number">1.</span> <span class="nav-text">组件化路由框架存在的意义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#APT%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">APT工作流程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BC%A0%E7%BB%9F%E9%A1%B5%E9%9D%A2%E8%B7%AF%E7%94%B1%E6%93%8D%E4%BD%9C%E6%96%B9%E5%BC%8F%E7%BC%BA%E9%99%B7"><span class="nav-number">3.</span> <span class="nav-text">传统页面路由操作方式缺陷</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%84%E4%BB%B6%E5%8C%96%E9%A1%B5%E9%9D%A2%E8%B7%AF%E7%94%B1%E4%BC%98%E5%8A%BF"><span class="nav-number">4.</span> <span class="nav-text">组件化页面路由优势</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Aroute%E8%B7%AF%E7%94%B1%E6%80%8E%E4%B9%88%E5%A4%84%E7%90%86%E7%9A%84"><span class="nav-number">5.</span> <span class="nav-text">Aroute路由怎么处理的?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B7%AF%E7%94%B1%E5%AE%9E%E8%B7%B5"><span class="nav-number">6.</span> <span class="nav-text">路由实践</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E5%AE%9E%E7%8E%B0"><span class="nav-number">6.1.</span> <span class="nav-text">基础实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B7%B3%E8%BD%AC"><span class="nav-number">6.1.1.</span> <span class="nav-text">跳转</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E5%86%8C"><span class="nav-number">6.1.2.</span> <span class="nav-text">注册</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%BB%E9%99%A4%E4%B8%AD%E5%BF%83%E5%8C%96"><span class="nav-number">6.2.</span> <span class="nav-text">去除中心化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E6%8E%A5%E5%8F%A3%E4%B8%8E%E5%AD%90%E6%A8%A1%E5%9D%97%E6%B3%A8%E5%86%8C%E7%B1%BB"><span class="nav-number">6.2.1.</span> <span class="nav-text">定义接口与子模块注册类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8-Router-%E7%B1%BB%E4%B8%AD%E6%95%B4%E5%90%88%E6%B3%A8%E5%86%8C"><span class="nav-number">6.2.2.</span> <span class="nav-text">在 Router 类中整合注册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8D%E5%B0%84%E5%AE%9E%E7%8E%B0%E5%8A%A8%E6%80%81%E6%B3%A8%E5%86%8C"><span class="nav-number">6.2.3.</span> <span class="nav-text">反射实现动态注册</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#APT%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E8%B7%AF%E7%94%B1%E6%B3%A8%E5%86%8C%E7%B1%BB"><span class="nav-number">6.3.</span> <span class="nav-text">APT自动生成路由注册类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3"><span class="nav-number">6.3.1.</span> <span class="nav-text">定义注解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E5%86%99-APT-%E5%A4%84%E7%90%86%E5%99%A8"><span class="nav-number">6.3.2.</span> <span class="nav-text">编写 APT 处理器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-APT-%E5%A4%84%E7%90%86%E5%99%A8"><span class="nav-number">6.3.3.</span> <span class="nav-text">配置 APT 处理器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E8%8A%82%E7%A0%81%E6%8F%92%E6%A1%A9%E4%BC%98%E5%8C%96%E8%B7%AF%E7%94%B1%E5%88%9D%E5%A7%8B%E6%80%A7%E8%83%BD"><span class="nav-number">6.4.</span> <span class="nav-text">字节码插桩优化路由初始性能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89-Gradle-%E6%8F%92%E4%BB%B6%E7%9A%84%E6%9E%84%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE"><span class="nav-number">6.4.1.</span> <span class="nav-text">自定义 Gradle 插件的构建与配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8F%92%E4%BB%B6%E7%B1%BB%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="nav-number">6.4.1.1.</span> <span class="nav-text">自定义插件类的实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%95%E5%85%A5Android%E4%BE%9D%E8%B5%96"><span class="nav-number">6.4.1.2.</span> <span class="nav-text">引入Android依赖</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B3%A8%E5%86%8CTransform"><span class="nav-number">6.4.1.3.</span> <span class="nav-text">注册Transform</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MyTransform-%E7%B1%BB%E7%9A%84%E8%AF%A6%E7%BB%86%E8%A7%A3%E6%9E%90"><span class="nav-number">6.4.2.</span> <span class="nav-text">MyTransform 类的详细解析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF%E5%AE%9A%E4%B9%89"><span class="nav-number">6.4.2.1.</span> <span class="nav-text">基本信息定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#transform-%E6%96%B9%E6%B3%95%EF%BC%9A%E6%A0%B8%E5%BF%83%E5%A4%84%E7%90%86%E9%80%BB%E8%BE%91"><span class="nav-number">6.4.2.2.</span> <span class="nav-text">transform 方法：核心处理逻辑</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RegisterCodeGenerator-%E7%B1%BB%EF%BC%9A%E6%8F%92%E6%A1%A9%E9%80%BB%E8%BE%91%E7%9A%84%E6%A0%B8%E5%BF%83%E5%AE%9E%E7%8E%B0"><span class="nav-number">6.4.3.</span> <span class="nav-text">RegisterCodeGenerator 类：插桩逻辑的核心实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#insertInitCodeTo"><span class="nav-number">6.4.3.1.</span> <span class="nav-text">insertInitCodeTo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#referHackWhenInit"><span class="nav-number">6.4.3.2.</span> <span class="nav-text">referHackWhenInit</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MyClassVisitor%E7%B1%BB"><span class="nav-number">6.4.3.3.</span> <span class="nav-text">MyClassVisitor类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#RouteMethodVisitor%E7%B1%BB"><span class="nav-number">6.4.3.4.</span> <span class="nav-text">RouteMethodVisitor类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#ASN"><span class="nav-number">6.4.3.4.1.</span> <span class="nav-text">ASN</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%B4%E4%BD%93%E6%80%9D%E8%B7%AF"><span class="nav-number">6.4.3.4.2.</span> <span class="nav-text">整体思路</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0%E6%AD%A5%E9%AA%A4"><span class="nav-number">6.4.3.4.3.</span> <span class="nav-text">代码实现步骤</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+<!-- common -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/utils.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/header-shrink.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/back2top.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/toggle-theme.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/code-block.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/main.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/libs/anime.min.js"></script>
+
+<!-- local-search -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/local-search.min.js"></script>
+
+
+<!-- lazyload -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/lazyload.min.js"></script>
+
+
+<div class="pjax">
+    
+        <!-- post-helper -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/post/post-helper.min.js"></script>
+
+        <!-- toc -->
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/post/toc.min.js"></script>
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/post/share.min.js"></script>
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+</body>
+</html>
