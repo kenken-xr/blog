@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="MoMo">
+    
+    <title>
+        
+            LeakCanary |
+        
+        今天在干嘛
+    </title>
+    
+<link rel="stylesheet" href="/blog/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/blog/images/logoMoon.svg">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/regular.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/font/css/brands.min.css">
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"kenken-xr.github.io","root":"/blog/","language":"en","path":"search.json"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#f8a5c2","title":"今天在干嘛","author":"MoMo","avatar":"/images/avatar.jpg","logo":"/images/logoMoon.svg","favicon":"/images/logoMoon.svg"},"menu":{"home":"/","archives":"/archives","tags":"/tags","categories":"/categories","github":"https://github.com/kenken-xr"},"first_screen":{"enable":true,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":true,"links":{"github":"https://github.com/kenken-xr","weixin":"img | /images/wx.png","qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":true,"percent":true,"hide_header":false},"home":{"announcement":null,"category":true,"tag":true,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":true,"reward":{"enable":false,"img_link":null,"text":null},"img_align":"center"},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true,"layout":"left"},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"local_search":{"enable":true,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.36"},"waline":{"server_url":null,"reaction":false,"version":"3.2.1"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":true},"cdn":{"enable":true,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":2023,"word_count":true,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"/blog","source_data":{},"version":"4.1.3"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original post title","author":"Original post author","link":"Original post link"}
+  </script>
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/blog/atom.xml" title="MoMo" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left border-box">
+            
+                <a class="logo-image border-box" href="/blog/">
+                    <img src="/blog/images/logoMoon.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/blog/">
+               今天在干嘛
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/"
+                            >
+                                
+                                HOME
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/archives"
+                            >
+                                
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/tags"
+                            >
+                                
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/categories"
+                            >
+                                
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="menu-item">
+                            <a class=""
+                               target="_blank" rel="noopener" href="https://github.com/kenken-xr"
+                            >
+                                
+                                GITHUB
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/"
+                    >HOME</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/archives"
+                    >ARCHIVES</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/tags"
+                    >TAGS</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/categories"
+                    >CATEGORIES</a>
+                </li>
+            
+                
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       target="_blank" rel="noopener" href="https://github.com/kenken-xr"
+                    >GITHUB</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        LeakCanary
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/blog/images/avatar.jpg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">MoMo</span>
+                                
+                                    <span class="author-badge">Lv5</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2024-12-10 19:14:32</span>
+            </span>
+
+            <span class="meta-info-item post-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="datetime" data-updated="Wed Dec 11 2024 15:49:08 GMT+0800">2024-12-11 15:49:08</span>
+            </span>
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/blog/categories/%E6%9C%89%E5%9C%A8%E8%AE%A4%E7%9C%9F%E4%B8%8A%E7%8F%AD/">有在认真上班</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/blog/tags/Android/">Android</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/blog/tags/%E9%A2%98/">题</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+            <span class="meta-info-item post-pv">
+                <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    <ol>
+<li><p>   Android dvm 的进程和Linux 的进程, 应用程序的进程是否为同一个概念 </p>
+</li>
+<li><p>   sim卡的EF 文件有何作用 </p>
+</li>
+<li><p>   什么是嵌入式实时操作系统, Android 操作系统属于实时操作系统吗? </p>
+</li>
+<li><p>   一条最长的短信息约占多少byte? </p>
+</li>
+<li><p>   android 中的动画有哪几类，它们的特点和区别是什么？ </p>
+</li>
+<li><p>   handler机制的原理 </p>
+</li>
+<li><p>   说说mvc以及mvp 模式的原理，它在 android 中的运用 </p>
+</li>
+<li><p>   如何让Activity 变成一个窗口</p>
+</li>
+<li><p>   你后台的Activity 被系统回收怎么办</p>
+</li>
+<li><p>   listview你是怎么优化的。 </p>
+</li>
+<li><p>   IPC及原理 </p>
+</li>
+<li><p>   service 的周期，activity 的周期，谈下你对Android 内部应用的了解，比<br>如他做电话，以及联系人等等应用。</p>
+</li>
+<li><p>   View如何刷新？ </p>
+</li>
+<li><p>   在Java 中如何引入C# 语言？ </p>
+</li>
+</ol>
+<h1 id="强软弱虚四大引用"><a href="#强软弱虚四大引用" class="headerlink" title="强软弱虚四大引用"></a>强软弱虚四大引用</h1><table>
+<thead>
+<tr>
+<th>引用类型</th>
+<th>被回收时间</th>
+<th>用途</th>
+<th>生存时间</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>强引用</td>
+<td>从来不会</td>
+<td>对象的一般状态</td>
+<td>JVM运行停止时</td>
+</tr>
+<tr>
+<td>软引用</td>
+<td>内存不足时</td>
+<td>对象缓存</td>
+<td>内存不足时</td>
+</tr>
+<tr>
+<td>弱引用</td>
+<td>jvm垃圾回收时</td>
+<td>对象缓存</td>
+<td>gc运行后</td>
+</tr>
+<tr>
+<td>虚引用</td>
+<td>未知</td>
+<td>未知</td>
+<td>未知</td>
+</tr>
+</tbody></table>
+<h1 id="Java中提供了抽象类还有接口，开发中如何去选择"><a href="#Java中提供了抽象类还有接口，开发中如何去选择" class="headerlink" title="Java中提供了抽象类还有接口，开发中如何去选择"></a>Java中提供了抽象类还有接口，开发中如何去选择</h1><h1 id="Binder"><a href="#Binder" class="headerlink" title="Binder"></a>Binder</h1><p><a href="https://kenken-xr.github.io/blog/2024/06/05/Android-15-Binder/">Binder</a></p>
+<h2 id="Binder是什么"><a href="#Binder是什么" class="headerlink" title="Binder是什么"></a>Binder是什么</h2><p>Binder是Android中的血管。</p>
+<p>在Android中所使用的Activity，Service等组件都需要和AMS(system server)通信这种跨进程的通信都是通过Binder完成。</p>
+<p>机制:Binder是一种进程间通信机制<br>驱动:Binder是一个虚拟物理设备驱动<br>应用层:Binder是一个能发起通信的Java<br>Framework/Native: Binder连接了Client、Server、Service Manager和Binder驱动程序，形成一套C/S的通信架构。</p>
+<p><strong>多进程的使用及优势</strong><br>虚拟机分配给各个进程的运行内存是有限制的，LMK也会优先回收对系统资源的占用多的进程</p>
+<ul>
+<li>突破进程内存限制，如图库占用内存过多</li>
+<li>功能稳定性:独立的通信进程保持长连接的稳定性</li>
+<li>规避系统内存泄漏:独立的WebView进程阻隔内存泄露导致的问题</li>
+<li>隔离风险:对于不稳定的功能放入独立进程，避免导致主进程崩溃</li>
+</ul>
+<blockquote>
+<p>多线程的情况下，application的onCreate会执行多次</p>
+</blockquote>
+<h2 id="Binder有什么优势"><a href="#Binder有什么优势" class="headerlink" title="Binder有什么优势"></a>Binder有什么优势</h2><p>跨进程通信：共享内存、socket、管道、消息队列</p>
+<table>
+<thead>
+<tr>
+<th>v</th>
+<th>Binder</th>
+<th>共享内存</th>
+<th>Socket</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>性能</td>
+<td>需要拷贝一次</td>
+<td>无需拷贝</td>
+<td>需要拷贝两次</td>
+</tr>
+<tr>
+<td>特点</td>
+<td>基于C/S架构易用性高</td>
+<td>控制复杂，易用性差</td>
+<td>基于C/S架构 作为一款通用接口，其传输效率低，开销大</td>
+</tr>
+<tr>
+<td>安全性</td>
+<td>为每个APP分配UID同时支持实名和匿名</td>
+<td>依赖上层协议访问接入点是开放的 不安全</td>
+<td>依赖上层协议访问接入点是开放的 不安全</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>MMKV: 共享内存</p>
+</blockquote>
+<h2 id="Binder是如何做到一次拷贝的"><a href="#Binder是如何做到一次拷贝的" class="headerlink" title="Binder是如何做到一次拷贝的"></a>Binder是如何做到一次拷贝的</h2><p>商家 – 快递柜 – 用户</p>
+<p>内存被操作系统划分成两块:<strong>用户空间和内核空间</strong>，用户空间是用户程序代码运行的地方，内核空间是内核代码运行的地方。为了安全，它们是隔离的，即使用户的程序崩溃了，内核也不受影响。</p>
+<p>Binder 通过使用内存映射（mmap）技术实现一次拷贝。在 Linux 内核中，mmap 系统调用可以将一个文件或者设备映射到进程的虚拟地址空间。</p>
+<p>Binder 驱动利用这个原理，在发送进程和接收进程的用户空间以及内核空间之间建立映射关系。</p>
+<p>当发送进程要传递数据给接收进程时，数据被存储在发送进程的用户空间缓冲区。Binder 驱动将这个缓冲区在内核空间进行映射，同时也将接收进程的用户空间的一块区域与内核空间的相同区域进行映射。这样，数据就可以直接从发送进程的用户空间通过内核空间传递到接收进程的用户空间，而不需要额外的数据拷贝。</p>
+<h2 id="MMAP的原理讲解"><a href="#MMAP的原理讲解" class="headerlink" title="MMAP的原理讲解"></a>MMAP的原理讲解</h2><p>Linux通过将一个虚拟内存区域与一个磁盘上的对象关联起来，以初始化这个虚拟内存区域的内容，这个过程称为内存映射(memory mapping)。</p>
+<p>把内核空间的地址和服务端进程中的一块虚拟内存同时映射到Binder的驱动</p>
+<p>对文件进行mmap，会在进程的虚拟内存分配地址空间，创建映射关系。</p>
+<p>实现这样的映射关系后，就可以采用指针的方式读写操作这一段内存，而系统会自动回写到对应的文件磁盘上</p>
+<ol>
+<li>在用户空间调用mmap后，会在当前进程的虚拟空间中分配一段区域并使用vm_area_struct(vma)结构记录这个区域。</li>
+<li>通过文件描述符链接到内核中的文件结构体，每个文件结构体维护着打开文件的相关信息;</li>
+<li>通过文件结构体file*定位到了文件，建立页表，将文件对应的物理地址和vma映射关联;</li>
+<li>进程的读或写操作访问虚拟地址空间这一段映射地址但是目前只建立了地址映射，真正的硬盘数据还没有拷贝到内存中，因此引发缺页异常，触发将文件内容拷贝到与vma(虚拟内存)关联的物理内存，</li>
+</ol>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="string">"C"</span></span><br><span class="line"><span class="function">JNIEXPORT <span class="type">void</span> JNICALL</span></span><br><span class="line"><span class="function"><span class="title">Java_com_enjoy_leo_1binder_MainActivity_writeTest</span><span class="params">(JNIEnv *env, jobject thiz)</span></span>{</span><br><span class="line">  std::string file =<span class="string">"/sdcard/a.txt"</span>;</span><br><span class="line">  <span class="comment">//打开文件</span></span><br><span class="line">  m_fd = <span class="built_in">open</span>(file.<span class="built_in">c_str</span>(), fagS: O_RDWRI | O_CREAT, S_IRWXU);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">//获得一页内存大小</span></span><br><span class="line">  <span class="comment">//Linux采用了分页来管理内存，即内存的管理中，内存是以页为单位,一般的32位系统一页为 4096个字节</span></span><br><span class="line">  m size = <span class="built_in">getpagesize</span>();</span><br><span class="line">  </span><br><span class="line">  <span class="comment">//将文件设置为m_size这么大</span></span><br><span class="line">  <span class="built_in">ftruncate</span>(mfd,msize);<span class="comment">//100 1000 10000</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">//m_size:映射区的长度。 需要是整数页个字节</span></span><br><span class="line">  <span class="comment">// 开辟m_size大的空间指向m_fd这个物理内存</span></span><br><span class="line">  <span class="comment">// m_ptr是指针，指向虚拟内存</span></span><br><span class="line">  byte[] m_ptr =(<span class="type">int8_t</span> *) <span class="built_in">mmap</span>( addr: <span class="number">0</span>,m_size, Prot: PROT_READ | PROT_WRITE, MAP_SHARED, m_fd,offset:<span class="number">0</span>);</span><br><span class="line">  </span><br><span class="line">  <span class="function">std::string <span class="title">data</span><span class="params">(s:<span class="string">"写入的数据"</span>)</span></span>;</span><br><span class="line">  </span><br><span class="line">  <span class="built_in">memcpy</span>(m_ptr,data.<span class="built_in">data</span>(),data.<span class="built_in">size</span>());</span><br><span class="line">  _android_log_print(ANDROID_LOG_ERROR, tag: <span class="string">"leo"</span>, fmt: <span class="string">"写入数据:%s"</span>,data.<span class="built_in">c_str</span>());</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>mmap 是一种内存映射文件的方法，它允许进程将文件的内容直接映射到进程的虚拟地址空间。</p>
+<p>其基本原理是，当进程调用 mmap 系统调用时，内核会为进程的虚拟地址空间分配一段连续的地址范围，这段地址范围与文件的物理存储区域建立关联。</p>
+<p>例如，一个文件存储在磁盘上，通过 mmap，该文件的内容可以被 “看作” 是存储在进程的内存空间中。当进程访问这段内存区域时，就好像访问普通的内存一样，但实际上是由内核通过页表等机制将内存访问转换为对文件的读取操作。这种方式可以提高文件访问的效率，尤其是在处理大型文件或者频繁读写文件的场景中。</p>
+<p>Binder是物理内存，是一个文件</p>
+<p><strong>MMAP优势</strong></p>
+<p>MMAP对文件的读写操作只需要从磁盘到用户主存的一次数据拷贝过程，减少了数据的拷贝次数，提高了文件操作效率。</p>
+<p>MMAP使用逻辑内存对磁盘文件进行映射，操作内存就相当于操作文件，不需要开启线程，操作MMAP的速度和操作内存的速度一样快;</p>
+<blockquote>
+<p>如何设计一个日志系统</p>
+</blockquote>
+<h2 id="Binder机制是如何跨进程的"><a href="#Binder机制是如何跨进程的" class="headerlink" title="Binder机制是如何跨进程的"></a>Binder机制是如何跨进程的</h2><p>拷贝发生在C端</p>
+<h2 id="描述AIDL生成的java类细节"><a href="#描述AIDL生成的java类细节" class="headerlink" title="描述AIDL生成的java类细节"></a>描述AIDL生成的java类细节</h2><p>Android Interface definition language,一种domain-specific languages(DSL领域特定语言)</p>
+<p>AIDL：可以理解为是DSL/配置文件/编译器(翻译器)</p>
+<p>app打包流程：</p>
+<p>sdk/aidl.exe -翻译-&gt; .aidl -生成-&gt;.java</p>
+<blockquote>
+<p>饿了么 hermes<br>爱奇艺 androidmeda</p>
+</blockquote>
+<ol>
+<li>接口定义（.aidl 文件）</li>
+</ol>
+<p>  AIDL（Android Interface Definition Language）文件用于定义跨进程通信的接口。在这个文件中，可以定义方法签名，包括方法名称、参数类型和返回值类型。例如，一个简单的 AIDL 文件可能定义一个加法方法：<br>  </p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">interface ICalculator {</span><br><span class="line">  int add(int num1, int num2);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p>
+<ol start="2">
+<li>生成的 Java 类结构<ol>
+<li>当编译 AIDL 文件时，会生成相应的 Java 类。这些 Java 类主要包括一个接口（继承自android.os.IInterface）和一个内部抽象类（继承自android.os.Binder）作为存根（Stub）。</li>
+<li><strong>接口：</strong> 这个接口与 AIDL 文件中定义的接口相同，用于客户端调用。它包含了 AIDL 文件中定义的所有方法，这些方法的参数和返回值类型与 AIDL 文件中的定义一致。</li>
+<li><strong>存根类（Stub）：</strong> 存根类实现了前面提到的接口，并且重写了onTransact方法。onTransact方法是 Binder 通信的核心方法之一，它用于接收从客户端通过 Binder 驱动传来的事务。在这个方法中，存根类会根据事务中的方法编号，调用相应的实际服务方法，并将结果返回给客户端。同时，还会生成一个静态的asInterface方法，用于客户端获取服务端对象的代理对象。这个方法会根据传入的Binder对象判断是在同一个进程还是不同进程，如果是不同进程，则返回代理对象，否则返回服务端实际对象。</li>
+</ol>
+</li>
+</ol>
+<h2 id="四大组件底层的通信机制"><a href="#四大组件底层的通信机制" class="headerlink" title="四大组件底层的通信机制"></a>四大组件底层的通信机制</h2><ul>
+<li><p>Activity</p>
+<ul>
+<li>Activity 之间的通信可以通过 Intent 来实现部分功能。但在底层，当一个 Activity 启动另一个 Activity 时，并不是直接进行启动操作，而是通过向系统的 Activity Manager Service（AMS）发送请求来实现。这个过程中，应用进程和 AMS 之间的通信是基于 Binder 机制。<strong>AMS 通过 Binder 机制与各个 Activity 所在的进程进行通信。</strong> </li>
+<li>例如，当启动一个新的 Activity 时，当前进程会通过 Binder 向 AMS 发送请求，AMS 会检查目标 Activity 的相关信息（如是否存在、是否需要创建新的进程等），然后通过 Binder 通知目标 Activity 所在的进程进行创建和启动操作。</li>
+</ul>
+</li>
+<li><p>Service</p>
+<ul>
+<li>Service 主要用于在后台执行长时间运行的操作。它与其他组件的通信也是基于 Binder 机制。当一个组件（如 Activity）要绑定一个 Service 时，会通过 Binder 机制获取 Service 的代理对象，然后通过这个代理对象与 Service 进行通信。系统向 Service 所在的进程发送启动请求，Service 所在的进程会根据请求创建和启动 Service。</li>
+</ul>
+</li>
+<li><p>Broadcast Receiver</p>
+<ul>
+<li>Broadcast Receiver 主要用于在不同的应用之间共享数据，用于接收系统或者应用发出的广播消息。</li>
+<li>当一个应用发送广播时，它会通过系统的广播机制发送消息。这个消息首先会被发送到 AMS，在这个过程中，应用进程和 AMS 之间的通信是通过 Binder 机制实现的。应用进程会将广播消息（包括广播的类型、携带的数据等）封装成一个事务，通过 Binder 驱动发送给 AMS。</li>
+</ul>
+</li>
+<li><p>Content Provider</p>
+<ul>
+<li>Content Provider 用于在不同的应用之间共享数据。它通过 Binder 机制向外提供数据访问接口。当一个应用（客户端）要访问另一个应用（服务端）中的 Content Provider 数据时，会通过 Binder 获取 Content Provider 的代理对象，然后通过这个代理对象执行查询、插入、更新、删除等操作。</li>
+<li>例如，一个应用中的数据库数据通过 Content Provider 暴露给其他应用。Content Provider 会实现一个继承自android.content.ContentProvider的类，这个类会通过 Binder 机制返回一个ContentResolver的代理对象给客户端应用。客户端应用通过这个代理对象（ContentResolver）执行查询、插入、更新、删除等操作来访问 Content Provider 中的数据。</li>
+</ul>
+</li>
+</ul>
+<p><strong>广播的通信机制</strong></p>
+<p>广播可以跨进程，底层使用的Binder</p>
+<h2 id="为什么Intent不能传递大数据"><a href="#为什么Intent不能传递大数据" class="headerlink" title="为什么Intent不能传递大数据"></a>为什么Intent不能传递大数据</h2><p>processState.cpp<br>一个应用进程复刻出来就回去实例化一个ProcessState，processState就会去准备一块接受Binder数据的内存区域，这个内存区域在调用mmap的时候</p>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mVMStart = <span class="built_in">mmap</span>(<span class="number">0</span>,BINDER_VM_SIZE,PROT_READ,MAP_PRIVATE | MAP_NORESERVE,mDriverFD，<span class="number">0</span>);</span><br></pre></td></tr></tbody></table></figure>
+<p>其中第二个参数BINDER_VM_SIZE表示能够传递的数据大小</p>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> BINDER_VM_SIZE ((1*1024*1024)-sysconf(_SC_PAGE_SIZE)* 2)</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>其中_SC_PAGE_SIZE=4k</p>
+<p>进程在映射mmap的时候，映射的大小区域是1M-8k</p>
+<p><strong>注意</strong></p>
+<p>Binder传输数据有两种方式：同步&amp;异步</p>
+<p>同步： 1M-8k<br>异步： (1M-8k)/2<br>  Binder调到底层binder_mmap会加限制<br>  </p><figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//源码:drivers/staging/android/binder.c =&gt; binder_mmap</span></span><br><span class="line"><span class="comment">// buffer_size = 1M-8k</span></span><br><span class="line"><span class="comment">// free_async_space异步传输的可用大小</span></span><br><span class="line"><span class="comment">// mmap时,将异步的可用空闲空间大小设为总大小一半(1024-8)/2=508</span></span><br><span class="line">proc-&gt;free_async_space = proc-&gt; buffer_size / <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//源码:drivers/staging/android/binder.c =&gt; binder_alloc_buf</span></span><br><span class="line"><span class="comment">//申请内存时,剩余异步可用内存不得小于所需要的内存</span></span><br><span class="line"><span class="keyword">if</span>(is async &amp;&amp; proc-&gt;free_async_space &lt; size + <span class="keyword">sizeof</span>(<span class="keyword">struct</span> binder_buffer)){</span><br><span class="line">  binder_debug(BINDER_DEBUG_BUFFER_ALLOC, <span class="string">"%d:binder_alloc_buf size %zd failed, no async space left\n"</span>, proc -&gt; pid, size);</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">// 省略代码</span></span><br><span class="line"><span class="comment">// 将异步剩余可用内存减去本次申请内存</span></span><br><span class="line"><span class="keyword">if</span>(is async){</span><br><span class="line">  proc-&gt;free_async_space -= size + <span class="keyword">sizeof</span>(<span class="keyword">struct</span> binder_buffer);</span><br><span class="line">  binder_debug(BINDER_DEBUG_BUFFER_ALLOC_ASYNC,  <span class="string">"%d:binder_alloc_buf_size %zd async free %zd\n"</span>, proc-&gt; pid, size, proc-&gt; free_async_space);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p></p>
+<ul>
+<li><p>底层传输机制限制</p>
+<ul>
+<li><strong>Intent 主要是通过 Binder 机制来传递数据</strong>。而 Binder 机制在传递数据时有一定的限制，它虽然有高效的数据拷贝方式，但对于大数据来说，可能会导致性能问题或者超出 Binder 的传输能力。因为 Binder 的缓冲区是有限的，大数据可能无法完整地放入这个缓冲区。</li>
+</ul>
+</li>
+<li><p>安全和效率考虑</p>
+<ul>
+<li>从安全角度看，传递大数据可能会增加安全风险。例如，恶意应用可能会利用 Intent 传递大量数据来攻击系统或者其他应用。从效率角度考虑，传递大数据会占用较多的系统资源，包括内存和 CPU 时间，这会影响整个系统的性能。因此，为了保证系统的安全性和高效性，Intent 通常不适合传递大数据。如果需要传递大数据，可以考虑使用其他方式，如文件共享、Content Provider 等。</li>
+</ul>
+</li>
+</ul>
+<p>线程池 如何切换到去queue内容、注解 处理方式三种、反射为什么慢、动态代理实现classLoder 流程，<br>android ARouter、OKhttp 处理回调回来监控成功率<br>kolin 了解携程<br>ANR 线上问题如何监控(信号量3)<br>  matrix xcrash 友盟apm  —— 信号机制<br>  启动优化过程、http 弱网优化<br>面<br>1、H5的加载原理，如何知道调用到的是源码的方法<br>热更新 多种实现<br>3、最有成就，最有技术挑战的工作<br>4、优化实战ANR处理，实际线上问题，启动优化，布局优化，网络优化弱网处理</p>
+<h1 id="Glide"><a href="#Glide" class="headerlink" title="Glide"></a>Glide</h1><p>glide<br>子线程glide.with(MainActivity.this)application——&gt; 防止内存泄漏<br>主线程glide.with (this)</p>
+<p><a class="link" target="_blank" rel="noopener" href="https://juejin.cn/post/6899846002195644424?from=search-suggest#heading-2">https://juejin.cn/post/6899846002195644424?from=search-suggest#heading-2<i class="fas fa-external-link-alt"></i></a><br><a class="link" target="_blank" rel="noopener" href="https://juejin.cn/post/6844903605728706573?from=search-suggest#heading-0">https://juejin.cn/post/6844903605728706573?from=search-suggest#heading-0<i class="fas fa-external-link-alt"></i></a><br><a class="link" target="_blank" rel="noopener" href="https://www.jianshu.com/p/79dd4953ec25">https://www.jianshu.com/p/79dd4953ec25<i class="fas fa-external-link-alt"></i></a><br><a class="link" target="_blank" rel="noopener" href="https://juejin.cn/post/7095565564029960206?https://juejin.cn/post/7095565564029960206?searchId=20241210160233655EE8715AC6E1F0A0B6#heading-22">https://juejin.cn/post/7095565564029960206?https://juejin.cn/post/7095565564029960206?searchId=20241210160233655EE8715AC6E1F0A0B6#heading-22<i class="fas fa-external-link-alt"></i></a></p>
+<p>ams pms wms</p>
+<h1 id="双亲委托机制"><a href="#双亲委托机制" class="headerlink" title="双亲委托机制"></a>双亲委托机制</h1><p>某个类加载器在加载类时，首先将加载任务委托给父类加载器，依次递归，如果父类加载器可以完成类加载任务，就成功返回;只有父类加载器无法完成此加载任务或者没有父类加载器时，才自己去加载。<br>1、避免重复加载，当父加载器已经加载了该类的时候就没有必要子ClassLoader再加载一次。<br>2、安全性考虑，防止核心API库被随意篡改</p>
+
+                </div>
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/blog/tags/Android/">Android</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/blog/tags/%E9%A2%98/">题</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                            <div class="post-share-container border-box">
+    <ul class="share-list-wrap border-box">
+        <li class="qq share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to QQ"
+        >
+            <i class="fa-brands fa-qq"></i>
+        </li>
+        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
+            data-tooltip-content="Share to WeChat"
+            data-tooltip-img-tip="Scan by WeChat"
+            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
+        >
+            <i class="fa-brands fa-weixin"></i>
+        </li>
+        <li class="weibo share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to WeiBo"
+        >
+            <i class="fa-brands fa-weibo"></i>
+        </li>
+    </ul>
+</div>
+
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/blog/2024/12/10/Android-38%20LeakCanary/"
+                                   title="LeakCanary"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">LeakCanary</span>
+                                        <span class="post-nav-item">Prev posts</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/blog/2024/12/10/Android-36%20EventBus/"
+                                   title="EventBus"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">EventBus</span>
+                                        <span class="post-nav-item">Next posts</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc left-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <!-- use hexo-blog-encrypt -->
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%BA%E8%BD%AF%E5%BC%B1%E8%99%9A%E5%9B%9B%E5%A4%A7%E5%BC%95%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">强软弱虚四大引用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java%E4%B8%AD%E6%8F%90%E4%BE%9B%E4%BA%86%E6%8A%BD%E8%B1%A1%E7%B1%BB%E8%BF%98%E6%9C%89%E6%8E%A5%E5%8F%A3%EF%BC%8C%E5%BC%80%E5%8F%91%E4%B8%AD%E5%A6%82%E4%BD%95%E5%8E%BB%E9%80%89%E6%8B%A9"><span class="nav-number">2.</span> <span class="nav-text">Java中提供了抽象类还有接口，开发中如何去选择</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Binder"><span class="nav-number">3.</span> <span class="nav-text">Binder</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Binder%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">3.1.</span> <span class="nav-text">Binder是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Binder%E6%9C%89%E4%BB%80%E4%B9%88%E4%BC%98%E5%8A%BF"><span class="nav-number">3.2.</span> <span class="nav-text">Binder有什么优势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Binder%E6%98%AF%E5%A6%82%E4%BD%95%E5%81%9A%E5%88%B0%E4%B8%80%E6%AC%A1%E6%8B%B7%E8%B4%9D%E7%9A%84"><span class="nav-number">3.3.</span> <span class="nav-text">Binder是如何做到一次拷贝的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MMAP%E7%9A%84%E5%8E%9F%E7%90%86%E8%AE%B2%E8%A7%A3"><span class="nav-number">3.4.</span> <span class="nav-text">MMAP的原理讲解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Binder%E6%9C%BA%E5%88%B6%E6%98%AF%E5%A6%82%E4%BD%95%E8%B7%A8%E8%BF%9B%E7%A8%8B%E7%9A%84"><span class="nav-number">3.5.</span> <span class="nav-text">Binder机制是如何跨进程的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%8F%E8%BF%B0AIDL%E7%94%9F%E6%88%90%E7%9A%84java%E7%B1%BB%E7%BB%86%E8%8A%82"><span class="nav-number">3.6.</span> <span class="nav-text">描述AIDL生成的java类细节</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E5%BA%95%E5%B1%82%E7%9A%84%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6"><span class="nav-number">3.7.</span> <span class="nav-text">四大组件底层的通信机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88Intent%E4%B8%8D%E8%83%BD%E4%BC%A0%E9%80%92%E5%A4%A7%E6%95%B0%E6%8D%AE"><span class="nav-number">3.8.</span> <span class="nav-text">为什么Intent不能传递大数据</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Glide"><span class="nav-number">4.</span> <span class="nav-text">Glide</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%89%98%E6%9C%BA%E5%88%B6"><span class="nav-number">5.</span> <span class="nav-text">双亲委托机制</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+        &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2024
+        
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/blog/">MoMo</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+        <div class="count-info info-item">
+            
+
+            
+                <span class="count-item border-box uv">
+                    <span class="item-type border-box">Unique Visitor</span>
+                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
+                </span>
+            
+
+            
+                <span class="count-item border-box pv">
+                    <span class="item-type border-box">Page View</span>
+                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
+                </span>
+            
+        </div>
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools left-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-toggle-theme-mode flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <!-- use hexo-blog-encrypt -->
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%BA%E8%BD%AF%E5%BC%B1%E8%99%9A%E5%9B%9B%E5%A4%A7%E5%BC%95%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">强软弱虚四大引用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java%E4%B8%AD%E6%8F%90%E4%BE%9B%E4%BA%86%E6%8A%BD%E8%B1%A1%E7%B1%BB%E8%BF%98%E6%9C%89%E6%8E%A5%E5%8F%A3%EF%BC%8C%E5%BC%80%E5%8F%91%E4%B8%AD%E5%A6%82%E4%BD%95%E5%8E%BB%E9%80%89%E6%8B%A9"><span class="nav-number">2.</span> <span class="nav-text">Java中提供了抽象类还有接口，开发中如何去选择</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Binder"><span class="nav-number">3.</span> <span class="nav-text">Binder</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Binder%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">3.1.</span> <span class="nav-text">Binder是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Binder%E6%9C%89%E4%BB%80%E4%B9%88%E4%BC%98%E5%8A%BF"><span class="nav-number">3.2.</span> <span class="nav-text">Binder有什么优势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Binder%E6%98%AF%E5%A6%82%E4%BD%95%E5%81%9A%E5%88%B0%E4%B8%80%E6%AC%A1%E6%8B%B7%E8%B4%9D%E7%9A%84"><span class="nav-number">3.3.</span> <span class="nav-text">Binder是如何做到一次拷贝的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MMAP%E7%9A%84%E5%8E%9F%E7%90%86%E8%AE%B2%E8%A7%A3"><span class="nav-number">3.4.</span> <span class="nav-text">MMAP的原理讲解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Binder%E6%9C%BA%E5%88%B6%E6%98%AF%E5%A6%82%E4%BD%95%E8%B7%A8%E8%BF%9B%E7%A8%8B%E7%9A%84"><span class="nav-number">3.5.</span> <span class="nav-text">Binder机制是如何跨进程的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%8F%E8%BF%B0AIDL%E7%94%9F%E6%88%90%E7%9A%84java%E7%B1%BB%E7%BB%86%E8%8A%82"><span class="nav-number">3.6.</span> <span class="nav-text">描述AIDL生成的java类细节</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E5%BA%95%E5%B1%82%E7%9A%84%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6"><span class="nav-number">3.7.</span> <span class="nav-text">四大组件底层的通信机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88Intent%E4%B8%8D%E8%83%BD%E4%BC%A0%E9%80%92%E5%A4%A7%E6%95%B0%E6%8D%AE"><span class="nav-number">3.8.</span> <span class="nav-text">为什么Intent不能传递大数据</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Glide"><span class="nav-number">4.</span> <span class="nav-text">Glide</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%89%98%E6%9C%BA%E5%88%B6"><span class="nav-number">5.</span> <span class="nav-text">双亲委托机制</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+<!-- common -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/utils.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/header-shrink.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/back2top.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/toggle-theme.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/code-block.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/main.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/libs/anime.min.js"></script>
+
+<!-- local-search -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/local-search.min.js"></script>
+
+
+<!-- lazyload -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/lazyload.min.js"></script>
+
+
+<div class="pjax">
+    
+        <!-- post-helper -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/post/post-helper.min.js"></script>
+
+        <!-- toc -->
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/post/toc.min.js"></script>
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/post/share.min.js"></script>
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.1.3/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+</body>
+</html>

@@ -241,7 +241,7 @@
 
             <span class="meta-info-item post-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="datetime" data-updated="Sun Jun 16 2024 13:29:24 GMT+0800">2024-06-16 13:29:24</span>
+                <span class="datetime" data-updated="Tue Dec 10 2024 16:15:19 GMT+0800">2024-12-10 16:15:19</span>
             </span>
         
 
@@ -288,7 +288,10 @@
                 <div class="post-content keep-markdown-body ">
                     
 
-                    <h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><p>Rxjava是NetFlix出品的Java框架， 官方描述为 a library for composing asynchronous and event-based programs using observable sequences for the Java VM，翻译过来就是“使用可观察序列组成的一个异步地、基于事件的响应式编程框架”。一个典型的使用示范如下：</p>
+                    <h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><p>RxJava的异步实现，是通过一种拓展的观察者模式来实现的。</p>
+<p>观察者模式面向的需求是:A对象(观察者)对B对象(被观察者)的某种变化高度敏感，需要在B对象变化的一瞬间做出变化。</p>
+<p>程序的观察者模式，观察者不需要时刻盯着被观察者，而是采用注册(Regsiter)或者订阅(Subscribe)的方式，告诉被观察者，我是你的某种状态，你的状态在发生变化的时候来通知我。</p>
+<p>Rxjava是NetFlix出品的Java框架， 官方描述为 a library for composing asynchronous and event-based programs using observable sequences for the Java VM，翻译过来就是“使用可观察序列组成的一个异步地、基于事件的响应式编程框架”。一个典型的使用示范如下：</p>
 <figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Observable.create(<span class="keyword">new</span> <span class="title class_">ObservableOnSubscribe</span>&lt;String&gt;() {</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">subscribe</span><span class="params">(ObservableEmitter&lt;String&gt; emitter)</span> <span class="keyword">throws</span> Exception {</span><br><span class="line">        <span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">"1234"</span>;</span><br><span class="line">        <span class="comment">//执行耗时任务</span></span><br><span class="line">        emitter.onNext(s);</span><br><span class="line">    }</span><br><span class="line">}).map(<span class="keyword">new</span> <span class="title class_">Function</span>&lt;String, Integer&gt;() {</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> Integer <span class="title function_">apply</span><span class="params">(String s)</span> <span class="keyword">throws</span> Exception {</span><br><span class="line">        <span class="keyword">return</span> Integer.parseInt(s);</span><br><span class="line">    }</span><br><span class="line">}).subscribeOn(Schedulers.io())</span><br><span class="line">  .observeOn(AndroidSchedulers.mainThread())</span><br><span class="line">  .subscribe();</span><br></pre></td></tr></tbody></table></figure>
 
 
