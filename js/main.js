@@ -8,11 +8,13 @@ window.addEventListener('DOMContentLoaded', () => {
     author: 'XPoet',
     repository: 'https://github.com/XPoet/hexo-theme-keep',
     localStorageKey: 'KEEP-THEME-STATUS',
+    encryptKey: 'KEEP-ENCRYPT',
     styleStatus: {
       isDark: false,
       fontSizeLevel: 0,
       isShowToc: true
-    }
+    },
+    defaultDatetimeFormat: 'YYYY-MM-DD HH:mm:ss'
   }
 
   // print theme base info
@@ -68,12 +70,12 @@ window.addEventListener('DOMContentLoaded', () => {
     KEEP.initCodeBlock()
     KEEP.setFooterVersion()
 
-    if (local_search?.enable === true) {
-      KEEP.initLocalSearch()
-    }
-
     if (lazyload?.enable === true) {
       KEEP.initLazyLoad()
+    }
+
+    if (local_search?.enable === true) {
+      KEEP.initLocalSearch()
     }
   }
   KEEP.initExecute()
