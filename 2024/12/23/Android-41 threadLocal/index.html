@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="MoMo">
+    
+    <title>
+        
+            ThreadLocal |
+        
+        今天在干嘛
+    </title>
+    
+<link rel="stylesheet" href="/blog/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/blog/images/logoMoon.svg">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/font/css/regular.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/font/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/font/css/brands.min.css">
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"kenken-xr.github.io","root":"/blog/","language":"en","path":"search.json"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#f8a5c2","title":"今天在干嘛","author":"MoMo","avatar":"/images/avatar.jpg","logo":"/images/logoMoon.svg","favicon":"/images/logoMoon.svg"},"menu":{"home":"/","archives":"/archives","tags":"/tags","categories":"/categories","github":"https://github.com/kenken-xr"},"first_screen":{"enable":true,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":true,"links":{"github":"https://github.com/kenken-xr","weixin":"img | /images/wx.png","qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":true,"percent":true,"hide_header":false},"home":{"announcement":null,"category":true,"tag":true,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":true,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true,"layout":"left"},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"local_search":{"enable":true,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.36"},"waline":{"server_url":null,"reaction":false,"version":"3.2.1"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":true},"cdn":{"enable":true,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":2023,"word_count":true,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"/blog","source_data":{},"version":"4.2.5"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original post title","author":"Original post author","link":"Original post link"}
+  </script>
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/blog/atom.xml" title="MoMo" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/blog/">
+                    <img src="/blog/images/logoMoon.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/blog/">
+               今天在干嘛
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/blog/">
+                                
+                                HOME
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/blog/archives">
+                                
+                                ARCHIVES
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/blog/tags">
+                                
+                                TAGS
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/blog/categories">
+                                
+                                CATEGORIES
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" target="_blank" rel="noopener" href="https://github.com/kenken-xr">
+                                
+                                GITHUB
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="menu-text-color fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/blog/">
+                            
+                            HOME
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/blog/archives">
+                            
+                            ARCHIVES
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/blog/tags">
+                            
+                            TAGS
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/blog/categories">
+                            
+                            CATEGORIES
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" target="_blank" rel="noopener" href="https://github.com/kenken-xr">
+                            
+                            GITHUB
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        ThreadLocal
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/blog/images/avatar.jpg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">MoMo</span>
+                                
+                                    <span class="author-badge">Lv5</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2024-12-23 16:30:45</span>
+            </span>
+
+            
+                <span class="meta-info-item post-update-date">
+                    <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                    <span class="datetime" data-updated="Mon Dec 23 2024 17:10:52 GMT+0800">2024-12-23 17:10:52</span>
+                </span>
+            
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/blog/categories/%E6%9C%89%E5%9C%A8%E8%AE%A4%E7%9C%9F%E4%B8%8A%E7%8F%AD/">有在认真上班</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/blog/tags/Android/">Android</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+            <span class="meta-info-item post-pv">
+                <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <h1 id="为什么要使用ThreadLocal"><a href="#为什么要使用ThreadLocal" class="headerlink" title="为什么要使用ThreadLocal"></a>为什么要使用ThreadLocal</h1><p>在并发编程中，多个线程同时访问和修改共享变量是一个常见的场景。这种情况下，可能会出现线程安全问题，即多个线程对共享变量的操作可能会相互干扰，导致数据不一致。</p>
+<p>为了解决线程安全问题，一种常见的做法是使用锁机制，如synchronized关键字或Lock接口。然而，加锁的方式可能会带来性能上的损失，因为线程之间需要竞争锁，而且在等待锁的过程中会阻塞线程的执行。</p>
+<p>另一种解决方案是使用ThreadLocal。ThreadLocal提供了一种空间换时间的方式来解决线程安全问题。它为每个线程创建了一个独立的存储空间，用于保存线程特有的数据。当多个线程访问同一个ThreadLocal变量时，实际上它们访问的是各自线程本地存储的副本，而不是共享变量本身。因此，每个线程都可以独立地修改自己的副本，而不会影响到其他线程。</p>
+<p>使用ThreadLocal的好处在于它避免了线程之间的竞争和阻塞，提高了并发性能。同时，它也简化了编程模型，因为开发者不需要显式地使用锁来保护共享变量的访问。</p>
+<p>需要注意的是，ThreadLocal并不适用于所有场景。它主要适用于每个线程需要独立保存自己的数据副本的情况。如果多个线程之间需要共享数据并进行协作，那么使用锁或其他同步机制可能更为合适。此外，在使用ThreadLocal时也需要注意内存泄漏和数据污染的问题，需要正确地管理和清理线程本地存储的数据。</p>
+<h1 id="ThreadLocal核心"><a href="#ThreadLocal核心" class="headerlink" title="ThreadLocal核心"></a>ThreadLocal核心</h1><p>ThreadLocal是Java中的一个类，它提供了线程局部（thread-local）变量。这些变量与普通的变量不同，因为每个访问变量的线程都有其自己独立初始化的变量副本。通过ThreadLocal实例，可以隔离并保存每个线程的数据，确保线程之间不会相互干扰，避免因并发访问导致的数据不一致问题。</p>
+<h2 id="核心特性"><a href="#核心特性" class="headerlink" title="核心特性"></a>核心特性</h2><ul>
+<li>线程隔离：每个线程对 ThreadLocal 变量的修改对其他线程是不可见的。</li>
+<li>无继承性：子线程不能访问父线程的 ThreadLocal 变量，除非子线程中有显式的设置或复制操作。</li>
+<li>避免同步：由于每个线程都有自己的变量副本，因此不需要同步就可以保证线程安全。</li>
+</ul>
+<h2 id="常见方法"><a href="#常见方法" class="headerlink" title="常见方法"></a>常见方法</h2><ul>
+<li>public T get()：返回当前线程对应的变量的值。如果当前线程没有对应的值，则返回初始值或 null（如果未设置初始值）。</li>
+<li>public void set(T value)：设置当前线程对应的变量的值。</li>
+<li>public void remove()：删除当前线程对应的变量。</li>
+<li>protected T initialValue()：这是一个受保护的方法，用于设置变量的初始值。通常，你可以通过匿名内部类来覆盖这个方法。</li>
+</ul>
+<h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2><ul>
+<li>数据库连接：在多线程应用中，每个线程可能需要自己的数据库连接。使用 ThreadLocal 可以为每个线程保存其自己的连接。</li>
+<li>会话管理：在 Web 应用中，每个用户的会话数据可以使用 ThreadLocal 存储，从而确保同一用户的多个请求在同一个线程中处理时能够访问到正确的会话数据。</li>
+<li>线程内上下文传递：有时需要在同一个线程的不同方法之间传递一些上下文信息，而不希望使用全局变量或参数传递。这时可以使用 ThreadLocal。</li>
+</ul>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p><strong>内存泄漏：</strong></p>
+<p>如果线程不再需要使用该变量，但忘记调用 remove() 方法来清理，那么由于 ThreadLocalMap 中的 Entry 的 key 是对 Thread 的弱引用，所以 Thread 被回收后，Entry 的 key 会被置为 null，但 value 不会被回收，从而导致内存泄漏。因此，使用完 ThreadLocal 后，最好调用 remove() 方法来清理。</p>
+<p><strong>线程池中的使用：</strong></p>
+<p>在线程池中，线程可能会被复用。如果线程之前设置过 ThreadLocal 变量，但在使用后没有清理，那么下一个任务可能会读取到上一个任务设置的值。因此，在线程池中使用 ThreadLocal 时需要特别小心。</p>
+<p><strong>初始化问题：</strong></p>
+<p>如果不重写 initialValue() 方法，并且在使用前没有调用 set() 方法设置值，那么 get() 方法将返回 null。为了避免这种情况，可以重写 initialValue() 方法来提供一个默认值。</p>
+<p><strong>不适用于全局共享状态：</strong></p>
+<p>虽然 ThreadLocal 可以在多个线程之间隔离数据，但它不适用于需要在多个线程之间共享和修改的全局状态。对于这种情况，应该使用其他同步机制（如锁或原子变量）。</p>
+<h1 id="ThreadLocal的工作原理"><a href="#ThreadLocal的工作原理" class="headerlink" title="ThreadLocal的工作原理"></a>ThreadLocal的工作原理</h1><p>ThreadLocal的工作原理主要是通过每个线程内部的ThreadLocalMap来实现的。ThreadLocalMap是ThreadLocal的静态内部类，它实现了类似于Map的键值对存储结构，但是键是弱引用（WeakReference）类型的ThreadLocal对象，而值则是与线程相关的数据。</p>
+<p>每个线程都有一个名为threadLocals的成员变量，这个变量就是ThreadLocalMap类型的。当线程调用ThreadLocal的set()方法时，它会将ThreadLocal对象和要存储的值作为键值对添加到自己的threadLocals中。当调用get()方法时，线程会从自己的threadLocals中根据ThreadLocal对象查找对应的值。</p>
+<p>由于每个线程都有自己的threadLocals，因此它们之间不会共享这些线程局部变量的值。这就是ThreadLocal能够实现线程隔离的原因。</p>
+<p><img lazyload="" alt="image" data-src="https://developer.qcloudimg.com/http-save/yehe-10752309/d7d23f923863af7032c49098f58156e5.png"></p>
+<h1 id="ThreadLocal的用法"><a href="#ThreadLocal的用法" class="headerlink" title="ThreadLocal的用法"></a>ThreadLocal的用法</h1><ol>
+<li>创建一个ThreadLocal对象：ThreadLocal<t> threadLocal = new ThreadLocal&lt;&gt;();</t></li>
+<li>在需要设置线程局部变量的地方调用set()方法：threadLocal.set(value);</li>
+<li>在需要获取线程局部变量的地方调用get()方法：T value = threadLocal.get();</li>
+<li>在不再需要线程局部变量时，调用remove()方法清理资源：threadLocal.remove();</li>
+</ol>
+<p>由于ThreadLocal中的值是与线程相关的，因此在使用完ThreadLocal后，最好及时调用remove()方法清理资源，以避免潜在的内存泄漏问题。</p>
+<h1 id="ThreadLocal的内存泄漏问题"><a href="#ThreadLocal的内存泄漏问题" class="headerlink" title="ThreadLocal的内存泄漏问题"></a>ThreadLocal的内存泄漏问题</h1><p>虽然ThreadLocal可以有效地实现线程隔离，但是它也存在一定的内存泄漏风险。这主要是因为ThreadLocalMap中的键是弱引用类型的<br>ThreadLocal对象。</p>
+<p>当ThreadLocal对象不再被强引用时，它会被垃圾回收器回收，但是对应的键值对仍然保留在ThreadLocalMap中。如果线程长时间运行且没有调用remove()方法清理资源，那么这些无用的键值对会占用内存空间，从而导致内存泄漏。</p>
+<p>为了避免这个问题可以采取以下措施：</p>
+<ol>
+<li>在使用完ThreadLocal后，及时调用remove()方法清理资源。</li>
+<li>使用静态内部类来持有ThreadLocal对象，以确保它不会被提前回收。</li>
+<li>尽量避免在长时间运行的线程中使用ThreadLocal。</li>
+<li>使用Java 8引入的InheritableThreadLocal来替代ThreadLocal，它可以在子线程中自动继承父线程的线程局部变量值，从而避免在创建新线程时重复设置值的问题。但是同样需要注意及时清理资源以避免内存泄漏。</li>
+</ol>
+<h1 id="源码分析"><a href="#源码分析" class="headerlink" title="源码分析"></a>源码分析</h1><h2 id="主要成员变量"><a href="#主要成员变量" class="headerlink" title="主要成员变量"></a>主要成员变量</h2><ul>
+<li><p><strong>ThreadLocalMap threadLocals：</strong> 这是 Thread 类中的一个字段，用于存储线程局部变量的映射。它不是 ThreadLocal 类的直接成员，但它是实现线程隔离的关键。</p>
+</li>
+<li><p><strong>ThreadLocalMap inheritableThreadLocals：</strong> 同样在 Thread 类中，用于存储可继承的线程局部变量。</p>
+</li>
+</ul>
+<p>在 ThreadLocal 类内部，没有直接引用这些字段，而是通过静态方法访问当前线程的 threadLocals 字段。</p>
+<p>ThreadLocal 本身并不直接存储数据，而是作为一个工具类，提供了访问和操作线程局部变量的方法。实际上，数据的存储是由 ThreadLocal 的内部类 ThreadLocalMap 来完成的。每个 Thread 对象都含有一个名为 threadLocals 的 ThreadLocalMap 类型的成员变量，这个变量用于存储当前线程中所有 ThreadLocal 对象的值。</p>
+<p>这里简要概括一下 ThreadLocal、ThreadLocalMap 和 Thread 之间的关系：</p>
+<ul>
+<li><strong>ThreadLocal：</strong> 这是一个工具类，提供了 set(T value)、get() 和 remove() 等方法来操作线程局部变量。但是，它本身不直接存储数据。</li>
+<li><strong>ThreadLocalMap：</strong> 这是 ThreadLocal 的一个静态内部类，实际上是一个定制化的哈希表（但不是 java.util.HashMap）。它用于存储线程局部变量的值，并且每个线程都有一个这样的映射。这个映射的键是 ThreadLocal 对象，值是对应的线程局部变量的值。</li>
+<li><strong>Thread：</strong> Java 中的线程类。每个 Thread 对象都有一个 threadLocals 字段，这是一个 ThreadLocalMap 实例，用于存储该线程中所有 ThreadLocal 变量的当前值。当线程调用 ThreadLocal 的 set 方法时，它实际上是在自己的 threadLocals 映射中设置值；当调用 get 方法时，它是从自己的 threadLocals 映射中检索值。</li>
+</ul>
+<p>这种设计使得每个线程都可以独立地管理自己的 ThreadLocal 变量，而不会与其他线程的变量发生冲突。这是多线程编程中一个非常有用的特性，因为它允许开发者在不使用显式锁的情况下维护线程安全的状态。</p>
+<h2 id="核心方法"><a href="#核心方法" class="headerlink" title="核心方法"></a>核心方法</h2><h3 id="get"><a href="#get" class="headerlink" title="get()"></a>get()</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> T <span class="title function_">get</span><span class="params">()</span> {</span><br><span class="line">  <span class="type">Thread</span> <span class="variable">t</span> <span class="operator">=</span> Thread.currentThread();</span><br><span class="line">  <span class="type">ThreadLocalMap</span> <span class="variable">map</span> <span class="operator">=</span> getMap(t);</span><br><span class="line">  <span class="keyword">if</span> (map != <span class="literal">null</span>) {</span><br><span class="line">    ThreadLocalMap.<span class="type">Entry</span> <span class="variable">e</span> <span class="operator">=</span> map.getEntry(<span class="built_in">this</span>);</span><br><span class="line">    <span class="keyword">if</span> (e != <span class="literal">null</span>) {</span><br><span class="line">      <span class="meta">@SuppressWarnings("unchecked")</span></span><br><span class="line">      <span class="type">T</span> <span class="variable">result</span> <span class="operator">=</span> (T)e.value;</span><br><span class="line">      <span class="keyword">return</span> result;</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">  <span class="keyword">return</span> setInitialValue();</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>get() 方法首先获取当前线程，然后尝试从线程的 threadLocals 字段中获取 ThreadLocalMap。如果映射存在且包含当前 ThreadLocal 实例的条目，则返回对应的值。否则，调用 setInitialValue() 来设置初始值。</p>
+<h3 id="set-T-value"><a href="#set-T-value" class="headerlink" title="set(T value)"></a>set(T value)</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">set</span><span class="params">(T value)</span> {</span><br><span class="line">    <span class="type">Thread</span> <span class="variable">t</span> <span class="operator">=</span> Thread.currentThread();</span><br><span class="line">    <span class="type">ThreadLocalMap</span> <span class="variable">map</span> <span class="operator">=</span> getMap(t);</span><br><span class="line">    <span class="keyword">if</span> (map != <span class="literal">null</span>)</span><br><span class="line">        map.set(<span class="built_in">this</span>, value);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        createMap(t, value);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>set() 方法将给定的值设置到当前线程的 threadLocals 字段中，对应于当前 ThreadLocal 实例的键。如果映射不存在，则创建一个新的映射。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><h2 id="hreadLocal是什么以及它的用途？"><a href="#hreadLocal是什么以及它的用途？" class="headerlink" title="hreadLocal是什么以及它的用途？"></a>hreadLocal是什么以及它的用途？</h2><p>ThreadLocal是Java中的一个类，它提供了线程局部（thread-local）变量。这些变量与普通的变量不同，因为每个访问变量的线程都有其自己独立初始化的变量副本。ThreadLocal实例通常是类中的私有静态字段，它们用于保存属于线程特有的状态，如用户ID、事务ID等。通过使用ThreadLocal，可以避免在多线程环境中使用同步，从而提高程序性能。</p>
+<h2 id="ThreadLocal是如何实现线程局部存储的？"><a href="#ThreadLocal是如何实现线程局部存储的？" class="headerlink" title="ThreadLocal是如何实现线程局部存储的？"></a>ThreadLocal是如何实现线程局部存储的？</h2><p>ThreadLocal内部使用了一个称为ThreadLocalMap的自定义哈希映射，来存储线程局部变量。每个Thread对象都有一个与之关联的ThreadLocalMap，这个映射将ThreadLocal对象作为键，将线程局部变量的值作为值。当线程调用ThreadLocal的set方法时，它会在自己的ThreadLocalMap中存储一个键值对；调用get方法时，它会从自己的映射中检索值。由于每个线程都有自己的ThreadLocalMap，因此它们可以独立地存储和检索值，而不会与其他线程冲突。</p>
+<h2 id="ThreadLocal可能会导致哪些问题？"><a href="#ThreadLocal可能会导致哪些问题？" class="headerlink" title="ThreadLocal可能会导致哪些问题？"></a>ThreadLocal可能会导致哪些问题？</h2><p>ThreadLocal使用不当可能会导致内存泄漏和数据污染问题。</p>
+<ul>
+<li><strong>内存泄漏：</strong> 如果线程不再需要，但线程池将其重用，并且之前的线程设置了ThreadLocal变量但没有清除，那么这些变量可能会占用内存而无法被垃圾收集器回收。这可以通过在不再需要ThreadLocal变量时调用其remove方法来避免。</li>
+<li><strong>数据污染：</strong> 当线程被线程池重用时，如果之前的任务没有清除其设置的ThreadLocal变量，那么新任务可能会意外地访问到这些旧数据。为了避免这种情况，应该在每个任务开始时清除可能存在的ThreadLocal变量。</li>
+</ul>
+<h2 id="ThreadLocal与synchronized有何不同？"><a href="#ThreadLocal与synchronized有何不同？" class="headerlink" title="ThreadLocal与synchronized有何不同？"></a>ThreadLocal与synchronized有何不同？</h2><p>ThreadLocal和synchronized都是用于处理多线程编程中共享资源访问问题的技术，但它们的工作原理和应用场景不同。</p>
+<ul>
+<li><p><strong>ThreadLocal：</strong> 它提供了线程局部变量，每个线程都有其自己的变量副本。这样，线程可以独立地操作自己的数据，而不需要与其他线程同步。ThreadLocal适用于每个线程需要独立保存自己状态的情况。</p>
+</li>
+<li><p><strong>synchronized：</strong> 它是一种内置的同步机制，用于控制多个线程对共享资源的访问。通过使用synchronized关键字，可以确保一次只有一个线程能够执行某个代码块或方法，从而避免线程安全问题。synchronized适用于多个线程需要共享和协作访问同一资源的情况。</p>
+</li>
+</ul>
+<h2 id="ThreadLocal为什么会导致内存泄漏？"><a href="#ThreadLocal为什么会导致内存泄漏？" class="headerlink" title="ThreadLocal为什么会导致内存泄漏？"></a>ThreadLocal为什么会导致内存泄漏？</h2><p>ThreadLocal导致内存泄漏的主要原因在于其内部类ThreadLocalMap中的键值对可能不会被垃圾收集器正确回收。ThreadLocalMap是Thread类的一个成员变量，用于存储每个线程自己的ThreadLocal变量副本。</p>
+<p>每个ThreadLocal实例在ThreadLocalMap中作为键存在，与之关联的值是线程特有的数据。当线程不再需要这些数据，并且没有显式地调用ThreadLocal的remove()方法来清除它们时，这些键值对仍然保留在ThreadLocalMap中。</p>
+<p>如果线程是长时间运行的（比如线程池中的线程），那么这些未清除的键值对将长时间占用内存。如果ThreadLocal实例本身是一个匿名内部类或者静态类的实例，并且持有了外部类的引用，那么外部类实例也可能无法被垃圾收集，从而导致更严重的内存泄漏。</p>
+<p>此外，即使线程最终终止，Thread对象本身（以及它的ThreadLocalMap）可能也不会立即被垃圾收集，特别是在使用了线程池的情况下。因此，长时间不清理的ThreadLocal变量可能导致应用程序的可用内存逐渐减少，最终导致OutOfMemoryError。</p>
+<p>为了避免这种内存泄漏，最佳实践是在不再需要ThreadLocal变量时显式调用其remove()方法。这确保了与当前线程关联的ThreadLocalMap中的相应条目被正确删除，从而允许垃圾收集器回收相关内存。在使用线程池时尤其重要，因为线程可能会被重用，而它们的ThreadLocalMap也会随之保留。</p>
+<h2 id="为什么ThreadLocal的key要用弱引用？"><a href="#为什么ThreadLocal的key要用弱引用？" class="headerlink" title="为什么ThreadLocal的key要用弱引用？"></a>为什么ThreadLocal的key要用弱引用？</h2><p>ThreadLocal的key使用弱引用的主要目的是为了帮助避免内存泄漏。在Java中，弱引用（WeakReference）是一种引用类型，它不会阻止其引用的对象被垃圾收集器回收。当垃圾收集器运行时，如果发现一个对象仅被弱引用所引用，那么它就会回收该对象。</p>
+<p>在ThreadLocalMap中，key是ThreadLocal对象，value是与线程相关的值。如果ThreadLocal的key使用强引用，那么只要线程对象存在（比如线程池中的线程），即使ThreadLocal实例在其他地方已经没有被引用，它也不会被垃圾收集器回收，因为ThreadLocalMap中还持有对它的强引用。这种情况下，如果ThreadLocal对象持有了其他资源（如大对象、数据库连接等），那么这些资源也不会被回收，从而导致内存泄漏。</p>
+<p>通过使用弱引用作为ThreadLocalMap中的key，当ThreadLocal实例在其他地方不再被引用时，垃圾收集器可以回收它。这样，即使线程仍然存在，与之关联的ThreadLocal对象也可以被清理，从而释放了它所持有的资源。然而，需要注意的是，仅仅将key设置为弱引用并不足以完全避免内存泄漏。如果value本身持有了其他不应该被泄漏的资源，那么这些资源仍然可能被泄漏。因此，正确使用ThreadLocal（包括在不再需要时调用remove()方法）仍然是避免内存泄漏的关键。</p>
+<p>另外，值得注意的是，虽然弱引用有助于减少内存泄漏的风险，但它也带来了一些复杂性。例如，在ThreadLocalMap的实现中需要处理key被意外回收的情况。因此，在设计类似的数据结构时需要权衡利弊。</p>
+
+                    
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/blog/tags/Android/">Android</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                            <div class="post-share-container border-box">
+    <ul class="share-list-wrap border-box">
+        <li class="qq share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to QQ"
+        >
+            <i class="fa-brands fa-qq"></i>
+        </li>
+        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
+            data-tooltip-content="Share to WeChat"
+            data-tooltip-img-tip="Scan by WeChat"
+            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
+        >
+            <i class="fa-brands fa-weixin"></i>
+        </li>
+        <li class="weibo share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to WeiBo"
+        >
+            <i class="fa-brands fa-weibo"></i>
+        </li>
+    </ul>
+</div>
+
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/blog/2024/12/23/Android-42%20LiveDada/"
+                                   title="LiveData"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">LiveData</span>
+                                        <span class="post-nav-item">Prev posts</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/blog/2024/12/20/futu-1%20%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B%E7%AE%A1%E7%90%86/"
+                                   title="启动流程管理"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">启动流程管理</span>
+                                        <span class="post-nav-item">Next posts</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc left-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8ThreadLocal"><span class="nav-number">1.</span> <span class="nav-text">为什么要使用ThreadLocal</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ThreadLocal%E6%A0%B8%E5%BF%83"><span class="nav-number">2.</span> <span class="nav-text">ThreadLocal核心</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E7%89%B9%E6%80%A7"><span class="nav-number">2.1.</span> <span class="nav-text">核心特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95"><span class="nav-number">2.2.</span> <span class="nav-text">常见方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">2.3.</span> <span class="nav-text">使用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">2.4.</span> <span class="nav-text">注意事项</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ThreadLocal%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="nav-number">3.</span> <span class="nav-text">ThreadLocal的工作原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ThreadLocal%E7%9A%84%E7%94%A8%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text">ThreadLocal的用法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ThreadLocal%E7%9A%84%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E9%97%AE%E9%A2%98"><span class="nav-number">5.</span> <span class="nav-text">ThreadLocal的内存泄漏问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90"><span class="nav-number">6.</span> <span class="nav-text">源码分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E8%A6%81%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F"><span class="nav-number">6.1.</span> <span class="nav-text">主要成员变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E6%96%B9%E6%B3%95"><span class="nav-number">6.2.</span> <span class="nav-text">核心方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#get"><span class="nav-number">6.2.1.</span> <span class="nav-text">get()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#set-T-value"><span class="nav-number">6.2.2.</span> <span class="nav-text">set(T value)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">7.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#hreadLocal%E6%98%AF%E4%BB%80%E4%B9%88%E4%BB%A5%E5%8F%8A%E5%AE%83%E7%9A%84%E7%94%A8%E9%80%94%EF%BC%9F"><span class="nav-number">7.1.</span> <span class="nav-text">hreadLocal是什么以及它的用途？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ThreadLocal%E6%98%AF%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E7%BA%BF%E7%A8%8B%E5%B1%80%E9%83%A8%E5%AD%98%E5%82%A8%E7%9A%84%EF%BC%9F"><span class="nav-number">7.2.</span> <span class="nav-text">ThreadLocal是如何实现线程局部存储的？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ThreadLocal%E5%8F%AF%E8%83%BD%E4%BC%9A%E5%AF%BC%E8%87%B4%E5%93%AA%E4%BA%9B%E9%97%AE%E9%A2%98%EF%BC%9F"><span class="nav-number">7.3.</span> <span class="nav-text">ThreadLocal可能会导致哪些问题？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ThreadLocal%E4%B8%8Esynchronized%E6%9C%89%E4%BD%95%E4%B8%8D%E5%90%8C%EF%BC%9F"><span class="nav-number">7.4.</span> <span class="nav-text">ThreadLocal与synchronized有何不同？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ThreadLocal%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E5%AF%BC%E8%87%B4%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%EF%BC%9F"><span class="nav-number">7.5.</span> <span class="nav-text">ThreadLocal为什么会导致内存泄漏？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88ThreadLocal%E7%9A%84key%E8%A6%81%E7%94%A8%E5%BC%B1%E5%BC%95%E7%94%A8%EF%BC%9F"><span class="nav-number">7.6.</span> <span class="nav-text">为什么ThreadLocal的key要用弱引用？</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+    &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2024
+    
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/blog/">MoMo</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+        <div class="count-info info-item">
+            
+
+            
+                <span class="count-item border-box uv">
+                    <span class="item-type border-box">Unique Visitor</span>
+                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
+                </span>
+            
+
+            
+                <span class="count-item border-box pv">
+                    <span class="item-type border-box">Page View</span>
+                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
+                </span>
+            
+        </div>
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools left-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8ThreadLocal"><span class="nav-number">1.</span> <span class="nav-text">为什么要使用ThreadLocal</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ThreadLocal%E6%A0%B8%E5%BF%83"><span class="nav-number">2.</span> <span class="nav-text">ThreadLocal核心</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E7%89%B9%E6%80%A7"><span class="nav-number">2.1.</span> <span class="nav-text">核心特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E6%96%B9%E6%B3%95"><span class="nav-number">2.2.</span> <span class="nav-text">常见方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">2.3.</span> <span class="nav-text">使用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">2.4.</span> <span class="nav-text">注意事项</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ThreadLocal%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="nav-number">3.</span> <span class="nav-text">ThreadLocal的工作原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ThreadLocal%E7%9A%84%E7%94%A8%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text">ThreadLocal的用法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ThreadLocal%E7%9A%84%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E9%97%AE%E9%A2%98"><span class="nav-number">5.</span> <span class="nav-text">ThreadLocal的内存泄漏问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90"><span class="nav-number">6.</span> <span class="nav-text">源码分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E8%A6%81%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F"><span class="nav-number">6.1.</span> <span class="nav-text">主要成员变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E6%96%B9%E6%B3%95"><span class="nav-number">6.2.</span> <span class="nav-text">核心方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#get"><span class="nav-number">6.2.1.</span> <span class="nav-text">get()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#set-T-value"><span class="nav-number">6.2.2.</span> <span class="nav-text">set(T value)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">7.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#hreadLocal%E6%98%AF%E4%BB%80%E4%B9%88%E4%BB%A5%E5%8F%8A%E5%AE%83%E7%9A%84%E7%94%A8%E9%80%94%EF%BC%9F"><span class="nav-number">7.1.</span> <span class="nav-text">hreadLocal是什么以及它的用途？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ThreadLocal%E6%98%AF%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E7%BA%BF%E7%A8%8B%E5%B1%80%E9%83%A8%E5%AD%98%E5%82%A8%E7%9A%84%EF%BC%9F"><span class="nav-number">7.2.</span> <span class="nav-text">ThreadLocal是如何实现线程局部存储的？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ThreadLocal%E5%8F%AF%E8%83%BD%E4%BC%9A%E5%AF%BC%E8%87%B4%E5%93%AA%E4%BA%9B%E9%97%AE%E9%A2%98%EF%BC%9F"><span class="nav-number">7.3.</span> <span class="nav-text">ThreadLocal可能会导致哪些问题？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ThreadLocal%E4%B8%8Esynchronized%E6%9C%89%E4%BD%95%E4%B8%8D%E5%90%8C%EF%BC%9F"><span class="nav-number">7.4.</span> <span class="nav-text">ThreadLocal与synchronized有何不同？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ThreadLocal%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E5%AF%BC%E8%87%B4%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%EF%BC%9F"><span class="nav-number">7.5.</span> <span class="nav-text">ThreadLocal为什么会导致内存泄漏？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88ThreadLocal%E7%9A%84key%E8%A6%81%E7%94%A8%E5%BC%B1%E5%BC%95%E7%94%A8%EF%BC%9F"><span class="nav-number">7.6.</span> <span class="nav-text">为什么ThreadLocal的key要用弱引用？</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/utils.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/header-shrink.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/back2top.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/toggle-theme.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/code-block.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/main.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/libs/anime.min.js"></script>
+
+<!-- local search -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/local-search.min.js"></script>
+
+
+<!-- lazyload -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/lazyload.min.js"></script>
+
+
+<div class="pjax">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/post/post-helper.min.js"></script>
+
+        <!-- toc -->
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/post/toc.min.js"></script>
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/post/share.min.js"></script>
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+</body>
+</html>

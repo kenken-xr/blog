@@ -267,7 +267,7 @@
             
                 <span class="meta-info-item post-update-date">
                     <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                    <span class="datetime" data-updated="Fri Jul 12 2024 15:29:34 GMT+0800">2024-07-12 15:29:34</span>
+                    <span class="datetime" data-updated="Mon Dec 23 2024 20:43:56 GMT+0800">2024-12-23 20:43:56</span>
                 </span>
             
         
@@ -393,6 +393,60 @@
 </ul>
 </li>
 </ol>
+<h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><h2 id="可见性原理"><a href="#可见性原理" class="headerlink" title="可见性原理"></a>可见性原理</h2><p>当对volatile变量进行写操作的时候，JVM会向处理器发送一条Lock#前缀的指令</p>
+<p>而这个LOCK前缀的指令主要实现了两个步骤：</p>
+<ol>
+<li>将当前处理器缓存行的数据写回到系统内存；</li>
+<li>将其他处理器中缓存了该数据的缓存行设置为无效。</li>
+</ol>
+<p>原因在于缓存一致性协议，每个处理器通过总线嗅探和MESI协议来检查自己的缓存是不是过期了，当处理器发现自己缓存行对应的内存地址被修改，就会将当前处理器的缓存行置为无效状态，当处理器对这个数据进行修改操作的时候，会重新从系统内存中把数据读到处理器缓存中。</p>
+<blockquote>
+<p>缓存一致性协议：当CPU写数据时，如果发现操作的变量是共享变量，即在其他CPU中也存在该变量的副本，会发出信号通知其他CPU将该变量的缓存行置为无效状态，因此当其他CPU需要读取这个变量时，就会从内存重新读取。</p>
+</blockquote>
+<p>当volatile修饰的变量进行写操作的时候，JVM就会向CPU发送LOCK#前缀指令，通过缓存一致性机制确保写操作的原子性，然后更新对应的主存地址的数据。</p>
+<p>处理器会使用嗅探技术保证在当前处理器缓存行，主存和其他处理器缓存行的数据的在总线上保持一致。在JVM通过LOCK前缀指令更新了当前处理器的数据之后，其他处理器就会嗅探到数据不一致，从而使当前缓存行失效，当需要用到该数据时直接去内存中读取，保证读取到的数据时修改后的值。</p>
+<h2 id="有序性原理"><a href="#有序性原理" class="headerlink" title="有序性原理"></a>有序性原理</h2><p><strong>volatile 的 happens-before 关系</strong></p>
+<p>happens-before 规则中有一条是 volatile 变量规则：对一个 volatile 域的写，happens-before 于任意后续对这个 volatile 域的读。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//假设线程A执行writer方法，线程B执行reader方法</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">VolatileExample</span> {</span><br><span class="line">    <span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">volatile</span> <span class="type">boolean</span> <span class="variable">flag</span> <span class="operator">=</span> <span class="literal">false</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">writer</span><span class="params">()</span> {</span><br><span class="line">        a = <span class="number">1</span>;              <span class="comment">// 1 线程A修改共享变量</span></span><br><span class="line">        flag = <span class="literal">true</span>;        <span class="comment">// 2 线程A写volatile变量</span></span><br><span class="line">    } </span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">reader</span><span class="params">()</span> {</span><br><span class="line">        <span class="keyword">if</span> (flag) {         <span class="comment">// 3 线程B读同一个volatile变量</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> a;          <span class="comment">// 4 线程B读共享变量</span></span><br><span class="line">        ……</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>根据 happens-before 规则，上面过程会建立 3 类 happens-before 关系。</p>
+<ul>
+<li>根据程序次序规则：1 happens-before 2 且 3 happens-before 4。</li>
+<li>根据 volatile 规则：2 happens-before 3。</li>
+<li>根据 happens-before 的传递性规则：1 happens-before 4。</li>
+</ul>
+<p><img lazyload="" alt="image" data-src="https://segmentfault.com/img/remote/1460000045398763"></p>
+<p>因为以上规则，当线程 A 将 volatile 变量 flag 更改为 true 后，线程 B 能够迅速感知。</p>
+<p><strong>volatile 禁止重排序</strong></p>
+<p>为了性能优化，JMM 在不改变正确语义的前提下，会允许编译器和处理器对指令序列进行重排序。JMM 提供了内存屏障阻止这种重排序。</p>
+<p>Java 编译器会在生成指令系列时在适当的位置会插入内存屏障指令来禁止特定类型的处理器重排序。</p>
+<p>JMM 会针对编译器制定 volatile 重排序规则表。</p>
+<p><img lazyload="" alt="image" data-src="https://segmentfault.com/img/remote/1460000045398764"></p>
+<p>为了实现 volatile 内存语义时，编译器在生成字节码时，会在指令序列中插入内存屏障来禁止特定类型的处理器重排序。</p>
+<p>对于编译器来说，发现一个最优布置来最小化插入屏障的总数几乎是不可能的，为此，JMM 采取了保守的策略。</p>
+<ul>
+<li>在每个 volatile 写操作的前面插入一个 StoreStore 屏障。</li>
+<li>在每个 volatile 写操作的后面插入一个 StoreLoad 屏障。</li>
+<li>在每个 volatile 读操作的后面插入一个 LoadLoad 屏障。</li>
+<li>在每个 volatile 读操作的后面插入一个 LoadStore 屏障。</li>
+</ul>
+<p>volatile 写是在前面和后面分别插入内存屏障，而 volatile 读操作是在后面插入两个内存屏障。</p>
+<p><img lazyload="" alt="image" data-src="https://segmentfault.com/img/remote/1460000045398765"></p>
+<h2 id="为什么不能保证原子性"><a href="#为什么不能保证原子性" class="headerlink" title="为什么不能保证原子性"></a>为什么不能保证原子性</h2><p>在多线程环境中，原子性是指一个操作或一系列操作要么完全执行，要么完全不执行，不会被其他线程的操作打断。</p>
+<p>volatile关键字可以确保一个线程对变量的修改对其他线程立即可见，这对于读-改-写的操作序列来说是不够的，因为这些操作序列本身并不是原子的。考虑下面的例子：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Counter</span> {</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">volatile</span> <span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">increment</span><span class="params">()</span> {</span><br><span class="line">        count++; <span class="comment">// 这实际上是三个独立的操作：读取count的值，增加1，写回新值到count</span></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>在这个例子中，尽管count变量被声明为volatile，但increment()方法并不是线程安全的。当多个线程同时调用increment()方法时，可能会发生以下情况：</p>
+<ul>
+<li>线程A读取count的当前值为0。</li>
+<li>线程B也读取count的当前值为0（在线程A增加count之前）。</li>
+<li>线程A将count增加到1并写回。</li>
+<li>线程B也将count增加到1并写回。</li>
+</ul>
+<p>在这种情况下，虽然increment()方法被调用了两次，但count的值只增加了1，而不是期望的2。这是因为count++操作不是原子的；它涉及到读取count值、增加1、然后写回新值的多个步骤。在这些步骤之间，其他线程的操作可能会干扰。</p>
+<p>为了保证原子性，可以使用synchronized关键字或者java.util.concurrent.atomic包中的原子类（如AtomicInteger），这些机制能够保证此类操作的原子性：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Counter</span> {</span><br><span class="line">    <span class="keyword">private</span> <span class="type">AtomicInteger</span> <span class="variable">count</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">AtomicInteger</span>(<span class="number">0</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">increment</span><span class="params">()</span> {</span><br><span class="line">        count.getAndIncrement(); <span class="comment">// 这个操作是原子的</span></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>在这个修改后的例子中，使用AtomicInteger及其getAndIncrement()方法来保证递增操作的原子性。这意味着即使多个线程同时尝试递增计数器，每次调用也都会正确地将count的值递增1。</p>
 
                     
                 </div>
@@ -496,7 +550,7 @@
             <div class="pc-post-toc left-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#volatile%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">1.</span> <span class="nav-text">volatile是什么</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#volatile%E5%8F%98%E9%87%8F%E8%83%BD%E7%A1%AE%E4%BF%9D%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E6%80%A7%E5%90%97%EF%BC%9F%E4%B8%BA%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">volatile变量能确保线程安全性吗？为什么？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E8%A7%81%E6%80%A7"><span class="nav-number">2.1.</span> <span class="nav-text">可见性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#volatile%E7%A9%B6%E7%AB%9F%E8%83%BD%E5%90%A6%E4%BF%9D%E8%AF%81%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E6%80%A7"><span class="nav-number">2.2.</span> <span class="nav-text">volatile究竟能否保证线程安全性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#volatile%E4%BD%9C%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">volatile作用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#volatile%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">4.</span> <span class="nav-text">volatile使用场景</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#volatile%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">1.</span> <span class="nav-text">volatile是什么</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#volatile%E5%8F%98%E9%87%8F%E8%83%BD%E7%A1%AE%E4%BF%9D%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E6%80%A7%E5%90%97%EF%BC%9F%E4%B8%BA%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">volatile变量能确保线程安全性吗？为什么？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E8%A7%81%E6%80%A7"><span class="nav-number">2.1.</span> <span class="nav-text">可见性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#volatile%E7%A9%B6%E7%AB%9F%E8%83%BD%E5%90%A6%E4%BF%9D%E8%AF%81%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E6%80%A7"><span class="nav-number">2.2.</span> <span class="nav-text">volatile究竟能否保证线程安全性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#volatile%E4%BD%9C%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">volatile作用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#volatile%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">4.</span> <span class="nav-text">volatile使用场景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8E%9F%E7%90%86"><span class="nav-number">5.</span> <span class="nav-text">原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E8%A7%81%E6%80%A7%E5%8E%9F%E7%90%86"><span class="nav-number">5.1.</span> <span class="nav-text">可见性原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%89%E5%BA%8F%E6%80%A7%E5%8E%9F%E7%90%86"><span class="nav-number">5.2.</span> <span class="nav-text">有序性原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E8%83%BD%E4%BF%9D%E8%AF%81%E5%8E%9F%E5%AD%90%E6%80%A7"><span class="nav-number">5.3.</span> <span class="nav-text">为什么不能保证原子性</span></a></li></ol></li></ol>
     </div>
 </div>
 
@@ -674,7 +728,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#volatile%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">1.</span> <span class="nav-text">volatile是什么</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#volatile%E5%8F%98%E9%87%8F%E8%83%BD%E7%A1%AE%E4%BF%9D%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E6%80%A7%E5%90%97%EF%BC%9F%E4%B8%BA%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">volatile变量能确保线程安全性吗？为什么？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E8%A7%81%E6%80%A7"><span class="nav-number">2.1.</span> <span class="nav-text">可见性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#volatile%E7%A9%B6%E7%AB%9F%E8%83%BD%E5%90%A6%E4%BF%9D%E8%AF%81%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E6%80%A7"><span class="nav-number">2.2.</span> <span class="nav-text">volatile究竟能否保证线程安全性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#volatile%E4%BD%9C%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">volatile作用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#volatile%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">4.</span> <span class="nav-text">volatile使用场景</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#volatile%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">1.</span> <span class="nav-text">volatile是什么</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#volatile%E5%8F%98%E9%87%8F%E8%83%BD%E7%A1%AE%E4%BF%9D%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E6%80%A7%E5%90%97%EF%BC%9F%E4%B8%BA%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">volatile变量能确保线程安全性吗？为什么？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E8%A7%81%E6%80%A7"><span class="nav-number">2.1.</span> <span class="nav-text">可见性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#volatile%E7%A9%B6%E7%AB%9F%E8%83%BD%E5%90%A6%E4%BF%9D%E8%AF%81%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E6%80%A7"><span class="nav-number">2.2.</span> <span class="nav-text">volatile究竟能否保证线程安全性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#volatile%E4%BD%9C%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">volatile作用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#volatile%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">4.</span> <span class="nav-text">volatile使用场景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8E%9F%E7%90%86"><span class="nav-number">5.</span> <span class="nav-text">原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E8%A7%81%E6%80%A7%E5%8E%9F%E7%90%86"><span class="nav-number">5.1.</span> <span class="nav-text">可见性原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%89%E5%BA%8F%E6%80%A7%E5%8E%9F%E7%90%86"><span class="nav-number">5.2.</span> <span class="nav-text">有序性原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E8%83%BD%E4%BF%9D%E8%AF%81%E5%8E%9F%E5%AD%90%E6%80%A7"><span class="nav-number">5.3.</span> <span class="nav-text">为什么不能保证原子性</span></a></li></ol></li></ol>
     </div>
 </div>
 

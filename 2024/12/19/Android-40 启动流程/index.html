@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="MoMo">
+    
+    <title>
+        
+            启动流程 |
+        
+        今天在干嘛
+    </title>
+    
+<link rel="stylesheet" href="/blog/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/blog/images/logoMoon.svg">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/font/css/regular.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/font/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/font/css/brands.min.css">
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"kenken-xr.github.io","root":"/blog/","language":"en","path":"search.json"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#f8a5c2","title":"今天在干嘛","author":"MoMo","avatar":"/images/avatar.jpg","logo":"/images/logoMoon.svg","favicon":"/images/logoMoon.svg"},"menu":{"home":"/","archives":"/archives","tags":"/tags","categories":"/categories","github":"https://github.com/kenken-xr"},"first_screen":{"enable":true,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":true,"links":{"github":"https://github.com/kenken-xr","weixin":"img | /images/wx.png","qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":true,"percent":true,"hide_header":false},"home":{"announcement":null,"category":true,"tag":true,"post_datetime":"updated"},"post":{"author_badge":{"enable":true,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":true,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true,"layout":"left"},"website_count":{"busuanzi_count":{"enable":true,"site_uv":true,"site_pv":true,"page_pv":true}},"local_search":{"enable":true,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.36"},"waline":{"server_url":null,"reaction":false,"version":"3.2.1"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":true},"cdn":{"enable":true,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":2023,"word_count":true,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"/blog","source_data":{},"version":"4.2.5"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original post title","author":"Original post author","link":"Original post link"}
+  </script>
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/blog/atom.xml" title="MoMo" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/blog/">
+                    <img src="/blog/images/logoMoon.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/blog/">
+               今天在干嘛
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/blog/">
+                                
+                                HOME
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/blog/archives">
+                                
+                                ARCHIVES
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/blog/tags">
+                                
+                                TAGS
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/blog/categories">
+                                
+                                CATEGORIES
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" target="_blank" rel="noopener" href="https://github.com/kenken-xr">
+                                
+                                GITHUB
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="menu-text-color fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/blog/">
+                            
+                            HOME
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/blog/archives">
+                            
+                            ARCHIVES
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/blog/tags">
+                            
+                            TAGS
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/blog/categories">
+                            
+                            CATEGORIES
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" target="_blank" rel="noopener" href="https://github.com/kenken-xr">
+                            
+                            GITHUB
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        启动流程
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/blog/images/avatar.jpg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">MoMo</span>
+                                
+                                    <span class="author-badge">Lv5</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2024-12-19 10:41:47</span>
+            </span>
+
+            
+                <span class="meta-info-item post-update-date">
+                    <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                    <span class="datetime" data-updated="Thu Dec 19 2024 19:14:25 GMT+0800">2024-12-19 19:14:25</span>
+                </span>
+            
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/blog/categories/%E6%9C%89%E5%9C%A8%E8%AE%A4%E7%9C%9F%E4%B8%8A%E7%8F%AD/">有在认真上班</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/blog/tags/Android/">Android</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+            <span class="meta-info-item post-pv">
+                <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <h1 id="Activity启动流程"><a href="#Activity启动流程" class="headerlink" title="Activity启动流程"></a>Activity启动流程</h1><p><img lazyload="" alt="image" data-src="https://i-blog.csdnimg.cn/blog_migrate/430844d0c3807bc8c4dadf5badbac32a.png"></p>
+<p>Activity.startActivity—&gt; startActivityForUser –&gt;Instrumentation.excuStartActivity–&gt;ATM —startActivity<br>  -&gt;判断 需要启动的 Activity 所在的进程 是否已经启动<br>    -&gt;如果启动了 realStartActivityLocked<br>    进程不存在:mService.startProcessAsync<br>      -&gt; AMS 如何通知到 zygote<br>      —&gt;zygote 如何创建 应用进程的 ===system server 创建一样流程一样的</p>
+<ol>
+<li>点击桌面App图标，Launcher进程采用Binder IPC向system_server进程发起startActivity请求；</li>
+<li>system_server进程接收到请求后，向zygote进程发送创建进程的请求；</li>
+<li>Zygote进程fork出新的子进程，即App进程；</li>
+<li>App进程，通过Binder IPC向sytem_server进程发起attachApplication请求；</li>
+<li>system_server进程在收到请求后，进行一系列准备工作后，再通过binder IPC向App进程发送scheduleLaunchActivity请求；</li>
+<li>App进程的binder线程（ApplicationThread）在收到请求后，通过handler向主线程发送LAUNCH_ACTIVITY消息；</li>
+<li>主线程在收到Message后，通过发射机制创建目标Activity，并回调Activity.onCreate()等方法。</li>
+</ol>
+<p>到此，App便正式启动，开始进入Activity生命周期，执行完onCreate/onStart/onResume方法，UI渲染结束后便可以看到App的主界面</p>
+<p>init.cpp#main() -&gt; LoadBootScripts(actionManager, serviceList) -&gt; 解析init.rc -&gt; trigger zygote-start</p>
+<h2 id="Launcher进程请求AMS"><a href="#Launcher进程请求AMS" class="headerlink" title="Launcher进程请求AMS"></a>Launcher进程请求AMS</h2><p>根Activity的启动流程就是桌面上点击一个应用图标进入到应用的第一个Activity的流程，桌面可以看成一个程序，即Launcher。</p>
+<p>当系统开机后，Launcher也随之被启动，然后将已经安装的应用程序图标显示到桌面上，当点击一个应用图标其实就是相当于点击活动中的一个button,其相应事件就是Launcher进程请求AMS来启动该应用程序。</p>
+<p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/Android-40%20%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/launcher%E8%AF%B7%E6%B1%82ams.png"></p>
+<p>请求的入口就是Launcher的startActivitySafe方法:<br><code>packages/apps/Launcher3/src/com/android/launcher3/Launcher.java</code></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">startActivitySafely</span><span class="params">(View v, Intent intent, ItemInfo item)</span> {</span><br><span class="line">  ...</span><br><span class="line">  <span class="comment">// 根Activity会在新的任务栈中启动</span></span><br><span class="line">  intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">try</span> {</span><br><span class="line">      ...</span><br><span class="line">      <span class="keyword">if</span> (isShortcut) {</span><br><span class="line">          startShortcutIntentSafely(intent, optsBundle, item);</span><br><span class="line">      } <span class="keyword">else</span> <span class="keyword">if</span> (user == <span class="literal">null</span> || user.equals(Process.myUserHandle())) {</span><br><span class="line">          <span class="comment">// 调用startActivity</span></span><br><span class="line">          startActivity(intent, optsBundle);</span><br><span class="line">      } <span class="keyword">else</span> {</span><br><span class="line">          LauncherAppsCompat.getInstance(<span class="built_in">this</span>).startActivityForProfile(</span><br><span class="line">                  intent.getComponent(), user, intent.getSourceBounds(), optsBundle);</span><br><span class="line">      }</span><br><span class="line">      ...</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">  } <span class="keyword">catch</span> (ActivityNotFoundException|SecurityException e) {</span><br><span class="line">      ...</span><br><span class="line">  }</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>该方法为根Activity设置了flag，即根Activity会在新的任务栈中启动。</p>
+<p><code>frameworks/base/core/java/android/app/Activity.java</code></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">startActivity</span><span class="params">(Intent intent, <span class="meta">@Nullable</span> Bundle options)</span> {</span><br><span class="line">  <span class="comment">//第二个参数为-1表示Launcher不需要知道根Activity的启动结果</span></span><br><span class="line">  <span class="keyword">if</span> (options != <span class="literal">null</span>) {</span><br><span class="line">      startActivityForResult(intent, -<span class="number">1</span>, options);</span><br><span class="line">  } <span class="keyword">else</span> {</span><br><span class="line">    startActivityForResult(intent, -<span class="number">1</span>);</span><br><span class="line">  }</span><br><span class="line">}</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">startActivityForResult</span><span class="params">(<span class="meta">@RequiresPermission</span> Intent intent, <span class="type">int</span> requestCode)</span> {</span><br><span class="line">    startActivityForResult(intent, requestCode, <span class="literal">null</span>);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">startActivityForResult</span><span class="params">(</span></span><br><span class="line"><span class="params">  <span class="meta">@RequiresPermission</span> Intent intent, </span></span><br><span class="line"><span class="params">  <span class="type">int</span> requestCode,</span></span><br><span class="line"><span class="params">  <span class="meta">@Nullable</span> Bundle options</span></span><br><span class="line"><span class="params">)</span> {</span><br><span class="line">  <span class="comment">//mParent表示当前Activity的父类，当根活动还没创建则mParent==null    </span></span><br><span class="line">  <span class="keyword">if</span> (mParent == <span class="literal">null</span>) {</span><br><span class="line">    options = transferSpringboardActivityOptions(options);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 1</span></span><br><span class="line">    Instrumentation.<span class="type">ActivityResult</span> <span class="variable">ar</span> <span class="operator">=</span></span><br><span class="line">      mInstrumentation.execStartActivity(</span><br><span class="line">        <span class="built_in">this</span>, mMainThread.getApplicationThread(), mToken, <span class="built_in">this</span>,</span><br><span class="line">        intent, requestCode, options);</span><br><span class="line">    ... </span><br><span class="line">  } </span><br><span class="line">  ...</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>每个Activity都持有Instrumentation对象的一个引用，但是整个进程只会存在一个Instrumentation对象</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// frameworks/base/core/java/android/app/Instrumentation.java</span></span><br><span class="line"><span class="keyword">public</span> ActivityResult <span class="title function_">execStartActivity</span><span class="params">(</span></span><br><span class="line"><span class="params">  Context who, </span></span><br><span class="line"><span class="params">  IBinder contextThread, </span></span><br><span class="line"><span class="params">  IBinder token, </span></span><br><span class="line"><span class="params">  Activity target,</span></span><br><span class="line"><span class="params">  Intent intent, <span class="type">int</span> requestCode, Bundle options</span></span><br><span class="line"><span class="params">)</span> {</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">try</span> {</span><br><span class="line">    ...</span><br><span class="line">    <span class="comment">//获取AMS的代理对象</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">result</span> <span class="operator">=</span> ActivityManager.getService()</span><br><span class="line">            .startActivity(whoThread, who.getBasePackageName(), intent,</span><br><span class="line">                    intent.resolveTypeIfNeeded(who.getContentResolver()),</span><br><span class="line">                    token, target != <span class="literal">null</span> ? target.mEmbeddedID : <span class="literal">null</span>,</span><br><span class="line">                    requestCode, <span class="number">0</span>, <span class="literal">null</span>, options);</span><br><span class="line">        checkStartActivityResult(result, intent);</span><br><span class="line">    } <span class="keyword">catch</span> (RemoteException e) {</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">RuntimeException</span>(<span class="string">"Failure from system"</span>, e);</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@UnsupportedAppUsage</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> IActivityManager <span class="title function_">getService</span><span class="params">()</span> {</span><br><span class="line">    <span class="keyword">return</span> IActivityManagerSingleton.get();</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="meta">@UnsupportedAppUsage</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Singleton&lt;IActivityManager&gt; IActivityManagerSingleton =</span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Singleton</span>&lt;IActivityManager&gt;() {</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> IActivityManager <span class="title function_">create</span><span class="params">()</span> {</span><br><span class="line">      <span class="comment">//得到activity的service引用，即IBinder类型的AMS引用</span></span><br><span class="line">      <span class="keyword">final</span> <span class="type">IBinder</span> <span class="variable">b</span> <span class="operator">=</span> ServiceManager.getService(Context.ACTIVITY_SERVICE);</span><br><span class="line">      <span class="comment">//转换成IActivityManager对象</span></span><br><span class="line">      <span class="keyword">final</span> <span class="type">IActivityManager</span> <span class="variable">am</span> <span class="operator">=</span> IActivityManager.Stub.asInterface(b);</span><br><span class="line">      <span class="keyword">return</span> am;</span><br><span class="line">    }</span><br><span class="line">};</span><br></pre></td></tr></tbody></table></figure>
+
+<p>在Singleton中的create方法中由于b是AMS引用作为服务端处于SystemServer进程中，与当前Launcher进程作为客户端与服务端不在同一个进程，所以am返回的是IActivityManager.Stub的代理对象，此时如果要实现客户端与服务端进程间的通信，只需要在AMS继承了IActivityManager.Stub类并实现了相应的方法，这样Launcher进程作为客户端就拥有了服务端AMS的代理对象，然后就可以调用AMS的方法来实现具体功能了，就这样<strong>Launcher的工作就交给AMS实现</strong></p>
+<h2 id="AMS发送创建应用进程请求"><a href="#AMS发送创建应用进程请求" class="headerlink" title="AMS发送创建应用进程请求"></a>AMS发送创建应用进程请求</h2><p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/Android-40%20%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/AMS%E5%8F%91%E9%80%81%E5%88%9B%E5%BB%BA%E5%BA%94%E7%94%A8%E8%BF%9B%E7%A8%8B%E8%AF%B7%E6%B1%82.png"></p>
+<h3 id="AMS将请求任务转移给Process"><a href="#AMS将请求任务转移给Process" class="headerlink" title="AMS将请求任务转移给Process"></a>AMS将请求任务转移给Process</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// frameworks/base/services/core/java/com/android/server/am/ActivityManagerService.java</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="type">int</span> <span class="title function_">startActivity</span><span class="params">(</span></span><br><span class="line"><span class="params">  IApplicationThread caller, </span></span><br><span class="line"><span class="params">  String callingPackage,</span></span><br><span class="line"><span class="params">  <span class="type">int</span> requestCode,</span></span><br><span class="line"><span class="params">  <span class="type">int</span> startFlags, </span></span><br><span class="line"><span class="params">  ProfilerInfo profilerInfo, </span></span><br><span class="line"><span class="params">  Bundle bOptions)</span> {</span><br><span class="line">    <span class="keyword">return</span> startActivityAsUser(...);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="type">int</span> <span class="title function_">startActivityAsUser</span><span class="params">(IApplicationThread caller, String callingPackage,</span></span><br><span class="line"><span class="params">        Intent intent, String resolvedType, IBinder resultTo, String resultWho, <span class="type">int</span> requestCode,</span></span><br><span class="line"><span class="params">        <span class="type">int</span> startFlags, ProfilerInfo profilerInfo, Bundle bOptions, <span class="type">int</span> userId,</span></span><br><span class="line"><span class="params">        <span class="type">boolean</span> validateIncomingUser)</span> {</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line">    <span class="comment">//判断调用者的进程是否隔离</span></span><br><span class="line">    enforceNotIsolatedCaller(<span class="string">"startActivity"</span>);</span><br><span class="line">    <span class="comment">//检查调用者权限</span></span><br><span class="line">    userId = mActivityStartController.checkTargetUser(userId, validateIncomingUser,</span><br><span class="line">            Binder.getCallingPid(), Binder.getCallingUid(), <span class="string">"startActivityAsUser"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// <span class="doctag">TODO:</span> Switch to user app stacks here.</span></span><br><span class="line">    <span class="keyword">return</span> mActivityStartController.obtainStarter(...)</span><br><span class="line">      .setMayWait(userId)</span><br><span class="line">      .execute();</span><br><span class="line"></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">ActivityStarter <span class="title function_">obtainStarter</span><span class="params">(Intent intent, String reason)</span> {</span><br><span class="line">  <span class="keyword">return</span> mFactory.obtain().setIntent(intent).setReason(reason);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>startActivity方法经过多个方法调用会去执行startActivityAsUser方法，在startActivityAsUser方法最后会返回mActivityStartController的一长串链式调用方法</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">execute</span><span class="params">()</span> {</span><br><span class="line">  <span class="keyword">try</span> {</span><br><span class="line">    <span class="keyword">if</span> (mRequest.mayWait) {</span><br><span class="line">        <span class="keyword">return</span> startActivityMayWait(...);</span><br><span class="line">    } <span class="keyword">else</span> {</span><br><span class="line">        <span class="keyword">return</span> startActivity(...);</span><br><span class="line">    }</span><br><span class="line">  } <span class="keyword">finally</span> {</span><br><span class="line">    onExecutionComplete();</span><br><span class="line">  }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="type">int</span> <span class="title function_">startActivityMayWait</span><span class="params">(...)</span> {</span><br><span class="line">  .....</span><br><span class="line">  <span class="comment">// 根据intent在系统中找到合适的应用的activity，如果有多个activity可选择，</span></span><br><span class="line">  <span class="comment">// 则会弹出ResolverActivity让用户选择合适的应用。</span></span><br><span class="line">  <span class="type">ActivityInfo</span> <span class="variable">aInfo</span> <span class="operator">=</span> mSupervisor.resolveActivity(intent, rInfo, startFlags, profilerInfo);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="type">int</span> <span class="variable">res</span> <span class="operator">=</span> startActivity(...);</span><br><span class="line">  ....</span><br><span class="line"></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="type">int</span> <span class="title function_">startActivity</span><span class="params">(...)</span> {</span><br><span class="line">  ...</span><br><span class="line">      result = startActivityUnchecked(...);</span><br><span class="line">  ...</span><br><span class="line"></span><br><span class="line">  postStartActivityProcessing(r, result, mTargetStack);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> <span class="type">int</span> <span class="title function_">startActivityUnchecked</span><span class="params">(...)</span> {</span><br><span class="line">...</span><br><span class="line"> <span class="keyword">if</span> (mStartActivity.resultTo == <span class="literal">null</span> &amp;&amp; mInTask == <span class="literal">null</span> &amp;&amp; !mAddingToTask</span><br><span class="line">                &amp;&amp; (mLaunchFlags &amp; FLAG_ACTIVITY_NEW_TASK) != <span class="number">0</span>) {</span><br><span class="line">    newTask = <span class="literal">true</span>;</span><br><span class="line">    <span class="comment">//创建新的TaskRecord</span></span><br><span class="line">    result = setTaskFromReuseOrCreateNewTask(taskToAffiliate, preferredLaunchStackId, topStack);</span><br><span class="line">  } <span class="keyword">else</span> <span class="keyword">if</span> (mSourceRecord != <span class="literal">null</span>) {</span><br><span class="line">      result = setTaskFromSourceRecord();</span><br><span class="line">  } <span class="keyword">else</span> <span class="keyword">if</span> (mInTask != <span class="literal">null</span>) {</span><br><span class="line">      result = setTaskFromInTask();</span><br><span class="line">  } <span class="keyword">else</span> {</span><br><span class="line">      setTaskToCurrentTopOrCreateNewTask();</span><br><span class="line">  }</span><br><span class="line">  ...</span><br><span class="line"></span><br><span class="line"> <span class="keyword">if</span> (mDoResume) {</span><br><span class="line">  <span class="keyword">final</span> <span class="type">ActivityRecord</span> <span class="variable">topTaskActivity</span> <span class="operator">=</span></span><br><span class="line">          mStartActivity.getTask().topRunningActivityLocked();</span><br><span class="line">  <span class="keyword">if</span> (!mTargetStack.isFocusable()</span><br><span class="line">          || (topTaskActivity != <span class="literal">null</span> &amp;&amp; topTaskActivity.mTaskOverlay</span><br><span class="line">          &amp;&amp; mStartActivity != topTaskActivity)) {</span><br><span class="line">      ...</span><br><span class="line">  } <span class="keyword">else</span> {</span><br><span class="line">      <span class="keyword">if</span> (mTargetStack.isFocusable() &amp;&amp; !mSupervisor.isFocusedStack(mTargetStack)) {</span><br><span class="line">          mTargetStack.moveToFront(<span class="string">"startActivityUnchecked"</span>);</span><br><span class="line">      }</span><br><span class="line">      mSupervisor.resumeFocusedStackTopActivityLocked(mTargetStack, mStartActivity,</span><br><span class="line">              mOptions);</span><br><span class="line">  }</span><br><span class="line">} <span class="keyword">else</span> {</span><br><span class="line">  mTargetStack.addRecentActivityLocked(mStartActivity);</span><br><span class="line">}</span><br><span class="line">...</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>在startActivityAsUser的链式方法中我们调用了setMayWait这个方法，所以这里的mRequest.mayWait为true，故会继续调用startActivityMayWait方法。</p>
+<p>startActivityMayWait方法经过调用多次的startActivity方法后会调用到startActivityUnchecked这个方法，会根据启动标志位和Activity启动模式来决定如何启动一个Activity以及是否要调用deliverNewIntent方法通知Activity有一个Intent试图重新启动它。</p>
+<p>无论以何种模式启动最终都会调用ActivityStackSupervisor.resumeFocusedStackTopActivityLocked方法。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">startSpecificActivityLocked</span><span class="params">(</span></span><br><span class="line"><span class="params">  ActivityRecord r,</span></span><br><span class="line"><span class="params">  <span class="type">boolean</span> andResume, </span></span><br><span class="line"><span class="params">  <span class="type">boolean</span> checkConfig</span></span><br><span class="line"><span class="params">)</span> {</span><br><span class="line">  <span class="comment">//获取即将要启动的Activity的所在的应用程序进程</span></span><br><span class="line">  <span class="type">ProcessRecord</span> <span class="variable">app</span> <span class="operator">=</span> mService.getProcessRecordLocked(r.processName,</span><br><span class="line">          r.info.applicationInfo.uid, <span class="literal">true</span>);</span><br><span class="line">  <span class="comment">//如果应用进程已经存在</span></span><br><span class="line">  <span class="keyword">if</span> (app != <span class="literal">null</span> &amp;&amp; app.thread != <span class="literal">null</span>) {</span><br><span class="line">    <span class="keyword">try</span> {</span><br><span class="line">      <span class="keyword">if</span> ((r.info.flags&amp;ActivityInfo.FLAG_MULTIPROCESS) == <span class="number">0</span></span><br><span class="line">              || !<span class="string">"android"</span>.equals(r.info.packageName)) {</span><br><span class="line">        <span class="comment">// Don't add this if it is a platform component that is marked</span></span><br><span class="line">        <span class="comment">// to run in multiple processes, because this is actually</span></span><br><span class="line">        <span class="comment">// part of the framework so doesn't make sense to track as a</span></span><br><span class="line">        <span class="comment">// separate apk in the process.</span></span><br><span class="line">        app.addPackage(r.info.packageName, r.info.applicationInfo.longVersionCode, mService.mProcessStats);</span><br><span class="line">      }</span><br><span class="line">      realStartActivityLocked(r, app, andResume, checkConfig);</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    } <span class="keyword">catch</span> (RemoteException e) {</span><br><span class="line">        Slog.w(TAG, <span class="string">"Exception when starting activity "</span></span><br><span class="line">                + r.intent.getComponent().flattenToShortString(), e);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">// If a dead object exception was thrown -- fall through to</span></span><br><span class="line">    <span class="comment">// restart the application.</span></span><br><span class="line">  }</span><br><span class="line">  <span class="comment">//应用进程还未创建，则通过AMS调用startProcessLocked向Zygote进程发送请求</span></span><br><span class="line">  mService.startProcessLocked(r.processName, r.info.applicationInfo, <span class="literal">true</span>, <span class="number">0</span>,<span class="string">"activity"</span>, r.intent.getComponent(), <span class="literal">false</span>, <span class="literal">false</span>, <span class="literal">true</span>);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>在方法中首先获取到了即将要启动的Activity所在的应用进程，假如是普通的Activity的启动流程的活，这个进程肯定是存在的，所以将执行realStartActivityLocked的方法。但是我们现在讨论的是根Activity的启动流程，由于应用都还未启动，意味着根Activity所在的应用进程还未创建，而mService其实就是AMS，所以这里将调用AMS的startProcessLocked。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="type">boolean</span> <span class="title function_">startProcessLocked</span><span class="params">(ProcessRecord app, String hostingType,</span></span><br><span class="line"><span class="params">            String hostingNameStr, <span class="type">boolean</span> disableHiddenApiChecks, String abiOverride)</span> {</span><br><span class="line">       ...</span><br><span class="line"></span><br><span class="line">            <span class="type">int</span> <span class="variable">uid</span> <span class="operator">=</span> app.uid; <span class="comment">//创建应用进程的用户ID</span></span><br><span class="line">            <span class="type">int</span>[] gids = <span class="literal">null</span>;</span><br><span class="line">            <span class="type">int</span> <span class="variable">mountExternal</span> <span class="operator">=</span> Zygote.MOUNT_EXTERNAL_NONE;</span><br><span class="line">            <span class="keyword">if</span> (!app.isolated) {</span><br><span class="line">                ...</span><br><span class="line"></span><br><span class="line">                <span class="comment">/*</span></span><br><span class="line"><span class="comment">                 * 对用户组进行创建和赋值</span></span><br><span class="line"><span class="comment">                 */</span></span><br><span class="line">                <span class="keyword">if</span> (ArrayUtils.isEmpty(permGids)) {</span><br><span class="line">                    gids = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">3</span>];</span><br><span class="line">                } <span class="keyword">else</span> {</span><br><span class="line">                    gids = <span class="keyword">new</span> <span class="title class_">int</span>[permGids.length + <span class="number">3</span>];</span><br><span class="line">                    System.arraycopy(permGids, <span class="number">0</span>, gids, <span class="number">3</span>, permGids.length);</span><br><span class="line">                }</span><br><span class="line">                gids[<span class="number">0</span>] = UserHandle.getSharedAppGid(UserHandle.getAppId(uid));</span><br><span class="line">                gids[<span class="number">1</span>] = UserHandle.getCacheAppGid(UserHandle.getAppId(uid));</span><br><span class="line">                gids[<span class="number">2</span>] = UserHandle.getUserGid(UserHandle.getUserId(uid));</span><br><span class="line"></span><br><span class="line">                <span class="comment">// Replace any invalid GIDs</span></span><br><span class="line">                <span class="keyword">if</span> (gids[<span class="number">0</span>] == UserHandle.ERR_GID) gids[<span class="number">0</span>] = gids[<span class="number">2</span>];</span><br><span class="line">                <span class="keyword">if</span> (gids[<span class="number">1</span>] == UserHandle.ERR_GID) gids[<span class="number">1</span>] = gids[<span class="number">2</span>];</span><br><span class="line">            }</span><br><span class="line">            ...</span><br><span class="line">            <span class="comment">//这个参数后文会提到</span></span><br><span class="line">            <span class="keyword">final</span> <span class="type">String</span> <span class="variable">entryPoint</span> <span class="operator">=</span> <span class="string">"android.app.ActivityThread"</span>;    </span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> startProcessLocked(...);        </span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">private</span> <span class="type">boolean</span> <span class="title function_">startProcessLocked</span><span class="params">(...)</span> {</span><br><span class="line">      ....</span><br><span class="line">        <span class="comment">//重点关注</span></span><br><span class="line">        <span class="keyword">final</span> <span class="type">ProcessStartResult</span> <span class="variable">startResult</span> <span class="operator">=</span> startProcess(...);</span><br><span class="line">  </span><br><span class="line">      ...</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> ProcessStartResult <span class="title function_">startProcess</span><span class="params">(...)</span> {</span><br><span class="line">        ....</span><br><span class="line">  <span class="keyword">if</span> (hostingType.equals(<span class="string">"webview_service"</span>)) {</span><br><span class="line">      startResult = startWebView(entryPoint,</span><br><span class="line">              app.processName, uid, uid, gids, runtimeFlags, mountExternal,</span><br><span class="line">              app.info.targetSdkVersion, seInfo, requiredAbi, instructionSet,</span><br><span class="line">              app.info.dataDir, <span class="literal">null</span>,</span><br><span class="line">              <span class="keyword">new</span> <span class="title class_">String</span>[] {PROC_START_SEQ_IDENT + app.startSeq});</span><br><span class="line"></span><br><span class="line">  } <span class="keyword">else</span> {</span><br><span class="line">  <span class="comment">//通过Process.start方法来为应用创建进程</span></span><br><span class="line">      startResult = Process.start(entryPoint,</span><br><span class="line">              app.processName, uid, uid, gids, runtimeFlags, mountExternal,</span><br><span class="line">              app.info.targetSdkVersion, seInfo, requiredAbi, instructionSet,</span><br><span class="line">              app.info.dataDir, invokeWith,</span><br><span class="line">              <span class="keyword">new</span> <span class="title class_">String</span>[] {PROC_START_SEQ_IDENT + app.startSeq});</span><br><span class="line">    checkTime(startTime, <span class="string">"startProcess: returned from zygote!"</span>);</span><br><span class="line">    <span class="keyword">return</span> startResult;</span><br><span class="line">  } <span class="keyword">finally</span> {</span><br><span class="line">    Trace.traceEnd(Trace.TRACE_TAG_ACTIVITY_MANAGER);</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>在startProcess方法里将调用Process.start来发送应用创建进程的请求。这样AMS就将发送请求的事交给了Process</p>
+<h3 id="Process向Zygote进程发送创建应用进程请求"><a href="#Process向Zygote进程发送创建应用进程请求" class="headerlink" title="Process向Zygote进程发送创建应用进程请求"></a>Process向Zygote进程发送创建应用进程请求</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> ProcessStartResult <span class="title function_">start</span><span class="params">(...)</span> {</span><br><span class="line">    <span class="keyword">return</span> ZYGOTE_PROCESS.start(...);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> Process.ProcessStartResult <span class="title function_">start</span><span class="params">(...)</span> {</span><br><span class="line">    <span class="keyword">try</span> {</span><br><span class="line">      <span class="comment">//重点关注</span></span><br><span class="line">      <span class="keyword">return</span> startViaZygote(...);</span><br><span class="line">    } <span class="keyword">catch</span> (ZygoteStartFailedEx ex) {</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> Process.ProcessStartResult <span class="title function_">startViaZygote</span><span class="params">(...)</span> <span class="keyword">throws</span> ZygoteStartFailedEx {</span><br><span class="line">        ArrayList&lt;String&gt; argsForZygote = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;String&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// --runtime-args, --setuid=, --setgid=,</span></span><br><span class="line">        <span class="comment">//创建字符串列表argsForZygote，并将启动应用进程的启动参数保存在这个列表中</span></span><br><span class="line">        argsForZygote.add(<span class="string">"--runtime-args"</span>);</span><br><span class="line">        argsForZygote.add(<span class="string">"--setuid="</span> + uid);</span><br><span class="line">        argsForZygote.add(<span class="string">"--setgid="</span> + gid);</span><br><span class="line">        argsForZygote.add(<span class="string">"--runtime-flags="</span> + runtimeFlags);</span><br><span class="line">        <span class="keyword">if</span> (mountExternal == Zygote.MOUNT_EXTERNAL_DEFAULT) {</span><br><span class="line">            argsForZygote.add(<span class="string">"--mount-external-default"</span>);</span><br><span class="line">        } <span class="keyword">else</span> <span class="keyword">if</span> (mountExternal == Zygote.MOUNT_EXTERNAL_READ) {</span><br><span class="line">            argsForZygote.add(<span class="string">"--mount-external-read"</span>);</span><br><span class="line">        } <span class="keyword">else</span> <span class="keyword">if</span> (mountExternal == Zygote.MOUNT_EXTERNAL_WRITE) {</span><br><span class="line">            argsForZygote.add(<span class="string">"--mount-external-write"</span>);</span><br><span class="line">        }</span><br><span class="line">        argsForZygote.add(<span class="string">"--target-sdk-version="</span> + targetSdkVersion);</span><br><span class="line"></span><br><span class="line">        ...</span><br><span class="line">        <span class="keyword">synchronized</span>(mLock) {</span><br><span class="line">		      <span class="comment">//重点关注</span></span><br><span class="line">          <span class="keyword">return</span> zygoteSendArgsAndGetResult(openZygoteSocketIfNeeded(abi),</span><br><span class="line">                                              useBlastulaPool,</span><br><span class="line">                                              argsForZygote);</span><br><span class="line">        }</span><br><span class="line">    }</span><br></pre></td></tr></tbody></table></figure>
+<p>在startViaZygote中会创建字符串列表argsForZygote来保存将要创建的应用进程的启动参数，然后最后会调用zygoteSendArgsAndGetResult方法，而在这个方法中第一个参数会调用openZygoteSocketIfNeeded方法，第三个参数就是启动参数列表。</p>
+<h1 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h1><p><a class="link" target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1et4y1s7FU?spm_id_from=333.788.player.switch&amp;vd_source=2081ceb1e91dd32eda9716db90753ea2&amp;p=9">视频讲解<i class="fas fa-external-link-alt"></i></a></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> startupSortStore <span class="title function_">sort</span><span class="params">(List&lt;? extends startup&lt;?&gt;&gt;startupList)</span>{</span><br><span class="line">  <span class="comment">//入度表</span></span><br><span class="line">  Map&lt;Class&lt;? <span class="keyword">extends</span> <span class="title class_">startup</span>&gt;, Integer&gt;inDegreeMap= <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">  <span class="comment">//0度表</span></span><br><span class="line">  Deque&lt;Class&lt;? <span class="keyword">extends</span> <span class="title class_">Startup</span>&gt;&gt;zeroDeque = <span class="keyword">new</span> <span class="title class_">ArrayDeque</span>&lt;&gt;();</span><br><span class="line">  <span class="comment">//任务表 用于保存原图</span></span><br><span class="line">  Map&lt;Class&lt;? <span class="keyword">extends</span> <span class="title class_">Startup</span>&gt;,Startup&lt;?&gt;&gt; startupMap = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">  <span class="comment">//任务依赖表</span></span><br><span class="line">  Map&lt;Class&lt;? <span class="keyword">extends</span> <span class="title class_">startup</span>&gt;, List&lt;Class&lt;? <span class="keyword">extends</span> <span class="title class_">Startup</span>&gt;&gt;&gt; startupchildrenMap = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 1.找出图中入度数为0的节点填表的过程</span></span><br><span class="line">  <span class="keyword">for</span>(startup&lt;?&gt;startup :startupList){</span><br><span class="line">    startupMap.put(startup.getClass()，startup);</span><br><span class="line">    <span class="comment">//记录每个任务的入度数(依赖的任务数)</span></span><br><span class="line">    <span class="type">int</span> dependenciesCount=startup.getDependenciesCount();</span><br><span class="line">    inDegreeMap.put(startup.getclass(),dependenciescount);</span><br><span class="line">    <span class="comment">//记录入度数(依赖的任务数)为0的任务</span></span><br><span class="line">    <span class="keyword">if</span>(dependenciesCount==<span class="number">0</span>) {</span><br><span class="line">      zeroDeque.offer(startup.getclass());</span><br><span class="line">    } <span class="keyword">else</span> {</span><br><span class="line">      <span class="comment">//遍历本任务的依赖任务，生成任务依赖表</span></span><br><span class="line">      <span class="keyword">for</span>(Class&lt;? <span class="keyword">extends</span> <span class="title class_">startup</span>&lt;?&gt;&gt;parent : startup.dependencies()){</span><br><span class="line">        List&lt;Class&lt;? <span class="keyword">extends</span> <span class="title class_">startup</span>&gt;&gt;children = startupchildrenMap.get(parent);</span><br><span class="line">        <span class="keyword">if</span>(children == <span class="literal">null</span>){</span><br><span class="line">          children = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">          <span class="comment">//记录这个父任务的所有子任务</span></span><br><span class="line">          startupchildrenMap.put(parent,children);</span><br><span class="line">        }</span><br><span class="line">        children.add(startup.getclass());</span><br><span class="line">      }</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 2.删除图中入度为0的这些顶点，并更新全图，，最后完成排序</span></span><br><span class="line">  List&lt;Startup&lt;?&gt;&gt;result = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">  <span class="comment">//处理入度为0的任务</span></span><br><span class="line">  <span class="keyword">while</span>(!zeroDeque.isEmpty()) {</span><br><span class="line">    Class&lt;?<span class="keyword">extends</span> <span class="title class_">startup</span>&gt;cls =zeroDeque.poll();</span><br><span class="line">    Startup&lt;?&gt;startup =startupMap.get(cls);result.add(startup);</span><br><span class="line">    <span class="comment">//删除此入度为0的任务</span></span><br><span class="line">    <span class="keyword">if</span>(startupChildrenMap.containsKey(cls)){</span><br><span class="line">      List&lt;Class&lt;? <span class="keyword">extends</span> <span class="title class_">startup</span>&gt;&gt;childstartup = startupchildrenMap.get(cls);</span><br><span class="line">      <span class="keyword">for</span>(Class&lt;?<span class="keyword">extends</span> <span class="title class_">startup</span>&gt;childcls :childstartup){</span><br><span class="line">        Integer num=inDegreeMap.get(childcls);</span><br><span class="line">        inDegreeMap.put(childcls，num-<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">if</span>(num-<span class="number">1</span>==<span class="number">0</span>){</span><br><span class="line">          zeroDeque.offer(childcls);</span><br><span class="line">        }</span><br><span class="line">      }</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">StartupSortStore</span>(result, startupMap, startupchildrenMap);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+                    
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/blog/tags/Android/">Android</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                            <div class="post-share-container border-box">
+    <ul class="share-list-wrap border-box">
+        <li class="qq share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to QQ"
+        >
+            <i class="fa-brands fa-qq"></i>
+        </li>
+        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
+            data-tooltip-content="Share to WeChat"
+            data-tooltip-img-tip="Scan by WeChat"
+            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
+        >
+            <i class="fa-brands fa-weixin"></i>
+        </li>
+        <li class="weibo share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to WeiBo"
+        >
+            <i class="fa-brands fa-weibo"></i>
+        </li>
+    </ul>
+</div>
+
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/blog/2024/12/20/futu-1%20%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B%E7%AE%A1%E7%90%86/"
+                                   title="启动流程管理"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">启动流程管理</span>
+                                        <span class="post-nav-item">Prev posts</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/blog/2024/12/10/Android-39%20%E7%83%AD%E4%BF%AE%E5%A4%8D/"
+                                   title="热修复"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">热修复</span>
+                                        <span class="post-nav-item">Next posts</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc left-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Activity%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">Activity启动流程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Launcher%E8%BF%9B%E7%A8%8B%E8%AF%B7%E6%B1%82AMS"><span class="nav-number">1.1.</span> <span class="nav-text">Launcher进程请求AMS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AMS%E5%8F%91%E9%80%81%E5%88%9B%E5%BB%BA%E5%BA%94%E7%94%A8%E8%BF%9B%E7%A8%8B%E8%AF%B7%E6%B1%82"><span class="nav-number">1.2.</span> <span class="nav-text">AMS发送创建应用进程请求</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#AMS%E5%B0%86%E8%AF%B7%E6%B1%82%E4%BB%BB%E5%8A%A1%E8%BD%AC%E7%A7%BB%E7%BB%99Process"><span class="nav-number">1.2.1.</span> <span class="nav-text">AMS将请求任务转移给Process</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Process%E5%90%91Zygote%E8%BF%9B%E7%A8%8B%E5%8F%91%E9%80%81%E5%88%9B%E5%BB%BA%E5%BA%94%E7%94%A8%E8%BF%9B%E7%A8%8B%E8%AF%B7%E6%B1%82"><span class="nav-number">1.2.2.</span> <span class="nav-text">Process向Zygote进程发送创建应用进程请求</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F"><span class="nav-number">2.</span> <span class="nav-text">拓扑排序</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+    &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2024
+    
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/blog/">MoMo</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+        <div class="count-info info-item">
+            
+
+            
+                <span class="count-item border-box uv">
+                    <span class="item-type border-box">Unique Visitor</span>
+                    <span class="item-value border-box uv" id="busuanzi_value_site_uv"></span>
+                </span>
+            
+
+            
+                <span class="count-item border-box pv">
+                    <span class="item-type border-box">Page View</span>
+                    <span class="item-value border-box pv" id="busuanzi_value_site_pv"></span>
+                </span>
+            
+        </div>
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools left-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Activity%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">Activity启动流程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Launcher%E8%BF%9B%E7%A8%8B%E8%AF%B7%E6%B1%82AMS"><span class="nav-number">1.1.</span> <span class="nav-text">Launcher进程请求AMS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AMS%E5%8F%91%E9%80%81%E5%88%9B%E5%BB%BA%E5%BA%94%E7%94%A8%E8%BF%9B%E7%A8%8B%E8%AF%B7%E6%B1%82"><span class="nav-number">1.2.</span> <span class="nav-text">AMS发送创建应用进程请求</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#AMS%E5%B0%86%E8%AF%B7%E6%B1%82%E4%BB%BB%E5%8A%A1%E8%BD%AC%E7%A7%BB%E7%BB%99Process"><span class="nav-number">1.2.1.</span> <span class="nav-text">AMS将请求任务转移给Process</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Process%E5%90%91Zygote%E8%BF%9B%E7%A8%8B%E5%8F%91%E9%80%81%E5%88%9B%E5%BB%BA%E5%BA%94%E7%94%A8%E8%BF%9B%E7%A8%8B%E8%AF%B7%E6%B1%82"><span class="nav-number">1.2.2.</span> <span class="nav-text">Process向Zygote进程发送创建应用进程请求</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F"><span class="nav-number">2.</span> <span class="nav-text">拓扑排序</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/utils.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/header-shrink.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/back2top.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/toggle-theme.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/code-block.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/main.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/libs/anime.min.js"></script>
+
+<!-- local search -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/local-search.min.js"></script>
+
+
+<!-- lazyload -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/lazyload.min.js"></script>
+
+
+<div class="pjax">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/post/post-helper.min.js"></script>
+
+        <!-- toc -->
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/post/toc.min.js"></script>
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/post/share.min.js"></script>
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+</body>
+</html>
