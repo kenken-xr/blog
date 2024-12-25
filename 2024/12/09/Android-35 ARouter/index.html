@@ -267,7 +267,7 @@
             
                 <span class="meta-info-item post-update-date">
                     <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                    <span class="datetime" data-updated="Wed Dec 18 2024 15:37:37 GMT+0800">2024-12-18 15:37:37</span>
+                    <span class="datetime" data-updated="Wed Dec 25 2024 17:15:49 GMT+0800">2024-12-25 17:15:49</span>
                 </span>
             
         
@@ -490,7 +490,7 @@
 <li>抽象一下就是：moduleA先把目标class存入第三方仓库——ARouter的WareHouse，然后muduleB发起路由时从仓库中根据path获取目标class，ARouter就是这个仓库的管理者。 就好比 邮政是信件的管理者，它是两方通信者的中间人。</li>
 </ul>
 <h2 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h2><p>以上分析内容梳理成流程图：</p>
-<p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/20230301/%E6%B5%81%E7%A8%8B%E5%9B%BE.webp"></p>
+<p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/Android-35%20ARouter/%E6%B5%81%E7%A8%8B%E5%9B%BE.png"></p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>moduelA通过中间人ARouter把路由信息的存到仓库WareHouse；moduleB发起路由时，再通过中间人ARouter从仓库WareHouse取出路由信息，这要就实现了没有依赖的两者之间的跳转与通信。其中涉及Activity的跳转、服务provider的获取、拦截器的处理等。</p>
 <p>其中ARouter在编译时生成的帮助类，是用于对所有使用@Route、@Interceptor注解的类信息的分组和收集，编译运行时对路由信息仓库Warehouse的填充和使用。这里涉及到的是 <strong>Annotation Process Tool</strong>（ <strong>APT</strong>）技术，即注解处理工具。</p>
 <p>如何使用编译时生成的帮助类:除了运行时查找dex，还可以在编译时扫描帮助类信息，并且直接在物流中心LogisticsCenter loadRouterMap()方法中直接插入使用帮助类的代码，这里涉及 <strong>Android Gradle Plugin</strong>（ <strong>AGP</strong>）技术，即Android的gradle插件相关技术。</p>
@@ -511,7 +511,7 @@
 <li>获取注解及生成代码都是在代码编译时候完成的，相比反射在运行时处理注解大大提高了程序性能。</li>
 <li>注意APT并不能对源文件进行修改，只能获取注解信息和被注解对象的信息，然后做一些自定义的处理，例如生成java类。</li>
 </ul>
-<h3 id="APT的原理"><a href="#APT的原理" class="headerlink" title="APT的原理"></a>APT的原理</h3><p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/20230301/Java%E7%9A%84%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B.webp"></p>
+<h3 id="APT的原理"><a href="#APT的原理" class="headerlink" title="APT的原理"></a>APT的原理</h3><p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/Android-35%20ARouter/java%E7%BC%96%E8%AF%91%E6%B5%81%E7%A8%8B"></p>
 <p>在Java源码到class文件之间，需要经过 <strong>注解处理器</strong>的处理，注解处理器生成的代码也同样会经过这一过程，最终一起生成class文件。在Android中，class文件还会被打进Dex文件中，最后生成APK文件。</p>
 <p>注解处理器的执行是在编译的初始阶段，并且会有多个processor（查看所有注册的processor：intermediates/annotation_processor_list/debug/annotationProcessors.json）。</p>
 <p>自定义的注解处理器如何注册进去:</p>
