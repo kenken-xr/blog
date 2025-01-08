@@ -267,7 +267,7 @@
             
                 <span class="meta-info-item post-update-date">
                     <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                    <span class="datetime" data-updated="Mon Dec 23 2024 20:43:56 GMT+0800">2024-12-23 20:43:56</span>
+                    <span class="datetime" data-updated="Wed Jan 08 2025 15:27:39 GMT+0800">2025-01-08 15:27:39</span>
                 </span>
             
         
@@ -421,7 +421,7 @@
 <p>为了性能优化，JMM 在不改变正确语义的前提下，会允许编译器和处理器对指令序列进行重排序。JMM 提供了内存屏障阻止这种重排序。</p>
 <p>Java 编译器会在生成指令系列时在适当的位置会插入内存屏障指令来禁止特定类型的处理器重排序。</p>
 <p>JMM 会针对编译器制定 volatile 重排序规则表。</p>
-<p><img lazyload="" alt="image" data-src="https://segmentfault.com/img/remote/1460000045398764"></p>
+<p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/Android-32%20volatile/%E9%87%8D%E6%8E%92%E5%BA%8F%E8%A7%84%E5%88%99%E8%A1%A8"></p>
 <p>为了实现 volatile 内存语义时，编译器在生成字节码时，会在指令序列中插入内存屏障来禁止特定类型的处理器重排序。</p>
 <p>对于编译器来说，发现一个最优布置来最小化插入屏障的总数几乎是不可能的，为此，JMM 采取了保守的策略。</p>
 <ul>
@@ -431,7 +431,7 @@
 <li>在每个 volatile 读操作的后面插入一个 LoadStore 屏障。</li>
 </ul>
 <p>volatile 写是在前面和后面分别插入内存屏障，而 volatile 读操作是在后面插入两个内存屏障。</p>
-<p><img lazyload="" alt="image" data-src="https://segmentfault.com/img/remote/1460000045398765"></p>
+<p><img lazyload="" alt="image" data-src="https://raw.githubusercontent.com/kenken-xr/blog-images/images/images/Android-32%20volatile/%E5%86%85%E5%AD%98%E5%B1%8F%E9%9A%9C"></p>
 <h2 id="为什么不能保证原子性"><a href="#为什么不能保证原子性" class="headerlink" title="为什么不能保证原子性"></a>为什么不能保证原子性</h2><p>在多线程环境中，原子性是指一个操作或一系列操作要么完全执行，要么完全不执行，不会被其他线程的操作打断。</p>
 <p>volatile关键字可以确保一个线程对变量的修改对其他线程立即可见，这对于读-改-写的操作序列来说是不够的，因为这些操作序列本身并不是原子的。考虑下面的例子：</p>
 <figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Counter</span> {</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">volatile</span> <span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">increment</span><span class="params">()</span> {</span><br><span class="line">        count++; <span class="comment">// 这实际上是三个独立的操作：读取count的值，增加1，写回新值到count</span></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
